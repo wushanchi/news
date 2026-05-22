@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日晨报 · Daily Briefing</title>
+<style>
+:root {
+  --bg: #0a0e14;
+  --surface: #141b22;
+  --card: #1a2332;
+  --border: #253040;
+  --text: #e2e8f0;
+  --text-dim: #7b8ba0;
+  --accent-ai: #ff6a3d;
+  --accent-world: #3b82f6;
+  --accent-tech: #10b981;
+  --accent-sports: #f59e0b;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --font: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+
+/* Hero */
+.hero{
+  text-align:center;
+  padding:56px 20px 40px;
+  background:linear-gradient(180deg,#141e2e 0%,var(--bg) 100%);
+  border-bottom:1px solid var(--border);
+}
+.hero-label{
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.hero h1{
+  font-size:clamp(28px,5vw,44px);
+  font-weight:800;
+  letter-spacing:-0.02em;
+  background:linear-gradient(135deg,#f0f4ff,#c8d6e5);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-date{
+  margin-top:10px;
+  font-size:15px;
+  color:var(--text-dim);
+}
+
+/* Date Picker */
+.date-bar{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  padding:20px 16px;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.date-bar label{
+  font-size:14px;
+  color:var(--text-dim);
+  font-weight:500;
+}
+.date-picker{
+  font-family:var(--font);
+  font-size:14px;
+  padding:8px 16px;
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  outline:none;
+  cursor:pointer;
+  transition:var(--transition);
+}
+.date-picker:focus{border-color:#4a6a9a}
+.date-nav{
+  display:flex;
+  gap:6px;
+}
+.date-nav button{
+  width:36px;height:36px;
+  border-radius:50%;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  font-size:16px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:var(--transition);
+}
+.date-nav button:hover{background:#253040;border-color:#3a5a80}
+
+/* Main Grid */
+.main{
+  max-width:1100px;
+  margin:0 auto;
+  padding:32px 16px 60px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+/* Report Card */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px 24px;
+  transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition);
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+}
+.card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+}
+.card-ai::before{background:linear-gradient(90deg,var(--accent-ai),#ff8c5a)}
+.card-ai:hover{border-color:var(--accent-ai)}
+.card-world::before{background:linear-gradient(90deg,var(--accent-world),#60a5fa)}
+.card-world:hover{border-color:var(--accent-world)}
+.card-tech::before{background:linear-gradient(90deg,var(--accent-tech),#34d399)}
+.card-tech:hover{border-color:var(--accent-tech)}
+.card-sports::before{background:linear-gradient(90deg,var(--accent-sports),#fbbf24)}
+.card-sports:hover{border-color:var(--accent-sports)}
+
+.card-icon{
+  width:48px;height:48px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+}
+.card-ai .card-icon{background:rgba(255,106,61,0.12);color:var(--accent-ai)}
+.card-world .card-icon{background:rgba(59,130,246,0.12);color:var(--accent-world)}
+.card-tech .card-icon{background:rgba(16,185,129,0.12);color:var(--accent-tech)}
+.card-sports .card-icon{background:rgba(245,158,11,0.12);color:var(--accent-sports)}
+
+.card h3{
+  font-size:18px;
+  font-weight:700;
+  color:var(--text);
+}
+.card p{
+  font-size:13px;
+  color:var(--text-dim);
+  line-height:1.55;
+}
+.card-status{
+  margin-top:auto;
+  font-size:12px;
+  font-weight:600;
+  padding:5px 12px;
+  border-radius:20px;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  width:fit-content;
+}
+.status-ready{background:rgba(16,185,129,0.12);color:#34d399}
+.status-pending{background:rgba(245,158,11,0.12);color:#fbbf24}
+.status-empty{background:rgba(123,139,160,0.12);color:var(--text-dim)}
+.status-dot{
+  width:7px;height:7px;
+  border-radius:50%;
+}
+.status-ready .status-dot{background:#34d399}
+.status-pending .status-dot{background:#fbbf24}
+.status-empty .status-dot{background:var(--text-dim)}
+
+/* Status Section */
+.status-section{
+  margin-top:40px;
+  padding:20px 24px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+.status-section h3{
+  font-size:14px;
+  color:var(--text-dim);
+  margin-bottom:12px;
+  font-weight:600;
+}
+.status-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.status-tag{
+  font-size:12px;
+  padding:4px 12px;
+  border-radius:6px;
+  font-weight:500;
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  padding:24px 16px 40px;
+  font-size:12px;
+  color:var(--text-dim);
+  opacity:0.5;
+  border-top:1px solid var(--border);
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .hero{padding:40px 16px 28px}
+  .grid{grid-template-columns:1fr}
+  .date-bar{flex-wrap:wrap;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-label">Daily Briefing</div>
+  <h1>每日晨报</h1>
+  <div class="hero-date" id="hero-date">2026 年 5 月 22 日 · 星期五</div>
+</header>
+
+<div class="date-bar">
+  <label for="date-input">选择日期：</label>
+  <input type="date" id="date-input" class="date-picker" value="2026-05-22">
+  <div class="date-nav">
+    <button id="btn-prev" title="前一天">&#8249;</button>
+    <button id="btn-today" title="今天">&#9679;</button>
+    <button id="btn-next" title="后一天">&#8250;</button>
+  </div>
+</div>
+
+<main class="main">
+  <div class="grid">
+    <!-- AI 晨报 -->
+    <a class="card card-ai" id="card-ai" href="ai-morning-2026-05-22.html" target="_blank">
+      <div class="card-icon">🤖</div>
+      <h3>AI 晨报</h3>
+      <p>AI 行业最新动态：模型发布、产品更新、行业趋势、论文研究与技巧观点</p>
+      <span class="card-status status-ready" id="status-ai"><span class="status-dot"></span>今日已生成</span>
+    </a>
+
+    <!-- 国际焦点 -->
+    <a class="card card-world" id="card-world" href="world-news-2026-05-22.html" target="_blank">
+      <div class="card-icon">🌍</div>
+      <h3>国际焦点</h3>
+      <p>全球要闻速递：政治经济、国际关系、重大事件与社会动态</p>
+      <span class="card-status status-pending" id="status-world"><span class="status-dot"></span>即将生成</span>
+    </a>
+
+    <!-- 科技日报 -->
+    <a class="card card-tech" id="card-tech" href="tech-news-2026-05-22.html" target="_blank">
+      <div class="card-icon">💻</div>
+      <h3>科技日报</h3>
+      <p>科技前沿资讯：互联网、半导体、航天、新能源与数字创新</p>
+      <span class="card-status status-pending" id="status-tech"><span class="status-dot"></span>即将生成</span>
+    </a>
+
+    <!-- 运动健康 -->
+    <a class="card card-sports" id="card-sports" href="sports-health-2026-05-22.html" target="_blank">
+      <div class="card-icon">⚽</div>
+      <h3>运动健康</h3>
+      <p>运动赛事与健康生活：体坛快讯、健身科学、营养饮食与身心养护</p>
+      <span class="card-status status-pending" id="status-sports"><span class="status-dot"></span>即将生成</span>
+    </a>
+  </div>
+
+  <div class="status-section" id="status-section" style="display:none;">
+    <h3>当日文件状态</h3>
+    <div class="status-list" id="status-list"></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>数据来源：AI HOT / 公开新闻源 · 每日 08:50 自动更新 · Powered by WorkBuddy</p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  const WEEKDAYS = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+  const REPORTS = [
+    {id:'ai',    prefix:'ai-morning',    label:'AI 晨报'},
+    {id:'world', prefix:'world-news',    label:'国际焦点'},
+    {id:'tech',  prefix:'tech-news',     label:'科技日报'},
+    {id:'sports',prefix:'sports-health', label:'运动健康'},
+  ];
+
+  const dateInput = document.getElementById('date-input');
+  const heroDate  = document.getElementById('hero-date');
+  const section   = document.getElementById('status-section');
+  const list      = document.getElementById('status-list');
+
+  function fmtDate(d){
+    const y = d.getFullYear();
+    const m = String(d.getMonth()+1).padStart(2,'0');
+    const day = String(d.getDate()).padStart(2,'0');
+    return y + '-' + m + '-' + day;
+  }
+
+  function heroText(d){
+    const y = d.getFullYear();
+    const m = d.getMonth()+1;
+    const day = d.getDate();
+    const w = WEEKDAYS[d.getDay()];
+    return y + ' 年 ' + m + ' 月 ' + day + ' 日 · ' + w;
+  }
+
+  function update(dateStr){
+    const d = new Date(dateStr + 'T00:00:00+08:00');
+    if(isNaN(d.getTime())) return;
+    dateInput.value = dateStr;
+    heroDate.textContent = heroText(d);
+    const today = new Date();
+    const todayStr = fmtDate(today);
+
+    REPORTS.forEach(function(r){
+      var href = r.prefix + '-' + dateStr + '.html';
+      var card = document.getElementById('card-'+r.id);
+      var statusEl = document.getElementById('status-'+r.id);
+      card.href = href;
+
+      if(dateStr === todayStr && r.id === 'ai'){
+        statusEl.className = 'card-status status-ready';
+        statusEl.innerHTML = '<span class="status-dot"></span>今日已生成';
+      } else if(dateStr > todayStr){
+        statusEl.className = 'card-status status-empty';
+        statusEl.innerHTML = '<span class="status-dot"></span>尚未到来';
+      } else {
+        statusEl.className = 'card-status status-pending';
+        statusEl.innerHTML = '<span class="status-dot"></span>检查中...';
+      }
+    });
+
+    if(dateStr !== todayStr || dateStr > todayStr){
+      section.style.display = 'block';
+      list.innerHTML = REPORTS.map(function(r){
+        var href = r.prefix + '-' + dateStr + '.html';
+        if(dateStr > todayStr){
+          return '<span class="status-tag status-empty">'+r.label+'：尚未到来</span>';
+        }
+        return '<span class="status-tag status-pending"><a href="'+href+'" target="_blank">'+r.label+'：查看 →</a></span>';
+      }).join('');
+    }
+  }
+
+  dateInput.addEventListener('change',function(){update(this.value)});
+  document.getElementById('btn-prev').addEventListener('click',function(){
+    var d = new Date(dateInput.value + 'T00:00:00+08:00');
+    d.setDate(d.getDate()-1);
+    update(fmtDate(d));
+  });
+  document.getElementById('btn-next').addEventListener('click',function(){
+    var d = new Date(dateInput.value + 'T00:00:00+08:00');
+    d.setDate(d.getDate()+1);
+    update(fmtDate(d));
+  });
+  document.getElementById('btn-today').addEventListener('click',function(){
+    update(fmtDate(new Date()));
+  });
+
+  update('2026-05-22');
+})();
+</script>
+
+</body>
+</html>
