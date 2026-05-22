@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026-05-22</title>
+<style>
+:root {
+  --c-bg:#0f0e06;--c-surface:#1c180a;--c-card:#261e0f;--c-border:#3a2e18;
+  --c-text:#faf0d4;--c-text-dim:#9e8a52;--c-accent:#f59e0b;--c-accent2:#fbbf24;
+  --c-accent-glow:rgba(245,158,11,0.15);--c-tag-sports:#f59e0b;--c-tag-fitness:#d97706;
+  --c-tag-nutrition:#b45309;--c-tag-wellness:#eab308;
+  --c-grad-start:#78350f;--c-grad-mid:#92400e;--c-grad-end:#451a03;
+  --radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono:'SF Mono','Cascadia Code','Consolas',monospace;
+  --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.06),transparent 60%),radial-gradient(circle at 70% 80%,rgba(245,158,11,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:.06em;margin-bottom:8px}
+.hero h1{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}.stat strong{color:var(--c-text);font-weight:600}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(15,14,6,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-sports{background:var(--c-tag-sports)}.badge-fitness{background:var(--c-tag-fitness)}
+.badge-nutrition{background:var(--c-tag-nutrition)}.badge-wellness{background:var(--c-tag-wellness)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(251,191,36,.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 22 日 · 星期五</div>
+  <h1>运动健康日报</h1>
+  <div class="hero-total">今日 16 条 · 北京时间 08:50</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-sports)"></span> 体坛快讯 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-fitness)"></span> 健身科学 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-nutrition)"></span> 营养饮食 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-wellness)"></span> 身心养护 <strong>3</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-sports">🏆 体坛快讯<span class="nav-count">7</span></a>
+  <a href="#sec-fitness">💪 健身科学<span class="nav-count">3</span></a>
+  <a href="#sec-nutrition">🥗 营养饮食<span class="nav-count">3</span></a>
+  <a href="#sec-wellness">🧘 身心养护<span class="nav-count">3</span></a>
+</div></nav>
+<main class="main">
+
+<section class="section" id="sec-sports"><div class="section-header"><span class="section-badge badge-sports">SPORTS</span><h2>体坛快讯</h2><span class="section-count">7 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">NBA</span></div><h3 class="card-title">NBA 西决 G3 今晚上演：雷霆马刺 1-1 战平</h3><p class="card-summary">西部决赛 G3 今晚 08:30 ET 在马刺主场进行，系列赛双加时 G1 后双方势均力敌。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.nba.com/news/2026-nba-playoffs-schedule" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">NBA</span></div><h3 class="card-title">东部决赛尼克斯 2-0 领先骑士强势开局</h3><p class="card-summary">尼克斯前两场合计净胜 27 分，G3 将于 5 月 23 日移师骑士主场，总决赛 6 月 3 日开打。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.nba.com/news/2026-nba-playoffs-schedule" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">Sky Sports</span></div><h3 class="card-title">阿森纳时隔 22 年重夺英超冠军！</h3><p class="card-summary">曼城客场 1-1 战平伯恩茅斯后，阿森纳提前锁定 2025/26 赛季英超冠军，终结连亚命运。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.skysports.com/football/news/11670/13545591/arsenal-win-premier-league-mikel-artetas-side-end-22-year-wait-for-title" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">UEFA</span></div><h3 class="card-title">欧冠决赛：阿森纳 vs 巴黎圣日耳曼</h3><p class="card-summary">阿森纳半决赛 1-0 淘汰马竞挺进决赛，将迎战卫冕冠军巴黎圣日耳曼，比赛为去年四强重演。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.uefa.com/uefachampionsleague/news/029a-1df98e9a78ca-1acaca3c53b0-1000--2026-uefa-champions-league-final-where-is-it-who-is-involv/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">Goal</span></div><h3 class="card-title">英冠升级附加赛决赛 5 月 23 日打响</h3><p class="card-summary">英冠升级附加赛决赛将于 5 月 23 日举行，决出最后一个英超升级名额。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.goal.com/en/news/championship-playoffs-2026-fixtures-dates-teams/bltdf05e204258efc24" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">ESPN</span></div><h3 class="card-title">NBA 季后赛回顾：76 人黑七奇迹淘汰凯尔特人</h3><p class="card-summary">76 人以 7 号种子身份 4-3 淘汰 2 号种子凯尔特人，上演首轮最大冷门。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.nba.com/playoffs/2026" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">ESPN</span></div><h3 class="card-title">骑士 4-3 险胜活塞挺进东决</h3><p class="card-summary">骑士在东部半决赛 4-3 险胜头号种子活塞，与尼克斯会师东部决赛。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.nba.com/playoffs/2026" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-fitness"><div class="section-header"><span class="section-badge badge-fitness">FITNESS</span><h2>健身科学</h2><span class="section-count">3 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">ScienceDaily</span></div><h3 class="card-title">研究发现亮氨酸可"超充"线粒体保护能量蛋白</h3><p class="card-summary">蛋白质食物中的亮氨酸能保护细胞内关键能量蛋白，为运动营养提供新科学依据。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/fitness/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">Harvard Health</span></div><h3 class="card-title">新指南推荐抗阻训练改善力量与日常功能</h3><p class="card-summary">居家或健身房抗阻训练可改善肌力、维度、爆发力和耐力，对中老年人尤其重要。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.health.harvard.edu/topics/exercise-and-fitness/all" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">RiminiWellness</span></div><h3 class="card-title">2026 健康趋势：从健身到健康生态系统的转变</h3><p class="card-summary">健康理念正从单一健身转向涵盖营养、长寿、心理的综合生态系统，形成结构化转型。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.gogoterme.com/en/blog/lifestyle/riminiwellness-2026-the-new-wellness-trends-between-fitness-nutrition-and-longevity/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-nutrition"><div class="section-header"><span class="section-badge badge-nutrition">NUTRITION</span><h2>营养饮食</h2><span class="section-count">3 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">Medical Xpress</span></div><h3 class="card-title">睡眠和饮食比运动更能缓冲慢性压力的健康损害</h3><p class="card-summary">新研究挑战传统认知：对抗工作压力时，改善睡眠和饮食的优先级可能高于增加运动量。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://medicalxpress.com/news/2026-05-diet-buffering-health-toll-chronic.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">Vogue</span></div><h3 class="card-title">2026 年六大健康趋势：个性化营养成主流</h3><p class="card-summary">专家盘点新一年健康趋势，个性化营养方案、功能性食品和肠道健康管理成为焦点。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.vogue.com/article/2026-wellness-trends" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#13</span><span class="card-source">SciTechDaily</span></div><h3 class="card-title">科学家发现身体"炎症关闭开关"</h3><p class="card-summary">研究人员发现调控炎症的关键分子机制，为慢性炎症相关疾病的治疗开辟新途径。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://scitechdaily.com/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-wellness"><div class="section-header"><span class="section-badge badge-wellness">WELLNESS</span><h2>身心养护</h2><span class="section-count">3 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#14</span><span class="card-source">Harvard Health</span></div><h3 class="card-title">规律运动是改善心理健康最有效的生活方式</h3><p class="card-summary">哈佛健康研究指出规律运动对焦虑抑郁的缓解效果显著，每周 150 分钟中等强度即可。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.health.harvard.edu/topics/exercise-and-fitness/all" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#15</span><span class="card-source">Scientific American</span></div><h3 class="card-title">高强度间歇训练对大脑认知功能的提升效果</h3><p class="card-summary">最新研究表明 HIIT 训练不仅能快速提升心肺功能，还对大脑执行功能有显著改善。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.scientificamerican.com/fitness/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#16</span><span class="card-source">RiminiWellness</span></div><h3 class="card-title">正念冥想与运动结合成为 2026 年身心养护主流</h3><p class="card-summary">将正念冥想融入日常运动成为新趋势，Mindful Movement 被视为身心健康的双效方案。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.gogoterme.com/en/blog/lifestyle/riminiwellness-2026-the-new-wellness-trends-between-fitness-nutrition-and-longevity/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+</main>
+<footer class="footer"><p>今日共收录 <strong>16</strong> 条运动健康资讯 · 数据来自公开体育健康媒体 · Powered by WorkBuddy</p></footer>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.card-animate').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll('.card-animate').forEach(function(e,i){e.style.transitionDelay=(i%6)*.06+'s'})},60)})();</script>
+</body>
+</html>

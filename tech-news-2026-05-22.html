@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-05-22</title>
+<style>
+:root {
+  --c-bg:#061410;--c-surface:#0d211a;--c-card:#142e24;--c-border:#1c3d30;
+  --c-text:#d4f0e4;--c-text-dim:#5e9b7c;--c-accent:#10b981;--c-accent2:#34d399;
+  --c-accent-glow:rgba(16,185,129,0.15);--c-tag-software:#10b981;--c-tag-hardware:#059669;
+  --c-tag-space:#0d9488;--c-tag-innovation:#14b8a6;
+  --c-grad-start:#064e3b;--c-grad-mid:#065f46;--c-grad-end:#022c22;
+  --radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono:'SF Mono','Cascadia Code','Consolas',monospace;
+  --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.06),transparent 60%),radial-gradient(circle at 70% 80%,rgba(16,185,129,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:.06em;margin-bottom:8px}
+.hero h1{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}.stat strong{color:var(--c-text);font-weight:600}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(6,20,16,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-software{background:var(--c-tag-software)}.badge-hardware{background:var(--c-tag-hardware)}
+.badge-space{background:var(--c-tag-space)}.badge-innovation{background:var(--c-tag-innovation)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(52,211,153,.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 22 日 · 星期五</div>
+  <h1>科技日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-software)"></span> 互联网/软件 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-hardware)"></span> 硬件/半导体 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-space)"></span> 航天/新能源 <strong>2</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-innovation)"></span> 数字创新 <strong>7</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-software">🌐 互联网/软件<span class="nav-count">7</span></a>
+  <a href="#sec-hardware">💾 硬件/半导体<span class="nav-count">4</span></a>
+  <a href="#sec-space">🚀 航天/新能源<span class="nav-count">2</span></a>
+  <a href="#sec-innovation">🔮 数字创新<span class="nav-count">7</span></a>
+</div></nav>
+<main class="main">
+
+<section class="section" id="sec-software"><div class="section-header"><span class="section-badge badge-software">SOFTWARE</span><h2>互联网 / 软件</h2><span class="section-count">7 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">The Verge</span></div><h3 class="card-title">Google 发布 Gemini Spark 对标 OpenAI 日常任务代理</h3><p class="card-summary">在 I/O 2026 大会上推出始终在线 AI 代理，可在 Workspace 后台运行，连接第三方应用。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">Business Insider</span></div><h3 class="card-title">OpenAI 向 YC 初创公司提供 200 万美元 AI 代币换取股权</h3><p class="card-summary">Sam Altman 领导的 OpenAI 向 YC 批次每家初创提供 API 代币，以无上限 SAFE 换取股权。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">Security Affairs</span></div><h3 class="card-title">GitHub 确认通过被污染 VS Code 扩展遭入侵</h3><p class="card-summary">员工设备被恶意扩展入侵，攻击者访问内部代码库，暴露开发者工具链供应链风险。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">Kaseya</span></div><h3 class="card-title">微软披露针对 3.5 万用户的凭证窃取活动</h3><p class="card-summary">大规模钓鱼行动涉及 26 国 1.3 万组织，攻击高价值账户，凸显 AI 时代安全紧迫性。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">The Record</span></div><h3 class="card-title">Discord 将所有用户默认设为端到端加密</h3><p class="card-summary">Discord 全面启用 E2E 加密，兼顾隐私与内容审核挑战，影响游戏、开发等深度使用社区。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">SecurityWeek</span></div><h3 class="card-title">Google Chrome 漏洞激增可能由 AI 发现驱动</h3><p class="card-summary">近期修补 200 多个漏洞被标记为"由 Google 报告"，AI 助力发现同时增加攻击压力。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">ITPro</span></div><h3 class="card-title">欧盟就高风险 AI 指南开放公众咨询</h3><p class="card-summary">EU AI 法案高风险系统分类指南草案公开征求意见，截止 6 月 23 日，影响医疗就业等领域。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-hardware"><div class="section-header"><span class="section-badge badge-hardware">HARDWARE</span><h2>硬件 / 半导体</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">Reuters</span></div><h3 class="card-title">Nvidia 预测 Q2 营收 910 亿美元押注 Vera 芯片</h3><p class="card-summary">超出华尔街预期，宣布 800 亿美元回购，Vera CPU 年底前可贡献 200 亿美元营收。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">Financial Times</span></div><h3 class="card-title">三星在最后时刻达成协议避免芯片大罢工</h3><p class="card-summary">三星与工会达成最后一刻协议含利润分享和加薪，避免冲击存储芯片生产。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">The Verge</span></div><h3 class="card-title">犹他州大规模 AI 数据中心项目遭遇当地反对</h3><p class="card-summary">Stratos 项目拟占地 4 万英亩功耗 9 吉瓦，因水资源和环境影响引发强烈抵制。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">Reuters</span></div><h3 class="card-title">美国政府计划向量子计算公司拨款 20 亿美元持股</h3><p class="card-summary">拨款加持股方式降低风险，加速量子硬件商业化，确保国家安全和经济利益。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-space"><div class="section-header"><span class="section-badge badge-space">AEROSPACE</span><h2>航天 / 新能源</h2><span class="section-count">2 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">Bloomberg/Reuters</span></div><h3 class="card-title">SpaceX 提交创纪录 IPO 估值 1.7 万亿美元</h3><p class="card-summary">拟以 SPCX 代码进行史上最大 IPO，2025 营收 187 亿美元，Starlink 季度利润 12 亿。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#13</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">Quartermaster 获 4300 万美元打造智能海事技术</h3><p class="card-summary">SmartMast 系统通过传感器分析提供实时海事情报，已在数百艘船上部署使用。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-innovation"><div class="section-header"><span class="section-badge badge-innovation">INNOVATION</span><h2>数字创新</h2><span class="section-count">7 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#14</span><span class="card-source">Google I/O</span></div><h3 class="card-title">Google I/O 2026 聚焦自主 AI 代理转型</h3><p class="card-summary">发布 100 多项 AI 代理和模型进展，从助手转向能跨应用执行多步骤工作流的自主代理。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#15</span><span class="card-source">Google</span></div><h3 class="card-title">Google 将更多 Gemini AI 融入广告和商业</h3><p class="card-summary">发布由 Gemini 驱动的新广告、创意生成和出价工具，保护并扩展核心广告收入引擎。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#16</span><span class="card-source">Bloomberg Law</span></div><h3 class="card-title">特朗普准备签署 AI 网络安全行政令聚焦自愿测试</h3><p class="card-summary">将 AI 公司纳入网络安全信息共享计划，不强制模型联邦审批，平衡风险可见与创新。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#17</span><span class="card-source">Reuters</span></div><h3 class="card-title">Mercury 获 2 亿美元融资估值 52 亿美元</h3><p class="card-summary">数字银行完成 D 轮融资，超 30 万客户，定位为科技和 AI 初创公司金融操作系统。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#18</span><span class="card-source">SecurityWeek</span></div><h3 class="card-title">Socket 获 6000 万美元融资估值 10 亿美元防恶意代码</h3><p class="card-summary">专注软件供应链安全，AI 生成代码和开源依赖扩大攻击面推动企业安全需求。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#19</span><span class="card-source">China Daily</span></div><h3 class="card-title">中国国有投资者深度布局 AI 初创公司</h3><p class="card-summary">国有背景投资者大举投资 Moonshot AI 等公司，大语言模型成为自主自强战略重点。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#20</span><span class="card-source">Moneycontrol</span></div><h3 class="card-title">印度旅游金融科技 Scapia 获 6300 万美元融资</h3><p class="card-summary">General Catalyst 领投，计划扩展旅游产品并加强 AI 驱动个性化，展现消费金融潜力。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+</main>
+<footer class="footer"><p>今日共收录 <strong>20</strong> 条科技资讯 · 数据来自公开科技媒体 · Powered by WorkBuddy</p></footer>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.card-animate').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll('.card-animate').forEach(function(e,i){e.style.transitionDelay=(i%6)*.06+'s'})},60)})();</script>
+</body>
+</html>
