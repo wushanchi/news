@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国际焦点日报 · 2026-05-23</title>
+<style>
+:root {
+  --c-bg: #0a0e1a;--c-surface: #10172b;--c-card: #141c35;--c-border: #1e2d55;
+  --c-text: #e8ecf5;--c-text-dim: #7a8bb5;--c-accent: #3b82f6;--c-accent2: #60a5fa;
+  --c-accent-glow: rgba(59,130,246,0.15);
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,#1a237e,#1e40af,#2563eb);padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(96,165,250,0.12),transparent 60%),radial-gradient(circle at 70% 80%,rgba(59,130,246,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(10,14,26,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-politics{background:#2563eb}.badge-economy{background:#0891b2}.badge-event{background:#7c3aed}.badge-society{background:#059669}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(96,165,250,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 23 日 · 星期六</div>
+  <h1 class="hero-title">国际焦点日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50 生成</div>
+</header>
+
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:#2563eb"></span> 政治外交 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:#0891b2"></span> 经济财经 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:#7c3aed"></span> 重大事件 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:#059669"></span> 社会人文 <strong>4</strong></div>
+  </div>
+</div>
+
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-politics">🏛️ 政治外交<span class="nav-count">6</span></a>
+  <a href="#sec-economy">💰 经济财经<span class="nav-count">6</span></a>
+  <a href="#sec-event">⚡ 重大事件<span class="nav-count">4</span></a>
+  <a href="#sec-society">🌐 社会人文<span class="nav-count">4</span></a>
+</div></nav>
+
+<main class="main">
+
+<!-- 政治外交 -->
+<section class="section" id="sec-politics">
+  <div class="section-header">
+    <span class="section-badge badge-politics">POLITICS</span>
+    <h2>政治外交</h2>
+    <span class="section-count">6 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#1</span>
+        <span class="card-source">财联社 / Livemint</span>
+      </div>
+      <h3 class="card-title">巴基斯坦陆军参谋长抵达伊朗，美伊谈判持续斡旋</h3>
+      <p class="card-summary">巴基斯坦陆军参谋长穆尼尔及三军情报局局长抵达德黑兰，持续推进美伊之间斡旋调停，但伊朗强调此行不意味达成最终共识。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://k.sina.cn/article_7857201856_1d45362c001905t78m.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#2</span>
+        <span class="card-source">路透社 / 伊朗外交部</span>
+      </div>
+      <h3 class="card-title">伊朗称与美分歧严重，谈判草案无实质进展</h3>
+      <p class="card-summary">伊朗外交部发言人表示，谈判草案虽每日传递但无突破性进展，在所有分歧解决前不会达成协议，立场依然强硬。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#3</span>
+        <span class="card-source">联合国 / 伊朗外交部</span>
+      </div>
+      <h3 class="card-title">伊朗外长与联合国秘书长古特雷斯通话讨论地区局势</h3>
+      <p class="card-summary">伊朗外长阿拉格齐与联合国秘书长古特雷斯举行电话会谈，双方围绕中东地区局势及外交进程深入交换意见。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://news.un.org/zh/news" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#4</span>
+        <span class="card-source">墨西哥政府 / EU</span>
+      </div>
+      <h3 class="card-title">墨西哥与欧盟举行峰会，升级战略伙伴关系</h3>
+      <p class="card-summary">第八届墨西哥—欧盟峰会在墨西哥城举行，双方宣布深化政治、经济与安全合作，共同维护多边主义国际秩序。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#5</span>
+        <span class="card-source">新华社 / 新华网</span>
+      </div>
+      <h3 class="card-title">塞内加尔总统解除总理及其政府职务</h3>
+      <p class="card-summary">塞内加尔总统宣布解除总理及其政府全体成员职务，引发西非政坛关注，新政府组建工作即将展开。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.xinhuanet.com/world/jsxw/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#6</span>
+        <span class="card-source">白宫 / 特朗普社交媒体</span>
+      </div>
+      <h3 class="card-title">特朗普取消个人行程召集国家安全团队，对伊强硬立场持续</h3>
+      <p class="card-summary">特朗普因"特殊政府事务"取消出席儿子婚礼，返回白宫与副总统、防长等举行对伊问题会议，强调伊朗核问题"很快结束"。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 经济财经 -->
+<section class="section" id="sec-economy">
+  <div class="section-header">
+    <span class="section-badge badge-economy">ECONOMY</span>
+    <h2>经济财经</h2>
+    <span class="section-count">6 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#7</span>
+        <span class="card-source">美联储 / 路透社</span>
+      </div>
+      <h3 class="card-title">美联储主席沃什：通胀可以更低，力推美联储改革</h3>
+      <p class="card-summary">新任美联储主席沃什宣誓就职后表示，相信在坚定立场下通胀能够回落，并强调将推动美联储以改革为导向，缩减前瞻性指引操作。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#8</span>
+        <span class="card-source">财经媒体 / 商品市场</span>
+      </div>
+      <h3 class="card-title">黄金价格下跌，美联储沃勒暗示下一步行动可能是加息</h3>
+      <p class="card-summary">美联储官员沃勒发表鹰派言论，暗示下一步政策动向为加息，金价随之下跌，现货黄金失守4500美元关口。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-may-23-2026-live-updates-11779477103131.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#9</span>
+        <span class="card-source">股市数据 / 彭博</span>
+      </div>
+      <h3 class="card-title">美股三大股指集体收涨，道指再创历史新高</h3>
+      <p class="card-summary">道指涨0.58%、标普涨0.37%、纳指涨0.20%，戴尔、惠普大涨超15%，标普500指数实现连续八周收阳。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#10</span>
+        <span class="card-source">LME / 托克集团</span>
+      </div>
+      <h3 class="card-title">托克集团创纪录提取LME期铜，单日交割超5.1万吨</h3>
+      <p class="card-summary">托克集团从LME美亚保税仓库提取超5.1万吨期铜，为2013年以来最大单日交割提货，全球铜供应紧张态势加剧。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#11</span>
+        <span class="card-source">Baker Hughes / 美国能源信息署</span>
+      </div>
+      <h3 class="card-title">美国石油钻井数上升，能源供应持续扩张</h3>
+      <p class="card-summary">美国5月22日当周总钻井数558口、石油钻井数425口，分别较前值增加7口和10口，页岩油产量持续攀升。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#12</span>
+        <span class="card-source">AI融资资讯 / 彭博</span>
+      </div>
+      <h3 class="card-title">Anthropic最快下周完成逾300亿美元融资，估值将超9000亿</h3>
+      <p class="card-summary">Anthropic即将完成超300亿美元融资，估值突破9000亿美元，超越OpenAI成为全球估值最高AI初创公司，红杉资本领投。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 重大事件 -->
+<section class="section" id="sec-event">
+  <div class="section-header">
+    <span class="section-badge badge-event">EVENTS</span>
+    <h2>重大事件</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#13</span>
+        <span class="card-source">SpaceX / CNN</span>
+      </div>
+      <h3 class="card-title">SpaceX星舰第12次试飞溅落印度洋，任务圆满完成</h3>
+      <p class="card-summary">星舰于美东时间22日18:30从得克萨斯发射升空，最终按计划溅落印度洋，标志着超重型火箭技术再获关键突破。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#14</span>
+        <span class="card-source">美国国土安全部</span>
+      </div>
+      <h3 class="card-title">特朗普政府宣布外国人须回本国才能申请绿卡</h3>
+      <p class="card-summary">特朗普政府出台新规，要求绿卡申请人必须返回其原籍国方可办理申请手续，大幅收紧合法移民通道。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-23/doc-inhyvtis7896874.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#15</span>
+        <span class="card-source">纽约新闻 / 当地媒体</span>
+      </div>
+      <h3 class="card-title">纽约一造船厂爆炸起火致16人受伤</h3>
+      <p class="card-summary">纽约某造船厂发生爆炸并引发大火，事故造成16人受伤，消防部门紧急出动扑救，具体爆炸原因正在调查中。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.xinhuanet.com/world/jsxw/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#16</span>
+        <span class="card-source">世界卫生组织</span>
+      </div>
+      <h3 class="card-title">世卫：埃博拉疫情在刚果（金）风险水平"非常高"</h3>
+      <p class="card-summary">世界卫生组织发布最新评估，指出埃博拉疫情在刚果民主共和国的风险水平为"非常高"，国际社会呼吁加强援助力度。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.xinhuanet.com/world/jsxw/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 社会人文 -->
+<section class="section" id="sec-society">
+  <div class="section-header">
+    <span class="section-badge badge-society">SOCIETY</span>
+    <h2>社会人文</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#17</span>
+        <span class="card-source">戛纳电影节</span>
+      </div>
+      <h3 class="card-title">戛纳2026：六部影片角逐金棕榈奖，电影节即将落幕</h3>
+      <p class="card-summary">第79届戛纳电影节进入尾声，六部入围影片竞争最高荣誉金棕榈奖，全球影迷屏息以待最终评选结果。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-may-23-2026-live-updates-11779477103131.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#18</span>
+        <span class="card-source">影视资讯 / Deadline</span>
+      </div>
+      <h3 class="card-title">汤姆·哈迪将不再出演《MobLand》第三季</h3>
+      <p class="card-summary">据报道，汤姆·哈迪因幕后矛盾被《MobLand》剧组解雇，不会回归第三季，引发影迷广泛关注和讨论。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-may-23-2026-live-updates-11779477103131.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#19</span>
+        <span class="card-source">新华社 / 新华网</span>
+      </div>
+      <h3 class="card-title">国际博物馆日：走进中国主会场，文化交流持续升温</h3>
+      <p class="card-summary">5月18日国际博物馆日，中国主会场活动成功举办，促进中外文明交流互鉴，博物馆热持续升温。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.xinhuanet.com/world/jsxw/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#20</span>
+        <span class="card-source">联合国 / WHO</span>
+      </div>
+      <h3 class="card-title">世卫组织：消除肝炎取得进展，实现2030年目标仍需加大力度</h3>
+      <p class="card-summary">WHO发布《2026年全球肝炎报告》，指出病毒性肝炎防治取得进展，但要实现2030年消除目标仍需国际社会加大投入。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://news.un.org/zh/story/2026/05/1142074" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  数据来源：Reuters / BBC / CNN / 新华网 / 环球网 / Livemint 等公开新闻源
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.card-animate').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

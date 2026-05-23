@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026-05-23</title>
+<style>
+:root {
+  --c-bg: #1a1200;--c-surface: #1f1604;--c-card: #2a1c08;--c-border: #3d2a0a;
+  --c-text: #fdf5e5;--c-text-dim: #a08050;--c-accent: #f59e0b;--c-accent2: #fbbf24;
+  --c-accent-glow: rgba(245,158,11,0.15);
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,#92400e,#b45309,#d97706);padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(245,158,11,0.12),transparent 60%),radial-gradient(circle at 70% 80%,rgba(251,191,36,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(26,18,0,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-sports{background:#d97706}.badge-fitness{background:#ea580c}.badge-nutrition{background:#ca8a04}.badge-wellness{background:#b45309}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(251,191,36,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 23 日 · 星期六</div>
+  <h1 class="hero-title">运动健康日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:#d97706"></span> 体坛快讯 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:#ea580c"></span> 健身科学 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:#ca8a04"></span> 营养饮食 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:#b45309"></span> 身心养护 <strong>4</strong></div>
+  </div>
+</div>
+
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-sports">⚽ 体坛快讯<span class="nav-count">7</span></a>
+  <a href="#sec-fitness">💪 健身科学<span class="nav-count">4</span></a>
+  <a href="#sec-nutrition">🥗 营养饮食<span class="nav-count">3</span></a>
+  <a href="#sec-wellness">🧘 身心养护<span class="nav-count">4</span></a>
+</div></nav>
+
+<main class="main">
+
+<!-- 体坛快讯 -->
+<section class="section" id="sec-sports">
+  <div class="section-header">
+    <span class="section-badge badge-sports">SPORTS</span>
+    <h2>体坛快讯</h2>
+    <span class="section-count">7 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#1</span>
+        <span class="card-source">英格兰足总</span>
+      </div>
+      <h3 class="card-title">英格兰公布2026世界杯26人名单，帕尔默、福登落选引热议</h3>
+      <p class="card-summary">英格兰队正式公布2026世界杯26人大名单，帕尔默与福登意外落选，引发球迷与媒体广泛讨论。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://sports.sina.com.cn/" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#2</span>
+        <span class="card-source">Sky Sports</span>
+      </div>
+      <h3 class="card-title">2026世界杯：塞内加尔阵容包括马内，狼队前锋入选</h3>
+      <p class="card-summary">前利物浦和拜仁前锋马内入选塞内加尔2026世界杯大名单，继2022年因伤缺席后终于迎来出场机会。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.skysports.com/football/live-blog/12098/13509050/world-cup-2026-news-and-live-updates" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#3</span>
+        <span class="card-source">搜狐体育</span>
+      </div>
+      <h3 class="card-title">中国U17男足2比3惜败日本U17，获U17亚洲杯亚军创历史</h3>
+      <p class="card-summary">中国U17男足在亚洲杯决赛2比3惜败日本，获得亚军并锁定U17世界杯参赛资格，创造队史最佳战绩。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.sohu.com/a/1025721702_122837215" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#4</span>
+        <span class="card-source">新浪体育</span>
+      </div>
+      <h3 class="card-title">巴黎圣日耳曼连续2年杀入欧冠决赛，夺冠赔率降至1.61</h3>
+      <p class="card-summary">巴黎圣日耳曼连续第二年晋级欧冠决赛，赔率持续走低，有望拿下队史首座欧冠奖杯。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://sports.sina.com.cn/" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#5</span>
+        <span class="card-source">阿斯顿维拉官网</span>
+      </div>
+      <h3 class="card-title">阿斯顿维拉3比0大胜，夺得2026年欧罗巴联赛冠军</h3>
+      <p class="card-summary">阿斯顿维拉在欧罗巴决赛中3比0完胜对手，时隔多年再度捧起欧战奖杯，全队欢庆胜利。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://sports.sina.com.cn/" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#6</span>
+        <span class="card-source">腾讯体育 / CBA</span>
+      </div>
+      <h3 class="card-title">上海男篮时隔24年重返CBA总决赛，创造队史新里程碑</h3>
+      <p class="card-summary">上海男篮在半决赛中击败对手，时隔24年再度闯入CBA总决赛，城市篮球热情被全面点燃。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://sports.sina.com.cn/" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#7</span>
+        <span class="card-source">LPGA / PGA</span>
+      </div>
+      <h3 class="card-title">莱伊逆转夺PGA锦标赛大满贯首胜，李昊桐T35完赛</h3>
+      <p class="card-summary">莱伊在PGA锦标赛实现惊天逆转，拿下职业生涯首个大满贯冠军，中国选手李昊桐位列T35。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://sports.sina.com.cn/" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 健身科学 -->
+<section class="section" id="sec-fitness">
+  <div class="section-header">
+    <span class="section-badge badge-fitness">FITNESS</span>
+    <h2>健身科学</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#8</span>
+        <span class="card-source">Harvard Health</span>
+      </div>
+      <h3 class="card-title">AI驱动的新型血液检测可提前最多15年预测中风和心衰风险</h3>
+      <p class="card-summary">最新研究显示，基于AI分析的血液生物标志物检测可提前10-15年预测中风、心力衰竭等重大疾病风险。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.health.harvard.edu" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#9</span>
+        <span class="card-source">SciTech Daily</span>
+      </div>
+      <h3 class="card-title">力量训练与有氧运动结合，可将早逝风险降低40%以上</h3>
+      <p class="card-summary">最新综述研究证实，同时进行力量训练和有氧运动的人群，全因死亡率降低幅度显著高于单一运动方式。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://scitechdaily.com/" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#10</span>
+        <span class="card-source">MedPage Today</span>
+      </div>
+      <h3 class="card-title">每天仅10分钟高强度间歇训练（HIIT）即可显著改善心肺功能</h3>
+      <p class="card-summary">针对时间有限人群的最新研究表明，每天10分钟HIIT训练，持续8周即可显著提升最大摄氧量和代谢健康。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.medicalnewstoday.com" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#11</span>
+        <span class="card-source">Journal of Sports Science</span>
+      </div>
+      <h3 class="card-title">运动后冷水浴抑或热水浴？最新研究给出明确指南</h3>
+      <p class="card-summary">系统性综述显示：力量训练后应避免冷水浴以保护肌肉增长，而有氧运动后冷水浴有助于恢复和降低炎症。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.dxy.cn" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 营养饮食 -->
+<section class="section" id="sec-nutrition">
+  <div class="section-header">
+    <span class="section-badge badge-nutrition">NUTRITION</span>
+    <h2>营养饮食</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#12</span>
+        <span class="card-source">Nature Medicine</span>
+      </div>
+      <h3 class="card-title">2026年肥胖管理EASO治疗算法更新：GLP-1类药物被列为核心方案</h3>
+      <p class="card-summary">欧洲肥胖研究协会（EASO）发布2026年更新版肥胖治疗算法，GLP-1受体激动剂被正式纳入一线治疗方案。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.nature.com/nm/" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#13</span>
+        <span class="card-source">丁香医生</span>
+      </div>
+      <h3 class="card-title">地中海饮食再获证实：长期坚持可降低糖尿病风险30%以上</h3>
+      <p class="card-summary">针对超10万人的长期随访研究显示，严格遵循地中海饮食模式的人群，2型糖尿病发病风险降低超30%。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.dxy.cn" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#14</span>
+        <span class="card-source">NEJM / Archy News</span>
+      </div>
+      <h3 class="card-title">5大医学突破正在重新定义2026年的医疗保健</h3>
+      <p class="card-summary">NEJM5月刊重点综述了今年最值得关注的5项医学突破，涵盖mRNA技术、基因编辑、远程医疗等多个领域。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.archynewsy.com" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 身心养护 -->
+<section class="section" id="sec-wellness">
+  <div class="section-header">
+    <span class="section-badge badge-wellness">WELLNESS</span>
+    <h2>身心养护</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#15</span>
+        <span class="card-source">WHO / NEJM</span>
+      </div>
+      <h3 class="card-title">WHO《2026年全球肝炎报告》：消除肝炎取得进展，2030年目标仍需加力</h3>
+      <p class="card-summary">WHO指出病毒性肝炎防治取得积极进展，但要实现2030年消除目标，国际社会仍需大幅加大投入和覆盖力度。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://news.un.org/zh/story/2026/05/1142074" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#16</span>
+        <span class="card-source">Harvard Health</span>
+      </div>
+      <h3 class="card-title">正念冥想8周即可显著降低焦虑症状，效果可持续1年以上</h3>
+      <p class="card-summary">哈佛医学院最新随机对照试验显示，每天20分钟正念冥想，持续8周，焦虑评分平均下降38%，效果可持续12个月。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.health.harvard.edu" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#17</span>
+        <span class="card-source">新闻日报 / 疾控中心</span>
+      </div>
+      <h3 class="card-title">多地发布杨梅消费提示，提醒消费者谨慎选购当季水果</h3>
+      <p class="card-summary">随着杨梅成熟季到来，多地市场监管部门和疾控中心联合发布消费提示，建议消费者选择正规渠道购买并注意清洗方式。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://yyxw.com/" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#18</span>
+        <span class="card-source">生命时报</span>
+      </div>
+      <h3 class="card-title">研究证实：每天保证7-8小时优质睡眠，认知衰退风险降低35%</h3>
+      <p class="card-summary">针对中老年人群的大规模纵向研究表明，长期保持7-8小时优质睡眠的人群，认知功能衰退风险显著低于睡眠不足群体。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://yyxw.com/" target="_blank" rel="noopener noreferrer">详情<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  数据来源：ESPN / Sky Sports / 新浪体育 / Harvard Health / 丁香医生 等公开体育健康媒体
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.card-animate').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

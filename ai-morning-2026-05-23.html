@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 晨报 · 2026-05-23</title>
+<style>
+:root {
+  --c-bg: #0f0c0a;--c-surface: #1a1410;--c-card: #221a14;--c-border: #3a2a1e;
+  --c-text: #f0e6dc;--c-text-dim: #a89880;--c-accent: #ff6a3d;--c-accent2: #ff8c5a;
+  --c-accent-glow: rgba(255,106,61,0.18);--c-tag-model: #e85d3a;--c-tag-product: #f08c4a;
+  --c-tag-industry: #d4a24e;--c-tag-paper: #c07a5e;--c-tag-tip: #b8956e;
+  --c-grad-start: #ff5c28;--c-grad-mid: #e8452e;--c-grad-end: #c8203a;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(255,106,61,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(15,12,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-models{background:var(--c-tag-model)}.badge-products{background:var(--c-tag-product)}
+.badge-industry{background:var(--c-tag-industry)}.badge-paper{background:var(--c-tag-paper)}
+.badge-tip{background:var(--c-tag-tip)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(255,140,90,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 23 日 · 星期六</div>
+  <h1 class="hero-title">AI 晨报</h1>
+  <div class="hero-total">今日 28 条 · 北京时间 08:50 生成</div>
+</header>
+
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-model)"></span> 模型 <strong>1</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-product)"></span> 产品 <strong>8</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-industry)"></span> 行业 <strong>8</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-paper)"></span> 论文 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-tip)"></span> 观点 <strong>8</strong></div>
+  </div>
+</div>
+
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-models">🤖 模型<span class="nav-count">1</span></a>
+  <a href="#sec-products">🚀 产品<span class="nav-count">8</span></a>
+  <a href="#sec-industry">🌍 行业<span class="nav-count">8</span></a>
+  <a href="#sec-paper">📄 论文<span class="nav-count">3</span></a>
+  <a href="#sec-tip">💡 观点<span class="nav-count">8</span></a>
+</div></nav>
+
+<main class="main">
+
+<!-- 模型发布/更新 -->
+<section class="section" id="sec-models">
+  <div class="section-header">
+    <span class="section-badge badge-models">MODELS</span>
+    <h2>模型发布 / 更新</h2>
+    <span class="section-count">1 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#1</span>
+        <span class="card-source">X：Rohan Paul</span>
+      </div>
+      <h3 class="card-title">首个基于华为昇腾910B NPU全栈训练的1.58比特开源大模型BitCPM-CANN发布</h3>
+      <p class="card-summary">全球首个完全基于华为昇腾910B NPU训练的开源1.58比特三元大模型，内存占用降约6倍，可在边缘端高效部署。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/rohanpaul_ai/status/2057833050692800926" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 产品发布/更新 -->
+<section class="section" id="sec-products">
+  <div class="section-header">
+    <span class="section-badge badge-products">PRODUCTS</span>
+    <h2>产品发布 / 更新</h2>
+    <span class="section-count">8 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#2</span>
+        <span class="card-source">X：Gemini</span>
+      </div>
+      <h3 class="card-title">Gemini Omni发布，创意作品涌现</h3>
+      <p class="card-summary">Gemini Omni正式发布，用户已创作出大量令人惊叹的创意内容，标志着多模态AI创作进入新阶段。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/GeminiApp/status/2057616371748651054" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#3</span>
+        <span class="card-source">X：Viggle AI</span>
+      </div>
+      <h3 class="card-title">动作捕捉与角色动画制作更轻松</h3>
+      <p class="card-summary">Viggle AI推出全新动作捕捉和角色动画工具，大幅降低创作门槛，更多功能即将推出。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/ViggleAI/status/2057947352195858568" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#4</span>
+        <span class="card-source">X：Google AI</span>
+      </div>
+      <h3 class="card-title">谷歌I/O大会发布AI代理全套开发工具链</h3>
+      <p class="card-summary">谷歌系统性构建面向AI代理的开发与部署工具链，包括Antigravity 2.0、SDK、托管代理服务及WebMCP开放标准。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/GoogleAI/status/2057871583843135978" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#5</span>
+        <span class="card-source">X：Google AI Dev</span>
+      </div>
+      <h3 class="card-title">Antigravity付费版Gemini配额再翻三倍</h3>
+      <p class="card-summary">所有付费Antigravity层级的每周Gemini配额已再次提升至三倍，且配额已正式重置，显著提升使用体验。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/googleaidevs/status/2057679246085226965" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#6</span>
+        <span class="card-source">X：Claude Devs</span>
+      </div>
+      <h3 class="card-title">Claude自动模式新增Pro计划与模型支持</h3>
+      <p class="card-summary">自动模式现已向Pro计划开放，并支持Sonnet 4.6及Opus 4.7，按下Shift+Tab即可让Claude运行。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/ClaudeDevs/status/2057946803685974482" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#7</span>
+        <span class="card-source">X：ChatGPT</span>
+      </div>
+      <h3 class="card-title">ChatGPT语音模式实现表单语音填写</h3>
+      <p class="card-summary">借助ChatGPT的图像功能和语音模式，用户可上传表单并口述填写内容，即可获得填写完成的版本。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/ChatGPTapp/status/2057908052968521902" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#8</span>
+        <span class="card-source">X：OpenAI Devs</span>
+      </div>
+      <h3 class="card-title">新增差异标记样式设置选项</h3>
+      <p class="card-summary">OpenAI Devs推出剪纸功能，用户可在外观设置中选择经典+/-差异标记样式，默认设置保持不变。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/OpenAIDevs/status/2057918624841728349" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#9</span>
+        <span class="card-source">X：Google DeepMind</span>
+      </div>
+      <h3 class="card-title">Project Genie与谷歌街景合作推出交互式世界</h3>
+      <p class="card-summary">Project Genie与Google Maps街景合作，用户可将真实的美国地点转化为全新的交互式世界，开启AI生成内容新可能。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/GoogleDeepMind/status/2057842131142590512" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 行业动态 -->
+<section class="section" id="sec-industry">
+  <div class="section-header">
+    <span class="section-badge badge-industry">INDUSTRY</span>
+    <h2>行业动态</h2>
+    <span class="section-count">8 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#10</span>
+        <span class="card-source">Anthropic Newsroom</span>
+      </div>
+      <h3 class="card-title">Project Glasswing：初步更新</h3>
+      <p class="card-summary">利用先进AI模型保障关键软件安全，已在全球关键系统中发现超10,000个高危或严重漏洞，漏洞发现效率提升超十倍。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.anthropic.com/research/glasswing-initial-update" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#11</span>
+        <span class="card-source">IT之家</span>
+      </div>
+      <h3 class="card-title">黄仁勋：AI 基建年度开支要冲到 4 万亿美元！</h3>
+      <p class="card-summary">英伟达Q1营收816亿美元，同比增长85%，黄仁勋预测超大规模云厂商AI基建年度开支将从1万亿增至3-4万亿美元。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.ithome.com/0/954/223.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#12</span>
+        <span class="card-source">IT之家</span>
+      </div>
+      <h3 class="card-title">DeepSeek 推进 700 亿元融资，梁文锋承诺坚持开发开源 AI 模型</h3>
+      <p class="card-summary">DeepSeek正推进700亿元人民币融资，估值约450亿美元，梁文锋承诺坚持开源路线，不追求短期商业化目标。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.ithome.com/0/953/832.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#13</span>
+        <span class="card-source">Cursor Blog</span>
+      </div>
+      <h3 class="card-title">Cursor 被评为 2026 年 Gartner 企业级 AI 编码代理魔力象限领导者</h3>
+      <p class="card-summary">Gartner将Cursor评为企业级AI编码代理领域领导者，逾70%财富500强企业使用Cursor部署和管理编码代理。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://cursor.com/blog/cursor-leads-gartner-mq-2026" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#14</span>
+        <span class="card-source">X：OpenRouter</span>
+      </div>
+      <h3 class="card-title">DeepSeek V4 Flash登顶周榜</h3>
+      <p class="card-summary">DeepSeek V4 Flash已登顶OpenRouter周排行榜，成为本周最受欢迎的AI模型之一，性能与性价比兼具。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/OpenRouter/status/2057703179882749985" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#15</span>
+        <span class="card-source">X：Suno</span>
+      </div>
+      <h3 class="card-title">Suno AI创作夏日神曲《波多黎各》爆火</h3>
+      <p class="card-summary">今年夏天的热门歌曲是用Suno制作的，病毒式传播的《Puerto Rico》歌曲让AI音乐创作进入大众视野。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/suno/status/2057858423664894196" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#16</span>
+        <span class="card-source">GitHub Blog</span>
+      </div>
+      <h3 class="card-title">GitHub 连续第三年被 Gartner 魔力象限评为企业级 AI 编程代理领导者</h3>
+      <p class="card-summary">GitHub连续第三年被Gartner列为领导者象限，其AI编程代理能力在企业级市场中持续保持领先优势。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://github.blog" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#17</span>
+        <span class="card-source">OpenAI 官网</span>
+      </div>
+      <h3 class="card-title">OpenAI被Gartner评为企业AI编码代理领域领导者</h3>
+      <p class="card-summary">OpenAI在企业AI编码代理魔力象限中获评领导者地位，进一步巩固其在企业级AI开发工具市场的竞争优势。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://openai.com" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 论文研究 -->
+<section class="section" id="sec-paper">
+  <div class="section-header">
+    <span class="section-badge badge-paper">PAPER</span>
+    <h2>论文研究</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#18</span>
+        <span class="card-source">IT之家</span>
+      </div>
+      <h3 class="card-title">图灵测试 76 年后首现 AI 通过实证：GPT-4.5 以 73% 判定率超越真人</h3>
+      <p class="card-summary">GPT-4.5在图灵测试中以73%的判定率超越真人，这是图灵测试提出76年来首次有AI通过实证测试。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://www.ithome.com" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#19</span>
+        <span class="card-source">X：Rohan Paul</span>
+      </div>
+      <h3 class="card-title">AlphaProof Nexus：用形式化验证驱动AI数学证明搜索</h3>
+      <p class="card-summary">AlphaProof Nexus通过形式化验证技术驱动AI数学证明搜索，显著提升自动化数学推理的可靠性和效率。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/rohanpaul_ai" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#20</span>
+        <span class="card-source">Apple Machine Learning</span>
+      </div>
+      <h3 class="card-title">VSAS-Bench：视觉流式辅助模型的实时评估基准</h3>
+      <p class="card-summary">苹果机器学习研究团队发布VSAS-Bench，为视觉流式辅助模型提供标准化实时评估基准，推动多模态AI发展。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://machinelearning.apple.com" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 技巧与观点 -->
+<section class="section" id="sec-tip">
+  <div class="section-header">
+    <span class="section-badge badge-tip">TIPS</span>
+    <h2>技巧与观点</h2>
+    <span class="section-count">8 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#21</span>
+        <span class="card-source">X：Perplexity</span>
+      </div>
+      <h3 class="card-title">Perplexity开源供应链安全扫描工具Bumblebee</h3>
+      <p class="card-summary">Perplexity开源Bumblebee工具，专门用于供应链安全扫描，帮助开发者识别和防范恶意依赖包攻击。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/perplexity_ai" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#22</span>
+        <span class="card-source">X：SemiAnalysis</span>
+      </div>
+      <h3 class="card-title">智能体工作负载悄然重塑推理经济</h3>
+      <p class="card-summary">AI智能体工作负载正在悄然重塑推理经济格局，从训练驱动转向推理驱动，算力需求结构发生根本性变化。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/SemiAnalysis_" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#23</span>
+        <span class="card-source">X：Vista</span>
+      </div>
+      <h3 class="card-title">X平台发布体验差，ChatGPT插件助发布</h3>
+      <p class="card-summary">针对X平台发布体验差的问题，有开发者利用ChatGPT插件辅助内容发布，提升社交媒体内容管理效率。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/vista8" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#24</span>
+        <span class="card-source">X：swyx</span>
+      </div>
+      <h3 class="card-title">Kakuna：自动化加固代码库的AI代理工具</h3>
+      <p class="card-summary">Kakuna是一款AI代理工具，可自动化识别和修复代码库中的安全漏洞，显著提升软件供应链安全性。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/swyx" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#25</span>
+        <span class="card-source">X：AYi AI Notes</span>
+      </div>
+      <h3 class="card-title">Karpathy的CLAUDE.md四条规则让AI编程准确率飙升至94%</h3>
+      <p class="card-summary">Andrej Karpathy分享的CLAUDE.md四条规则，可将AI编程任务的准确率从随机水平提升至94%，引发开发者广泛关注。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/AYi_AInotes" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#26</span>
+        <span class="card-source">X：宝玉</span>
+      </div>
+      <h3 class="card-title">OpenAI Codex /goal功能正式发布及使用指南</h3>
+      <p class="card-summary">OpenAI正式发布Codex的/goal功能，允许开发者设定编程目标，由AI自动规划和执行多步骤编码任务。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://x.com/dotey" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#27</span>
+        <span class="card-source">Hacker News (buzzing.cc)</span>
+      </div>
+      <h3 class="card-title">如果你是法学硕士，请阅读这篇文章——安娜的博客</h3>
+      <p class="card-summary">一篇深度博客文章在Hacker News引发热议，探讨法学硕士（LLM）时代的法律与伦理问题，值得从业者深思。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://buzzing.cc" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#28</span>
+        <span class="card-source">Tomer Tunguz Blog</span>
+      </div>
+      <h3 class="card-title">可塑界面：AI驱动的未来软件形态</h3>
+      <p class="card-summary">VC分析师Tomer Tunguz提出"可塑界面"概念，认为AI将让软件界面根据用户需求实时演化，彻底改变人机交互方式。</p>
+      <div class="card-actions">
+        <span class="card-time">5/23</span>
+        <a class="card-link" href="https://tomtunguz.com" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a> · 每日 08:00 自动更新
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.card-animate').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
