@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 晨报 · 2026-05-24</title>
+<style>
+:root {
+  --c-bg: #0f0c0a;--c-surface: #1a1410;--c-card: #221a14;--c-border: #3a2a1e;
+  --c-text: #f0e6dc;--c-text-dim: #a89880;--c-accent: #ff6a3d;--c-accent2: #ff8c5a;
+  --c-accent-glow: rgba(255,106,61,0.18);--c-tag-model: #e85d3a;--c-tag-product: #f08c4a;
+  --c-tag-industry: #d4a24e;--c-tag-paper: #c07a5e;--c-tag-tip: #b8956e;
+  --c-grad-start: #ff5c28;--c-grad-mid: #e8452e;--c-grad-end: #c8203a;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(255,106,61,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(15,12,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-models{background:var(--c-tag-model)}.badge-products{background:var(--c-tag-product)}
+.badge-industry{background:var(--c-tag-industry)}.badge-paper{background:var(--c-tag-paper)}
+.badge-tip{background:var(--c-tag-tip)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(255,140,90,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 24 日 · 星期日</div>
+  <h1 class="hero-title">AI 晨报</h1>
+  <div class="hero-total">今日 12 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-model)"></span> 模型 <strong>0</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-product)"></span> 产品 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-industry)"></span> 行业 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-paper)"></span> 论文 <strong>1</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-tip)"></span> 观点 <strong>1</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-products">🚀 产品<span class="nav-count">4</span></a>
+  <a href="#sec-industry">🌍 行业<span class="nav-count">6</span></a>
+  <a href="#sec-paper">📄 论文<span class="nav-count">1</span></a>
+  <a href="#sec-tip">💡 观点<span class="nav-count">1</span></a>
+</div></nav>
+<main class="main">
+
+<!-- Products -->
+<section class="section" id="sec-products"><div class="section-header"><span class="section-badge badge-products">PRODUCTS</span><h2>产品发布 / 更新</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">X：阶跃星辰 StepFun</span></div><h3 class="card-title">StepAudio 2.5 实时语音发布：副语言感知与人格化交互</h3><p class="card-summary">深度理解语音中的语气、语速、停顿等副语言特征，支持 API 接入自定义人格，内置上万种原生人格选项。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://x.com/StepFun_ai/status/2058303294544425197" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">Hacker News</span></div><h3 class="card-title">Models.dev：AI 模型规格、定价和功能的开源数据库</h3><p class="card-summary">收录人工智能模型的各项规格、定价及功能信息，便于开发者查询和比较不同 AI 模型，获 HN 社区广泛关注。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://github.com/anomalyco/models.dev" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">X：Replit</span></div><h3 class="card-title">Replit Agent 与 Squidler 集成，实现全自动化 AI 质量保障</h3><p class="card-summary">构建完成后 Squidler 自动对线上应用进行自动化测试，发现问题自动反馈给 Replit Agent 修复，实现全流程自动化。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://x.com/Replit/status/2058261705998602548" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">Claude Code</span></div><h3 class="card-title">Claude Code v2.1.150 版本更新</h3><p class="card-summary">包含内部基础设施优化，聚焦于后台系统改进，未引入用户可见的功能或界面变更。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.150" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- Industry -->
+<section class="section" id="sec-industry"><div class="section-header"><span class="section-badge badge-industry">INDUSTRY</span><h2>行业动态</h2><span class="section-count">6 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">Fortune</span></div><h3 class="card-title">微软称使用 AI 的成本高于支付人工工资</h3><p class="card-summary">在特定工作场景中，部署和使用 AI 的综合开销已超过雇佣人类员工完成同类任务的费用，揭示企业应用 AI 的现实经济挑战。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://fortune.com/2026/05/22/microsoft-ai-cost-problem-tokens-agents" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">IT之家</span></div><h3 class="card-title">Anthropic 最快下周完成逾 300 亿美元融资，估值有望反超 OpenAI</h3><p class="card-summary">此轮融资将使其估值突破 9000 亿美元，成为全球估值最高的 AI 初创企业。预计 Q2 营收将达 109 亿美元，环比增长超一倍。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://www.ithome.com/0/954/452.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">IT之家</span></div><h3 class="card-title">AI 替代入门级工作：74% CEO 冻结或缩减招聘</h3><p class="card-summary">AI 工具被广泛用于入门级任务，科技行业受冲击最严重。报告警告过快裁员或对人才梯队造成长远风险。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://www.ithome.com/0/954/235.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">Mistral AI</span></div><h3 class="card-title">Mistral AI 收购 Emmi AI，加倍投入工业 AI</h3><p class="card-summary">整合 Emmi AI 在物理仿真与数字孪生方面的专长，提升工程解决方案能力，为航空航天、汽车等高风险行业提供实时仿真平台。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://mistral.ai/news/science-to-win-industrial-ai" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">X：Kling AI</span></div><h3 class="card-title">Kling AI 亮相戛纳，推动 AI 赋能电影制作</h3><p class="card-summary">在戛纳电影市场举办官方会议，探讨 AI 如何融入实际电影制作流程，已服务于动画长片、好莱坞剧集等多种创作形式。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://x.com/Kling_ai/status/2058013861404684739" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">X：Google DeepMind</span></div><h3 class="card-title">Google DeepMind 扩大与新加坡合作，推动 AI 安全规模化部署</h3><p class="card-summary">与各国专家合作，重点加速科学发现、加强大流行病防范并改善医疗保健，新项目将聚焦亚太地区的 AI 安全落地。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://x.com/GoogleDeepMind/status/2057985225100235022" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- Papers -->
+<section class="section" id="sec-paper"><div class="section-header"><span class="section-badge badge-paper">PAPER</span><h2>论文研究</h2><span class="section-count">1 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">Hugging Face Blog</span></div><h3 class="card-title">Nemotron-Labs 扩散语言模型实现光速级文本生成</h3><p class="card-summary">NVIDIA 发布技术博客，聚焦通过扩散语言模型架构大幅提升文本生成速度，相较于传统自回归模型在延迟和吞吐量方面具备性能优势。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://huggingface.co/blog/nvidia/nemotron-labs-diffusion" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- Tips -->
+<section class="section" id="sec-tip"><div class="section-header"><span class="section-badge badge-tip">INSIGHTS</span><h2>技巧与观点</h2><span class="section-count">1 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">X：宝玉</span></div><h3 class="card-title">飞书-Claude Code 桥接开源项目</h3><p class="card-summary">实现飞书与本机 Claude Code CLI 双向连接，用户可从飞书消息直接指挥 Claude Code 执行任务，并读取飞书工作上下文创建和编辑文档。</p><div class="card-actions"><span class="card-time">5/24</span><a class="card-link" href="https://x.com/dotey/status/2058084478459826432" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+</main>
+<footer class="footer">
+  <p>今日共收录 <strong>12</strong> 条 AI 资讯 · 数据来自 <a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT (aihot.virxact.com)</a></p>
+</footer>
+<script>
+(function(){'use strict';var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.12});document.querySelectorAll('.card-animate').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll('.card-animate').forEach(function(e,i){e.style.transitionDelay=(i%6)*0.06+'s'})},60)})();
+</script>
+</body>
+</html>

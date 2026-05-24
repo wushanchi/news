@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-05-24</title>
+<style>
+:root {
+  --c-bg: #050f0a;--c-surface: #0c1a14;--c-card: #112018;--c-border: #1a3a28;
+  --c-text: #dff5e8;--c-text-dim: #7aa890;--c-accent: #10b981;--c-accent2: #34d399;
+  --c-accent-glow: rgba(16,185,129,0.18);--c-tag-int: #059669;--c-tag-hw: #10b981;
+  --c-tag-space: #34d399;--c-tag-digital: #6ee7b7;
+  --c-grad-start: #064e3b;--c-grad-mid: #047857;--c-grad-end: #10b981;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(16,185,129,0.1),transparent 60%),radial-gradient(circle at 70% 80%,rgba(52,211,153,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(5,15,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-int{background:var(--c-tag-int)}.badge-hw{background:var(--c-tag-hw)}
+.badge-space{background:var(--c-tag-space)}.badge-digital{background:var(--c-tag-digital)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(52,211,153,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 24 日 · 星期日</div>
+  <h1 class="hero-title">💻 科技日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-int)"></span> 互联网/软件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-hw)"></span> 硬件/半导体 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-space)"></span> 航天/新能源 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-digital)"></span> 数字创新 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-int">💻 互联网/软件<span class="nav-count">5</span></a>
+  <a href="#sec-hw">🔧 硬件/半导体<span class="nav-count">4</span></a>
+  <a href="#sec-space">🚀 航天/新能源<span class="nav-count">5</span></a>
+  <a href="#sec-digital">✨ 数字创新<span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+
+<!-- 互联网/软件 -->
+<section class="section" id="sec-int"><div class="section-header"><span class="section-badge badge-int">INTERNET</span><h2>互联网 / 软件</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">Sporting News</span></div><h3 class="card-title">2026 NBA 季后赛赛程全览：东西部决赛对阵更新</h3><p class="card-summary">NBA 2025-26 赛季季后赛东西部决赛激战正酣，官方公布完整对阵表、开赛时间及转播平台信息。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://www.sportingnews.com/us/nba/news/nba-playoffs-schedule-2026-bracket-dates-times-channels-streams/fa891bae5fd2cd51e8bac5d0" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">ESPN</span></div><h3 class="card-title">NBA 季后赛积分榜与赛果实时更新</h3><p class="card-summary">ESPN 提供 2025-26 赛季 NBA 季后赛全部赛果、积分榜变动及逐场分析，随时掌握最新战况。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://www.espn.com/nba/scoreboard" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">新浪体育</span></div><h3 class="card-title">巴萨 18 岁边锋亚马尔接受 FIFA 专访，目标比肩梅西 C 罗</h3><p class="card-summary">正在养伤备战世界杯的巴萨新星亚马尔表示，自己的目标是与梅西、C 罗、姆巴佩、内马尔等顶尖球星并肩。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://k.sina.cn/article_7857201856_1d45362c001905uurk.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">新浪财经</span></div><h3 class="card-title">芝麻 AI 速递：昨夜今晨财经热点要闻 5 月 24 日</h3><p class="card-summary">覆盖股市动态、经济数据、企业财务及政策更新等核心财经领域，助力精准洞察金融市场风云变幻。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-24/doc-inhyxwhv6243928.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">腾讯新闻</span></div><h3 class="card-title">上海市本地资讯速览：2026 年 05 月 24 日科技热点</h3><p class="card-summary">上海科技节在科技馆开幕，51 位科技明星走上红毯；科技馆焕新重新开放，并发布第十一期"新发现·科普书单"。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://news.qq.com/rain/a/20260524A01V8G00" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- 硬件/半导体 -->
+<section class="section" id="sec-hw"><div class="section-header"><span class="section-badge badge-hw">HARDWARE</span><h2>硬件 / 半导体</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">AIToolsRecap</span></div><h3 class="card-title">特斯拉投片下一代 AI5 芯片，用于 Optimus 机器人和超算</h3><p class="card-summary">AI5 芯片由台积电和三星在美国生产，将大幅提升机器人的端侧 AI 算力，加速人形机器人商业化落地。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://aitoolsrecap.com/Blog/ai-news-may-2026" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">163 科技</span></div><h3 class="card-title">2026 年 5 月科技圈四大爆炸事件：AI、量子、航天齐发力</h3><p class="card-summary">中国 5 月在 AI 大模型、量子计算、航天及 6G 频谱等多个赛道取得突破性进展，展现中国科技全面提速之势。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://www.163.com/dy/article/KTAP9DV005566XKW.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">搜狐科技</span></div><h3 class="card-title">2026 年 5 月科技热点：中国多领域突破，AI 量子航天齐发力</h3><p class="card-summary">5 月中国 AI 大模型调用量全球领先，量子计算实现算力飞跃，多项硬核科技突破重塑全球科技竞争新格局。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://www.sohu.com/a/1025143029_122775070" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">人民网</span></div><h3 class="card-title">2026 年北京科技周 5 月 24 日启动，将推出系列科普活动</h3><p class="card-summary">北京市科委宣布 2026 年北京科技周于 5 月 24 日正式启动，期间将举办第五届北京科技传播大会及系列科普开放活动。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://www.msn.cn/zh-cn/%E6%8A%80%E6%9C%AF/%E9%80%9A%E7%94%A8/2026%E5%B9%B4%E5%8C%97%E4%BA%AC%E7%A7%91%E6%8A%80%E5%91%A8%E6%9C%8824%E6%97%A5%E5%90%AF%E5%8A%A8-%E5%B0%86%E6%8E%A8%E5%87%BA%E7%B3%BB%E5%88%97%E7%A7%91%E6%99%AE%E6%B4%BB%E5%8A%A8/ar-AA23GOHW" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- 航天/新能源 -->
+<section class="section" id="sec-space"><div class="section-header"><span class="section-badge badge-space">SPACE</span><h2>航天 / 新能源</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">慧语简报</span></div><h3 class="card-title">香港籍载荷专家黎家盈将搭乘神舟二十三号升空</h3><p class="card-summary">香港籍载荷专家黎家盈将随神舟二十三号飞船进入太空，成为首位赴中国空间站的香港航天员，特区行政长官李家超致贺。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://news.topurl.cn/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">神舟办公室</span></div><h3 class="card-title">神舟二十三号任务清单公布，含 1 名航天员 1 年期在轨驻留试验</h3><p class="card-summary">任务清单正式公布，其中 1 名航天员将开展 1 年期在轨驻留试验，为中国长期载人航天积累关键数据。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://news.topurl.cn/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">澎湃新闻</span></div><h3 class="card-title">2026 年北京科技周启幕，聚焦奋进科技新征程</h3><p class="card-summary">全国科技活动周和全国科技工作者日活动同步启动，聚焦奋进科技新征程主题，推出系列科普示范活动。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://www.gov.cn/yaowen/liebiao/202604/content_7066241.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#13</span><span class="card-source">IT之家</span></div><h3 class="card-title">中国 AI 大模型调用量领跑全球，5G-A 实现县域全覆盖</h3><p class="card-summary">中国在 AI 大模型实际调用规模上已领跑全球，同时 5G-A 网络实现县域全覆盖，数字基础设施持续升级。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://www.163.com/dy/article/KTAP9DV005566XKW.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#14</span><span class="card-source">科技日报</span></div><h3 class="card-title">中荷科学家研发出利用玉米生产生物塑料的方法</h3><p class="card-summary">中国和荷兰科学家联合研发出利用玉米为原料生产生物塑料的新方法，为绿色材料产业和实现"双碳"目标提供新路径。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://sputniknews.cn/20260524/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- 数字创新 -->
+<section class="section" id="sec-digital"><div class="section-header"><span class="section-badge badge-digital">DIGITAL</span><h2>数字创新</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#15</span><span class="card-source">Fortune</span></div><h3 class="card-title">Google I/O 2026 全览：AI 重塑搜索，Gemini 3.5 Flash 发布</h3><p class="card-summary">谷歌 I/O 2026 大会发布 Gemini 3.5 Flash 及 AI Ultra 订阅档，推出个人 AI 代理 Gemini Spark，为 30 年来搜索业务最大升级。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://fortune.com/2026/05/20/google-i-o-2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#16</span><span class="card-source">OpenAI Blog</span></div><h3 class="card-title">OpenAI 自主破解困扰学界 80 年的几何难题</h3><p class="card-summary">OpenAI 宣布其通用推理模型在无人工引导的情况下自主生成了全新证明，为 AI 加速物理、材料科学等领域突破提供可能。</p><div class="card-actions"><span class="card-time">05/21</span><a class="card-link" href="https://aitoolsrecap.com/Blog/ai-news-may-2026" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#17</span><span class="card-source">The AI Track</span></div><h3 class="card-title">2026 年 5 月 AI 新闻深度汇总：每日更新</h3><p class="card-summary">深度整理 2026 年 5 月 AI 领域每日重要动态，涵盖模型发布、产品更新、行业趋势及前沿研究，提供详尽分析与关键洞察。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://theaitrack.com/ai-news-may-2026-in-depth-and-concise/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#18</span><span class="card-source">CO/AI</span></div><h3 class="card-title">今日科技头条：AI 机器人、SpaceX IPO、NVIDIA 纪录与 OpenAI 动态</h3><p class="card-summary">Google 的 SynthID 水印技术获 OpenAI、NVIDIA 等支持，用以对抗 AI 生成虚假信息；两款 AI 科学助手成功实现药物重定位突破。</p><div class="card-actions"><span class="card-time">05/24</span><a class="card-link" href="https://coaio.com/news/2026/05/top-tech-news-today-ai-robots-spacex-ipo-nvidia-records-openai-2qsc/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+</main>
+<footer class="footer">
+  <p>今日共收录 <strong>18</strong> 条科技资讯 · 数据来源：TechCrunch / The Verge / 36氪 / IT之家 / AIToolsRecap 等公开科技媒体</p>
+</footer>
+<script>
+(function(){"use strict";var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");o.unobserve(e.target)}})},{threshold:0.12});document.querySelectorAll(".card-animate").forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll(".card-animate").forEach(function(e,i){e.style.transitionDelay=i%6*.06+"s"})},60)})();
+</script>
+</body>
+</html>
