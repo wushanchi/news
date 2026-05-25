@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国际焦点日报 · 2026-05-25</title>
+<style>
+:root {
+  --c-bg: #0a0f1c;--c-surface: #111827;--c-card: #1e293b;--c-border: #334155;
+  --c-text: #e2e8f0;--c-text-dim: #94a3b8;--c-accent: #3b82f6;--c-accent2: #60a5fa;
+  --c-accent-glow: rgba(59,130,246,0.15);--c-cat-politics: #60a5fa;--c-cat-economy: #34d399;
+  --c-cat-events: #f472b6;--c-culture: #c084fc;
+  --c-grad-start: #1d4ed8;--c-grad-mid: #2563eb;--c-grad-end: #0ea5e9;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(255,255,255,0.07),transparent 55%),radial-gradient(circle at 20% 80%,rgba(59,130,246,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(10,15,28,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-politics{background:var(--c-cat-politics)}.badge-economy{background:var(--c-cat-economy)}
+.badge-events{background:var(--c-cat-events)}.badge-culture{background:var(--c-culture)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(59,130,246,0.1);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(96,165,250,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 25 日 · 星期一</div>
+  <h1 class="hero-title">国际焦点日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-politics)"></span> 政治外交 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-economy)"></span> 经济财经 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-events)"></span> 重大事件 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-culture)"></span> 社会人文 <strong>4</strong></div>
+  </div>
+</div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#politics"><span>政治外交</span><span class="nav-count">6</span></a>
+    <a href="#economy"><span>经济财经</span><span class="nav-count">3</span></a>
+    <a href="#events"><span>重大事件</span><span class="nav-count">7</span></a>
+    <a href="#culture"><span>社会人文</span><span class="nav-count">4</span></a>
+  </nav>
+</div>
+<div class="main">
+
+<!-- 政治外交 -->
+<section id="politics" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-politics">政治外交</span>
+    <h2>政治外交</h2><span class="section-count">共 6 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#01</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">塞尔维亚总统武契奇抵达北京开始访华</h3>
+      <p class="card-summary">塞尔维亚总统武契奇抵达北京展开对华访问行程，预计将深化双边战略伙伴关系。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260524/374d18cbaeec4f54aa2d261ee3e1d556/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#02</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">特朗普：美伊协议基本谈成，包括开放霍尔木兹海峡</h3>
+      <p class="card-summary">特朗普表示美伊核协议谈判基本达成，协议内容包括开放霍尔木兹海峡等关键条款。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260524/c167384a581d4322802ef41f6f321a8d/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#03</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">外交部：中方坚决反对美国在亚洲部署中导系统</h3>
+      <p class="card-summary">中国外交部明确表态，坚决反对美国在亚洲国家部署中程导弹系统，强调此举严重威胁地区安全。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260522/a806f87816a24d3282373fb945e251df/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#04</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">特朗普指示代表不要仓促达成协议：时间在我们这边</h3>
+      <p class="card-summary">特朗普就美伊谈判表态，称已指示谈判团队不急于达成协议，认为美方在时间上占据优势。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071487747.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#05</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">韩国总统抨击韩媒涉华假新闻，中国驻韩大使高度赞赏</h3>
+      <p class="card-summary">韩国总统公开批评国内媒体传播涉华虚假新闻，中国驻韩大使对此表示高度赞赏。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260522/28bf21ced3da482a81a4651506c46083/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#06</span><span class="card-source">卫星通讯社</span></div>
+      <h3 class="card-title">美媒：美国与伊朗框架协议已完成95%，措辞仍在争论</h3>
+      <p class="card-summary">美方媒体披露，美伊框架协议已接近完成（95%），目前双方仍在部分措辞细节上进行博弈。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071487058.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 经济财经 -->
+<section id="economy" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-economy">经济财经</span>
+    <h2>经济财经</h2><span class="section-count">共 3 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#07</span><span class="card-source">IMF / 卫星通讯社</span></div>
+      <h3 class="card-title">国际货币基金组织警告：政府债务增长将损害欧盟经济</h3>
+      <p class="card-summary">IMF 发布警示报告，指出欧盟各国政府债务持续增长可能拖累整体经济增长，需采取审慎财政政策。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071484413.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#08</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">观天下："副驾变乘客"，以色列被"甩"出美伊谈判核心</h3>
+      <p class="card-summary">分析指出以色列在美伊核谈判中被边缘化，从核心参与者沦为旁观者，安全利益面临重新评估。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260524/fa65dd01d6d84218bb140866f8c9620f/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#09</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">国际能源署署长：全球石油市场或将进入"危险区域"</h3>
+      <p class="card-summary">IEA 署长警告全球石油市场正进入不稳定区间，地缘政治与供需变化叠加带来不确定性。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260521/41b6b0e5dc8d4a04993627bbcfba6fda/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 重大事件 -->
+<section id="events" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-events">重大事件</span>
+    <h2>重大事件</h2><span class="section-count">共 7 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">卫星通讯社</span></div>
+      <h3 class="card-title">神舟二十三号载人飞船成功发射，完成第8次"太空会师"</h3>
+      <p class="card-summary">神舟二十三号载人飞船成功发射升空，航天员顺利进入空间站，完成中国航天史上的第8次太空交会对接。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071487646.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">卫星通讯社</span></div>
+      <h3 class="card-title">俄常驻代表：乌军在扎波罗热核电站周围袭击强度大幅增加</h3>
+      <p class="card-summary">俄罗斯常驻联合国代表指控乌克兰军队大幅增加对扎波罗热核电站周边区域的袭击频率和强度。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071486570.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">卫星通讯社</span></div>
+      <h3 class="card-title">以色列空袭黎巴嫩一日致28人丧生</h3>
+      <p class="card-summary">以色列空军对黎巴嫩南部发动大规模空袭，单日造成至少28人死亡，局势急剧升级。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071484309.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">卫星通讯社</span></div>
+      <h3 class="card-title">乌军袭击斯塔罗比尔斯克学校，受伤人数增至44人</h3>
+      <p class="card-summary">乌军对斯塔罗比尔斯克一所学校发动袭击事件持续恶化，伤亡人数上升至44人，引发人道主义关切。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071484634.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">卫星通讯社</span></div>
+      <h3 class="card-title">世卫组织总干事：埃博拉病毒疑似感染病例数已超900例</h3>
+      <p class="card-summary">WHO 总干事通报刚果（金）埃博拉疫情形势严峻，疑似感染病例已突破900例大关。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071486278.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">白宫附近传枪响，一名枪手被制服后死亡</h3>
+      <p class="card-summary">白宫附近发生枪击事件，一名枪手被制服后在医院宣告死亡。特朗普回应称该人"有暴力史"。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260524/0c850a650d2b4919b61b9c29f8be56a3/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">巴基斯坦客运列车遭爆炸袭击，至少24人死亡</h3>
+      <p class="card-summary">巴基斯坦一列客运列车遭遇爆炸恐怖袭击，造成至少24人死亡、多人受伤，当局正在调查幕后黑手。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260524/32265dffb8ca492a817ae7ef877d9505/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 社会人文 -->
+<section id="culture" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-culture">社会人文</span>
+    <h2>社会人文</h2><span class="section-count">共 4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">卫星通讯社</span></div>
+      <h3 class="card-title">金正恩就中国山西煤矿事故向习近平表示诚挚慰问</h3>
+      <p class="card-summary">朝鲜领导人金正恩就山西省发生的煤矿安全事故向中国国家主席习近平致以慰问电。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071487878.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#18</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">阿富汗强降雨引发灾情致28人死亡</h3>
+      <p class="card-summary">阿富汗多地遭遇强降雨天气，引发洪水等灾害，目前已确认28人遇难，救援行动正在进行。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260524/a6202eeb930a4cd1a4c3955b9e33503f/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#19</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">高市早苗团队"抹黑门"细节曝光，日媒称掌握证据</h3>
+      <p class="card-summary">日本媒体披露高市早苗竞选团队涉嫌抹黑对手的证据细节，引发日本政坛新一轮争议。</p>
+      <div class="card-actions"><a href="https://www.news.cn/world/20260524/d5a7c790088d47928a6e34375b1497c3/c.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#20</span><span class="card-source">卫星通讯社</span></div>
+      <h3 class="card-title">安哥拉一处非法金矿坍塌，28人死亡</h3>
+      <p class="card-summary">安哥拉一处非法金矿发生坍塌事故，导致28名矿工遇难，凸显非法采矿活动的安全隐患。</p>
+      <div class="card-actions"><a href="https://sputniknews.cn/20260525/1071484522.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+</div>
+<footer class="footer">
+  数据来源：Reuters / BBC / CNN / 新华网 / 卫星通讯社 等公开新闻源 · 国际焦点日报 · 2026-05-25
+</footer>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.card-animate').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

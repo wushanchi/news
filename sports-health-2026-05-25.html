@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026-05-25</title>
+<style>
+:root {
+  --c-bg: #0f0a02;--c-surface: #1a1408;--c-card: #221a0c;--c-border: #3a2a14;
+  --c-text: #fef3c7;--c-text-dim: #a89260;--c-accent: #f59e0b;--c-accent2: #fbbf24;
+  --c-accent-glow: rgba(245,158,11,0.18);--c-tag-sports: #d97706;--c-tag-fitness: #f59e0b;
+  --c-tag-nutrition: #fbbf24;--c-tag-wellness: #fcd34d;
+  --c-grad-start: #92400e;--c-grad-mid: #b45309;--c-grad-end: #d97706;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(245,158,11,0.1),transparent 60%),radial-gradient(circle at 70% 80%,rgba(251,191,36,0.08),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(15,10,2,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-sports{background:var(--c-tag-sports)}.badge-fitness{background:var(--c-tag-fitness)}
+.badge-nutrition{background:var(--c-tag-nutrition)}.badge-wellness{background:var(--c-tag-wellness)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(245,158,11,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 25 日 · 星期一</div>
+  <h1 class="hero-title">🏃 运动健康日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-sports)"></span> 体坛快讯 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-fitness)"></span> 健身科学 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-nutrition)"></span> 营养饮食 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-wellness)"></span> 身心养护 <strong>4</strong></div>
+  </div>
+</div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#sports">⚽ 体坛快讯 <span class="nav-count">7</span></a>
+    <a href="#fitness">💪 健身科学 <span class="nav-count">4</span></a>
+    <a href="#nutrition">🥗 营养饮食 <span class="nav-count">3</span></a>
+    <a href="#wellness">🧘 身心养护 <span class="nav-count">4</span></a>
+  </nav>
+</div>
+<main class="main">
+
+<section class="section" id="sports">
+  <div class="section-header">
+    <span class="section-badge badge-sports">Sports</span>
+    <h2>体坛快讯</h2>
+    <span class="section-count">7 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#01</span>
+        <span class="card-source">新华网体育</span>
+      </div>
+      <h3 class="card-title">上海队时隔24年重返CBA总决赛</h3>
+      <p class="card-summary">上海男篮经过多年重建，时隔整整24年再次闯入CBA总决赛，创造队史新世纪以来最佳战绩，球迷热情空前高涨。</p>
+      <div class="card-actions">
+        <span class="card-time">5月23日</span>
+        <a href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#02</span>
+        <span class="card-source">NBA官网</span>
+      </div>
+      <h3 class="card-title">尼克斯121-108击败骑士，东部决赛3-0领先拿到赛点</h3>
+      <p class="card-summary">纽约尼克斯在客场以121-108战胜克利夫兰骑士，东部决赛取得3-0绝对领先优势，同时收获季后赛十连胜，距离总决赛仅一步之遥。</p>
+      <div class="card-actions">
+        <span class="card-time">5月24日</span>
+        <a href="https://www.nba.com/playoffs/2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#03</span>
+        <span class="card-source">新华网体育</span>
+      </div>
+      <h3 class="card-title">中国U17男足亚洲杯决赛憾负日本收获亚军</h3>
+      <p class="card-summary">中国U17男足在亚洲杯决赛中不敌日本队获得亚军，但已创造近年最佳战绩。国家体育总局和中国足协第一时间发文祝贺球队突破。</p>
+      <div class="card-actions">
+        <span class="card-time">5月23日</span>
+        <a href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#04</span>
+        <span class="card-source">新华网体育</span>
+      </div>
+      <h3 class="card-title">"东北超"首日开赛约10万人观赛，点燃区域足球热情</h3>
+      <p class="card-summary">东北超级联赛正式揭幕，首日比赛吸引约10万名观众到场观赛。"山海关不住"的东北足球热情彻底释放，赛事经济活力涌动。</p>
+      <div class="card-actions">
+        <span class="card-time">5月24日</span>
+        <a href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#05</span>
+        <span class="card-source">新华网体育</span>
+      </div>
+      <h3 class="card-title">马来西亚羽毛球大师赛中国队斩获3金1银</h3>
+      <p class="card-summary">中国队在马来西亚羽毛球大师赛中表现出色，共收获3枚金牌和1枚 silver，继续稳固世界羽坛强国地位，年轻选手崭露头角。</p>
+      <div class="card-actions">
+        <span class="card-time">5月24日</span>
+        <a href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#06</span>
+        <span class="card-source">新华网体育</span>
+      </div>
+      <h3 class="card-title">法网前瞻：辛纳冲击"全满贯"，中国选手福地再出发</h3>
+      <p class="card-summary">2026年法国网球公开赛即将开打，世界第一辛纳力争拿下法网冠军实现职业生涯全满贯。中国金花们曾在罗兰·加洛斯创造佳绩，今年再次从福地出发。</p>
+      <div class="card-actions">
+        <span class="card-time">5月23日</span>
+        <a href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#07</span>
+        <span class="card-source">新华网体育</span>
+      </div>
+      <h3 class="card-title">巴赫用20页讲稿细说中国与奥林匹克的百年情缘</h3>
+      <p class="card-summary">国际奥委会主席巴赫化身讲解员，以一份长达20页的讲稿详细讲述中国与奥林匹克运动跨越百年的深厚渊源与动人故事。</p>
+      <div class="card-actions">
+        <span class="card-time">5月24日</span>
+        <a href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="fitness">
+  <div class="section-header">
+    <span class="section-badge badge-fitness">Fitness</span>
+    <h2>健身科学</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#08</span>
+        <span class="card-source">WHO / 新华社</span>
+      </div>
+      <h3 class="card-title">第79届世卫大会通过多项运动健康决议</h3>
+      <p class="card-summary">第79届世界卫生大会在日内瓦闭幕，成员国通过超过20项决定和13项决议，涵盖促进体育锻炼、减少久坐行为等全球健康行动纲领。</p>
+      <div class="card-actions">
+        <span class="card-time">5月24日</span>
+        <a href="https://www.china.org.cn/world/Off_the_Wire/2026-05/24/content_118511146.shtml" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#09</span>
+        <span class="card-source">WHO</span>
+      </div>
+      <h3 class="card-title">世卫大会聚焦中风与肝病预防：生活方式是关键</h3>
+      <p class="card-summary">WHA79 将中风和肝病列为重点防控目标，决议强调规律运动、健康饮食和限酒等生活方式干预在全球疾病负担降低中的核心作用。</p>
+      <div class="card-actions">
+        <span class="card-time">5月23日</span>
+        <a href="https://www.who.int/news/item/23-05-2026-seventy-ninth-world-health-assembly---daily-update--23-may-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#10</span>
+        <span class="card-source">体育科研</span>
+      </div>
+      <h3 class="card-title">研究证实：微量营养素缺乏直接影响运动表现与恢复</h3>
+      <p class="card-summary">最新发表在 Nature Scientific Reports 上的研究揭示，维生素C、铁、锌、镁等微量营养素的免疫相互作用显著影响情绪和精神状态，间接制约运动能力恢复。</p>
+      <div class="card-actions">
+        <span class="card-time">5月18日</span>
+        <a href="https://www.nature.com/subjects/nutrition/srep" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#11</span>
+        <span class="card-source">新华网</span>
+      </div>
+      <h3 class="card-title">防止校园"烂跑道"：新国标酝酿出台</h3>
+      <p class="card-summary">针对近年来频发的校园塑胶跑道质量问题，相关部门正在酝酿出台更严格的强制性国家标准，从材料源头保障青少年运动安全。</p>
+      <div class="card-actions">
+        <span class="card-time">5月23日</span>
+        <a href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="nutrition">
+  <div class="section-header">
+    <span class="section-badge badge-nutrition">Nutrition</span>
+    <h2>营养饮食</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#12</span>
+        <span class="card-source">Nature</span>
+      </div>
+      <h3 class="card-title">营养免疫学新发现：维生素 C / 铁 / 锌 / 镁协同调节情绪</h3>
+      <p class="card-summary">Nature 子刊发表对照研究，首次系统性量化维生素C、铁、锌、镁四种微量营养素与外周血细胞指标的免疫交互作用，为精神障碍的营养干预提供新证据。</p>
+      <div class="card-actions">
+        <span class="card-time">5月18日</span>
+        <a href="https://www.nature.com/subjects/nutrition/srep" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#13</span>
+        <span class="card-source">WHO</span>
+      </div>
+      <h3 class="card-title">世卫组织推动全球食品营养标签标准化</h3>
+      <p class="card-summary">本届世卫大会通过决议推动成员国实施统一的食品包装前端营养标签体系，帮助消费者更直观地识别糖、盐、脂肪含量，对抗全球肥胖趋势。</p>
+      <div class="card-actions">
+        <span class="card-time">5月23日</span>
+        <a href="https://www.who.int/news/item/23-05-2026-seventy-ninth-world-health-assembly---daily-update--23-may-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#14</span>
+        <span class="card-source">Frontiers</span>
+      </div>
+      <h3 class="card-title">2026年全球营养趋势：个性化与可持续双轨并行</h3>
+      <p class="cell-summary">Frontiers in Nutrition 最新综述指出，基于基因检测的个性化营养方案和低碳水化合物植物性饮食成为2026年两大主导营养趋势。</p>
+      <div class="card-actions">
+        <span class="card-time">5月22日</span>
+        <a href="https://www.frontiersin.org/journals/nutrition/articles" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="wellness">
+  <div class="section-header">
+    <span class="section-badge badge-wellness">Wellness</span>
+    <h2>身心养护</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#15</span>
+        <span class="card-source">联合国新闻</span>
+      </div>
+      <h3 class="card-title">世卫大会在埃博拉、汉坦病毒阴影下开幕，全球卫生安全受关注</h3>
+      <p class="card-summary">第79届世界卫生大会在中非埃博拉疫情反弹和邮轮汉坦病毒感染事件的双重阴影下召开，强化全球突发公共卫生事件应对机制成为首要议题。</p>
+      <div class="card-actions">
+        <span class="card-time">5月18日</span>
+        <a href="https://news.un.org/en/story/2026/05/1167539" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#16</span>
+        <span class="card-source">WHO</span>
+      </div>
+      <h3 class="card-title">WHA79 通过决议：将精神卫生纳入全民健康覆盖核心指标</h3>
+      <p class="card-summary">世卫大会通过历史性决议，要求各成员国将精神卫生服务纳入全民健康覆盖（UHC）的核心监测指标，推动心理健康去污名化和服务可及性提升。</p>
+      <div class="card-actions">
+        <span class="card-time">5月23日</span>
+        <a href="https://www.who.int/news/item/23-05-2026-seventy-ninth-world-health-assembly---daily-update--23-may-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#17</span>
+        <span class="card-source">新华网体育</span>
+      </div>
+      <h3 class="card-title">国际武联秘书长：武术要登上更高舞台，也要走向大众</h3>
+      <p class="card-summary">国际武术联合会秘书长张玉萍接受专访时表示，武术运动既要争取进入更高水平的竞技舞台，也要致力于走向普通大众，推广全民健身理念。</p>
+      <div class="card-actions">
+        <span class="card-time">5月23日</span>
+        <a href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top">
+        <span class="card-num">#18</span>
+        <span class="card-source">Springer</span>
+      </div>
+      <h3 class="card-title">最新研究：高强度间歇运动对心肺功能的长期收益被低估</h3>
+      <p class="card-summary">Springer Nature 发表的健身研究荟萃分析显示，HIIT（高强度间歇训练）对中老年人心肺功能的改善效果显著优于传统中等强度持续运动，且收益可持续数年。</p>
+      <div class="card-actions">
+        <span class="card-time">5月21日</span>
+        <a href="https://link.springer.com/subjects/fitness" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <p>🏃 运动健康日报 · 每日 08:50 自动生成 · 数据来源：<a href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer">新华网体育</a> <a href="https://www.who.int/news" target="_blank" rel="noopener noreferrer">WHO</a> <a href="https://www.nature.com" target="_blank" rel="noopener noreferrer">Nature</a></p>
+  <p>© 2026 WorkBuddy Daily News · 仅供参考，不构成医疗建议</p>
+</footer>
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.card-animate').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
