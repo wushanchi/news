@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-05-26</title>
+<style>
+:root {
+  --c-bg: #0a100a;--c-surface: #0f1a0f;--c-card: #162216;--c-border: #253625;
+  --c-text: #d4e8d4;--c-text-dim: #7d9e7d;--c-accent: #10b981;--c-accent2: #34d399;
+  --c-accent-glow: rgba(16,185,129,0.15);--c-cat-internet: #10b981;--c-cat-hardware: #0ea5e9;
+  --c-cat-aerospace: #f59e0b;--c-cat-digital: #a78bfa;
+  --c-grad-start: #059669;--c-grad-mid: #047857;--c-grad-end: #065f46;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.06),transparent 55%),radial-gradient(circle at 70% 70%,rgba(16,185,129,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(10,16,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-internet{background:var(--c-cat-internet)}.badge-hardware{background:var(--c-cat-hardware)}
+.badge-aerospace{background:var(--c-cat-aerospace)}.badge-digital{background:var(--c-cat-digital)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(16,185,129,0.1);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(52,211,153,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 26 日 · 星期二</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-internet)"></span> 互联网/软件 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-hardware)"></span> 硬件/半导体 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-aerospace)"></span> 航天/新能源 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-digital)"></span> 数字创新 <strong>3</strong></div>
+  </div>
+</div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#internet"><span>互联网/软件</span><span class="nav-count">7</span></a>
+    <a href="#hardware"><span>硬件/半导体</span><span class="nav-count">4</span></a>
+    <a href="#aerospace"><span>航天/新能源</span><span class="nav-count">4</span></a>
+    <a href="#digital"><span>数字创新</span><span class="nav-count">3</span></a>
+  </nav>
+</div>
+<div class="main">
+
+<!-- 互联网/软件 -->
+<section id="internet" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-internet">互联网/软件</span>
+    <h2>互联网/软件</h2><span class="section-count">共 7 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#01</span><span class="card-source">TechCrunch</span></div>
+      <h3 class="card-title">Anthropic 以 9000 亿美元估值完成 300 亿美元融资</h3>
+      <p class="card-summary">Anthropic 即将完成由红杉资本等联合领投的 300 亿美元融资，估值超 9000 亿美元，首次超越 OpenAI 创下的 8520 亿美元估值。Q2 营收 109 亿美元，首现季度盈利。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#02</span><span class="card-source">The Verge</span></div>
+      <h3 class="card-title">OpenAI 提交 IPO 申请，Anthropic 实现季度运营盈利</h3>
+      <p class="card-summary">AI 行业 IPO 浪潮来袭：OpenAI 准备向 SEC 提交保密 S-1 申请，Anthropic 预计 Q2 营收环比增长 130%，SpaceX 招股书同步披露 GPU 算力采购合同。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#03</span><span class="card-source">Axios</span></div>
+      <h3 class="card-title">特朗普废除 AI 安全行政令，称其削弱美国竞争力</h3>
+      <p class="card-summary">特朗普取消 AI 安全审查行政令，扎克伯格、马斯克被曝在签署前数小时直接致电总统。短期利好 AI 公司快速发布，但长期缺乏联邦监管框架。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#04</span><span class="card-source">ZDNet</span></div>
+      <h3 class="card-title">华尔街成为 AI 新战场，Anthropic 和 OpenAI 72 小时内加码金融</h3>
+      <p class="card-summary">Anthropic 和 OpenAI 密集推出企业金融部门、金融服务合作及华尔街工作流 AI 代理工具，金融领域加速成为 AI 公司争夺的下一个主战场。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#05</span><span class="card-source">Ars Technica</span></div>
+      <h3 class="card-title">谷歌搜索迎来 25 年来最大更新：直接在结果页生成交互式应用</h3>
+      <p class="card-summary">谷歌重建搜索栏，可从对话直接生成自定义视觉内容和交互式图形，标志"10 条蓝色链接"时代功能终结。产品 VP 称用户正在提出更长更复杂的问题。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#06</span><span class="card-source">The Verge</span></div>
+      <h3 class="card-title">OpenAI Codex 突破：可在 Mac 锁定状态下自主操控</h3>
+      <p class="card-summary">OpenAI Codex 实现重大自主代理能力——即使 Mac 处于锁定状态也能控制操作，用户无需保持屏幕打开即可维持 AI 代理运行。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#07</span><span class="card-source">TechCrunch</span></div>
+      <h3 class="card-title">中国模型在 OpenRouter 上占比超 60%，开源权重格局已变</h3>
+      <p class="card-summary">Kimi、DeepSeek、GLM、Qwen 等中国模型占据 OpenRouter 上 60% 的 AI 使用量，开源权重领域已由中国主导。Meta 的 Avocado 模型久未更新。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 硬件/半导体 -->
+<section id="hardware" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-hardware">硬件/半导体</span>
+    <h2>硬件/半导体</h2><span class="section-count">共 4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#08</span><span class="card-source">Wired</span></div>
+      <h3 class="card-title">Anthropic 考虑采用微软 Maia 200 芯片，成第五家芯片合作伙伴</h3>
+      <p class="card-summary">Anthropic 洽谈采用微软定制 AI 芯片 Maia 200，此举使其投资组合涵盖 NVIDIA、AWS Trainium、谷歌 TPU 和 SpaceX 计算，计算可选性正成为竞争护城河。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#09</span><span class="card-source">IT之家</span></div>
+      <h3 class="card-title">华为何庭波"韬定律"发布：逻辑折叠技术将芯片密度提升 53%</h3>
+      <p class="card-summary">何庭波在 ISCAS 2026 提出 LogicFolding 三维拓扑重组技术，麒麟 2026 晶体管密度从 155 提升至 238 MTr/mm²，性能核心能效提高 41%，不依赖新光刻工艺。</p>
+      <div class="card-actions"><a href="https://www.ithome.com/0/954/778.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">36氪</span></div>
+      <h3 class="card-title">长鑫科技科创板 IPO 上会，国产存储芯片迈入资本市场</h3>
+      <p class="card-summary">长鑫科技科创板 IPO 正式提交上会审核，标志着国产 DRAM/NAND 存储芯片龙头向资本市场迈出关键一步，市场关注其估值与定价。</p>
+      <div class="card-actions"><a href="https://news.qq.com/rain/a/20260525A01Q3R00" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">IT之家</span></div>
+      <h3 class="card-title">三星折叠屏将推"Ultra"系列，Z Fold 8 Ultra 参数曝光</h3>
+      <p class="card-summary">三星计划在折叠屏产品线引入 Ultra 子系列，Z Fold 8 Ultra 主要参数提前曝光，折叠屏市场高端化竞争进一步加剧。</p>
+      <div class="card-actions"><a href="https://www.ithome.com" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 航天/新能源 -->
+<section id="aerospace" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-aerospace">航天/新能源</span>
+    <h2>航天/新能源</h2><span class="section-count">共 4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">Wired</span></div>
+      <h3 class="card-title">NextEra 以 670 亿美元收购 Dominion Energy，AI 电力需求成核心驱动</h3>
+      <p class="card-summary">NextEra 宣布以 670 亿美元收购 Dominion Energy，创美国公用事业史上最大并购。AI 驱动的电力需求是战略动因——预计到 2030 年 AI 将消耗全美 15-25% 电力。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">神舟二十三号载人飞船发射取得圆满成功</h3>
+      <p class="card-summary">神舟二十三号载人飞船成功发射升空，航天员顺利进驻中国空间站，完成中国航天史上第 8 次太空交会对接任务。</p>
+      <div class="card-actions"><a href="https://news.qq.com/rain/a/20260525A01Q3R00" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">TechCrunch</span></div>
+      <h3 class="card-title">SpaceX IPO 招股书披露：Anthropic 每月支付 12.5 亿美元 GPU 算力费</h3>
+      <p class="card-summary">SpaceX 的 IPO 招股书披露与 Anthropic 签订 450 亿美元 GPU 计算合同，Anthropic 每月支付 12.5 亿美元，揭示 AI 企业天文数字般的算力投入。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">全球油价受美伊协议预期影响暴跌，WTI 一度跌超 7%</h3>
+      <p class="card-summary">受美伊达成核协议框架预期升温影响，国际油价大幅下跌。WTI 失守 90 美元/桶，布伦特跌破 94 美元/桶，能源市场面临供需格局重塑。</p>
+      <div class="card-actions"><a href="https://finance.sina.com.cn/headline/2026-05-26/doc-inhzequv2330548.shtml" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 数字创新 -->
+<section id="digital" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-digital">数字创新</span>
+    <h2>数字创新</h2><span class="section-count">共 3 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">The Verge</span></div>
+      <h3 class="card-title">Adobe、Canva、CapCut 集成 Gemini，AI 编辑工具内嵌聊天界面</h3>
+      <p class="card-summary">三大创意工具宣布整合 Google Gemini，用户可在 Gemini 应用内直接访问图像和视频编辑功能，Canva 已对 Gemini AI Ultra 订阅用户上线。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">TechCrunch</span></div>
+      <h3 class="card-title">Andrej Karpathy 加入 Anthropic，重建预训练研究团队</h3>
+      <p class="card-summary">OpenAI 联合创始人、前特斯拉自动驾驶负责人 Karpathy 加入 Anthropic，称"LLM 前沿接下来的几年尤为关键"，这是 2026 年最高调 AI 人才流动。</p>
+      <div class="card-actions"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-may-25-2026" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#18</span><span class="card-source">36氪</span></div>
+      <h3 class="card-title">2026 北京科技周启动：聚焦"十五五"创新成果展示</h3>
+      <p class="card-summary">2026 年北京科技周在中科院空天信息创新研究院启动，主题为"奋进十五五 · 科技谱新篇"，系统展示 AI、量子、航天等多赛道科技突破。</p>
+      <div class="card-actions"><a href="https://www.sohu.com/a/1026683280_121119257" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+</div>
+<footer class="footer">
+  数据来源：TechCrunch / The Verge / Wired / ZDNet / Ars Technica / IT之家 / 36氪 等公开科技媒体 · 2026-05-26
+</footer>
+<script>
+const observer=new IntersectionObserver((e)=>{e.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.12});
+document.querySelectorAll('.card-animate').forEach((e)=>observer.observe(e));
+</script>
+</body>
+</html>

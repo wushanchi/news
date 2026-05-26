@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国际焦点日报 · 2026-05-26</title>
+<style>
+:root {
+  --c-bg: #0a0f1c;--c-surface: #111827;--c-card: #1e293b;--c-border: #334155;
+  --c-text: #e2e8f0;--c-text-dim: #94a3b8;--c-accent: #3b82f6;--c-accent2: #60a5fa;
+  --c-accent-glow: rgba(59,130,246,0.15);--c-cat-politics: #60a5fa;--c-cat-economy: #34d399;
+  --c-cat-events: #f472b6;--c-culture: #c084fc;
+  --c-grad-start: #1d4ed8;--c-grad-mid: #2563eb;--c-grad-end: #0ea5e9;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(255,255,255,0.07),transparent 55%),radial-gradient(circle at 20% 80%,rgba(59,130,246,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(10,15,28,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-politics{background:var(--c-cat-politics)}.badge-economy{background:var(--c-cat-economy)}
+.badge-events{background:var(--c-cat-events)}.badge-culture{background:var(--c-culture)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(59,130,246,0.1);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(96,165,250,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 26 日 · 星期二</div>
+  <h1 class="hero-title">国际焦点日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-politics)"></span> 政治外交 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-economy)"></span> 经济财经 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-events)"></span> 重大事件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-culture)"></span> 社会人文 <strong>3</strong></div>
+  </div>
+</div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#politics"><span>政治外交</span><span class="nav-count">7</span></a>
+    <a href="#economy"><span>经济财经</span><span class="nav-count">5</span></a>
+    <a href="#events"><span>重大事件</span><span class="nav-count">5</span></a>
+    <a href="#culture"><span>社会人文</span><span class="nav-count">3</span></a>
+  </nav>
+</div>
+<div class="main">
+
+<!-- 政治外交 -->
+<section id="politics" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-politics">政治外交</span>
+    <h2>政治外交</h2><span class="section-count">共 7 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#01</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">美伊就冻结资产达成谅解，协议或于明日宣布</h3>
+      <p class="card-summary">美国和伊朗就伊朗被冻结金融资产达成谅解，特朗普称谈判"顺利推进"。协议草案含霍尔木兹海峡 30 天内恢复通航、延长停火 60 天等关键条款。</p>
+      <div class="card-actions"><a href="https://finance.sina.com.cn/headline/2026-05-26/doc-inhzequv2330548.shtml" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#02</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">内塔尼亚胡私下承认以色列对特朗普伊朗协议"影响力有限"</h3>
+      <p class="card-summary">以色列总理私下承认在美伊核谈判中"几乎无力影响"特朗普决策，以色列在谈判进程中被大幅边缘化，此前美以曾联合轰炸伊朗。</p>
+      <div class="card-actions"><a href="https://www.livemint.com/news/world/total-world-latest-news-on-may-26-2026-live-updates-11779743607615.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#03</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">拉夫罗夫要求鲁比奥撤离驻基辅美国外交官和公民</h3>
+      <p class="card-summary">俄罗斯外长拉夫罗夫向美国国务卿鲁比奥发出警告，要求撤离驻乌克兰首都基辅的美国外交人员及公民，俄乌局势进一步升级。</p>
+      <div class="card-actions"><a href="https://www.livemint.com/news/world/total-world-latest-news-on-may-26-2026-live-updates-11779743607615.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#04</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">特朗普与习近平会面，稳定石油市场</h3>
+      <p class="card-summary">特朗普与中国国家主席习近平举行会谈，此举在新一轮海湾地区袭击事件背景下对石油市场起到稳定作用，缓解全球能源安全担忧。</p>
+      <div class="card-actions"><a href="https://www.livemint.com/news/world/total-world-latest-news-on-may-26-2026-live-updates-11779743607615.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#05</span><span class="card-source">AP News</span></div>
+      <h3 class="card-title">特朗普接受第二任期第四次体检</h3>
+      <p class="card-summary">美国总统特朗普在沃尔特·里德国家军事医疗中心接受第二任期第四次体检，时间节点恰在其 80 岁生日前夕，引发公众对其健康状况的关注。</p>
+      <div class="card-actions"><a href="https://www.livemint.com/news/world/total-world-latest-news-on-may-26-2026-live-updates-11779743607615.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#06</span><span class="card-source">UN News</span></div>
+      <h3 class="card-title">联合国下任秘书长人选寻找工作正式启动</h3>
+      <p class="card-summary">联合国秘书长人选须于年底前确定，若安理会因否决权陷入僵局，现任秘书长古特雷斯可能被要求继续担任临时秘书长。</p>
+      <div class="card-actions"><a href="https://www.globalissues.org/news/2026/05" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#07</span><span class="card-source">新华网</span></div>
+      <h3 class="card-title">德国经济部长率 40 家企业高管访华，行程持续至 29 日</h3>
+      <p class="card-summary">德国经济与能源部长赖歇率西门子、巴斯夫、博世等 40 家顶级企业高管访华，系其上任后首次访华，凸显德国对中德经贸关系的重视。</p>
+      <div class="card-actions"><a href="https://mbd.baidu.com/newspage/data/dtlandingsuper?nid=dt_4059771241263114179" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 经济财经 -->
+<section id="economy" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-economy">经济财经</span>
+    <h2>经济财经</h2><span class="section-count">共 5 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#08</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">WTI 原油日内跌幅一度扩大至 7%，失守 90 美元/桶</h3>
+      <p class="card-summary">受美伊协议预期升温影响，WTI 原油价格一度跌破 90 美元/桶大关，布伦特原油失守 94 美元/桶，日内跌幅达 6.26%，能源市场剧烈波动。</p>
+      <div class="card-actions"><a href="https://finance.sina.com.cn/headline/2026-05-26/doc-inhzequv2330548.shtml" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#09</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">欧洲股市抹去伊朗战争以来全部跌幅，全球市场大涨</h3>
+      <p class="card-summary">欧洲斯托克 600 涨 1.03%，德 DAX 涨 2.03%，法 CAC 40 涨 1.84%；美股期货标普 500 涨 0.9%，纳指涨 1.2%，市场乐观情绪驱动全球资产走高。</p>
+      <div class="card-actions"><a href="https://finance.sina.com.cn/headline/2026-05-26/doc-inhzequv2330548.shtml" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">欧盟计划对谷歌处以数亿欧元反垄断罚款</h3>
+      <p class="card-summary">欧盟针对谷歌的反垄断行动再进一步，拟对其处以数亿欧元罚款，此举延续了欧盟多年来对美国科技巨头加强监管的坚定立场。</p>
+      <div class="card-actions"><a href="https://finance.sina.com.cn/headline/2026-05-26/doc-inhzequv2330548.shtml" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">印度燃油价格 4 年来首次上调，财政部长呼吁民众关注"三个 F"</h3>
+      <p class="card-summary">印度汽油柴油价格在保持 4 年稳定后迎来上调，财长西塔拉曼发表视频讲话呼吁关注生活成本上升问题，主要城市油价均有变动。</p>
+      <div class="card-actions"><a href="https://www.livemint.com/news/world/total-world-latest-news-on-may-26-2026-live-updates-11779743607615.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">惠誉评级警告：北美企业面临战争溢出、关税和 AI 三重信用风险</h3>
+      <p class="card-summary">惠誉评级发布报告指出，北美企业正面临战争溢出效应、关税政策波动及 AI 技术变革三重叠加的信用风险，企业需审慎管理财务。</p>
+      <div class="card-actions"><a href="https://finance.sina.com.cn/headline/2026-05-26/doc-inhzequv2330548.shtml" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 重大事件 -->
+<section id="events" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-events">重大事件</span>
+    <h2>重大事件</h2><span class="section-count">共 5 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">Reuters / AP</span></div>
+      <h3 class="card-title">美军对伊朗南部实施自卫打击，打击目标包括导弹发射场</h3>
+      <p class="card-summary">美军在伊朗南部实施自卫打击，目标包括导弹发射场及试图布设水雷的伊朗船只，中东军事对峙态势未因谈判而缓解。</p>
+      <div class="card-actions"><a href="https://finance.sina.com.cn/headline/2026-05-26/doc-inhzequv2330548.shtml" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">UN News</span></div>
+      <h3 class="card-title">俄罗斯对基辅发动大规模夜间袭击，动用约 90 枚导弹</h3>
+      <p class="card-summary">俄罗斯对乌克兰首都基辅发动大规模夜间袭击，动用约 90 枚导弹和 60 架无人机，联合国驻乌高级官员呼吁立即停止对平民的伤害。</p>
+      <div class="card-actions"><a href="https://www.globalissues.org/news/2026/05" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">WHO</span></div>
+      <h3 class="card-title">埃博拉疫情迅速蔓延，刚果疑似病例已超 900 例、死亡 220 例</h3>
+      <p class="card-summary">世卫总干事谭德塞表示刚果（金）邦迪布焦型埃博拉疑似病例超 900 例，220 例疑似死亡，疫情扩散速度已超过现有防控能力。</p>
+      <div class="card-actions"><a href="https://www.globalissues.org/news/2026/05" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">普京签署参战人员债务免除法案</h3>
+      <p class="card-summary">俄罗斯总统普京签署法案，免除 2026 年 5 月起签约参与特别军事行动人员的债务，旨在激励更多人员加入军事行动。</p>
+      <div class="card-actions"><a href="https://finance.sina.com.cn/headline/2026-05-26/doc-inhzequv2330548.shtml" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">霍尔木兹海峡将在 30 天内恢复通航，伊朗要求美方先解冻资产</h3>
+      <p class="card-summary">美伊协议草案显示霍尔木兹海峡将在 30 天内恢复通航并免费开放，但伊朗要求美方先行解冻 120 亿美元资产，核问题留待后续谈判。</p>
+      <div class="card-actions"><a href="https://news.gmw.cn/2026-05/26/content_38789244.htm" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 社会人文 -->
+<section id="culture" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-culture">社会人文</span>
+    <h2>社会人文</h2><span class="section-count">共 3 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#18</span><span class="card-source">Reuters</span></div>
+      <h3 class="card-title">独立恐怖片《Obsession》全球票房突破 7900 万美元</h3>
+      <p class="card-summary">由前 YouTuber Curry Barker 执导的独立恐怖片《Obsession》全球票房接近 8000 万美元，无视外界批评，成为 2026 年最大票房黑马之一。</p>
+      <div class="card-actions"><a href="https://www.livemint.com/news/world/total-world-latest-news-on-may-26-2026-live-updates-11779743607615.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#19</span><span class="card-source">IPS</span></div>
+      <h3 class="card-title">日本与哈萨克斯坦深化能源安全与核风险时代的伙伴关系</h3>
+      <p class="card-summary">日哈两国在地缘政治不确定性加剧的背景下加强能源合作，伙伴关系涵盖城市、资源、技术与和平等多个维度，共筑能源安全屏障。</p>
+      <div class="card-actions"><a href="https://www.globalissues.org/news/2026/05" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#20</span><span class="card-source">WHO</span></div>
+      <h3 class="card-title">世卫总干事呼吁紧急应对埃博拉并加强大流行病防备能力</h3>
+      <p class="card-summary">在第 79 届世界卫生大会上，谭德塞警告近期埃博拉和汉坦病毒疫情暴发再次证明世界对快速传播传染病依然脆弱，呼吁全球加强防备。</p>
+      <div class="card-actions"><a href="https://www.globalissues.org/news/2026/05" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+</div>
+<footer class="footer">
+  数据来源：Reuters / BBC / CNN / 新华网 / 环球网 / UN News / AP / IPS 等公开新闻源 · 2026-05-26
+</footer>
+<script>
+const observer=new IntersectionObserver((e)=>{e.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.12});
+document.querySelectorAll('.card-animate').forEach((e)=>observer.observe(e));
+</script>
+</body>
+</html>

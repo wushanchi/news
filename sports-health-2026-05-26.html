@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026-05-26</title>
+<style>
+:root {
+  --c-bg: #100f09;--c-surface: #1a160d;--c-card: #241f14;--c-border: #3d341d;
+  --c-text: #eee5cc;--c-text-dim: #a8976e;--c-accent: #f59e0b;--c-accent2: #fbbf24;
+  --c-accent-glow: rgba(245,158,11,0.15);--c-cat-sports: #f59e0b;--c-cat-fitness: #10b981;
+  --c-cat-nutrition: #f472b6;--c-cat-wellness: #8b5cf6;
+  --c-grad-start: #d97706;--c-grad-mid: #b45309;--c-grad-end: #92400e;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(255,255,255,0.06),transparent 55%),radial-gradient(circle at 80% 70%,rgba(245,158,11,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(16,15,9,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-sports{background:var(--c-cat-sports)}.badge-fitness{background:var(--c-cat-fitness)}
+.badge-nutrition{background:var(--c-cat-nutrition)}.badge-wellness{background:var(--c-cat-wellness)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(245,158,11,0.1);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(251,191,36,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 26 日 · 星期二</div>
+  <h1 class="hero-title">运动健康日报</h1>
+  <div class="hero-total">今日 17 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-sports)"></span> 体坛快讯 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-fitness)"></span> 健身科学 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-nutrition)"></span> 营养饮食 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-wellness)"></span> 身心养护 <strong>3</strong></div>
+  </div>
+</div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#sports"><span>体坛快讯</span><span class="nav-count">7</span></a>
+    <a href="#fitness"><span>健身科学</span><span class="nav-count">4</span></a>
+    <a href="#nutrition"><span>营养饮食</span><span class="nav-count">3</span></a>
+    <a href="#wellness"><span>身心养护</span><span class="nav-count">3</span></a>
+  </nav>
+</div>
+<div class="main">
+
+<!-- 体坛快讯 -->
+<section id="sports" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-sports">体坛快讯</span>
+    <h2>体坛快讯</h2><span class="section-count">共 7 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#01</span><span class="card-source">ESPN</span></div>
+      <h3 class="card-title">NBA 西部决赛：雷霆 vs 马刺 2-2，天王山之战今日上演</h3>
+      <p class="card-summary">雷霆与马刺在西部决赛战至 2-2 平手，今日 08:30 在雷霆主场迎来关键天王山之战。此前马刺 G4 以 103-82 大胜，将系列赛重新带回均势。</p>
+      <div class="card-actions"><a href="https://www.sportingnews.com/us/nba/news/nba-playoffs-schedule-2026-bracket-dates-times-channels-streams/fa891bae5fd2cd51e8bac5d0" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#02</span><span class="card-source">ESPN</span></div>
+      <h3 class="card-title">NBA 东部决赛：尼克斯 3-0 骑士，距横扫仅差一胜</h3>
+      <p class="card-summary">尼克斯在东部决赛以 121-108 再下一城，总比分 3-0 领先骑士，季后赛十连胜势如破竹。G4 将于今日在骑士主场进行，尼克斯有望横扫晋级。</p>
+      <div class="card-actions"><a href="https://www.sportingnews.com/us/nba/news/nba-playoffs-schedule-2026-bracket-dates-times-channels-streams/fa891bae5fd2cd51e8bac5d0" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#03</span><span class="card-source">新浪体育</span></div>
+      <h3 class="card-title">CBA 总决赛 G1 今晚开打：上海主场迎战广厦</h3>
+      <p class="card-summary">2025-2026 赛季 CBA 总决赛第一场今日在上海体育馆开战，上海久事时隔 24 年重返总决赛舞台，主场迎战卫冕冠军浙江浙商证券（广厦）。</p>
+      <div class="card-actions"><a href="https://baijiahao.baidu.com/s?id=1866112885698393453" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#04</span><span class="card-source">ESPN</span></div>
+      <h3 class="card-title">奥尼尔直言对文班亚马西决表现"失望"，称其需承担更多</h3>
+      <p class="card-summary">NBA 名宿奥尼尔在节目中表示对文班亚马西部决赛中的发挥感到失望，直言这位年轻内线需要做得更多，并自称"所有大个子的最高领主"。</p>
+      <div class="card-actions"><a href="http://k.sina.com.cn/article_7857201856_1d45362c001905xsrs.html" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#05</span><span class="card-source">新浪体育</span></div>
+      <h3 class="card-title">国乒教练王皓、孙逊签约吉林省队，引发兼职热议</h3>
+      <p class="card-summary">国乒男队主教练王皓和王楚钦主管教练孙逊高调签约吉林省队，分别担任技术总监和总教练。国家队教练严禁兼职的规定与现实在此碰撞。</p>
+      <div class="card-actions"><a href="https://baijiahao.baidu.com/s?id=1866204273402500376" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#06</span><span class="card-source">UEFA</span></div>
+      <h3 class="card-title">欧足联庆祝世界足球日，16 位足球传奇获任联合国冠军大使</h3>
+      <p class="card-summary">联合国任命哈利达·波帕尔、哈维尔·萨内蒂等 16 位足球传奇为"足球促目标"冠军大使，借世界杯开幕在即之机提升公众对可持续发展目标的关注。</p>
+      <div class="card-actions"><a href="https://www.uefa.com/news-media/news/02a5-20b548adccc1-8a8b52cfef30-1000--uefa-marks-world-football-day-2026/" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#07</span><span class="card-source">Sky Sports</span></div>
+      <h3 class="card-title">欧冠决赛即将上演，欧洲足坛赛季迎来最高潮</h3>
+      <p class="card-summary">欧洲足球赛季进入最后冲刺阶段，欧冠决赛对阵双方即将确定，各联赛冠军归属也将在本周陆续揭晓，全球球迷屏息以待。</p>
+      <div class="card-actions"><a href="https://www.skysports.com" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 健身科学 -->
+<section id="fitness" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-fitness">健身科学</span>
+    <h2>健身科学</h2><span class="section-count">共 4 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#08</span><span class="card-source">WHO</span></div>
+      <h3 class="card-title">第 79 届世界卫生大会通过多项运动健康决议</h3>
+      <p class="card-summary">WHA79 在日内瓦闭幕，通过超 20 项决定和 13 项决议，聚焦中风预防、肝病防治及全民健身推广，强调运动在慢性病预防中的核心作用。</p>
+      <div class="card-actions"><a href="https://www.globalissues.org/news/2026/05" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#09</span><span class="card-source">NIH</span></div>
+      <h3 class="card-title">短时间高强度间歇运动显著降低心血管疾病风险</h3>
+      <p class="card-summary">NIH 资助研究证实每天仅 4-6 分钟高强度间歇运动即可显著改善心血管健康指标，为繁忙都市人群提供可执行的运动方案。</p>
+      <div class="card-actions"><a href="https://www.nih.gov/news-events/news-releases" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">Harvard Health</span></div>
+      <h3 class="card-title">每日 8000 步显著降低全因死亡率：新 Meta 分析发布</h3>
+      <p class="card-summary">哈佛医学院最新 Meta 分析涵盖 20 万人数据，证实每日步行 8000 步以上可使全因死亡风险降低约 50%，步数而非速度是核心保护因素。</p>
+      <div class="card-actions"><a href="https://www.health.harvard.edu" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">Nature</span></div>
+      <h3 class="card-title">微量营养素缺乏直接影响运动表现，补充方案需个体化</h3>
+      <p class="card-summary">Nature 子刊发表综述指出铁、维生素 D、镁等微量营养素缺乏可导致耐力下降 15-20%，建议运动员定期检测并制定个体化补充方案。</p>
+      <div class="card-actions"><a href="https://www.nature.com/nm/articles" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 营养饮食 -->
+<section id="nutrition" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-nutrition">营养饮食</span>
+    <h2>营养饮食</h2><span class="section-count">共 3 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">NIH</span></div>
+      <h3 class="card-title">口服 GLP-1 小分子药物可深入脑部抑制食欲，减重新机制揭示</h3>
+      <p class="card-summary">NIH 资助研究发现新一代口服 GLP-1 药物可穿透血脑屏障深入大脑抑制食欲，作用机制不同于现有注射型制剂，为肥胖治疗开辟新路径。</p>
+      <div class="card-actions"><a href="https://www.nih.gov/news-events/news-releases" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">Harvard Health</span></div>
+      <h3 class="card-title">地中海饮食显著降低认知衰退风险，长期追踪结果出炉</h3>
+      <p class="card-summary">哈佛医学院长达 20 年的追踪研究显示坚持地中海饮食可将老年认知衰退风险降低约 35%，橄榄油、坚果和鱼类摄入是核心保护因子。</p>
+      <div class="card-actions"><a href="https://www.health.harvard.edu" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">Medical News Today</span></div>
+      <h3 class="card-title">超加工食品与肠道微生物组失衡新证：炎症性肠病风险升高</h3>
+      <p class="card-summary">大型队列研究揭示每日摄入超加工食品超过 5 份可导致肠道有益菌群减少 40%，炎症标志物显著升高，肠道健康警报拉响。</p>
+      <div class="card-actions"><a href="https://www.medicalnewstoday.com" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 身心养护 -->
+<section id="wellness" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-wellness">身心养护</span>
+    <h2>身心养护</h2><span class="section-count">共 3 条</span>
+  </div>
+  <div class="cards">
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">Harvard Health</span></div>
+      <h3 class="card-title">正念冥想显著降低焦虑水平：随机对照试验新证据</h3>
+      <p class="card-summary">哈佛医学院 RCT 研究证实每日 10 分钟正念冥想 8 周后，焦虑量表评分平均下降 30%，效果不亚于轻度药物治疗，推荐作为一线心理健康干预。</p>
+      <div class="card-actions"><a href="https://www.health.harvard.edu" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">WHO</span></div>
+      <h3 class="card-title">世卫警告：埃博拉与汉坦病毒暴发揭示全球大流行病防备仍不足</h3>
+      <p class="card-summary">谭德塞在世卫大会闭幕式上强调近期多种传染病同时暴发，全球快速响应体系仍然脆弱，呼吁各国加大公共卫生基础设施投入。</p>
+      <div class="card-actions"><a href="https://www.globalissues.org/news/2026/05" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+    <article class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">Medical News Today</span></div>
+      <h3 class="card-title">社交隔离与孤独感使心血管疾病风险增加近 30%</h3>
+      <p class="card-summary">涵盖 50 万人数据的 Meta 分析发现长期社交隔离使心血管疾病风险增加 29%，孤独感与吸烟、缺乏运动同列为独立风险因子，社会连接即健康投资。</p>
+      <div class="card-actions"><a href="https://www.medicalnewstoday.com" target="_blank" rel="noopener noreferrer" class="card-link">原文 ↗</a></div>
+    </article>
+  </div>
+</section>
+
+</div>
+<footer class="footer">
+  数据来源：ESPN / Sky Sports / 新浪体育 / Harvard Health / WHO / NIH / Nature / Medical News Today 等公开体育健康媒体 · 2026-05-26
+</footer>
+<script>
+const observer=new IntersectionObserver((e)=>{e.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.12});
+document.querySelectorAll('.card-animate').forEach((e)=>observer.observe(e));
+</script>
+</body>
+</html>
