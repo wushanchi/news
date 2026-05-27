@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-05-27</title>
+<style>
+:root{--c-bg:#0a100a;--c-surface:#0f1a0f;--c-card:#162216;--c-border:#253625;--c-text:#d4e8d4;--c-text-dim:#7d9e7d;--c-accent:#10b981;--c-accent2:#34d399;--c-accent-glow:rgba(16,185,129,0.15);--c-cat-internet:#10b981;--c-cat-hardware:#0ea5e9;--c-cat-aerospace:#f59e0b;--c-cat-digital:#a78bfa;--c-grad-start:#059669;--c-grad-mid:#047857;--c-grad-end:#065f46;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.06),transparent 55%),radial-gradient(circle at 70% 70%,rgba(16,185,129,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(10,16,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}.nav a:hover{color:var(--c-text);background:var(--c-card)}.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-internet{background:var(--c-cat-internet)}.badge-hardware{background:var(--c-cat-hardware)}.badge-aerospace{background:var(--c-cat-aerospace)}.badge-digital{background:var(--c-cat-digital)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(16,185,129,0.1);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(52,211,153,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 27 日 · 星期三</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-internet)"></span> 互联网/软件 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-hardware)"></span> 硬件/半导体 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-aerospace)"></span> 航天/新能源 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-digital)"></span> 数字创新 <strong>3</strong></div>
+  </div>
+</div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#internet"><span>互联网/软件</span><span class="nav-count">6</span></a>
+    <a href="#hardware"><span>硬件/半导体</span><span class="nav-count">5</span></a>
+    <a href="#aerospace"><span>航天/新能源</span><span class="nav-count">4</span></a>
+    <a href="#digital"><span>数字创新</span><span class="nav-count">3</span></a>
+  </nav>
+</div>
+<div class="main">
+
+<!-- 互联网/软件 -->
+<section id="internet" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-internet">互联网/软件</span>
+    <h2>互联网/软件</h2><span class="section-count">共 6 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#1</span><span class="card-source">36氪</span></div>
+      <div class="card-title">硅谷 AI 一线观察：一人花掉 50 万美金 Token 背后的大厂焦虑</div>
+      <div class="card-summary">AI大模型Token消耗惊人，单人成本高达50万美金，大厂AI投入焦虑持续升温。</div>
+      <div class="card-actions"><a class="card-link" href="https://www.163.com/dy/media/T1374539835965.html" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#2</span><span class="card-source">36氪</span></div>
+      <div class="card-title">红杉、华兴投了"AI 产品的大众点评"，02 年创始人打造</div>
+      <div class="card-summary">AI产品评价平台获红杉、华兴投资，02年创始人打造"AI产品的大众点评"模式。</div>
+      <div class="card-actions"><a class="card-link" href="https://www.163.com/dy/media/T1374539835965.html" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#3</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">华为 nova 16 关键配置出炉：三款机型搭载麒麟 9010S</div>
+      <div class="card-summary">华为nova 16系列6月1日发布，共四款机型，至少三款确认搭载麒麟9010S处理器。</div>
+      <div class="card-actions"><a class="card-link" href="https://www.ithome.com/list/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#4</span><span class="card-source">快科技</span></div>
+      <div class="card-title">周淑怡直播大骂 Win11，系统不稳定引热议</div>
+      <div class="card-summary">主播周淑怡在直播中公开吐槽Windows系统不稳定，特别是Windows 11，相关片段迅速引发网友讨论。</div>
+      <div class="card-actions"><a class="card-link" href="https://news.mydrivers.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#5</span><span class="card-source">快科技</span></div>
+      <div class="card-title">全国多地取消固定分时电价，晚上用电也贵了</div>
+      <div class="card-summary">贵州、湖北等地取消执行40余年的固定分时电价机制，电力市场迎来变革，家庭电费可能因时段调整涨跌。</div>
+      <div class="card-actions"><a class="card-link" href="https://news.mydrivers.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#6</span><span class="card-source">China Daily</span></div>
+      <div class="card-title">618 促销抵消芯片涨价影响，手机购买窗口开启</div>
+      <div class="card-summary">尽管芯片价格上涨，618大促折扣仍为消费者提供了购买手机的好时机。</div>
+      <div class="card-actions"><a class="card-link" href="https://www.chinadaily.com.cn/business/tech/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 硬件/半导体 -->
+<section id="hardware" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-hardware">硬件/半导体</span>
+    <h2>硬件/半导体</h2><span class="section-count">共 5 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#7</span><span class="card-source">财新</span></div>
+      <div class="card-title">长鑫科技科创板 IPO 今日上会，拟募资 295 亿元创纪录</div>
+      <div class="card-summary">国产内存厂商长鑫科技5月27日上会审议，拟募资295亿元创科创板历史新高，一季度净利润330亿。</div>
+      <div class="card-actions"><a class="card-link" href="https://finance.caixin.com/2026-05-21/102446049.html" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#8</span><span class="card-source">快科技</span></div>
+      <div class="card-title">中国半导体的阳谋：华为韬定律 + 长江存储 IPO + 长鑫上会</div>
+      <div class="card-summary">华为抛出"韬定律"，长江存储启动A股IPO辅导，长鑫科技更新招股书，中国半导体产业加速自主化。</div>
+      <div class="card-actions"><a class="card-link" href="https://news.mydrivers.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#9</span><span class="card-source">新浪财经</span></div>
+      <div class="card-title">美光科技市值突破 1 万亿美元，芯片板块表现亮眼</div>
+      <div class="card-summary">美光科技股价大涨19.31%，创2011年以来最大单日涨幅，带动其他存储芯片股走高。</div>
+      <div class="card-actions"><a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-27/doc-inhzhttw8519936.shtml" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">小米 REDMI Note 17R 获进网许可，首搭骁龙 4 Gen 4</div>
+      <div class="card-summary">REDMI Note 17R手机获进网许可，预计首搭高通骁龙4 Gen 4芯片。</div>
+      <div class="card-actions"><a class="card-link" href="https://www.ithome.com/list/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">快科技</span></div>
+      <div class="card-title">进口豪华车集体崩盘：奥迪保时捷跌幅惊人</div>
+      <div class="card-summary">2020年至2026年4月，雷克萨斯、奔驰、宝马、保时捷、奥迪等进口豪华车销量近乎腰斩。</div>
+      <div class="card-actions"><a class="card-link" href="https://news.mydrivers.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 航天/新能源 -->
+<section id="aerospace" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-aerospace">航天/新能源</span>
+    <h2>航天/新能源</h2><span class="section-count">共 4 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">快科技</span></div>
+      <div class="card-title">我国成功发射通信技术试验卫星二十四号</div>
+      <div class="card-summary">5月27日0时16分，长征七号改运载火箭在文昌航天发射场成功将通信技术试验卫星二十四号送入预定轨道。</div>
+      <div class="card-actions"><a class="card-link" href="https://news.mydrivers.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">快科技</span></div>
+      <div class="card-title">特斯拉攻克干法正极技术难题：4680 电池生产成本对半砍</div>
+      <div class="card-summary">特斯拉向美国专利商标局提交专利文件，已成功攻克干法正极技术瓶颈，电极生产成本近乎减半。</div>
+      <div class="card-actions"><a class="card-link" href="https://news.mydrivers.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">快科技</span></div>
+      <div class="card-title">美国公布最新月球基地建设路线图</div>
+      <div class="card-summary">NASA发布月球基地建设路线更新，向多家商业航天公司授予订单，披露3项计划于今年实施的月球任务。</div>
+      <div class="card-actions"><a class="card-link" href="https://news.mydrivers.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">科技趋势</span></div>
+      <div class="card-title">三星 MWC 发布石墨烯锂硫电池原型，4.8 分钟充满</div>
+      <div class="card-summary">三星在巴塞罗那MWC发布石墨烯锂硫电池原型，能量密度提升2.5倍，充电仅需4.8分钟。</div>
+      <div class="card-actions"><a class="card-link" href="https://llodo.com/technology/technology-trends-shaping-may-2026-breakthroughs-market-shifts-and-real-world-impact.html" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 数字创新 -->
+<section id="digital" class="section">
+  <div class="section-header">
+    <span class="section-badge badge-digital">数字创新</span>
+    <h2>数字创新</h2><span class="section-count">共 3 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">科技趋势</span></div>
+      <div class="card-title">欧盟发布 AI 法案修正案，全球 AI 风投达 780 亿美元</div>
+      <div class="card-summary">5月8日欧盟委员会发布AI法案修正案，全球AI风险投资5月达780亿美元，环比增长12%。</div>
+      <div class="card-actions"><a class="card-link" href="https://llodo.com/technology/technology-trends-shaping-may-2026-breakthroughs-market-shifts-and-real-world-impact.html" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">Gartner</span></div>
+      <div class="card-title">边缘 AI 芯片出货量 Q1 突破 23 亿颗，5G 用户达 49 亿</div>
+      <div class="card-summary">2026年Q1边缘AI芯片出货量突破23亿颗，全球5G用户达49亿，5G-Advanced开始商用。</div>
+      <div class="card-actions"><a class="card-link" href="https://llodo.com/technology/technology-trends-shaping-may-2026-breakthroughs-market-shifts-and-real-world-impact.html" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#18</span><span class="card-source">快科技</span></div>
+      <div class="card-title">富士山岩浆压力达宝永大喷发 16 倍，随时可能苏醒</div>
+      <div class="card-summary">东京大学监测数据显示富士山地下岩浆房压力达1.6兆帕，为理论喷发临界值的16倍，火山随时可能苏醒。</div>
+      <div class="card-actions"><a class="card-link" href="https://news.mydrivers.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="footer">数据来源：TechCrunch / The Verge / 36氪 / IT之家 / 快科技 / 财新 / Gartner 等公开科技媒体 · 生成时间 2026-05-27 08:50 北京时间</div>
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.card-animate').forEach(c=>observer.observe(c));
+</script>
+</body>
+</html>
