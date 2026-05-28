@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-05-28</title>
+<style>
+:root {
+  --c-bg: #0a1410;--c-surface: #111c16;--c-card: #1a2e22;--c-border: #1e4a2f;
+  --c-text: #e8f5ec;--c-text-dim: #88b39a;--c-accent: #10b981;--c-accent2: #34d399;
+  --c-accent-glow: rgba(16,185,129,0.15);
+  --c-grad-start: #059669;--c-grad-mid: #047857;--c-grad-end: #065f46;
+  --c-cat-sw: #3b82f6;--c-cat-hw: #f59e0b;--c-cat-space: #8b5cf6;--c-cat-digital: #ec4899;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(16,185,129,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(10,20,16,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-sw{background:var(--c-cat-sw)}.badge-hw{background:var(--c-cat-hw)}
+.badge-space{background:var(--c-cat-space)}.badge-digital{background:var(--c-cat-digital)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(52,211,153,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 28 日 · 星期四</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-sw)"></span> 互联网/软件 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-hw)"></span> 硬件/半导体 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-space)"></span> 航天/新能源 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-digital)"></span> 数字创新 <strong>3</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sw">互联网/软件<span class="nav-count">6</span></a>
+  <a href="#hw">硬件/半导体<span class="nav-count">5</span></a>
+  <a href="#space">航天/新能源<span class="nav-count">4</span></a>
+  <a href="#digital">数字创新<span class="nav-count">3</span></a>
+</div></nav>
+
+<main class="main">
+
+<section class="section" id="sw">
+  <div class="section-header">
+    <span class="section-badge badge-sw">SOFTWARE</span>
+    <h2>互联网 / 软件</h2>
+    <span class="section-count">6 条</span>
+  </div>
+  <div class="cards">
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#01</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">Meta 推出 Instagram/Facebook/WhatsApp 付费订阅服务</div>
+      <div class="card-summary">Meta为三大社交平台推出付费订阅，最低月费2.99美元，未来还将推出AI相关订阅套餐</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#02</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">微信 Win/Mac 4.1.10 正式版发布：边写边译功能上线</div>
+      <div class="card-summary">微信桌面端4.1.10正式版发布，新增边写边译功能，支持输入框内实时翻译</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://m.ithome.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#03</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">7-Zip 26.00 存在 8.8 分高危漏洞，请紧急升级</div>
+      <div class="card-summary">7-Zip压缩软件被发现的漏洞评分达8.8，可被利用执行任意代码，建议用户尽快升级</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://m.ithome.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#04</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">谷歌工程师利用内幕信息在 Polymarket 获利120万美元被起诉</div>
+      <div class="card-summary">谷歌工程师被指控利用内部信息在预测市场平台Polymarket上非法交易获利</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#05</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">Remote 借助 AI 工具实现人均营收增长50%</div>
+      <div class="card-summary">薪资管理初创公司Remote披露借助AI工具实现人均营收大幅提升，无需扩招员工</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#06</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">OpenAI 确认 ChatGPT 与 API 出现高延迟，现已修复</div>
+      <div class="card-summary">ChatGPT及API服务昨日出现高延迟问题，OpenAI已确认修复并恢复正常运行</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://m.ithome.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="hw">
+  <div class="section-header">
+    <span class="section-badge badge-hw">HARDWARE</span>
+    <h2>硬件 / 半导体</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#07</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">三星发布全球首款 4K 360Hz QD-OLED 显示器面板</div>
+      <div class="card-summary">支持FHD 680Hz双模切换，下半年量产，电竞显示技术再创新高</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://m.ithome.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#08</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">Snowflake 与 AWS 签署 60 亿美元 AI 芯片大单</div>
+      <div class="card-summary">云数据平台Snowflake与亚马逊AWS签署价值60亿美元AI芯片采购协议</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#09</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">Valve 调整 Steam Deck 售价，最高涨幅 300 美元</div>
+      <div class="card-summary">Steam Deck掌机价格调整，部分型号最高涨幅达300美元，引发玩家社区讨论</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://m.ithome.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">微软示警高性能 Win10/Win11 电脑成挖矿攻击目标</div>
+      <div class="card-summary">微软发出安全警告，称高性能Windows电脑正成为加密货币挖矿攻击的重点目标</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://m.ithome.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">鸿蒙智行新一代问界 M9 发布：47.98万元起</div>
+      <div class="card-summary">华为鸿蒙智行发布新一代问界M9，标准版47.98万起，领世加长版64.98万起</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://m.ithome.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="space">
+  <div class="section-header">
+    <span class="section-badge badge-space">SPACE & ENERGY</span>
+    <h2>航天 / 新能源</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">FAA 命令 SpaceX 调查 Starship V3 助推器故障</div>
+      <div class="card-summary">联邦航空管理局要求SpaceX对最新一次Starship V3助推器失败事故展开调查</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">Princeton 孵化 Thea Energy 完成 1 亿美元融资</div>
+      <div class="card-summary">核聚变初创公司Thea Energy完成1亿美元融资，跻身全球资金最雄厚的聚变能源公司之列</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">Beijing Post</span></div>
+      <div class="card-title">全球首个兆瓦级空中风电系统在四川宜宾升空2000米发电</div>
+      <div class="card-summary">S2000空中风力发电系统成功升至2000米高空并连接电网，开创空基风电新纪元</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://beijingpost.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">夏季用电高峰提前，南方电网电力负荷连续三天刷新纪录</div>
+      <div class="card-summary">南方电网电力负荷连续三天创下历史新高，光伏组件两项强制性国标明年6月起实施</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://m.ithome.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="digital">
+  <div class="section-header">
+    <span class="section-badge badge-digital">INNOVATION</span>
+    <h2>数字创新</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">CrowdStrike 与谷歌联手摧毁针对开源开发者的僵尸网络</div>
+      <div class="card-summary">合作瓦解一个专门针对开源软件开发者发动供应链攻击的黑客僵尸网络</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">英国签证门户网站泄露数千名申请人护照和自拍照片</div>
+      <div class="card-summary">签证平台发生严重数据泄露，大量护照及自拍照片外泄，平台方对报道媒体采取法律行动</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#18</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">蔚来自动驾驶发布中国首个城区领航辅助全域覆盖</div>
+      <div class="card-summary">蔚来旗舰SUV ES9正式上市，售价49.8万-62.8万起，推动汽车产业绿色循环发展</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://m.ithome.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  数据来源：TechCrunch / IT之家 / Morning Star / Beijing Post 等公开科技媒体<br>
+  自动生成于 2026-05-28 08:50 (UTC+8)
+</footer>
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.card-animate').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

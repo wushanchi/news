@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026-05-28</title>
+<style>
+:root {
+  --c-bg: #14110a;--c-surface: #1e1a10;--c-card: #2a2418;--c-border: #3d3522;
+  --c-text: #f5f0e6;--c-text-dim: #b0a888;--c-accent: #f59e0b;--c-accent2: #fbbf24;
+  --c-accent-glow: rgba(245,158,11,0.15);
+  --c-grad-start: #d97706;--c-grad-mid: #b45309;--c-grad-end: #92400e;
+  --c-cat-sports: #ef4444;--c-cat-fitness: #3b82f6;--c-cat-nutrition: #10b981;--c-cat-wellness: #8b5cf6;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(245,158,11,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(20,17,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-sports{background:var(--c-cat-sports)}.badge-fitness{background:var(--c-cat-fitness)}
+.badge-nutrition{background:var(--c-cat-nutrition)}.badge-wellness{background:var(--c-cat-wellness)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(251,191,36,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 28 日 · 星期四</div>
+  <h1 class="hero-title">运动健康日报</h1>
+  <div class="hero-total">今日 17 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-sports)"></span> 体坛快讯 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-fitness)"></span> 健身科学 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-nutrition)"></span> 营养饮食 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-cat-wellness)"></span> 身心养护 <strong>3</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sports">体坛快讯<span class="nav-count">7</span></a>
+  <a href="#fitness">健身科学<span class="nav-count">3</span></a>
+  <a href="#nutrition">营养饮食<span class="nav-count">4</span></a>
+  <a href="#wellness">身心养护<span class="nav-count">3</span></a>
+</div></nav>
+
+<main class="main">
+
+<section class="section" id="sports">
+  <div class="section-header">
+    <span class="section-badge badge-sports">SPORTS</span>
+    <h2>体坛快讯</h2>
+    <span class="section-count">7 条</span>
+  </div>
+  <div class="cards">
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#01</span><span class="card-source">ESPN / NBA</span></div>
+      <div class="card-title">NBA 总决赛 6 月 3 日开打，尼克斯静待雷霆或马刺</div>
+      <div class="card-summary">尼克斯横扫骑士进总决赛，等待雷霆与马刺西决胜者，NBA Finals将于6月3日正式开赛</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.nba.com/playoffs/2026" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#02</span><span class="card-source">腾讯体育</span></div>
+      <div class="card-title">雷霆主场 127-114 击败马刺，文班与切特冲突引发关注</div>
+      <div class="card-summary">文班亚马与切特迎面撞肩态度强硬，马刺出界球争议裁判不予理会，米奇被吹技术犯规</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://sports.qq.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#03</span><span class="card-source">腾讯体育</span></div>
+      <div class="card-title">尼克斯跨节轰 20-0 进攻狂潮，横扫骑士夺东部冠军</div>
+      <div class="card-summary">布伦森获东决MVP，唐斯举起东冠奖杯，尼克斯本世纪首次闯入总决赛</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://sports.qq.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#04</span><span class="card-source">F1 Official</span></div>
+      <div class="card-title">F1 2026赛季：Kimi Antonelli 四冠领跑，摩纳哥站即将开赛</div>
+      <div class="card-summary">新秀Antonelli连续赢下中国、日本、迈阿密和加拿大四站，Mercedes包揽前五站冠军</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.formula1.com/en/results/2026/races" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#05</span><span class="card-source">新浪体育</span></div>
+      <div class="card-title">中国小将吴宜泽 6-2 战胜肖恩·墨菲，挺进斯诺克八强</div>
+      <div class="card-summary">吴宜泽以6-2大比分击败名将肖恩·墨菲，强势晋级八强，展现中国斯诺克新生代实力</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://sports.sina.com.cn/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#06</span><span class="card-source">新浪体育</span></div>
+      <div class="card-title">曼联 4000 万镑锁定日系球员，转会窗口动态更新</div>
+      <div class="card-summary">曼联转会消息频出，4000万镑锁定日系新援目标，世界杯前夕各队加速阵容补强</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://sports.sina.com.cn/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#07</span><span class="card-source">腾讯体育</span></div>
+      <div class="card-title">NBA 官方追加普拉姆利一级恶意犯规，天王山蓄力撞翻麦凯恩</div>
+      <div class="card-summary">NBA官方追加升级普拉姆利犯规为一级恶意，哈利伯顿谈假摔称教练会专门教学</div>
+      <div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://sports.qq.com/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="fitness">
+  <div class="section-header">
+    <span class="section-badge badge-fitness">FITNESS</span>
+    <h2>健身科学</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#08</span><span class="card-source">ISSN</span></div>
+      <div class="card-title">国际运动营养学会确认维生素C/E及多酚的抗氧化功效</div>
+      <div class="card-summary">2026年立场声明确认饮食抗氧化剂如维生素C/E、多酚和类黄酮对运动恢复的积极作用</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.academicjobs.com/research-publication-news/sports-nutrition-research-2026-latest-scientist-findings-or-academicjobs-15221" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#09</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">甜菜根汁两周内重塑口腔菌群，有效降低老年人血压</div>
+      <div class="card-summary">最大规模研究之一发现，富含硝酸盐的甜菜根汁以独特方式重塑口腔细菌来降低血压</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/nutrition/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">多吃豆类和大豆可将高血压风险降低近30%</div>
+      <div class="card-summary">全球研究大型分析发现，食用更多豆类、扁豆、鹰嘴豆和豆腐等大豆食品显著降低高血压风险</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/nutrition/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="nutrition">
+  <div class="section-header">
+    <span class="section-badge badge-nutrition">NUTRITION</span>
+    <h2>营养饮食</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">研究发现冰沙中加入香蕉会大幅降低类黄酮吸收能力</div>
+      <div class="card-summary">在浆果冰沙中加入香蕉会降低身体吸收健康类黄酮的能力，简单食物组合影响营养获取</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/nutrition/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">番石榴汁或能让铁补充剂更有效改善贫血</div>
+      <div class="card-summary">17项研究综述发现，女性和青少年饮用番石榴汁配合铁补充剂效果更佳</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/nutrition/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">维生素D2补充剂或有"前所未知的"副作用</div>
+      <div class="card-summary">研究意外发现维生素D2补充剂可能降低体内更有效的维生素D3水平</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/nutrition/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">临床试验：每天吃牛肉不会恶化血糖或增加糖尿病风险</div>
+      <div class="card-summary">持续一个月每天食用6-7盎司牛肉的成年人，血糖控制和胰岛素敏感性未恶化</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/nutrition/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="wellness">
+  <div class="section-header">
+    <span class="section-badge badge-wellness">WELLNESS</span>
+    <h2>身心养护</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">日本科学家创造"超级"维生素K助力大脑自我修复</div>
+      <div class="card-summary">新型维生素K化合物可能帮助大脑再生丢失的神经元，或改变阿尔茨海默病治疗方式</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/nutrition/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">科学家在高温烹饪食品中发现隐藏致癌化学物质</div>
+      <div class="card-summary">烧烤、烘烤、烟熏和油炸等高温烹饪方法产生PAHs化合物，存在于多种日常食品中</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/nutrition/" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">Nature</span></div>
+      <div class="card-title">微量营养素-免疫互作影响情绪和精神障碍</div>
+      <div class="card-summary">病例对照研究揭示维生素C、铁、锌、镁等微量元素与外周血细胞指标在情绪及精神病中的关联</div>
+      <div class="card-actions"><span class="card-time">近日</span><a class="card-link" href="https://www.nature.com/subjects/nutrition/srep" target="_blank" rel="noopener noreferrer">原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a></div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  数据来源：ESPN / NBA / F1 / 腾讯体育 / 新浪体育 / ScienceDaily / Nature 等公开体育健康媒体<br>
+  自动生成于 2026-05-28 08:50 (UTC+8)
+</footer>
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.card-animate').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
