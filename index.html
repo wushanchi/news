@@ -257,7 +257,7 @@ a{color:inherit;text-decoration:none}
 
 <div class="date-bar">
   <label for="date-input">选择日期：</label>
-  <input type="date" id="date-input" class="date-picker" value="2026-05-22">
+  <input type="date" id="date-input" class="date-picker">
   <div class="date-nav">
     <button id="btn-prev" title="前一天">&#8249;</button>
     <button id="btn-today" title="今天">&#9679;</button>
@@ -268,35 +268,35 @@ a{color:inherit;text-decoration:none}
 <main class="main">
   <div class="grid">
     <!-- AI 晨报 -->
-    <a class="card card-ai" id="card-ai" href="ai-morning-2026-05-22.html" target="_blank">
+    <a class="card card-ai" id="card-ai" href="#" target="_blank">
       <div class="card-icon">🤖</div>
       <h3>AI 晨报</h3>
       <p>AI 行业最新动态：模型发布、产品更新、行业趋势、论文研究与技巧观点</p>
-      <span class="card-status status-ready" id="status-ai"><span class="status-dot"></span>今日已生成</span>
+      <span class="card-status status-pending" id="status-ai"><span class="status-dot"></span>加载中...</span>
     </a>
 
     <!-- 国际焦点 -->
-    <a class="card card-world" id="card-world" href="world-news-2026-05-22.html" target="_blank">
+    <a class="card card-world" id="card-world" href="#" target="_blank">
       <div class="card-icon">🌍</div>
       <h3>国际焦点</h3>
       <p>全球要闻速递：政治经济、国际关系、重大事件与社会动态</p>
-      <span class="card-status status-ready" id="status-world"><span class="status-dot"></span>今日已生成</span>
+      <span class="card-status status-pending" id="status-world"><span class="status-dot"></span>加载中...</span>
     </a>
 
     <!-- 科技日报 -->
-    <a class="card card-tech" id="card-tech" href="tech-news-2026-05-22.html" target="_blank">
+    <a class="card card-tech" id="card-tech" href="#" target="_blank">
       <div class="card-icon">💻</div>
       <h3>科技日报</h3>
       <p>科技前沿资讯：互联网、半导体、航天、新能源与数字创新</p>
-      <span class="card-status status-ready" id="status-tech"><span class="status-dot"></span>今日已生成</span>
+      <span class="card-status status-pending" id="status-tech"><span class="status-dot"></span>加载中...</span>
     </a>
 
     <!-- 运动健康 -->
-    <a class="card card-sports" id="card-sports" href="sports-health-2026-05-22.html" target="_blank">
+    <a class="card card-sports" id="card-sports" href="#" target="_blank">
       <div class="card-icon">⚽</div>
       <h3>运动健康</h3>
       <p>运动赛事与健康生活：体坛快讯、健身科学、营养饮食与身心养护</p>
-      <span class="card-status status-ready" id="status-sports"><span class="status-dot"></span>今日已生成</span>
+      <span class="card-status status-pending" id="status-sports"><span class="status-dot"></span>加载中...</span>
     </a>
   </div>
 
@@ -350,34 +350,30 @@ a{color:inherit;text-decoration:none}
     const today = new Date();
     const todayStr = fmtDate(today);
 
+    // 先设置链接 + "检查中"占位状态
     REPORTS.forEach(function(r){
       var href = r.prefix + '-' + dateStr + '.html';
       var card = document.getElementById('card-'+r.id);
       var statusEl = document.getElementById('status-'+r.id);
       card.href = href;
 
-      if(dateStr === todayStr && r.id === 'ai'){
-        statusEl.className = 'card-status status-ready';
-        statusEl.innerHTML = '<span class="status-dot"></span>今日已生成';
-      } else if(dateStr > todayStr){
+      if(dateStr > todayStr){
         statusEl.className = 'card-status status-empty';
         statusEl.innerHTML = '<span class="status-dot"></span>尚未到来';
       } else {
         statusEl.className = 'card-status status-pending';
         statusEl.innerHTML = '<span class="status-dot"></span>检查中...';
+        // 用 fetch HEAD 检测文件是否真实存在
+        (function(el, rId){
+          fetch(href, {method:'HEAD'}).then(function(res){
+            if(res.ok){
+              el.className = 'card-status status-ready';
+              el.innerHTML = '<span class="status-dot"></span>已生成 ✓';
+            }
+          }).catch(function(){});
+        })(statusEl, r.id);
       }
     });
-
-    if(dateStr !== todayStr || dateStr > todayStr){
-      section.style.display = 'block';
-      list.innerHTML = REPORTS.map(function(r){
-        var href = r.prefix + '-' + dateStr + '.html';
-        if(dateStr > todayStr){
-          return '<span class="status-tag status-empty">'+r.label+'：尚未到来</span>';
-        }
-        return '<span class="status-tag status-pending"><a href="'+href+'" target="_blank">'+r.label+'：查看 →</a></span>';
-      }).join('');
-    }
   }
 
   dateInput.addEventListener('change',function(){update(this.value)});
@@ -395,7 +391,9 @@ a{color:inherit;text-decoration:none}
     update(fmtDate(new Date()));
   });
 
-  update('2026-05-22');
+  update(fmtDate(new Date()));
+  // 页面加载时日期选择器同步为今天
+  dateInput.value = fmtDate(new Date());
 })();
 </script>
 
