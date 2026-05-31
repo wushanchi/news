@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-05-31</title>
+<style>
+:root{--c-bg:#06120a;--c-surface:#0c1a10;--c-card:#102416;--c-border:#1a3824;--c-text:#dcf5e6;--c-text-dim:#6d9e7a;--c-accent:#10b981;--c-accent2:#34d399;--c-accent-glow:rgba(16,185,129,0.18);--c-tag-a:#059669;--c-tag-b:#10b981;--c-tag-c:#34d399;--c-tag-d:#6ee7b7;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,#064e3b,#047857,#065f46);padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(16,185,129,0.1),transparent 60%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.85)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(6,18,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-a{background:var(--c-tag-a)}.badge-b{background:var(--c-tag-b)}.badge-c{background:var(--c-tag-c)}.badge-d{background:var(--c-tag-d)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.4);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim)}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(52,211,153,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 31 日 · 星期日</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-a)"></span> 互联网/软件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-b)"></span> 硬件/半导体 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-c)"></span> 航天/新能源 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-d)"></span> 数字创新 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-software">🌐 互联网<span class="nav-count">5</span></a>
+  <a href="#sec-hardware">💾 硬件<span class="nav-count">5</span></a>
+  <a href="#sec-space">🚀 航天<span class="nav-count">4</span></a>
+  <a href="#sec-innovation">💡 创新<span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+
+<section class="section" id="sec-software"><div class="section-header"><span class="section-badge badge-a">SOFTWARE</span><h2>互联网 / 软件</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">GitHub Copilot 按 token 计费引发开发者强烈不满</h3><p class="card-summary">微软旗下 AI 编程助手推出全新按 token 计费模式，被开发者怒斥"简直是笑话"，部分用户开始寻找替代方案。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">独家体验：Google 24/7 AI 助手 Gemini Spark 相当实用</h3><p class="card-summary">作者亲测 Google 全天候 AI 助手 Gemini Spark，称其能提供全天候智能辅助，实际体验远超预期。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">DuckDuckGo 安装量增长 30%，用户拒绝强制推送 AI 搜索</h3><p class="card-summary">隐私搜索引擎 DuckDuckGo 安装量大幅上涨，大量用户因为反感 Google 搜索强制加入 AI 功能而转投隐私优先选项。</p><div class="card-actions"><span class="card-time">5/26</span><a class="card-link" href="https://techcrunch.com/2026/05/26/duckduckgo-installs-are-up-30-as-users-reject-being-force-fed-googles-ai-search" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">Meta 推出 Instagram、Facebook、WhatsApp 付费订阅服务</h3><p class="card-summary">Meta 正式上线三大社交应用订阅服务，预计后续将推出 AI 相关付费套餐，开启社交巨头付费新模式。</p><div class="card-actions"><span class="card-time">5/27</span><a class="card-link" href="https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">浏览器大战升温，2026 年 Chrome 和 Safari 最佳替代品盘点</h3><p class="card-summary">浏览器市场竞争加剧，文章盘点 2026 年最受欢迎的替代浏览器，包括隐私优先和 AI 增强型选项。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://techcrunch.com/2026/05/30/as-the-browser-wars-heat-up-here-are-the-hottest-alternatives-to-chrome-and-safari-in-2026" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-hardware"><div class="section-header"><span class="section-badge badge-b">HARDWARE</span><h2>硬件 / 半导体</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">阿易 AI Notes</span></div><h3 class="card-title">NVIDIA 或于 6 月发布整合 Blackwell GPU 的 ARM 笔记本芯片 N1X</h3><p class="card-summary">NVIDIA 与联发科合作的 ARM 笔记本芯片 N1X 预计 6 月 1 日发布，目标接近 RTX 4070 图形性能，标志 NVIDIA 转型整机核心方案商。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://x.com/AYi_AInotes/status/2060779431648547016" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">Meta 据传正在研发 AI 可穿戴吊坠硬件</h3><p class="card-summary">Meta 正在开发 AI 吊坠可穿戴设备，进一步拓展硬件产品线，将 AI 助手以穿戴形态融入日常生活。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://techcrunch.com/2026/05/30/meta-is-reportedly-developing-an-ai-pendant" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">技术 CEO"AI 精神病"现象引发热议</h3><p class="card-summary">部分科技公司 CEO 过度追捧 AI、对 AI 能力产生不切实际认知的现象引发行业反思，理性回归呼声渐高。</p><div class="card-actions"><span class="card-time">5/27</span><a class="card-link" href="https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">SemiAnalysis</span></div><h3 class="card-title">xAI 放弃 JAX GPU 转向自研 C 训练框架</h3><p class="card-summary">xAI 宣布放弃 JAX GPU 方案，自研 Grok Build C 训练框架，其 JAX 堆栈 MFU 低于 10%，NVIDIA 两年支持工作宣告失败。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://x.com/SemiAnalysis_/status/2060571944575963482" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">新华网</span></div><h3 class="card-title">AI 智能体：从"对话 AI"到"行动 AI"的产业变革</h3><p class="card-summary">OpenClaw 等开源代理框架引爆产业变革，百度、阿里、腾讯、字节等科技巨头密集入局 AI Agent 赛道。</p><div class="card-actions"><span class="card-time">5/26</span><a class="card-link" href="https://www.news.cn/tech/20260526/fc9dfd9fff9b4651ba4aefe85ee116f5/c.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-space"><div class="section-header"><span class="section-badge badge-c">AEROSPACE</span><h2>航天 / 新能源</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">蓝色起源 New Glenn 火箭佛罗里达测试发生爆炸</h3><p class="card-summary">蓝色起源 New Glenn 重型运载火箭在佛罗里达测试过程中发生爆炸事故，具体原因正在调查中。</p><div class="card-actions"><span class="card-time">5/28</span><a class="card-link" href="https://techcrunch.com/2026/05/28/blue-origins-new-glenn-rocket-explodes-during-testing-in-florida" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">Slate Auto 将于 6 月 24 日公布电动车定价并开启预售</h3><p class="card-summary">电动车初创公司 Slate Auto 即将公布首款电动车定价并开启预售，为竞争激烈的电动汽车市场再添新玩家。</p><div class="card-actions"><span class="card-time">5/28</span><a class="card-link" href="https://techcrunch.com/2026/05/28/slate-auto-will-announce-pricing-and-take-preorders-for-its-ev-on-june-24" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#13</span><span class="card-source">Bloomberg</span></div><h3 class="card-title">软银将在法国投资 750 亿欧元建设 AI 数据中心</h3><p class="card-summary">软银集团计划投资 750 亿欧元在法国建设 AI 数据中心，创欧洲 AI 基础设施投资新纪录，推动绿色能源与算力结合。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://www.bloomberg.com/news/articles/2026-05-30/softbank-to-invest-some-75-billion-in-ai-in-france-reports-say" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#14</span><span class="card-source">Anthropic / TechCrunch</span></div><h3 class="card-title">Anthropic 融资 650 亿美元，IPO 前估值接近 1 万亿美元</h3><p class="card-summary">AI 巨头 Anthropic 完成 650 亿美元融资，IPO 前估值接近万亿美元，AI 赛道资本疯狂程度再创新高。</p><div class="card-actions"><span class="card-time">5/28</span><a class="card-link" href="https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-innovation"><div class="section-header"><span class="section-badge badge-d">INNOVATION</span><h2>数字创新</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#15</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">TikTok 向超级应用转型的战略路径分析</h3><p class="card-summary">TikTok 加速拓展功能版图，从短视频向社交、电商、本地服务等超级应用方向演进，挑战 Meta 生态霸主地位。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://techcrunch.com/2026/05/30/tiktoks-road-to-becoming-a-super-app" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#16</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">三位顶级 VC 谈 AI 投资狂潮：群体思维还是理性繁荣？</h3><p class="card-summary">三位顶级风险投资人分享对当前 AI 投资热潮的真实看法，探讨是否存在过度投资与泡沫风险。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://techcrunch.com/2026/05/30/the-groupthink-boom-what-three-top-vcs-really-think-about-the-ai-frenzy" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#17</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">新版 Siri 应用抢先体验，苹果对抗 ChatGPT 野心曝光</h3><p class="card-summary">新版 Siri 应用体验曝光，苹果计划以全新 AI 助手与 ChatGPT 正面交锋，深度整合系统级能力与隐私保护。</p><div class="card-actions"><span class="card-time">5/28</span><a class="card-link" href="https://techcrunch.com/2026/05/28/sneak-peek-at-new-siri-app-reveals-apples-plans-to-take-on-chatgpt-and-more" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#18</span><span class="card-source">阿里云</span></div><h3 class="card-title">阿里云 Qwen 成为 UEFA 独家 AI 合作伙伴至 2033 年</h3><p class="card-summary">阿里云和 Qwen 将利用大语言模型增强 UEFA 球迷互动与媒体内容体验，标志中国 AI 技术在顶级体育赛事场景重要突破。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://x.com/alibaba_cloud/status/2060520586489770167" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+</main>
+<footer class="footer">
+  <p>今日共收录 <strong>18</strong> 条科技资讯 · 数据来源：TechCrunch / The Verge / 36氪 / IT之家 等公开科技媒体</p>
+</footer>
+<script>
+(function(){'use strict';var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.12});document.querySelectorAll('.card-animate').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll('.card-animate').forEach(function(e,i){e.style.transitionDelay=(i%6)*0.06+'s'})},60)})();
+</script>
+</body>
+</html>

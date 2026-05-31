@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026-05-31</title>
+<style>
+:root{--c-bg:#0f0c04;--c-surface:#1a1408;--c-card:#221c0c;--c-border:#3a3018;--c-text:#faf0d8;--c-text-dim:#a89860;--c-accent:#f59e0b;--c-accent2:#fbbf24;--c-accent-glow:rgba(245,158,11,0.18);--c-tag-a:#d97706;--c-tag-b:#f59e0b;--c-tag-c:#fbbf24;--c-tag-d:#fcd34d;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,#78350f,#b45309,#92400e);padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(245,158,11,0.1),transparent 60%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.85)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(15,12,4,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-a{background:var(--c-tag-a)}.badge-b{background:var(--c-tag-b)}.badge-c{background:var(--c-tag-c)}.badge-d{background:var(--c-tag-d)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.4);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim)}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(251,191,36,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 31 日 · 星期日</div>
+  <h1 class="hero-title">运动健康日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-a)"></span> 体坛快讯 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-b)"></span> 健身科学 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-c)"></span> 营养饮食 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-d)"></span> 身心养护 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-sports">⚽ 体坛<span class="nav-count">7</span></a>
+  <a href="#sec-fitness">🏋️ 健身<span class="nav-count">4</span></a>
+  <a href="#sec-nutrition">🥗 营养<span class="nav-count">3</span></a>
+  <a href="#sec-wellness">🧘 养护<span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+
+<section class="section" id="sec-sports"><div class="section-header"><span class="section-badge badge-a">SPORTS</span><h2>体坛快讯</h2><span class="section-count">7 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">ESPN / NBC Sports</span></div><h3 class="card-title">NBA 西部决赛：雷霆与马刺激战，文班亚马 41+24 封神</h3><p class="card-summary">Victor Wembanyama 西决 G1 狂砍 41 分 24 篮板，雷霆需限制其发挥并激活 Chet Holmgren 进攻，系列赛悬念重重。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://www.nba.com/playoffs" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">ESPN</span></div><h3 class="card-title">NBA 东部决赛：尼克斯剑指 21 世纪首次总决赛</h3><p class="card-summary">纽约尼克斯在东决中表现强势，接近时隔二十余年重返 NBA 总决赛，"历史性之旅"引发全城狂热。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://www.espn.com/nba/story/_/id/48419498/nba-playoffs-2026-play-finals-schedule-scores-news-highlights-bracket-dates" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">FOX Sports</span></div><h3 class="card-title">IndyCar 底特律大奖赛 5 月 31 日正式开赛</h3><p class="card-summary">2026 雪佛兰底特律大奖赛于 5 月 31 日举行，IndyCar 系列赛在底特律街道赛道上演极速对决。</p><div class="card-actions"><span class="card-time">5/31</span><a class="card-link" href="https://www.foxsports.com/motor/chevrolet-detroit-grand-prix-ntt-indycar-series-may-31-2026-racetrax-6053" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">LiveScore</span></div><h3 class="card-title">全球足球联赛收官战密集进行，多国冠军揭晓</h3><p class="card-summary">5 月 31 日全球多场足球赛事进行，欧洲各大联赛进入收官阶段，欧冠半决赛第二轮争夺白热化。</p><div class="card-actions"><span class="card-time">5/31</span><a class="card-link" href="https://www.livescore.com/en/football/2026-05-31/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">新浪体育</span></div><h3 class="card-title">骑士 vs 掘金：哈登带领骑士冲击西部劲旅</h3><p class="card-summary">骑士近期豪取 3 连胜，新援哈登加盟后场上化学反应良好，对阵约基奇领衔的掘金队主场之战看点十足。</p><div class="card-actions"><span class="card-time">5/30</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">新浪体育</span></div><h3 class="card-title">雷霆 vs 湖人：杰伦·威廉姆斯复出，雷霆欲止连败</h3><p class="card-summary">西部第一雷霆核心亚历山大缺阵遭遇 2 连败，杰伦·威廉姆斯的回归将提升侧翼攻防威胁，客场挑战湖人值得关注。</p><div class="card-actions"><span class="card-time">5/30</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">NHRA / AP</span></div><h3 class="card-title">NHRA 波托马克国民赛 IIHF 男子冰球世锦赛同日进行</h3><p class="card-summary">5 月 31 日多项体育赛事同步上演，NHRA 直线加速赛在 Mechanicsville 举行，冰球世锦赛继续争夺。</p><div class="card-actions"><span class="card-time">5/31</span></div></article>
+</div></section>
+
+<section class="section" id="sec-fitness"><div class="section-header"><span class="section-badge badge-b">FITNESS</span><h2>健身科学</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">ScienceDaily</span></div><h3 class="card-title">全球研究：慢性肾病已影响近 8 亿人口</h3><p class="card-summary">一项大规模全球研究发现，慢性肾病现在影响全球近 8 亿人，已成为全球公共卫生头号挑战之一。</p><div class="card-actions"><span class="card-time">5/29</span><a class="card-link" href="https://www.sciencedaily.com/news/health_medicine" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">NIH</span></div><h3 class="card-title">NIH：科学家探索帮助中风幸存者重建技能的新方法</h3><p class="card-summary">美国国家卫生研究院报告，科学家正探索创新方法帮助中风幸存者恢复丧失的技能，提高生活质量。</p><div class="card-actions"><span class="card-time">5/26</span><a class="card-link" href="https://newsinhealth.nih.gov/2026/05" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">NIH</span></div><h3 class="card-title">NIH 资助研究：人类胰岛细胞图谱揭示糖尿病新线索</h3><p class="card-summary">NIH 资助的研究完成人类胰腺胰岛细胞全面表征，为糖尿病风险评估和治疗策略提供全新分子线索。</p><div class="card-actions"><span class="card-time">5/12</span><a class="card-link" href="https://www.nih.gov/news-events/news-releases" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">WHO / UN News</span></div><h3 class="card-title">WHO：埃博拉疫情在刚果民主共和国持续蔓延</h3><p class="card-summary">刚果（金）现有 906 例疑似埃博拉病例，223 例疑似死亡，WHO 警告"这是一种因照顾他人而感染的疾病"。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+</div></section>
+
+<section class="section" id="sec-nutrition"><div class="section-header"><span class="section-badge badge-c">NUTRITION</span><h2>营养饮食</h2><span class="section-count">3 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">NIHR / LinkedIn</span></div><h3 class="card-title">英国 NIHR 发布 2026 年 5 月健康研究月度综述</h3><p class="card-summary">英国国家健康与护理研究所发布 5 月综述，涵盖营养干预、癌症筛查和公共卫生政策最新研究成果。</p><div class="card-actions"><span class="card-time">5/29</span><a class="card-link" href="https://www.linkedin.com/pulse/nihr-brcs-monthly-news-round-up-may-2026-nihr-research-vvooe" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#13</span><span class="card-source">Harvard Health</span></div><h3 class="card-title">哈佛健康：2026 年夏季健康饮食指南更新</h3><p class="card-summary">哈佛大学公共卫生学院发布夏季饮食建议，强调多样植物蛋白摄入与限糖策略，推荐地中海饮食模式。</p><div class="card-actions"><span class="card-time">5/28</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#14</span><span class="card-source">Mayo Clinic</span></div><h3 class="card-title">Mayo Clinic：精准营养——在症状出现前发现疾病的新时代</h3><p class="card-summary">梅奥诊所推进精准营养与预防医学，利用分子标记在症状出现前识别疾病风险，实现个性化饮食干预。</p><div class="card-actions"><span class="card-time">5/28</span><a class="card-link" href="https://newsnetwork.mayoclinic.org/category/research/discovery-science/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-wellness"><div class="section-header"><span class="section-badge badge-d">WELLNESS</span><h2>身心养护</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#15</span><span class="card-source">UN News</span></div><h3 class="card-title">联合国：禁止儿童使用社交媒体还不够——平台必须从根本上安全</h3><p class="card-summary">联合国人权高专办发布 10 点框架，敦促科技公司从设计上保障儿童网络安全，而非简单禁止使用。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#16</span><span class="card-source">NIH</span></div><h3 class="card-title">NIH：烧伤康复新突破——关注幸存者生活质量改善</h3><p class="card-summary">科学家探索创新方法帮助烧伤幸存者重建生活质量，包括新型皮肤替代物和综合康复训练方案。</p><div class="card-actions"><span class="card-time">5/25</span><a class="card-link" href="https://newsinhealth.nih.gov/2026/05" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#17</span><span class="card-source">UNICEF</span></div><h3 class="card-title">UNICEF：加沙儿童心理健康危机急剧恶化</h3><p class="card-summary">联合国儿童基金会警告，加沙儿童不仅面临人身安全威胁，更陷入严重心理创伤的无尽苦难循环。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#18</span><span class="card-source">IPS / UN</span></div><h3 class="card-title">全球高温频发，极端气候对人体健康的连锁影响加剧</h3><p class="card-summary">创纪录热浪席卷全球，中暑、心血管疾病与呼吸系统疾病发病率同步攀升，脆弱人群面临最大威胁。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+</div></section>
+
+</main>
+<footer class="footer">
+  <p>今日共收录 <strong>18</strong> 条运动健康资讯 · 数据来源：ESPN / Sky Sports / 新浪体育 / Harvard Health / WHO 等公开体育健康媒体</p>
+</footer>
+<script>
+(function(){'use strict';var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.12});document.querySelectorAll('.card-animate').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll('.card-animate').forEach(function(e,i){e.style.transitionDelay=(i%6)*0.06+'s'})},60)})();
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国际焦点 · 2026-05-31</title>
+<style>
+:root{--c-bg:#0a0d14;--c-surface:#101520;--c-card:#161c2a;--c-border:#1e2d44;--c-text:#e6ecf5;--c-text-dim:#7d8fa8;--c-accent:#3b82f6;--c-accent2:#60a5fa;--c-accent-glow:rgba(59,130,246,0.18);--c-tag-a:#3b82f6;--c-tag-b:#4f9fcf;--c-tag-c:#6366f1;--c-tag-d:#8b5cf6;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,#1e3a5f,#1a4b8c,#0f3460);padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(59,130,246,0.1),transparent 60%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.85)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(10,13,20,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-a{background:var(--c-tag-a)}.badge-b{background:var(--c-tag-b)}.badge-c{background:var(--c-tag-c)}.badge-d{background:var(--c-tag-d)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.4);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim)}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(96,165,250,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 31 日 · 星期日</div>
+  <h1 class="hero-title">国际焦点日报</h1>
+  <div class="hero-total">今日 19 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-a)"></span> 政治外交 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-b)"></span> 经济财经 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-c)"></span> 重大事件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-d)"></span> 社会人文 <strong>5</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-politics">🏛️ 政治外交<span class="nav-count">5</span></a>
+  <a href="#sec-economy">💰 经济财经<span class="nav-count">4</span></a>
+  <a href="#sec-events">⚡ 重大事件<span class="nav-count">5</span></a>
+  <a href="#sec-society">🌏 社会人文<span class="nav-count">5</span></a>
+</div></nav>
+<main class="main">
+
+<section class="section" id="sec-politics"><div class="section-header"><span class="section-badge badge-a">POLITICS</span><h2>政治外交</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">新华社 / 环球网</span></div><h3 class="card-title">美伊局势持续紧张升级，美国对伊加码经济制裁</h3><p class="card-summary">美国财政部将伊朗相关多国个人和实体纳入新制裁名单，作为"经济狂怒行动"一部分，中东局势再添变数。</p><div class="card-actions"><span class="card-time">5/31</span><a class="card-link" href="https://finance.sina.com.cn/headline/2026-05-31/doc-inhztpvx9646489.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">Reuters / 新华网</span></div><h3 class="card-title">中东多国调解美伊谈判，霍尔木兹海峡安全成焦点</h3><p class="card-summary">海湾国家加紧斡旋美伊间接谈判，围绕核协议恢复和制裁解除展开密集外交，伊朗铀浓缩活动仍是核心障碍。</p><div class="card-actions"><span class="card-time">5/30</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">UN News</span></div><h3 class="card-title">罗马尼亚遭无人机袭击，联合国秘书长表示震惊</h3><p class="card-summary">一架无人机袭击罗马尼亚城市加拉茨居民楼，至少两人受伤，联合国秘书长对俄乌冲突外溢风险升级表示严重关切。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">UN News</span></div><h3 class="card-title">联合国呼吁加大对蓝盔维和部队政治和财政支持</h3><p class="card-summary">全球紧张局势加剧之际，联合国秘书长古特雷斯呼吁为身处险境的蓝盔维和人员提供更有力的政治支持和可靠财政保障。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">IPS</span></div><h3 class="card-title">联合国选举曾被利益交换、支票外交与豪华游轮所污染</h3><p class="card-summary">2026年联合国外交繁忙：新任联大主席将于9月上任，同时将选出新任秘书长接替安东尼奥·古特雷斯。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+</div></section>
+
+<section class="section" id="sec-economy"><div class="section-header"><span class="section-badge badge-b">ECONOMY</span><h2>经济财经</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">新浪财经</span></div><h3 class="card-title">美伊局势紧张升级扰动全球能源市场</h3><p class="card-summary">国际原油价格受中东地缘政治风险影响波动加剧，霍尔木兹海峡航运安全引发国际能源署关注，多国储备策略调整中。</p><div class="card-actions"><span class="card-time">5/31</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">Bloomberg</span></div><h3 class="card-title">软银将在法国投资 750 亿欧元建设 AI 数据中心</h3><p class="card-summary">软银集团计划投资 750 亿欧元（约 870 亿美元）在法国建设人工智能数据中心基础设施，标志欧洲 AI 投资新高。</p><div class="card-actions"><span class="card-time">5/30</span><a class="card-link" href="https://www.bloomberg.com/news/articles/2026-05-30/softbank-to-invest-some-75-billion-in-ai-in-france-reports-say" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">新华社</span></div><h3 class="card-title">China-US经贸磋商持续进行，五个方面取得初步成果</h3><p class="card-summary">中美经贸对话保持沟通渠道，双方围绕关税减免、技术转让等议题交换意见，释放积极合作信号。</p><div class="card-actions"><span class="card-time">5/30</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">环球网</span></div><h3 class="card-title">全球供应链重构加速，东南亚承接制造业转移</h3><p class="card-summary">跨国企业加速在东南亚布局生产基地，越南、马来西亚成受益最大经济体，区域全面经济伙伴关系协定效应持续释放。</p><div class="card-actions"><span class="card-time">5/30</span></div></article>
+</div></section>
+
+<section class="section" id="sec-events"><div class="section-header"><span class="section-badge badge-c">EVENTS</span><h2>重大事件</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">央视新闻</span></div><h3 class="card-title">马来西亚云顶高原观光巴士事故致 7 人受伤</h3><p class="card-summary">当地时间 5 月 30 日下午，马来西亚彭亨州云顶高原下山路段发生两辆观光巴士与一辆运动型车辆相撞事故，造成 7 人受伤。</p><div class="card-actions"><span class="card-time">5/31</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">WHO / UN News</span></div><h3 class="card-title">刚果民主共和国埃博拉疫情扩大至 906 例疑似病例</h3><p class="card-summary">最新一轮致命埃博拉疫情暴发两周后，WHO 估计刚果（金）现有 906 例疑似病例，包括 223 例疑似死亡。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">UN News</span></div><h3 class="card-title">加沙开斋节期间 26 人遇难，联合国人权调查员报告</h3><p class="card-summary">联合国人权事务高级专员办事处报告，自开斋节前夕起，加沙地带至少 26 名巴勒斯坦人遇难，人道危机持续恶化。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#13</span><span class="card-source">UNICEF</span></div><h3 class="card-title">加沙儿童深陷"无尽苦难循环"，UNICEF 呼吁扩大援助通道</h3><p class="card-summary">联合国儿童基金会官员表示，加沙恶劣条件使儿童陷入无尽苦难，心碎的父母只能旁观，国际人道行动需紧急扩大。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#14</span><span class="card-source">UN News</span></div><h3 class="card-title">联合国警告：2025 年冲突相关性暴力案例翻倍增加</h3><p class="card-summary">去年全球记录近 10,000 起冲突相关性暴力案例，为前一年两倍以上，强奸、性奴役和绑架被用作战争武器。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+</div></section>
+
+<section class="section" id="sec-society"><div class="section-header"><span class="section-badge badge-d">SOCIETY</span><h2>社会人文</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#15</span><span class="card-source">IPS</span></div><h3 class="card-title">全球热浪频发，气候危机已不再是未来警告</h3><p class="card-summary">随着创纪录高温席卷全球，气候危机已从对未来的警告变为当下现实，发展中国家承受最严重影响。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#16</span><span class="card-source">UN OHCHR</span></div><h3 class="card-title">联合国警告：禁止儿童使用社交媒体还不够，应从设计上保障安全</h3><p class="card-summary">联合国人权高专办发布 10 点框架，敦促各国政府和科技公司从根本上使社交平台安全，而非简单禁止儿童使用。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#17</span><span class="card-source">IPS</span></div><h3 class="card-title">当代战争形态演变：从坦克飞机到无人机群与网络战</h3><p class="card-summary">分析乌克兰、伊朗、黎巴嫩等多地持续冲突，指出当代战争已从传统装甲战演变为远程导弹、无人机群与网络战的综合体。</p><div class="card-actions"><span class="card-time">5/29</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#18</span><span class="card-source">新浪国际</span></div><h3 class="card-title">特朗普释放缓和信号，中东外交多方角力持续</h3><p class="card-summary">特朗普释放对伊朗谈判缓和信号，外界视其为新一轮博弈前的战略休整，中东格局仍高度不确定。</p><div class="card-actions"><span class="card-time">5/30</span></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#19</span><span class="card-source">央视网</span></div><h3 class="card-title">全球迎来超级赛事年，世界杯与冬奥会驱动体育外交</h3><p class="card-summary">2026年作为超级赛事年，足球世界杯、冬奥会、亚运会等顶级赛事接连登场，推动各国文化交流与经济合作。</p><div class="card-actions"><span class="card-time">5/30</span></div></article>
+</div></section>
+
+</main>
+<footer class="footer">
+  <p>今日共收录 <strong>19</strong> 条国际资讯 · 数据来源：Reuters / BBC / CNN / 新华网 / 环球网 / UN News 等公开新闻源</p>
+</footer>
+<script>
+(function(){'use strict';var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.12});document.querySelectorAll('.card-animate').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll('.card-animate').forEach(function(e,i){e.style.transitionDelay=(i%6)*0.06+'s'})},60)})();
+</script>
+</body>
+</html>
