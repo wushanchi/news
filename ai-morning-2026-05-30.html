@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 晨报 · 2026-05-30</title>
+<style>
+:root {
+  --c-bg: #0f0c0a;--c-surface: #1a1410;--c-card: #221a14;--c-border: #3a2a1e;
+  --c-text: #f0e6dc;--c-text-dim: #a89880;--c-accent: #ff6a3d;--c-accent2: #ff8c5a;
+  --c-accent-glow: rgba(255,106,61,0.18);--c-tag-model: #e85d3a;--c-tag-product: #f08c4a;
+  --c-tag-industry: #d4a24e;--c-tag-paper: #c07a5e;--c-tag-tip: #b8956e;
+  --c-grad-start: #ff5c28;--c-grad-mid: #e8452e;--c-grad-end: #c8203a;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(255,106,61,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(15,12,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-models{background:var(--c-tag-model)}.badge-products{background:var(--c-tag-product)}
+.badge-industry{background:var(--c-tag-industry)}.badge-paper{background:var(--c-tag-paper)}
+.badge-insights{background:var(--c-tag-tip)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(255,140,90,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 5 月 30 日 · 星期六</div>
+  <h1 class="hero-title">AI 晨报</h1>
+  <div class="hero-total">24 条 · 北京时间 08:00 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-model)"></span> 模型 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-product)"></span> 产品 <strong>8</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-industry)"></span> 行业 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-paper)"></span> 论文 <strong>1</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-tip)"></span> 观点 <strong>8</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-models">🤖 模型<span class="nav-count">4</span></a>
+  <a href="#sec-products">🚀 产品<span class="nav-count">8</span></a>
+  <a href="#sec-industry">🌍 行业<span class="nav-count">3</span></a>
+  <a href="#sec-paper">📄 论文<span class="nav-count">1</span></a>
+  <a href="#sec-insights">💡 观点<span class="nav-count">8</span></a>
+</div></nav>
+<main class="main">
+
+<!-- Models -->
+<section class="section" id="sec-models"><div class="section-header"><span class="section-badge badge-models">MODELS</span><h2>模型发布 / 更新</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">Greg Brockman</span></div><h3 class="card-title">OpenAI 推出实时翻译模型，支持 70+ 语言输入</h3><p class="card-summary">接收 70+ 语言语音输入，翻译成 13 种输出语言，已在智能眼镜上运行。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/gdb/status/2060452095279415725" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">阶跃星辰 StepFun</span></div><h3 class="card-title">阶跃星辰 Step 3.7 Flash 发布，聚焦智能体效率</h3><p class="card-summary">198B MoE 架构，11B 活跃参数，256K 上下文，支持多模态理解，Apache 2.0 开源。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/StepFun_ai/status/2060149124117475791" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">IT之家</span></div><h3 class="card-title">小米开源可控视频音效生成模型 ControlFoley</h3><p class="card-summary">统一支持文本/参考音频控制视频配音三类任务，多个 benchmark 开源 SOTA。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.ithome.com/0/957/282.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">Qwen Blog</span></div><h3 class="card-title">Qwen-VLA：从理解世界到在其中行动</h3><p class="card-summary">提供聊天、图像视频理解、生成、文档处理、搜索集成、工具利用等全面功能。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://qwen.ai/blog?id=qwenvla" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- Products -->
+<section class="section" id="sec-products"><div class="section-header"><span class="section-badge badge-products">PRODUCTS</span><h2>产品发布 / 更新</h2><span class="section-count">8 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">Greg Brockman</span></div><h3 class="card-title">Codex 可自主管理对话线程与并行任务</h3><p class="card-summary">可创建/搜索/整理/固定对话线程，为并行任务启动工作树。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/gdb/status/2060486309886443787" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">Gemini App</span></div><h3 class="card-title">Gemini Omni 可将草图变为现实</h3><p class="card-summary">在 Gemini 应用中上传画圆视频即可将草图变成真实内容。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/GeminiApp/status/2060435981946503243" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">OpenAI</span></div><h3 class="card-title">Codex 现已支持 Windows 端计算机使用功能</h3><p class="card-summary">Windows 用户可通过 ChatGPT 移动应用启动和引导 PC 上的任务。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/OpenAI/status/2060428604727771421" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">OpenRouter</span></div><h3 class="card-title">Guardrails：保护智能体、数据与成本</h3><p class="card-summary">可配置安全治理工具，提供预算执行、零数据保留、提示注入防御等功能。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://openrouter.ai/announcements/guardrails" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">Runway</span></div><h3 class="card-title">Runway API 持续扩展模型与端点支持</h3><p class="card-summary">新增 Seedance 2.0、GPT Image 2、HappyHorse 1.0 等模型 API。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/runwayml/status/2060453805519765548" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">OpenRouter</span></div><h3 class="card-title">OpenRouter 支持模型生成文件补丁</h3><p class="card-summary">通过 Responses API 使用 V4A diffs 提出文件编辑建议，服务端验证 diff 语法。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/OpenRouter/status/2060395056196936054" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">ChatGPT</span></div><h3 class="card-title">ChatGPT 对话目录功能上线</h3><p class="card-summary">适用于含 5 条以上回复的对话，方便用户管理长篇对话。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/ChatGPTapp/status/2060467129066070182" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">Gemini App</span></div><h3 class="card-title">Gemini 本月更新：全新界面与智能体助手</h3><p class="card-summary">全新设计的界面加上 Gemini Spark 全天候智能体辅助。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/GeminiApp/status/2060389565052096911" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- Industry -->
+<section class="section" id="sec-industry"><div class="section-header"><span class="section-badge badge-industry">INDUSTRY</span><h2>行业动态</h2><span class="section-count">3 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#13</span><span class="card-source">IT之家</span></div><h3 class="card-title">中央网信办等四部门：提升全民 AI 素养</h3><p class="card-summary">印发工作要点，强化 AI 赋能教育，加快人才培育，提升全民数字素养与技能。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.ithome.com/0/957/319.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#14</span><span class="card-source">OpenAI 官网</span></div><h3 class="card-title">波士顿儿童医院利用 AI 解锁新诊断</h3><p class="card-summary">部署 OpenAI 技术改善患者护理，成功帮助诊断超 40 种罕见病病例。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://openai.com/index/boston-childrens-hospital" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#15</span><span class="card-source">Google Blog</span></div><h3 class="card-title">滑铁卢大学未来实验室展示 AI 原型</h3><p class="card-summary">学生开发用于重塑教育和工作的 AI 原型，含手语辅导工具。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://blog.google/innovation-and-ai/technology/ai/university-waterloo-labs" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- Paper -->
+<section class="section" id="sec-paper"><div class="section-header"><span class="section-badge badge-paper">PAPER</span><h2>论文研究</h2><span class="section-count">1 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#16</span><span class="card-source">Fei-Fei Li, World Labs</span></div><h3 class="card-title">GPIC：大规模视觉生成基准数据集发布</h3><p class="card-summary">适用于大规模生成模型新时代的视觉生成基准数据集。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/drfeifei/status/2060404846734512205" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<!-- Insights -->
+<section class="section" id="sec-insights"><div class="section-header"><span class="section-badge badge-insights">INSIGHTS</span><h2>技巧与观点</h2><span class="section-count">8 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#17</span><span class="card-source">洪明</span></div><h3 class="card-title">Claude 设计卡片 Skill 支持 28 种布局 10 种主题</h3><p class="card-summary">文字/URL 一键生成公众号首图、小红书图文卡等视觉物料，开源工具。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/hongming731/status/2060487110906527820" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#18</span><span class="card-source">Rohan Paul</span></div><h3 class="card-title">极致推理速度：8×AMD MI300X 达 3000 tokens/s</h3><p class="card-summary">Kog 团队实现单用户 10-30 倍推理速度提升，协同设计 monokernel。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/rohanpaul_ai/status/2060409504693645440" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#19</span><span class="card-source">Berry Xia</span></div><h3 class="card-title">Adam's Law：用高频词写 Prompt 效果更好</h3><p class="card-summary">FaceMind 团队实验发现使用高频表达可显著提升大语言模型表现。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/berryxia/status/2060212428584202428" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#20</span><span class="card-source">邵猛</span></div><h3 class="card-title">Cursor 团队发布《开发者习惯报告》</h3><p class="card-summary">开发者周均代码产出从 3.6K 增至 8.6K 行，AI 代码 60 分钟留存率升至 81%。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://x.com/shao__meng/status/2060167182777249886" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#21</span><span class="card-source">HN / buzzing.cc</span></div><h3 class="card-title">Claude Code 文档中未提及的所有可配置选项</h3><p class="card-summary">深度解析 Claude Code 源码中的隐藏配置选项。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://buildingbetter.tech/p/i-read-the-claude-code-source-code" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#22</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">当公司过于"AI 上瘾"时会发生什么？</h3><p class="card-summary">Box 创始人称为"AI psychosis"，2026 年科技裁员已近 2025 全年水平。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/video/what-happens-when-companies-become-too-ai-pilled" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#23</span><span class="card-source">IT之家</span></div><h3 class="card-title">特斯拉 FSD 安全性宣称遭质疑</h3><p class="card-summary">路透社调查发现安全数据经不起推敲，11 位研究员指出统计方法缺陷。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://www.ithome.com/0/956/864.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#24</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">Scott Wu：AI 编程智能体不应取代人类</h3><p class="card-summary">Devvin 创始人表示 AI 编程智能体旨在增强而非取代人类程序员。</p><div class="card-actions"><span class="card-time">今日</span><a class="card-link" href="https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+</main>
+<footer class="footer">
+  <p>今日共收录 <strong>24</strong> 条 AI 资讯 · 数据来自 <a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a></p>
+</footer>
+<script>
+(function(){'use strict';var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.12});document.querySelectorAll('.card-animate').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll('.card-animate').forEach(function(e,i){e.style.transitionDelay=(i%6)*0.06+'s'})},60)})();
+</script>
+</body>
+</html>
