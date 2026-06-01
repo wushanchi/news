@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-06-01</title>
+<style>
+:root{--c-bg:#0a0f0d;--c-surface:#101914;--c-card:#16211b;--c-border:#1e3a2e;--c-text:#d8f0e4;--c-text-dim:#7aa090;--c-accent:#10b981;--c-accent2:#34d399;--c-accent-glow:rgba(16,185,129,0.18);--c-tag-a:#10b981;--c-tag-b:#2fb88e;--c-tag-c:#4ebf9c;--c-tag-d:#6dc6aa;--c-grad-start:#059669;--c-grad-mid:#10b981;--c-grad-end:#34d399;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid),var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(16,185,129,0.1),transparent 60%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.1);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.85)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(10,15,13,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-a{background:var(--c-tag-a)}.badge-b{background:var(--c-tag-b)}.badge-c{background:var(--c-tag-c)}.badge-d{background:var(--c-tag-d)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.4);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim)}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(52,211,153,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 1 日 · 星期一</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-a)"></span> 互联网/软件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-b)"></span> 硬件/半导体 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-c)"></span> 航天/新能源 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-d)"></span> 数字创新 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-internet">🌐 互联网<span class="nav-count">5</span></a>
+  <a href="#sec-hardware">💾 硬件<span class="nav-count">5</span></a>
+  <a href="#sec-space">🚀 航天<span class="nav-count">4</span></a>
+  <a href="#sec-digital">💡 创新<span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+
+<section class="section" id="sec-internet"><div class="section-header"><span class="section-badge badge-a">INTERNET</span><h2>互联网 / 软件</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">GitHub Copilot推出按token计费新定价，开发者强烈不满</h3><p class="card-summary">新按token使用量计费模式引发开发者community广泛抗议，称使用成本将大幅上涨。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">YouTuber执导电影包揽北美周末票房前两名</h3><p class="card-summary">本周末票房最高的两部电影均由YouTuber执导，标志短视频创作者向传统影视跨界。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">"This is fine"表情包创作者与AI公司Artisan达成版权和解</h3><p class="card-summary">经典网络表情包创作者KC Green与AI初创公司Artisan就版权侵权纠纷达成和解。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">Snap前高管联合推出Ghost Angels早期风投基金</h3><p class="card-summary">多位Snap前高管联合推出聚焦社交、AR、消费科技的风险投资基金。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">"AI精神病"概念引发科技行业激烈争论</h3><p class="card-summary">围绕AI过度依赖是否导致认知偏差展开大辩论，帮助从业者理性看待AI使用风险。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-hardware"><div class="section-header"><span class="section-badge badge-b">HARDWARE</span><h2>硬件 / 半导体</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">新华网</span></div><h3 class="card-title">华为正式发表「韬（τ）定律」改写全球半导体规则</h3><p class="card-summary">华为董事何庭波在ISCAS 2026发表半导体新定律，基于τ定律已量产381款芯片。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://www.news.cn/tech/20260526/75603364bbae42bab67933d63d63e373/c.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">IT之家</span></div><h3 class="card-title">华为秋季将推出麒麟芯片，率先采用逻辑折叠技术</h3><p class="card-summary">基于韬定律的新麒麟芯片将采用逻辑折叠技术，为半导体创新开辟新路径。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://www.ithome.com/0/957/718.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">软银宣布投资750亿欧元在法国建设数据中心</h3><p class="card-summary">软银在欧最大单笔算力投资，支持欧洲AI算力基础设施建设。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">环保活动家Erin Brockovich批评数据中心运营不透明</h3><p class="card-summary">知名环保活动家公开批评科技行业数据中心信息披露不足，引发行业讨论。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">法拉第Luce电动车发布引争议，但分析师称不影响销量</h3><p class="card-summary">法拉第Luce电动车负面评价不断，但品牌溢价和核心技术仍是高端电动车竞争力。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-space"><div class="section-header"><span class="section-badge badge-c">SPACE</span><h2>航天 / 新能源</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">IT之家</span></div><h3 class="card-title">特斯拉FSD完成首次全程零干预横穿加拿大自动驾驶</h3><p class="card-summary">Model搭载FSD V14.3.3从温哥华到哈利法克斯，6051公里全程零人工干预。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://www.ithome.com/0/957/718.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">SpaceX计划发起破纪录IPO</h3><p class="card-summary">SpaceX计划本月发起史上最大规模IPO之一，星链贡献61%营收与39%利润率。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#13</span><span class="card-source">新华网</span></div><h3 class="card-title">《中国未来产业科技创新发展报告（2026）》蓝皮书发布</h3><p class="card-summary">系统梳理全球未来产业发展态势，涵盖AI、量子、生物制造、低空经济等重点领域。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://www.digitalchina.gov.cn/2026/xwzx/szkx/202605/t20260527_5326826.htm" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#14</span><span class="card-source">36氪</span></div><h3 class="card-title">2026年五大核心风口：具身智能、AI Agent、低空经济居首</h3><p class="card-summary">新型储能、人形机器人商业化、AI Agent产业重构、低空经济等成为年度确定性风口。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://www.36kr.com/p/3705442276897280" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+<section class="section" id="sec-digital"><div class="section-header"><span class="section-badge badge-d">DIGITAL</span><h2>数字创新</h2><span class="section-count">4 条</span></div>
+<div class="cards">
+<article class="card card-animate"><div class="card-top"><span class="card-num">#15</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">黑人创业者季度融资创2022年以来新高</h3><p class="card-summary">2026年Q2美国黑人创业者融资额达2022年来最高，但中小项目融资难度未见缓解。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#16</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">硅谷精英追捧百亿级生物增强技术市场</h3><p class="card-summary">Vega$健身赛事深度解析：肽类、类固醇等生物增强技术在硅谷精英中的追捧热潮。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#17</span><span class="card-source">TechCrunch</span></div><h3 class="card-title">苹果WWDC将推AI升级：Gemini蒸馏模型本地运行</h3><p class="card-summary">苹果Siri及设备端AI升级将在iPhone本地运行Gemini蒸馏模型，强调隐私保护。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+<article class="card card-animate"><div class="card-top"><span class="card-num">#18</span><span class="card-source">The Verge</span></div><h3 class="card-title">中国发布下一代AI、自动驾驶、电池技术监管蓝图</h3><p class="card-summary">中国发布涵盖AI、自动驾驶、电池领域的技术术语监管蓝图，为下一代技术划定框架。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://www.theverge.com/" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+</div></section>
+
+</main>
+<footer class="footer">
+  <p>数据来源：TechCrunch / The Verge / IT之家 / 新华网 / 36氪 等公开科技媒体</p>
+</footer>
+<script>
+(function(){'use strict';var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.12});document.querySelectorAll('.card-animate').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll('.card-animate').forEach(function(e,i){e.style.transitionDelay=(i%6)*0.06+'s'})},60)})();
+</script>
+</body>
+</html>

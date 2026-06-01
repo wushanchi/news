@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国际焦点日报 · 2026-06-01</title>
+<style>
+:root {
+  --c-bg: #0a0e14;--c-surface: #10161e;--c-card: #161e2a;--c-border: #263040;
+  --c-text: #e0e8f0;--c-text-dim: #8899b0;--c-accent: #3b82f6;--c-accent2: #60a5fa;
+  --c-accent-glow: rgba(59,130,246,0.18);--c-tag-politics: #3b82f6;--c-tag-economy: #4f8fe0;
+  --c-tag-events: #5b9cf5;--c-tag-society: #6aa8f8;
+  --c-grad-start: #1d4ed8;--c-grad-mid: #2563eb;--c-grad-end: #3b82f6;
+  --radius: 14px;--radius-sm: 8px;--transition: 0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-mono: 'SF Mono','Cascadia Code','Consolas','Menlo',monospace;
+  --font-sans: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(59,130,246,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(10,14,20,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-politics{background:var(--c-tag-politics)}.badge-economy{background:var(--c-tag-economy)}
+.badge-events{background:var(--c-tag-events)}.badge-society{background:var(--c-tag-society)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(96,165,250,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 1 日 · 星期一</div>
+  <h1 class="hero-title">国际焦点日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-politics)"></span> 政治外交 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-economy)"></span> 经济财经 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-events)"></span> 重大事件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-society)"></span> 社会人文 <strong>3</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sec-politics">🌐 政治外交<span class="nav-count">7</span></a>
+  <a href="#sec-economy">💰 经济财经<span class="nav-count">5</span></a>
+  <a href="#sec-events">⚠️ 重大事件<span class="nav-count">5</span></a>
+  <a href="#sec-society">🏛️ 社会人文<span class="nav-count">3</span></a>
+</div></nav>
+<main class="main">
+
+<!-- ==================== 政治外交 ==================== -->
+<section class="section" id="sec-politics">
+<div class="section-header"><span class="section-badge badge-politics">Politics</span><h2>政治外交</h2><span class="section-count">7 条</span></div>
+<div class="cards">
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#1</span><span class="card-source">Reuters</span></div><h3 class="card-title">以色列升级黎巴嫩军事行动，埃及强烈谴责</h3><p class="card-summary">埃及外交部声明谴责以色列在黎巴嫩的军事升级为"公然侵略"，呼吁联合国安理会紧急制止。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/jjxw/2026-06-01/doc-inhzvsve4337974.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#2</span><span class="card-source">新华网</span></div><h3 class="card-title">伊朗将按自身立场修订伊美协议草案</h3><p class="card-summary">伊朗塔斯尼姆通讯社称伊美协议草案交换仍在继续，伊方将按自身立场提出修订建议。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://k.sina.com.cn/article_1699432410_654b47da02001rili.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#3</span><span class="card-source">CNN</span></div><h3 class="card-title">伊朗总统府再度否认佩泽希齐扬辞职传闻</h3><p class="card-summary">伊朗总统府官员表示总统将继续履行职责，指责境外媒体散布谣言。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/roll/2026-06-01/doc-inhzvsve4339466.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#4</span><span class="card-source">AP News</span></div><h3 class="card-title">伊朗官员强硬表态：不会对美退让妥协</h3><p class="card-summary">伊朗最高领袖军事顾问雷扎伊表示，伊朗无意向美国退让或妥协。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://news.sina.com.cn/w/2026-06-01/doc-inhzvsuw5697018.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#5</span><span class="card-source">Reuters</span></div><h3 class="card-title">美墨加协定只剩两国在谈，北美"三结义"前景堪忧</h3><p class="card-summary">美墨已就修订协定敲定谈判日程但未提及加拿大，加拿大另购瑞典预警机摆脱对美依赖。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://k.sina.com.cn/article_1914880192_7222c0c002001m1wm.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#6</span><span class="card-source">BBC</span></div><h3 class="card-title">日本鼓吹新版"印太战略"，寻求地区防务"新角色"</h3><p class="card-summary">日本防卫大臣小泉进次郎在香格里拉对话会上鼓吹新版印太构想，引发地区安全担忧。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/jjxw/2026-06-01/doc-inhzvsve4341492.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#7</span><span class="card-source">新华网</span></div><h3 class="card-title">以色列寻求美国支持扩大对黎真主党打击范围</h3><p class="card-summary">据以媒报道，以色列正寻求美国支持扩大对黎巴嫩真主党打击，包括对贝鲁特实施空袭。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://k.sina.com.cn/article_2810373291_a782e4ab02002um4w.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+</div>
+</section>
+
+<!-- ==================== 经济财经 ==================== -->
+<section class="section" id="sec-economy">
+<div class="section-header"><span class="section-badge badge-economy">Economy</span><h2>经济财经</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#8</span><span class="card-source">Reuters</span></div><h3 class="card-title">伯克希尔哈撒韦85亿美元收购泰勒莫里森住宅公司</h3><p class="card-summary">巴菲特旗下公司将收购美国住宅建筑商泰勒莫里森，交易完成后从纽交所退市。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/headline/2026-06-01/doc-inhzwckv5320139.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#9</span><span class="card-source">路透社</span></div><h3 class="card-title">欧盟考虑暂停调整对俄石油价格上限</h3><p class="card-summary">受伊朗局势动荡可能引发燃油供应短缺影响，欧盟考虑临时暂停对俄石油价格上限调整。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/headline/2026-06-01/doc-inhzwckv5320139.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#10</span><span class="card-source">AP News</span></div><h3 class="card-title">美国SEC提议废除上市公司气候信息披露规定</h3><p class="card-summary">美国证券交易委员会提议废除要求上市公司披露气候变化信息的相关规定。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/headline/2026-06-01/doc-inhzwckv5320139.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#11</span><span class="card-source">Reuters</span></div><h3 class="card-title">WTI原油突破90美元/桶，布伦特原油同步走高</h3><p class="card-summary">受中东局势紧张影响，国际油价大幅攀升，WTI原油突破90美元关口，涨幅超3%。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/headline/2026-06-01/doc-inhzwckv5320139.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#12</span><span class="card-source">路透社</span></div><h3 class="card-title">美国财长贝森特：伊朗袭击波斯湾邻国是"重大失误"</h3><p class="card-summary">美财长称伊朗石油主要装卸基地哈尔克岛已停运，地区盟友更密切配合冻结伊朗资金。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/headline/2026-06-01/doc-inhzwckv5320139.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+</div>
+</section>
+
+<!-- ==================== 重大事件 ==================== -->
+<section class="section" id="sec-events">
+<div class="section-header"><span class="section-badge badge-events">Events</span><h2>重大事件</h2><span class="section-count">5 条</span></div>
+<div class="cards">
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#13</span><span class="card-source">AP News</span></div><h3 class="card-title">缅甸储存采矿爆炸物建筑爆炸致46死逾70伤</h3><p class="card-summary">缅甸掸邦南坎镇一栋储存采矿炸药的建筑发生爆炸，造成重大伤亡，调查正在进行。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-june-1-2026-live-updates-11780253144647.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#14</span><span class="card-source">Reuters</span></div><h3 class="card-title">扎波罗热核电站遭无人机袭击，IAEA警告无异"玩火"</h3><p class="card-summary">乌克兰无人机袭击核电站所在城市，此前无人机还攻击了6号发电机组电机房。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/jjxw/2026-06-01/doc-inhzvsux8746085.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#15</span><span class="card-source">BBC</span></div><h3 class="card-title">黎巴嫩指责以色列实施"焦土政策"</h3><p class="card-summary">黎总理萨拉姆发表讲话，指责以色列完全摧毁黎南部城镇及民用基础设施。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://k.sina.com.cn/article_1914880192_7222c0c002001m1x0.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#16</span><span class="card-source">CNN</span></div><h3 class="card-title">英国就以色列黎巴嫩军事行动表态</h3><p class="card-summary">英国外交大臣库珀表示以色列军事升级已造成平民伤亡，压缩了外交斡旋空间。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://finance.sina.com.cn/headline/2026-06-01/doc-inhzwckv5320139.shtml" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#17</span><span class="card-source">AP News</span></div><h3 class="card-title">一颗流星在美国马萨诸塞州上空爆炸引发巨响</h3><p class="card-summary">流星在美国马萨诸塞州近海上空爆炸，多地居民听到爆炸声，无人员伤亡报告。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://k.sina.com.cn/article_1914880192_7222c0c002001m1wi.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+</div>
+</section>
+
+<!-- ==================== 社会人文 ==================== -->
+<section class="section" id="sec-society">
+<div class="section-header"><span class="section-badge badge-society">Society</span><h2>社会人文</h2><span class="section-count">3 条</span></div>
+<div class="cards">
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#18</span><span class="card-source">新华网</span></div><h3 class="card-title">46名中国公民从柬埔寨电诈园区成功获救</h3><p class="card-summary">中国驻柬埔寨大使馆通报，经中柬双方密切协作，46名中国公民从电诈园区获救。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://k.sina.com.cn/article_7857201856_1d45362c0019067u10.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#19</span><span class="card-source">Reuters</span></div><h3 class="card-title">2026世界杯倒计时：距离开赛仅剩10天</h3><p class="card-summary">2026美加墨世界杯将于6月11日开打，48支国家队128场对决，决赛在新泽西举行。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-june-1-2026-live-updates-11780253144647.html" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+<article class="card card-animate"><div class="card-top"><span class="card-num">#20</span><span class="card-source">Reuters</span></div><h3 class="card-title">G7领导人峰会6月在法国举行，SpaceX计划破纪录IPO</h3><p class="card-summary">本月重大事件：G7领导人峰会、世界杯开赛、SpaceX IPO等全球瞩目议程。</p><div class="card-actions"><span class="card-time">6/1</span><a class="card-link" href="https://www.graphicnews.com/en/pages/48050/world-agenda-june-2026" target="_blank" rel="noopener noreferrer">原文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a></div></article>
+
+</div>
+</section>
+
+</main>
+<footer class="footer">
+  <p>今日共收录 <strong>20</strong> 条国际要闻 · 数据来源：Reuters / BBC / CNN / 新华网 / Sina News / 环球网 等公开新闻源</p>
+</footer>
+<script>
+(function(){'use strict';var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.12});document.querySelectorAll('.card-animate').forEach(function(e){o.observe(e)});setTimeout(function(){document.querySelectorAll('.card-animate').forEach(function(e,i){e.style.transitionDelay=(i%6)*0.06+'s'})},60)})();
+</script>
+</body>
+</html>
