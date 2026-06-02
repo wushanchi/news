@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026-06-02</title>
+<style>
+:root{--c-bg:#0f0c06;--c-surface:#1a1508;--c-card:#221e0e;--c-border:#3a3218;--c-text:#f5efe0;--c-text-dim:#b8a878;--c-accent:#f59e0b;--c-accent2:#fbbf24;--c-accent-glow:rgba(245,158,11,0.18);--c-tag-sport:#d97706;--c-tag-fitness:#ca8a04;--c-tag-nutri:#eab308;--c-tag-mind:#fbbf24;--c-grad-start:#92400e;--c-grad-mid:#b45309;--c-grad-end:#d97706;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.06),transparent 60%),radial-gradient(circle at 70% 80%,rgba(245,158,11,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(15,12,6,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-sport{background:var(--c-tag-sport)}.badge-fitness{background:var(--c-tag-fitness)}.badge-nutri{background:var(--c-tag-nutri)}.badge-mind{background:var(--c-tag-mind)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 2 日 · 星期一</div>
+  <h1 class="hero-title">运动健康日报</h1>
+  <div class="hero-total">今日 17 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-sport)"></span> 体坛快讯 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-fitness)"></span> 健身科学 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-nutri)"></span> 营养饮食 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-mind)"></span> 身心养护 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sport"><span>⚽ 体坛快讯</span></a>
+  <a href="#fitness"><span>💪 健身科学</span></a>
+  <a href="#nutri"><span>🥗 营养饮食</span></a>
+  <a href="#mind"><span>🧘 身心养护</span></a>
+</div></nav>
+<main class="main">
+
+<!-- 体坛快讯 -->
+<section class="section" id="sport">
+  <div class="section-header">
+    <span class="section-badge badge-sport">SPORTS</span>
+    <h2>体坛快讯</h2>
+    <span class="section-count">6 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#1</span><span class="card-source">ESPN</span></div>
+      <div class="card-title">NBA总决赛：马刺vs尼克斯6月4日开打</div>
+      <div class="card-summary">马刺抢七淘汰雷霆重返总决赛，尼克斯横扫骑士自1999年来首进总决赛，时隔27年重演经典。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#2</span><span class="card-source">环球网</span></div>
+      <div class="card-title">法网2026：王曦雨晋级女单16强创个人最佳</div>
+      <div class="card-summary">中国选手王曦雨在2026年法国网球公开赛中晋级女单16强，创造个人大满贯最佳战绩。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#3</span><span class="card-source">Olympics.com</span></div>
+      <div class="card-title">法网2026：辛纳、德约科维奇、萨巴伦卡冲击红土荣耀</div>
+      <div class="card-summary">本赛季第二项大满贯赛事在巴黎罗兰·加洛斯进行，5月24日至6月7日赛程持续。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#4</span><span class="card-source">新华社</span></div>
+      <div class="card-title">巴黎圣日耳曼点球大战击败阿森纳成功卫冕</div>
+      <div class="card-summary">巴黎圣日耳曼在欧冠决赛中通过点球大战击败阿森纳，成功卫冕冠军。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#5</span><span class="card-source">南昌新闻</span></div>
+      <div class="card-title">健美操世界杯6月首次在中国南昌举办</div>
+      <div class="card-summary">世界体操联合会2026年南昌健美操世界杯6月27-29日举办，中国首次承办该项赛事。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#6</span><span class="card-source">Sportshistori</span></div>
+      <div class="card-title">6月体育日历：MLB Gehrig日、世界杯备战全面展开</div>
+      <div class="card-summary">6月2日MLB Lou Gehrig日，FIFA世界杯备战进入倒计时，全球体育赛事密集。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 健身科学 -->
+<section class="section" id="fitness">
+  <div class="section-header">
+    <span class="section-badge badge-fitness">FITNESS</span>
+    <h2>健身科学</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#7</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">间歇性禁食给大脑带来惊人变化</div>
+      <div class="card-summary">研究发现间歇性禁食不仅可减重，还能改变肠道菌群和脑活动模式，对认知有积极影响。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#8</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">能预测寿命的被遗忘器官——胸腺</div>
+      <div class="card-summary">Mass General Brigham用AI分析胸腺扫描，发现胸腺大小与免疫功能及寿命存在显著关联。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#9</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">为何癌症在中年比老年更易转移</div>
+      <div class="card-summary">研究发现黑色素瘤转移率在中年小鼠中最高，可能与免疫微环境年龄相关变化有关。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">NIH</span></div>
+      <div class="card-title">NIH批准实验性阿片类物质使用障碍治疗研究</div>
+      <div class="card-summary">IND生效，将对mitragynine（卡瓦叶提取物）进行人体安全性研究，开辟治疗新路径。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 营养饮食 -->
+<section class="section" id="nutri">
+  <div class="section-header">
+    <span class="section-badge badge-nutri">NUTRITION</span>
+    <h2>营养饮食</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">常见氨基酸助力小鼠在致命炎症中存活</div>
+      <div class="card-summary">Salk研究所发现甲硫氨酸可提升小鼠重症存活率，为营养干预脓毒症提供新思路。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">Omega-3鱼油对2型糖尿病有应用潜力</div>
+      <div class="card-summary">Omega-3补充剂可改善非肥胖个体的胰岛素抵抗，为2型糖尿病营养干预提供证据。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">修复DNA损伤：科学家发现褪黑素的意外新益处</div>
+      <div class="card-summary">褪黑素或可帮助夜班工作者提升DNA修复能力，对昼夜节律紊乱人群有保护作用。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 身心养护 -->
+<section class="section" id="mind">
+  <div class="section-header">
+    <span class="section-badge badge-mind">WELLNESS</span>
+    <h2>身心养护</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">科学家找到驱动阿尔茨海默病脑部炎症的隐藏开关</div>
+      <div class="card-summary">Scripps研究所发现STING蛋白修饰会持续引发炎症，为阿尔茨海默病治疗提供新靶点。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">ScienceDaily</span></div>
+      <div class="card-title">这种药物在疗程结束后仍能将类风湿关节炎延缓数年</div>
+      <div class="card-summary">abatacept治疗1年可延缓高风险人群发病，为自身免疫疾病预防性治疗开辟新方向。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">Nature</span></div>
+      <div class="card-title">Nature：商业抗体的可靠性引发新的担忧</div>
+      <div class="card-summary">科学家长期担忧商业抗体的可靠性问题，最新发现再次引发对科研可重复性的关注。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">Nature Medicine</span></div>
+      <div class="card-title">遗传变异与儿童癌症关联：75,602例测序数据分析</div>
+      <div class="card-summary">对2016-2025年间遗传检测数据的分析揭示了致病性胚系变异与儿童癌症的新关联。</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  数据来源：ESPN / Sky Sports / 新华社 / ScienceDaily / NIH / Nature 等公开体育健康媒体
+</footer>
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.08});
+document.querySelectorAll('.card-animate').forEach(c=>obs.observe(c));
+</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-06-02</title>
+<style>
+:root{--c-bg:#060f0c;--c-surface:#0c1a14;--c-card:#12241c;--c-border:#1e3a2e;--c-text:#e2f0e8;--c-text-dim:#7da894;--c-accent:#10b981;--c-accent2:#34d399;--c-accent-glow:rgba(16,185,129,0.18);--c-tag-web:#059669;--c-tag-hw:#0d9488;--c-tag-space:#14b8a6;--c-tag-digi:#6ee7b7;--c-grad-start:#047857;--c-grad-mid:#059669;--c-grad-end:#10b981;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.06),transparent 60%),radial-gradient(circle at 70% 80%,rgba(16,185,129,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(6,15,12,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-web{background:var(--c-tag-web)}.badge-hw{background:var(--c-tag-hw)}.badge-space{background:var(--c-tag-space)}.badge-digi{background:var(--c-tag-digi)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 2 日 · 星期一</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-web)"></span> 互联网/软件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-hw)"></span> 硬件/半导体 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-space)"></span> 航天/新能源 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-digi)"></span> 数字创新 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#web"><span>🌐 互联网/软件</span></a>
+  <a href="#hw"><span>🔧 硬件/半导体</span></a>
+  <a href="#space"><span>🚀 航天/新能源</span></a>
+  <a href="#digi"><span>✨ 数字创新</span></a>
+</div></nav>
+<main class="main">
+
+<!-- 互联网/软件 -->
+<section class="section" id="web">
+  <div class="section-header">
+    <span class="section-badge badge-web">WEB/SOFTWARE</span>
+    <h2>互联网/软件</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#1</span><span class="card-source">Microsoft</span></div>
+      <div class="card-title">Microsoft Build 2026开幕：聚焦AI代理与Copilot</div>
+      <div class="card-summary">Satya Nadella主持主题演讲，发布Agent 365、多模型路由Azure AI Foundry及Windows本地AI能力。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#2</span><span class="card-source">Perplexity</span></div>
+      <div class="card-title">Perplexity发布Search as Code搜索架构</div>
+      <div class="card-summary">AI智能体新搜索范式，直接编写Python代码调用搜索栈，已在Agent API中提供。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#3</span><span class="card-source">Replit</span></div>
+      <div class="card-title">Replit用单个提示词构建完整业务</div>
+      <div class="card-summary">一个提示词即可获得网站、移动应用、幻灯片和发布视频，免费开始。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#4</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">美团AI Agent"小美"与腾讯元宝深度合作</div>
+      <div class="card-summary">用户在腾讯元宝提交需求可无缝连接美团生态，面向智能体服务正变得日益重要。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#5</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">智谱建议A股发行并在科创板上市</div>
+      <div class="card-summary">计划发行2%-8%新股，募集资金用于AI大模型和MaaS平台，英文名称变更为Z.AI。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 硬件/半导体 -->
+<section class="section" id="hw">
+  <div class="section-header">
+    <span class="section-badge badge-hw">HARDWARE</span>
+    <h2>硬件/半导体</h2>
+    <span class="section-count">6 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#6</span><span class="card-source">NVIDIA</span></div>
+      <div class="card-title">NVIDIA发布RTX Spark超级芯片：重新发明PC</div>
+      <div class="card-summary">搭载Blackwell GPU、20核Grace CPU、128GB统一内存，被誉为"Windows版M1时刻"。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#7</span><span class="card-source">Intel</span></div>
+      <div class="card-title">Intel Arc G3/G3 Extreme掌机芯片正式亮相</div>
+      <div class="card-summary">GPU优先架构，搭载XeSS 3，帧率与功耗全面压制AMD，被评目前最佳掌机芯片。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#8</span><span class="card-source">Intel</span></div>
+      <div class="card-title">Intel预告Nova Lake桌面平台：最高48核</div>
+      <div class="card-summary">采用Intel 18A制程，支持Thunderbolt 5与Wi-Fi 7，COMPUTEX 2026重磅发布。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#9</span><span class="card-source">NVIDIA</span></div>
+      <div class="card-title">NVIDIA Vera全新CPU架构与Vera Rubin AI平台</div>
+      <div class="card-summary">Vera为AI代理设计，3.6TB/s内部带宽；Vera Rubin含7颗定制芯片、6万亿晶体管。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">Qualcomm</span></div>
+      <div class="card-title">Qualcomm发布Snapdragon C芯片：$300起售</div>
+      <div class="card-summary">专为平价Windows笔记本设计，性能对标A18 Pro，直接挑战MacBook Neo。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">Tom's Guide</span></div>
+      <div class="card-title">十铨科技发布首批第三方PCIe Gen6 SSD</div>
+      <div class="card-summary">T-CREATE MASTER Ai I6E顺序读取达28GB/s，面向AI训练场景，COMPUTEX展出。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 航天/新能源 -->
+<section class="section" id="space">
+  <div class="section-header">
+    <span class="section-badge badge-space">SPACE/ENERGY</span>
+    <h2>航天/新能源</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">OpenAI</span></div>
+      <div class="card-title">OpenAI在密歇根州启动Stargate 1GW数据中心</div>
+      <div class="card-summary">AI基础设施建设重要一步，旨在扩大AI可及性、创造就业机会并支持社区发展。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">英伟达和台积电将AI引入晶圆厂</div>
+      <div class="card-summary">两大巨头合作推动半导体设计与制造中AI技术的深度应用，加速芯片产业智能化。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">Tom's Guide</span></div>
+      <div class="card-title">AMD Ryzen 7 5800X3D十周年纪念版重新发布</div>
+      <div class="card-summary">售价$349（降价$100），6月25日上市，附赠新型导热材料，面向AM4用户。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 数字创新 -->
+<section class="section" id="digi">
+  <div class="section-header">
+    <span class="section-badge badge-digi">INNOVATION</span>
+    <h2>数字创新</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">Tom's Guide</span></div>
+      <div class="card-title">Asus ROG首款OLED电竞显示器540Hz刷新率</div>
+      <div class="card-summary">24.5英寸Tandem WOLED面板，540Hz刷新率，0.02ms响应时间，电竞显示器新标杆。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">Tom's Guide</span></div>
+      <div class="card-title">Dell XPS 13新款发布：$699史上最薄最轻</div>
+      <div class="card-summary">搭载Intel Wildcat Lake CPU，2.5K触控屏，续航17小时，剑指MacBook Neo。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">NVIDIA</span></div>
+      <div class="card-title">NVIDIA发布工厂运营蓝图FOX</div>
+      <div class="card-summary">自主工厂管理智能体参考设计，富士康等首批采用，预计根源分析时间缩短80%。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#18</span><span class="card-source">COMPUTEX</span></div>
+      <div class="card-title">COMPUTEX 2026首增机器人展区</div>
+      <div class="card-summary">AI从云端算力延伸到实体硬件，机器人与智慧移动首次成为独立展区，标志产业转型。</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  数据来源：TechCrunch / The Verge / Tom's Guide / 36氪 / IT之家 / 新华网 等公开科技媒体
+</footer>
+<script>
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.08});
+document.querySelectorAll('.card-animate').forEach(c=>obs.observe(c));
+</script>
+</body>
+</html>
