@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026-06-03</title>
+<style>
+:root{--c-bg:#0e0c06;--c-surface:#1a160e;--c-card:#242014;--c-border:#3a3020;--c-text:#f0ead8;--c-text-dim:#a89870;--c-accent:#f59e0b;--c-accent2:#fbbf24;--c-accent-glow:rgba(245,158,11,0.18);--c-tag-sport:#d97706;--c-tag-fitness:#b45309;--c-tag-nutrition:#ca8a04;--c-tag-wellness:#a16207;--c-grad-start:#b45309;--c-grad-mid:#d97706;--c-grad-end:#f59e0b;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.06),transparent 60%),radial-gradient(circle at 70% 80%,rgba(245,158,11,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(14,12,6,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-sport{background:var(--c-tag-sport)}.badge-fitness{background:var(--c-tag-fitness)}.badge-nutrition{background:var(--c-tag-nutrition)}.badge-wellness{background:var(--c-tag-wellness)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(251,191,36,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 3 日 · 星期三</div>
+  <h1 class="hero-title">运动健康日报</h1>
+  <div class="hero-total">今日 17 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-sport)"></span> 体坛快讯 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-fitness)"></span> 健身科学 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-nutrition)"></span> 营养饮食 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-wellness)"></span> 身心养护 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sport"><span>🏆 体坛快讯</span></a>
+  <a href="#fitness"><span>💪 健身科学</span></a>
+  <a href="#nutrition"><span>🥗 营养饮食</span></a>
+  <a href="#wellness"><span>🧘 身心养护</span></a>
+</div></nav>
+<main class="main">
+
+<!-- 体坛快讯 -->
+<section class="section" id="sport">
+  <div class="section-header">
+    <span class="section-badge badge-sport">SPORTS</span>
+    <h2>体坛快讯</h2>
+    <span class="section-count">6 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#1</span><span class="card-source">NBA</span></div>
+      <div class="card-title">NBA总决赛今日开战：马刺主场迎战尼克斯，1999年重演</div>
+      <div class="card-summary">文班亚马率领马刺队与布伦森的尼克斯队争夺总冠军，Game 1于北京时间6月4日8:30 ABC直播。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#2</span><span class="card-source">ESPN</span></div>
+      <div class="card-title">马刺vs尼克斯总决赛全解析：文班亚马对决布伦森</div>
+      <div class="card-summary">ESPN专家团全面剖析两队对决关键点，涵盖文班亚马统治力、布伦森领导力及战术博弈。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#3</span><span class="card-source">USA Today</span></div>
+      <div class="card-title">NBA总决赛赛程出炉：马刺尼克斯七场四胜制对决</div>
+      <div class="card-summary">完整赛程公布，马刺拥有主场优势，这是自1999年邓肯时代以来两队首次在总决赛相遇。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#4</span><span class="card-source">FIFA</span></div>
+      <div class="card-title">2026世界杯开幕倒计时：6月11日墨西哥城揭幕战</div>
+      <div class="card-summary">距世界杯开幕仅剩8天，48支球队齐聚美加墨，揭幕战将在阿兹特克体育场打响。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#5</span><span class="card-source">新浪体育</span></div>
+      <div class="card-title">文班亚马选出历史最佳首发五人组引热议</div>
+      <div class="card-summary">NBA新科超级巨星文班亚马分享个人心目中的历史最佳首发五人阵容，引发球迷广泛讨论。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#6</span><span class="card-source">新华网</span></div>
+      <div class="card-title">王楚钦被任命为中国男乒队长，率队出征世锦赛</div>
+      <div class="card-summary">中国乒乓名将王楚钦在2026 ITTF世界团体锦标赛表现优异后，被正式任命为中国男队队长。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 健身科学 -->
+<section class="section" id="fitness">
+  <div class="section-header">
+    <span class="section-badge badge-fitness">FITNESS</span>
+    <h2>健身科学</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#7</span><span class="card-source">Frontiers</span></div>
+      <div class="card-title">最新综述：运动与睡眠的双向影响机制</div>
+      <div class="card-summary">Frontiers发表综述研究表明运动和睡眠存在双向促进关系，适度运动显著改善睡眠质量。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#8</span><span class="card-source">Sydney University</span></div>
+      <div class="card-title">悉尼大学研究：每日微习惯改变可延长健康寿命</div>
+      <div class="card-summary">改善睡眠、增加运动、优化饮食的微小日常改变，可显著增加健康预期寿命和总寿命。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#9</span><span class="card-source">The Lancet</span></div>
+      <div class="card-title">柳叶刀：睡眠+运动+营养三项组合决定健康寿命</div>
+      <div class="card-summary">SPAN三要素（睡眠、运动、营养）是决定寿命和健康寿命的关键因子，不应孤立研究。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">Sports Illustrated</span></div>
+      <div class="card-title">2026年夏季运动趋势：户外混合训练成主流</div>
+      <div class="card-summary">融合力量、有氧与柔韧性的户外混合训练成为2026年夏季全球健身新趋势。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 营养饮食 -->
+<section class="section" id="nutrition">
+  <div class="section-header">
+    <span class="section-badge badge-nutrition">NUTRITION</span>
+    <h2>营养饮食</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">Nature Medicine</span></div>
+      <div class="card-title">Nature Medicine：胶质母细胞瘤干细胞移植中期结果积极</div>
+      <div class="card-summary">I/II期临床试验中期分析显示，基因工程自体干细胞移植可为胶质母细胞瘤患者带来新希望。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">Harvard Health</span></div>
+      <div class="card-title">哈佛健康：2026年最佳抗炎饮食模式推荐</div>
+      <div class="card-summary">地中海饮食与DASH饮食再次被哈佛医学院评为年度最佳抗炎饮食模式，有助降低慢性病风险。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">Medical News Today</span></div>
+      <div class="card-title">研究发现：每日摄入足量膳食纤维可降低15%全因死亡率</div>
+      <div class="card-summary">大规模荟萃分析表明每日摄入25-30克膳食纤维，可显著降低全因死亡率和心血管疾病风险。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 身心养护 -->
+<section class="section" id="wellness">
+  <div class="section-header">
+    <span class="section-badge badge-wellness">WELLNESS</span>
+    <h2>身心养护</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">AASM</span></div>
+      <div class="card-title">美国睡眠医学会Q1报告：睡眠健康五大关键趋势</div>
+      <div class="card-summary">2026年Q1睡眠医学报告揭示AI辅助睡眠诊断、个性化睡眠方案等五大趋势，睡眠健康受重视。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">Nature Medicine</span></div>
+      <div class="card-title">个性化医疗2026：精准预防成为新前沿</div>
+      <div class="card-summary">Nature Medicine预测2026年精准预防将成为医疗新前沿，基因检测与AI辅助个体化健康管理结合。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">丁香医生</span></div>
+      <div class="card-title">夏季心理健康：高温天气下的情绪管理指南</div>
+      <div class="card-summary">炎热天气可能导致情绪波动和焦虑加重，专家建议通过规律作息和适度运动来调节心理状态。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">WHO</span></div>
+      <div class="card-title">WHO发布2026全球健康新指南：数字健康工具规范化</div>
+      <div class="card-summary">世界卫生组织发布数字健康工具规范化新指南，推动AI辅助诊断和远程医疗在全球的标准化应用。</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <p>数据来源：ESPN / NBA / Sky Sports / 新浪体育 / Harvard Health / The Lancet / WHO 等公开体育健康媒体</p>
+  <p style="margin-top:4px">生成时间：2026年6月3日 08:50（北京时间）</p>
+</footer>
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.card-animate').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国际焦点日报 · 2026-06-03</title>
+<style>
+:root{--c-bg:#080c14;--c-surface:#0e1420;--c-card:#141c2c;--c-border:#1e2d44;--c-text:#e8edf5;--c-text-dim:#8899b8;--c-accent:#3b82f6;--c-accent2:#60a5fa;--c-accent-glow:rgba(59,130,246,0.18);--c-tag-pol:#2563eb;--c-tag-eco:#0ea5e9;--c-tag-event:#8b5cf6;--c-tag-social:#6366f1;--c-grad-start:#1d4ed8;--c-grad-mid:#2563eb;--c-grad-end:#3b82f6;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.06),transparent 60%),radial-gradient(circle at 70% 80%,rgba(59,130,246,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(8,12,20,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-pol{background:var(--c-tag-pol)}.badge-eco{background:var(--c-tag-eco)}.badge-event{background:var(--c-tag-event)}.badge-social{background:var(--c-tag-social)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(96,165,250,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 3 日 · 星期三</div>
+  <h1 class="hero-title">国际焦点日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-pol)"></span> 政治外交 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-eco)"></span> 经济财经 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-event)"></span> 重大事件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-social)"></span> 社会人文 <strong>5</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#pol"><span>🏛️ 政治外交</span></a>
+  <a href="#eco"><span>💰 经济财经</span></a>
+  <a href="#event"><span>⚠️ 重大事件</span></a>
+  <a href="#social"><span>🌍 社会人文</span></a>
+</div></nav>
+<main class="main">
+
+<!-- 政治外交 -->
+<section class="section" id="pol">
+  <div class="section-header">
+    <span class="section-badge badge-pol">POLITICS</span>
+    <h2>政治外交</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#1</span><span class="card-source">新华网</span></div>
+      <div class="card-title">伊朗宣称袭击美军第五舰队总部，美军予以否认</div>
+      <div class="card-summary">伊朗革命卫队称对驻巴林美军第五舰队总部等多处基地实施打击，美军否认总部被成功击中。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#2</span><span class="card-source">CNN</span></div>
+      <div class="card-title">伊朗宣布暂停与美国核谈判，特朗普否认对话中断</div>
+      <div class="card-summary">伊朗因以色列在黎巴嫩行动暂停与美谈判，特朗普坚称谈判仍在继续，美方积极寻求维持对话。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#3</span><span class="card-source">新华网</span></div>
+      <div class="card-title">鲁比奥：以色列拟控加沙七成区域不符美方立场</div>
+      <div class="card-summary">美国国务卿表示以色列计划控制加沙70%区域方案与美国立场不符，美方将持续斡旋中东和平。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#4</span><span class="card-source">新华网</span></div>
+      <div class="card-title">匈牙利总理表示准备好与泽连斯基会谈</div>
+      <div class="card-summary">匈牙利总理欧尔班释放外交善意，表示愿意与乌克兰总统泽连斯基展开直接对话以缓和欧陆局势。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#5</span><span class="card-source">Elysée</span></div>
+      <div class="card-title">G7峰会定于6月14-16日在法国依云举行</div>
+      <div class="card-summary">法国总统马克龙将主持第52届G7峰会，聚焦全球AI治理、气候行动与中东局势等核心议题。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 经济财经 -->
+<section class="section" id="eco">
+  <div class="section-header">
+    <span class="section-badge badge-eco">ECONOMY</span>
+    <h2>经济财经</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#6</span><span class="card-source">Bloomberg</span></div>
+      <div class="card-title">Alphabet拟融资800亿美元扩建AI基础设施</div>
+      <div class="card-summary">含伯克希尔100亿美元私募协议，全部用于AI基础设施建设，规模为科技史上最大单笔融资之一。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#7</span><span class="card-source">Bloomberg</span></div>
+      <div class="card-title">Anthropic秘密提交IPO文件，SK海力士市值首破万亿美元</div>
+      <div class="card-summary">AI独角兽Anthropic秘密递交S-1注册草案，力争2026年秋登陆美股；SK海力士市值创新里程碑。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#8</span><span class="card-source">Reuters</span></div>
+      <div class="card-title">软银宣布750亿欧元投资法国AI算力集群</div>
+      <div class="card-summary">软银在美国以外最大单笔AI投资，总算力5GW，首期450亿欧元，计划2031年在法建成3.1GW算力。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#9</span><span class="card-source">Bloomberg</span></div>
+      <div class="card-title">SpaceX提交S-1修正案，马斯克同意366天股份锁定</div>
+      <div class="card-summary">SpaceX提交IPO修正文件显示马斯克已接受为期366天的股份锁定安排，由高盛负责约束执行。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">Reuters</span></div>
+      <div class="card-title">WTI原油突破93美元，中东局势推动油价上行</div>
+      <div class="card-summary">受美伊军事对峙升级影响，国际油价持续攀升，OPEC+拟7月增产以稳定市场，市场高度关注。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 重大事件 -->
+<section class="section" id="event">
+  <div class="section-header">
+    <span class="section-badge badge-event">EVENTS</span>
+    <h2>重大事件</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">Independent</span></div>
+      <div class="card-title">以色列无人机袭击黎巴嫩南部致11人死亡</div>
+      <div class="card-summary">以色列无人机对黎巴嫩南部发动袭击，造成包括父子三人在内的11名平民死亡，局势急剧恶化。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">新华网</span></div>
+      <div class="card-title">美军证实空袭伊朗格什姆岛，科威特拦截来袭导弹</div>
+      <div class="card-summary">美军确认对伊朗格什姆岛实施空袭并拦截伊朗导弹无人机，科威特宣布成功拦截来袭导弹。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">新华网</span></div>
+      <div class="card-title">墨西哥总统指责美国干涉内政另有所图</div>
+      <div class="card-summary">墨西哥总统批评美国干涉墨国内政，指责美方以关税等手段施压背后另有政治目的，双边关系趋紧。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">Reuters</span></div>
+      <div class="card-title">乌克兰幕僚长称乌方已准备好接受当前前线现状</div>
+      <div class="card-summary">泽连斯基幕僚长表示乌克兰愿意接受与俄罗斯维持当前前线现状，释放重要停战信号。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">UN News</span></div>
+      <div class="card-title">刚果（金）埃博拉疫情：四名护士康复出院</div>
+      <div class="card-summary">四名感染埃博拉病毒的护士在东部刚果（金）康复出院，此次疫情此前引发国际卫生紧急警报。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 社会人文 -->
+<section class="section" id="social">
+  <div class="section-header">
+    <span class="section-badge badge-social">SOCIETY</span>
+    <h2>社会人文</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">新华网</span></div>
+      <div class="card-title">泰国司法部长：前总理他信将被特赦</div>
+      <div class="card-summary">泰国司法部长宣布前总理他信·西那瓦将获得特赦，此举可能对泰国政局产生深远影响。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">新华网</span></div>
+      <div class="card-title">伊拉克两支民兵武装宣布将武器交由国家管控</div>
+      <div class="card-summary">伊拉克两支重要民兵武装宣布将武器移交国家统一管控，有助于促进伊拉克国内安全稳定。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#18</span><span class="card-source">新华网</span></div>
+      <div class="card-title">美国加州发生银行劫持人质事件，警方介入处置</div>
+      <div class="card-summary">美国加利福尼亚州一家银行内发生劫持人质事件，当地警方已紧急介入并展开处置行动。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#19</span><span class="card-source">FIFA</span></div>
+      <div class="card-title">2026 FIFA世界杯开幕倒计时：6月11日首战打响</div>
+      <div class="card-summary">距FIFA世界杯开幕仅剩8天，揭幕战将在墨西哥城阿兹特克体育场举行，48支球队蓄势待发。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#20</span><span class="card-source">CNN</span></div>
+      <div class="card-title">黎官员称真主党已准备好与以色列全面停火</div>
+      <div class="card-summary">黎巴嫩官员透露真主党有意与以色列达成全面停火协议，为中东局势带来一线缓和希望。</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <p>数据来源：Reuters / BBC / CNN / 新华网 / 环球网 / Bloomberg / Independent 等公开新闻源</p>
+  <p style="margin-top:4px">生成时间：2026年6月3日 08:50（北京时间）</p>
+</footer>
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.card-animate').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

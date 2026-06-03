@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-06-03</title>
+<style>
+:root{--c-bg:#060e0a;--c-surface:#0c1a12;--c-card:#122218;--c-border:#1c3826;--c-text:#e0f0e6;--c-text-dim:#80a890;--c-accent:#10b981;--c-accent2:#34d399;--c-accent-glow:rgba(16,185,129,0.18);--c-tag-web:#059669;--c-tag-hw:#0d9488;--c-tag-space:#6366f1;--c-tag-digital:#8b5cf6;--c-grad-start:#047857;--c-grad-mid:#059669;--c-grad-end:#10b981;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.06),transparent 60%),radial-gradient(circle at 70% 80%,rgba(16,185,129,0.1),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(6,14,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-web{background:var(--c-tag-web)}.badge-hw{background:var(--c-tag-hw)}.badge-space{background:var(--c-tag-space)}.badge-digital{background:var(--c-tag-digital)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(52,211,153,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 3 日 · 星期三</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-web)"></span> 互联网/软件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-hw)"></span> 硬件/半导体 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-space)"></span> 航天/新能源 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-digital)"></span> 数字创新 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#web"><span>🌐 互联网/软件</span></a>
+  <a href="#hw"><span>🔧 硬件/半导体</span></a>
+  <a href="#space"><span>🚀 航天/新能源</span></a>
+  <a href="#digital"><span>💡 数字创新</span></a>
+</div></nav>
+<main class="main">
+
+<!-- 互联网/软件 -->
+<section class="section" id="web">
+  <div class="section-header">
+    <span class="section-badge badge-web">WEB</span>
+    <h2>互联网/软件</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#1</span><span class="card-source">GitHub Blog</span></div>
+      <div class="card-title">GitHub Copilot桌面应用发布：智能体原生体验</div>
+      <div class="card-summary">微软Build 2026发布Copilot桌面应用，定位"智能体原生"，让AI以用户习惯方式工作。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#2</span><span class="card-source">Claude Blog</span></div>
+      <div class="card-title">Claude Code新增动态工作流：运行时即兴创建多智能体</div>
+      <div class="card-summary">允许模型在运行时即兴创建和协调多智能体框架处理复杂任务，解决长时间执行的智能惰性问题。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#3</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">微软开源AI评估框架：用文本描述即可创建测试</div>
+      <div class="card-summary">Adaptive Spec-driven Scoring框架，开发者可通过自然语言描述快速生成AI行为评估与回归测试。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#4</span><span class="card-source">OpenAI</span></div>
+      <div class="card-title">OpenAI Codex推出Python SDK，可直接嵌入应用</div>
+      <div class="card-summary">pip install openai-codex即可集成，相当于内置顶级编程和生图Agent，复用Codex登录态。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#5</span><span class="card-source">Google DeepMind</span></div>
+      <div class="card-title">Google DeepMind开源科学智能体工具包Science Skills</div>
+      <div class="card-summary">专为科学发现的自主智能体设计，以更高token效率加速智能体工作流，已发布至GitHub。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 硬件/半导体 -->
+<section class="section" id="hw">
+  <div class="section-header">
+    <span class="section-badge badge-hw">HARDWARE</span>
+    <h2>硬件/半导体</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#6</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">英伟达发布RTX Spark PC处理器：联发科20核CPU+Blackwell GPU</div>
+      <div class="card-summary">3nm工艺，6144 CUDA核心，AI性能达1 petaFLOP，正式进军Windows PC处理器赛道。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#7</span><span class="card-source">Tom's Hardware</span></div>
+      <div class="card-title">COMPUTEX 2026 Day 2：各大厂商新品持续发布</div>
+      <div class="card-summary">NVIDIA、Intel、AMD、Qualcomm等厂商在台北COMPUTEX上竞相发布新产品，AI PC时代全面到来。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#8</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">英伟达Vera Rubin架构全面量产，AI工厂平台DSX亮相</div>
+      <div class="card-summary">黄仁勋GTC台北主题演讲发布Vera Rubin架构，Rubin GPU与Vera CPU为核心的AI工厂方案。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#9</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">SK海力士计划五年内晶圆产能翻倍，应对AI存储短缺</div>
+      <div class="card-summary">SK会长崔泰源宣布未来五年晶圆产能提高一倍，预测供需紧张或延续至2030年。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">技嘉COMPUTEX推出AI TOP桌面生态，可本地运行405B大模型</div>
+      <div class="card-summary">包含三款AI整机，最高可运行405B参数大语言模型，实现本地化高智能模型部署。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 航天/新能源 -->
+<section class="section" id="space">
+  <div class="section-header">
+    <span class="section-badge badge-space">SPACE</span>
+    <h2>航天/新能源</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">Bloomberg</span></div>
+      <div class="card-title">SpaceX提交S-1修正案，马斯克同意366天股份锁定</div>
+      <div class="card-summary">SpaceX IPO进程加速，马斯克已接受为期366天的股份锁定安排，预计创史上最大科技IPO纪录。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">Reuters</span></div>
+      <div class="card-title">软银750亿欧元投资法国：打造欧洲最大AI算力集群</div>
+      <div class="card-summary">软银在美以外最大单笔AI投资，总算力5GW，首期450亿欧元，计划2031年建成3.1GW算力。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">Microsoft Research</span></div>
+      <div class="card-title">微软Aurora：AI天气预报速度超传统超算数千倍</div>
+      <div class="card-summary">微软研究院Aurora模型天气预报速度比传统超级计算机快数千倍，在Build大会上重点展示。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">The Verge</span></div>
+      <div class="card-title">微软首款高级推理AI模型MAI-Thinking-1发布</div>
+      <div class="card-summary">Build 2026发布，完全从头使用干净数据训练，软件工程基准达领先水平，标志微软AI自研新里程碑。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 数字创新 -->
+<section class="section" id="digital">
+  <div class="section-header">
+    <span class="section-badge badge-digital">DIGITAL</span>
+    <h2>数字创新</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">Runway</span></div>
+      <div class="card-title">Runway Aleph 2.0 API推出精准视频编辑功能</div>
+      <div class="card-summary">支持在多镜头序列中编辑最长30秒1080p视频，仅修改指定部分，保持其余内容完全不变。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">Hugging Face</span></div>
+      <div class="card-title">Holo3.1发布：快速本地计算机使用智能体开源</div>
+      <div class="card-summary">基于Qwen家族，提供0.8B至35B四种尺寸，首发FP8/Q4量化，35B得分从67%提升至79.3%。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">商汤</span></div>
+      <div class="card-title">商汤开源SenseNova-Skills AI办公技能套件</div>
+      <div class="card-summary">图像图表生成、数据分析、PPT创建、深度研究四大核心功能，适配任何技能兼容智能体。</div>
+    </div>
+    <div class="card card-animate">
+      <div class="card-top"><span class="card-num">#18</span><span class="card-source">Replit</span></div>
+      <div class="card-title">Replit与微软合作Fabric集成：构建内部工具直接发布</div>
+      <div class="card-summary">组织可在Replit中构建内部工具、工作流并直接发布到Microsoft Fabric，内置安全与治理。</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <p>数据来源：TechCrunch / The Verge / IT之家 / 36氪 / Tom's Hardware / Bloomberg 等公开科技媒体</p>
+  <p style="margin-top:4px">生成时间：2026年6月3日 08:50（北京时间）</p>
+</footer>
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.card-animate').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

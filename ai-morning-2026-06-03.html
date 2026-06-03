@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 晨报 · 2026-06-03</title>
+<style>
+:root{--c-bg:#0f0c0a;--c-surface:#1a1410;--c-card:#221a14;--c-border:#3a2a1e;--c-text:#f0e6dc;--c-text-dim:#a89880;--c-accent:#ff6a3d;--c-accent2:#ff8c5a;--c-accent-glow:rgba(255,106,61,0.18);--c-tag-model:#e85d3a;--c-tag-product:#f08c4a;--c-tag-industry:#d4a24e;--c-tag-paper:#c07a5e;--c-tag-tip:#b8956e;--c-grad-start:#ff5c28;--c-grad-mid:#e8452e;--c-grad-end:#c8203a;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(255,106,61,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(15,12,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-models{background:var(--c-tag-model)}.badge-products{background:var(--c-tag-product)}
+.badge-industry{background:var(--c-tag-industry)}.badge-paper{background:var(--c-tag-paper)}
+.badge-tip{background:var(--c-tag-tip)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(255,140,90,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 3 日 · 星期三</div>
+  <h1 class="hero-title">AI 晨报</h1>
+  <div class="hero-total">今日 30 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-model)"></span> 模型 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-product)"></span> 产品 <strong>8</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-industry)"></span> 行业 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-paper)"></span> 论文 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-tip)"></span> 观点 <strong>9</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#models"><span>🧠 模型</span><span class="nav-count">3</span></a>
+  <a href="#products"><span>📦 产品</span><span class="nav-count">8</span></a>
+  <a href="#industry"><span>🏭 行业</span><span class="nav-count">7</span></a>
+  <a href="#paper"><span>📄 论文</span><span class="nav-count">3</span></a>
+  <a href="#tips"><span>💡 观点</span><span class="nav-count">9</span></a>
+</div></nav>
+<main class="main">
+
+<!-- 模型发布/更新 -->
+<section class="section" id="models">
+  <div class="section-header">
+    <span class="section-badge badge-models">MODELS</span>
+    <h2>模型发布/更新</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+    <a class="card card-animate" href="https://www.theverge.com/tech/941664/microsoft-ai-model-reasoning-mai-thinking-1-build-2026" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#1</span><span class="card-source">The Verge</span></div>
+      <div class="card-title">微软首款高级推理AI模型MAI-Thinking-1发布</div>
+      <div class="card-summary">微软Build 2026发布首款高级推理AI模型，从头训练未蒸馏，关键软件工程基准达领先水平。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://huggingface.co/blog/Hcompany/holo31" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#2</span><span class="card-source">Hugging Face</span></div>
+      <div class="card-title">Holo3.1：快速本地计算机使用智能体发布</div>
+      <div class="card-summary">基于Qwen家族的计算机使用智能体，提供四种尺寸并首发FP8/Q4量化，35B得分提升至79.3%。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/StepFun_ai/status/2061655529731342402" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#3</span><span class="card-source">阶跃星辰</span></div>
+      <div class="card-title">阶跃星辰Step 3.7 Flash发布，专为高效推理设计</div>
+      <div class="card-summary">196B MoE推理优化模型，KV-cache成本仅为DeepSeek的22%，Apache 2.0许可开源。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+  </div>
+</section>
+
+<!-- 产品发布/更新 -->
+<section class="section" id="products">
+  <div class="section-header">
+    <span class="section-badge badge-products">PRODUCTS</span>
+    <h2>产品发布/更新</h2>
+    <span class="section-count">8 条</span>
+  </div>
+  <div class="cards">
+    <a class="card card-animate" href="https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#4</span><span class="card-source">Claude Blog</span></div>
+      <div class="card-title">Claude Code 新增动态工作流功能</div>
+      <div class="card-summary">运行时即兴创建多智能体框架，生成独立上下文窗口子代理，解决长时间执行的智能惰性问题。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/ClaudeDevs/status/2061877343078244459" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#5</span><span class="card-source">Claude</span></div>
+      <div class="card-title">Claude Platform 新增 CLI 工具</div>
+      <div class="card-summary">每个API端点可从终端运行，支持调用Messages API、启动Claude托管智能体并管道传输结果。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/vista8/status/2061846741885018296" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#6</span><span class="card-source">OpenAI</span></div>
+      <div class="card-title">OpenAI Codex 发布 Python SDK，可直接嵌入应用</div>
+      <div class="card-summary">pip install openai-codex即可集成，相当于内置顶级编程和生图Agent，可复用Codex登录态。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/googleaidevs/status/2061924472245153863" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#7</span><span class="card-source">Google DeepMind</span></div>
+      <div class="card-title">Google DeepMind 开源科学智能体工具包</div>
+      <div class="card-summary">Science Skills工具包专为科学发现自主智能体设计，以更高token效率加速智能体工作流。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-descriptions" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#8</span><span class="card-source">TechCrunch</span></div>
+      <div class="card-title">微软发布开源AI评估框架，用文本描述创建测试</div>
+      <div class="card-summary">Adaptive Spec-driven Scoring框架，开发者可通过文本描述快速生成AI行为测试与回归测试。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/runwayml/status/2061895998545244342" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#9</span><span class="card-source">Runway</span></div>
+      <div class="card-title">Runway API 推出 Aleph 2.0 视频编辑功能</div>
+      <div class="card-summary">精准编辑多镜头序列中长达30秒的1080p视频，仅修改指定部分，保持其余内容不变。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#10</span><span class="card-source">GitHub Blog</span></div>
+      <div class="card-title">GitHub Copilot应用：智能体原生的桌面体验</div>
+      <div class="card-summary">Build 2026发布Copilot桌面应用，定位"智能体原生"，让AI以用户习惯方式工作。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/Replit/status/2061892255028486435" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#11</span><span class="card-source">Replit</span></div>
+      <div class="card-title">Replit 与微软合作发布 Fabric 集成</div>
+      <div class="card-summary">组织可在Replit中构建内部工具并直接发布到Microsoft Fabric，内置安全与治理功能。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+  </div>
+</section>
+
+<!-- 行业动态 -->
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="section-badge badge-industry">INDUSTRY</span>
+    <h2>行业动态</h2>
+    <span class="section-count">7 条</span>
+  </div>
+  <div class="cards">
+    <a class="card card-animate" href="https://www.bloomberg.com/news/videos/2026-06-02/bloomberg-tech-6-2-2026-video" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#12</span><span class="card-source">Bloomberg</span></div>
+      <div class="card-title">Alphabet拟融资800亿美元，Anthropic提交IPO申请</div>
+      <div class="card-summary">Alphabet宣布股权融资扩展AI基建；Anthropic秘密提交IPO，上市竞赛领先OpenAI。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/natolambert/status/2061813361848029631" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#13</span><span class="card-source">Ai2</span></div>
+      <div class="card-title">Nathan Lambert离开Ai2，结束OLMO等项目工作</div>
+      <div class="card-summary">主导OLMO和Tulu等开源模型项目的Ai2研究员宣布离职，未来仍深耕开源模型领域。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://www.anthropic.com/news/expanding-project-glasswing" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#14</span><span class="card-source">Anthropic</span></div>
+      <div class="card-title">Anthropic扩展Project Glasswing计划至约150个新组织</div>
+      <div class="card-summary">覆盖电力、水务、医疗等关键基础设施行业，利用Claude扫描漏洞协助修复，影响或超1亿人。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://www.ithome.com/0/958/810.htm" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#15</span><span class="card-source">IT之家</span></div>
+      <div class="card-title">SK海力士计划未来五年晶圆产能翻倍</div>
+      <div class="card-summary">SK会长崔泰源宣布五年内晶圆产能翻倍，应对AI普及带来的存储供应短缺，紧张或延续至2030年。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/AnthropicAI/status/2061924580222968183" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#16</span><span class="card-source">Anthropic</span></div>
+      <div class="card-title">Anthropic支持美国AI行政令实施</div>
+      <div class="card-summary">表态支持白宫AI行政令，称其为加强美国AI领导地位的重要一步，期待推进合作实施。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#17</span><span class="card-source">OpenAI</span></div>
+      <div class="card-title">OpenAI呼吁通过全球领导力推进青年AI安全与机遇</div>
+      <div class="card-summary">呼吁设立专门AI安全研究所，保障青少年使用AI时的安全并创造更多发展机遇。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://openai.com/index/travelers" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#18</span><span class="card-source">OpenAI</span></div>
+      <div class="card-title">Travelers借助OpenAI在全国部署AI理赔助手</div>
+      <div class="card-summary">美国保险公司Travelers与OpenAI合作构建AI理赔助手，提供全天候理赔引导支持。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+  </div>
+</section>
+
+<!-- 论文研究 -->
+<section class="section" id="paper">
+  <div class="section-header">
+    <span class="section-badge badge-paper">PAPER</span>
+    <h2>论文研究</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+    <a class="card card-animate" href="https://x.com/MSFTResearch/status/2061927189977727450" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#19</span><span class="card-source">Microsoft Research</span></div>
+      <div class="card-title">Aurora天气预报速度超传统超算数千倍</div>
+      <div class="card-summary">微软研究院Aurora模型天气预报速度比传统超级计算机快数千倍，在Build上分享成果。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://transformer-circuits.pub/2026/may-update/index.html" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#20</span><span class="card-source">Anthropic</span></div>
+      <div class="card-title">Anthropic可解释性研究：区分因果效应相似的特征</div>
+      <div class="card-summary">提出TWERA方法通过分析特征下游连接预测实际影响，为识别模型内部因果组件提供新途径。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://openai.com/index/codex-for-knowledge-work" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#21</span><span class="card-source">OpenAI</span></div>
+      <div class="card-title">Codex正在成为每个人的生产力工具</div>
+      <div class="card-summary">The Next Era of Knowledge Work报告指出Codex正通过AI增强研究、分析、自动化变革知识工作。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+  </div>
+</section>
+
+<!-- 技巧与观点 -->
+<section class="section" id="tips">
+  <div class="section-header">
+    <span class="section-badge badge-tip">TIPS</span>
+    <h2>技巧与观点</h2>
+    <span class="section-count">9 条</span>
+  </div>
+  <div class="cards">
+    <a class="card card-animate" href="https://x.com/Khazix0918/status/2061669881725309048" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#22</span><span class="card-source">卡兹克</span></div>
+      <div class="card-title">为了不花那120刀，我把电脑清理软件做成了开源skill</div>
+      <div class="card-summary">使用Codex制作跨平台AI清理skill，三色分级展示可清理空间，实测释放近120G优于CleanMyMac。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/SenseTime_AI/status/2061822148076093625" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#23</span><span class="card-source">商汤</span></div>
+      <div class="card-title">商汤开源SenseNova-Skills AI办公技能套件</div>
+      <div class="card-summary">提供图像信息图表生成、数据分析、PPT创建和深度研究四大核心功能，适配任何技能兼容智能体。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/rohanpaul_ai/status/2061601689841648120" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#24</span><span class="card-source">Karpathy</span></div>
+      <div class="card-title">Karpathy 分享个人学习方法论</div>
+      <div class="card-summary">AI领域知名研究者Andrej Karpathy分享其高效学习方法与知识体系构建的心得体会。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://claude.com/blog/running-an-ai-native-engineering-org" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#25</span><span class="card-source">Claude Blog</span></div>
+      <div class="card-title">智能体编程如何重塑工程组织与流程</div>
+      <div class="card-summary">Claude Code团队分享：规划转向JIT、先问Claude、代码审查自动化，工程瓶颈从写代码转向验证。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/ClaudeDevs/status/2061900434722496604" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#26</span><span class="card-source">Claude</span></div>
+      <div class="card-title">Claude Code 自我检查与反馈闭环技巧</div>
+      <div class="card-summary">分享如何让Claude Code在交回工作前检查自己的成果，通过编码手动检查关闭反馈循环。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://www.theverge.com/ai-artificial-intelligence/941388/gemini-spark-ai-agent-trip-planning" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#27</span><span class="card-source">The Verge</span></div>
+      <div class="card-title">Gemini Spark：最令人印象深刻也最可怕的AI体验</div>
+      <div class="card-summary">Google DeepMind的Gemini Spark提供极为深刻的用户体验，其强大能力也引发深刻恐惧感。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://www.tomtunguz.com/the-thriving-ecosystem-of-open-models" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#28</span><span class="card-source">Tunguz VC</span></div>
+      <div class="card-title">开放模型的繁荣生态：69.1% token使用量来自开源</div>
+      <div class="card-summary">OpenRouter数据显示开放权重模型产生69.1%的token使用量，领导地位频繁更迭。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://garymarcus.substack.com/p/why-things-will-eventually-fall-apart" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#29</span><span class="card-source">Gary Marcus</span></div>
+      <div class="card-title">Gary Marcus：为什么AI终将崩塌</div>
+      <div class="card-summary">探讨AI面临的根本性挑战，数学理论局限性与人类心理复杂性导致AI系统最终可能出现问题。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+    <a class="card card-animate" href="https://x.com/runwayml/status/2061895998545244342" target="_blank" rel="noopener noreferrer">
+      <div class="card-top"><span class="card-num">#30</span><span class="card-source">Runway</span></div>
+      <div class="card-title">Runway Aleph 2.0 API新增精准视频编辑</div>
+      <div class="card-summary">Aleph 2.0通过API提供1080p精准编辑，支持多镜头序列中仅修改指定部分的30秒视频。</div>
+      <div class="card-actions"><span class="card-link">阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </a>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <p>数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">AI HOT (aihot.virxact.com)</a></p>
+  <p style="margin-top:4px">生成时间：2026年6月3日 08:50（北京时间）</p>
+</footer>
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.card-animate').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
