@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026 年 6 月 5 日</title>
+<style>
+:root{--c-bg:#060f0c;--c-surface:#0c1a14;--c-card:#122620;--c-border:#1a3a2e;--c-text:#e6f5ef;--c-text-dim:#88b8a0;--c-accent:#10b981;--c-accent2:#34d399;--c-accent-glow:rgba(16,185,129,0.18);--c-tag-internet:#059669;--c-tag-hardware:#0d9488;--c-tag-aero:#6366f1;--c-tag-digital:#8b5cf6;--c-grad-start:#059669;--c-grad-mid:#10b981;--c-grad-end:#34d399;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(16,185,129,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(6,15,12,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-internet{background:var(--c-tag-internet)}.badge-hardware{background:var(--c-tag-hardware)}.badge-aero{background:var(--c-tag-aero)}.badge-digital{background:var(--c-tag-digital)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(52,211,153,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 5 日 · 星期五</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-internet)"></span> 互联网/软件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-hardware)"></span> 硬件/半导体 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-aero)"></span> 航天/新能源 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-digital)"></span> 数字创新 <strong>5</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#internet"><span>🌐 互联网/软件</span><span class="nav-count">5</span></a>
+  <a href="#hardware"><span>💾 硬件/半导体</span><span class="nav-count">5</span></a>
+  <a href="#aero"><span>🚀 航天/新能源</span><span class="nav-count">5</span></a>
+  <a href="#digital"><span>🤖 数字创新</span><span class="nav-count">5</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="internet">
+  <div class="section-header">
+    <span class="section-badge badge-internet">INTERNET</span>
+    <h2>🌐 互联网/软件</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#01</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">微软WinUI原生改造Win11：从开始菜单切入</div>
+  <div class="card-summary">微软用WinUI对Win11开始菜单进行原生改造，逐步减少对网页技术依赖</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#02</span>
+    <span class="card-source">The Verge</span>
+  </div>
+  <div class="card-title">Meta推出Instagram Plus订阅，3.99美元/月</div>
+  <div class="card-summary">Meta推出Instagram Plus付费订阅服务，月费仅3.99美元含专属功能</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.theverge.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#03</span>
+    <span class="card-source">The Verge</span>
+  </div>
+  <div class="card-title">V社确认Steam Machine主机夏季发售</div>
+  <div class="card-summary">Valve确认Steam Machine游戏主机和Steam Frame VR头显将于今夏正式发售</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.theverge.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#04</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">浏览器联盟致信微软：别在Windows强推Edge</div>
+  <div class="card-summary">多家浏览器厂商联名抗议微软在Win10/Win11中强制推广Edge浏览器的行为</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#05</span>
+    <span class="card-source">TechCrunch</span>
+  </div>
+  <div class="card-title">GitLab一季度营收增长23%但裁员14%，理由也是AI</div>
+  <div class="card-summary">GitLab营收同比增长23%仍裁员约14%，称AI效率提升导致人员需求减少</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="hardware">
+  <div class="section-header">
+    <span class="section-badge badge-hardware">HARDWARE</span>
+    <h2>💾 硬件/半导体</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#06</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">台积电CEO：未来数年难以满足全球芯片需求</div>
+  <div class="card-summary">台积电CEO魏哲家表示产能严重不足，未来数年公司难以满足全球芯片供应需求</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#07</span>
+    <span class="card-source">Ars Technica</span>
+  </div>
+  <div class="card-title">Intel 18A制程有望2027年底实现高利润率</div>
+  <div class="card-summary">英特尔预计18A先进制程2027年底实现高利润率，当前重点提升良率</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://arstechnica.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#08</span>
+    <span class="card-source">Reuters</span>
+  </div>
+  <div class="card-title">ASML成为欧洲有史以来市值最高公司</div>
+  <div class="card-summary">光刻机龙头ASML市值超越所有欧洲公司，成为欧洲史上最高市值企业</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.reuters.com/technology/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#09</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">新华三发布全球首款企业级Wi-Fi 8接入点</div>
+  <div class="card-summary">新华三发布全球首款企业级Wi-Fi 8 AP WA8648，引领下一代无线网络标准</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#10</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">IDC：下半年全球PC市场迎动荡期，核心问题是缺内存</div>
+  <div class="card-summary">IDC预测下半年PC市场面临动荡，内存供应短缺成为制约出货的核心瓶颈</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="aero">
+  <div class="section-header">
+    <span class="section-badge badge-aero">AEROSPACE</span>
+    <h2>🚀 航天/新能源</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#11</span>
+    <span class="card-source">TechCrunch</span>
+  </div>
+  <div class="card-title">SpaceX敲定IPO：每股135美元，估值1.78万亿美元</div>
+  <div class="card-summary">SpaceX确定IPO计划，高盛分析若上市估值可达1.78万亿美元</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#12</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">千帆星座再添18星，在轨卫星增至182颗</div>
+  <div class="card-summary">长征火箭成功发射千帆极轨11组卫星，千帆星座组网卫星增至182颗</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#13</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">中国电车首次超越日本，终结日系车在澳28年统治</div>
+  <div class="card-summary">中国电动汽车在澳大利亚市场份额首超日本品牌，终结日系车28年领先地位</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#14</span>
+    <span class="card-source">TechCrunch</span>
+  </div>
+  <div class="card-title">NASA罗曼空间望远镜完成检测，最快8月30日发射</div>
+  <div class="card-summary">NASA罗曼空间望远镜完成最终检测，最快将于8月30日发射升空探索宇宙</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#15</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">世界最大海上换流站成功安装，海上风电迈入新时代</div>
+  <div class="card-summary">我国最大海上换流站成功就位，海上风电进入超高压直流输电新时代</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="digital">
+  <div class="section-header">
+    <span class="section-badge badge-digital">DIGITAL</span>
+    <h2>🤖 数字创新</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#16</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">全球首台机器人塔吊式3D打印机亮相，可建100米高楼</div>
+  <div class="card-summary">全球首台机器人塔吊式3D打印机亮相，最高可建造100米混凝土建筑</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#17</span>
+    <span class="card-source">TechCrunch</span>
+  </div>
+  <div class="card-title">OpenAI奥尔特曼预测主动式AI为下一阶段</div>
+  <div class="card-summary">奥尔特曼预测主动式AI将继聊天机器人和智能体之后成为AI发展下一阶段</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://techcrunch.com/2026/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#18</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">16名数学家起草《莱顿宣言》警告AI冲击数学研究</div>
+  <div class="card-summary">16名数学家联合发布宣言，警告AI可能冲击数学研究信任基础和学术生态</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#19</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">北京19个路口上线AI红绿灯，拥堵指数下降约19%</div>
+  <div class="card-summary">北京19个路口部署AI信号灯系统，路口拥堵指数下降约19%效果显著</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#20</span>
+    <span class="card-source">IT之家</span>
+  </div>
+  <div class="card-title">香港发布首个生产力级超级智能体HKGAI V3</div>
+  <div class="card-summary">香港发布首个生产力级超级智能体，本地大模型HKGAI V3同步亮相</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ithome.com/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <p>数据来源：TechCrunch / The Verge / IT之家 / 36氪 / Ars Technica / Reuters 等公开科技媒体</p>
+  <p style="margin-top:4px">生成时间：2026 年 6 月 5 日 08:50 (UTC+8) · 多源轮询自动聚合</p>
+</footer>
+<script>
+(function(){var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('.card-animate').forEach(function(el){observer.observe(el)});})();
+</script>
+</body>
+</html>
