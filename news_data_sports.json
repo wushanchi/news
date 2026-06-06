@@ -1,0 +1,173 @@
+{
+  "sports": {
+    "accent": "#f59e0b",
+    "accent2": "#fbbf24",
+    "bg": "#120e06",
+    "surface": "#1a140a",
+    "card": "#241c10",
+    "border": "#3a2e18",
+    "text": "#f0e8d0",
+    "text_dim": "#aa9860",
+    "grad": [
+      "#b45309",
+      "#d97706",
+      "#f59e0b"
+    ],
+    "tags": {
+      "sports": "#f59e0b",
+      "fitness": "#10b981",
+      "nutrition": "#ef4444",
+      "wellness": "#8b5cf6"
+    },
+    "stat_names": {
+      "sports": "体坛快讯",
+      "fitness": "健身科学",
+      "nutrition": "营养饮食",
+      "wellness": "身心养护"
+    },
+    "title": "运动健康日报",
+    "footer": "数据来源：ESPN / Sky Sports / NBA / 新浪体育 / 虎扑 / Harvard Health / Medical News Today / ScienceDaily / NIH 等公开体育健康媒体",
+    "sections": [
+      {
+        "id": "sports",
+        "badge": "SPORTS",
+        "title": "体坛快讯",
+        "emoji": "⚽",
+        "items": [
+          [
+            "NBA总决赛G2：马刺vs尼克斯激战正酣",
+            "ESPN",
+            "2026年NBA总决赛马刺vs尼克斯G2在圣安东尼奥进行，首战尼克斯客场取胜后马刺力争扳平大比分，文班亚马表现备受关注。",
+            "https://www.espn.com/nba/story/_/id/48419498/nba-playoffs-2026-play-finals-schedule-scores-news-highlights-bracket-dates"
+          ],
+          [
+            "FIFA世界杯倒计时5天：6月11日北美三国联合开幕",
+            "FIFA",
+            "2026年FIFA世界杯即将在加拿大、墨西哥和美国三国联合举办，48支球队首次参赛，6月11日墨西哥城阿兹特克球场迎来开幕战。",
+            "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
+          ],
+          [
+            "F1西班牙大奖赛本周末巴塞罗那开赛",
+            "Sky Sports",
+            "F1 2026赛季西班牙大奖赛本周末在巴塞罗那加泰罗尼亚赛道举行，各车队带来赛季中期重要升级，冠军争夺进入白热化阶段。",
+            "https://www.skysports.com/f1"
+          ],
+          [
+            "中国国家男子足球队开启世界杯前热身赛之旅",
+            "新浪体育",
+            "国足开启世界杯前系列热身赛，教练组通过实战检验阵容搭配和战术体系，为即将到来的大赛做最后准备。",
+            "https://www.workercn.cn/sports/"
+          ],
+          [
+            "2026年全国跳水冠军赛收官：山西李亚杰夺冠",
+            "新华网",
+            "2026年全国跳水冠军赛圆满收官，山西选手李亚杰在女子项目中发挥出色夺得冠军，展现了中国跳水项目的深厚人才储备。",
+            "https://www.workercn.cn/sports/"
+          ],
+          [
+            "2026年上海大众体育季火热开启，超百场赛事来袭",
+            "上海体育",
+            "2026年上海大众体育季从6月正式拉开帷幕，计划推出超百场赛事活动，涵盖路跑、骑行、球类等多个大众体育项目。",
+            "https://mp.weixin.qq.com/s/OQ5Scpxmff3m71MnKcnkSA"
+          ],
+          [
+            "全国老年人体育健身大会健身球操交流活动开幕",
+            "中新网",
+            "全国老年人体育健身大会健身球操交流活动在河南郑州开幕，来自全国各地的老年健身爱好者齐聚一堂展示健康风采。",
+            "https://www.workercn.cn/sports/"
+          ]
+        ]
+      },
+      {
+        "id": "fitness",
+        "badge": "FITNESS",
+        "title": "健身科学",
+        "emoji": "💪",
+        "items": [
+          [
+            "研究证实：抗阻训练结合有氧运动显著降低死亡风险",
+            "Medical News Today",
+            "最新研究显示将抗阻训练与有氧运动相结合可显著降低全因死亡风险，专家建议每周至少进行两次力量训练配合规律有氧运动。",
+            "https://www.news-medical.net/category/Medical-Research-News.aspx"
+          ],
+          [
+            "五百健身达人河南郑州比武：全民健身热潮涌动",
+            "中国体育报",
+            "来自全国各地的500名健身达人在河南郑州参加比武大会，涵盖力量、柔韧、协调等多维度项目，展现全民健身热潮。",
+            "https://www.workercn.cn/sports/"
+          ],
+          [
+            "北京青少年科学健身指导活动启动，1400余名师生参与",
+            "中新网",
+            "北京市体育局主办的'奔跑吧·少年'青少年科学健身指导暨体质促进趣味运动会首场活动在北京小学红山分校举行，全校1400余名师生参与。",
+            "https://www.chinanews.com.cn/ty/2026/06-02/10633011.shtml"
+          ],
+          [
+            "MLB举办Lou Gehrig Day：联盟范围关注渐冻症",
+            "ESPN",
+            "MLB于6月2日举办Lou Gehrig Day，联盟范围开展渐冻症（ALS）认知和筹款活动，体育界持续为罕见病研究贡献力量。",
+            "https://www.espn.com/mlb"
+          ]
+        ]
+      },
+      {
+        "id": "nutrition",
+        "badge": "NUTRITION",
+        "title": "营养饮食",
+        "emoji": "🥗",
+        "items": [
+          [
+            "NIH批准卡痛叶提取物mitragynine人体安全研究",
+            "NIH",
+            "美国国立卫生研究院批准卡痛叶活性成分mitragynine进入人体安全性研究，该物质被认为可能成为阿片类药物使用障碍的潜在治疗选择。",
+            "https://www.nih.gov/news-events/news-releases"
+          ],
+          [
+            "地中海饮食模式与认知功能衰退减缓显著相关",
+            "Harvard Health",
+            "新研究表明坚持地中海饮食模式与老年认知功能衰退减缓显著相关，橄榄油、鱼类和坚果中的多酚类物质被认为是保护大脑的关键因素。",
+            "https://www.health.harvard.edu"
+          ],
+          [
+            "植物蛋白在运动营养领域应用研究取得新进展",
+            "ScienceDaily",
+            "最新研究显示豌豆蛋白和大豆蛋白在促进肌肉蛋白合成方面与乳清蛋白效果相当，为素食运动员提供了更多科学支持的选择。",
+            "https://www.sciencedaily.com/news/health_medicine/"
+          ]
+        ]
+      },
+      {
+        "id": "wellness",
+        "badge": "WELLNESS",
+        "title": "身心养护",
+        "emoji": "🧘",
+        "items": [
+          [
+            "免疫系统抗癌新机制被发现，颠覆数十年核心认知",
+            "ScienceDaily",
+            "科学家发现免疫系统抗癌的全新机制，推翻了数十年来指导免疫学的核心信念，该发现可能为癌症免疫治疗开辟全新方向。",
+            "https://www.sciencedaily.com/news/health_medicine/"
+          ],
+          [
+            "Nature Medicine：发展中国家母婴健康策略经验总结",
+            "Nature",
+            "研究总结尼泊尔、塞内加尔和赞比亚在母婴健康领域取得重大进展的经验，尽管分娩护理覆盖率较高但仍需持续关注服务质量提升。",
+            "https://www.nature.com/nm/articles?year=2026"
+          ],
+          [
+            "世界环境日聚焦气候与健康：炎热气候的心理影响",
+            "WHO",
+            "2026年世界环境日主题聚焦气候变化对人类身心健康的深远影响，极端高温与心理健康问题之间的关联引发全球关注。",
+            "https://www.unep.org/news-and-stories/press-release"
+          ],
+          [
+            "心理健康应用效果参差不齐：最新元分析揭示问题",
+            "Medical News Today",
+            "一项覆盖50万用户的元分析显示心理健康App效果参差不齐，仅约30%的应用有临床证据支持，专家呼吁加强数字疗法监管。",
+            "https://www.news-medical.net/category/Medical-Research-News.aspx"
+          ]
+        ]
+      }
+    ]
+  }
+}

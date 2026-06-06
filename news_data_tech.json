@@ -1,0 +1,173 @@
+{
+  "tech": {
+    "accent": "#10b981",
+    "accent2": "#34d399",
+    "bg": "#0a120e",
+    "surface": "#101a14",
+    "card": "#18241c",
+    "border": "#1e3a2a",
+    "text": "#dce8e0",
+    "text_dim": "#88aa90",
+    "grad": [
+      "#065f46",
+      "#059669",
+      "#047857"
+    ],
+    "tags": {
+      "internet": "#10b981",
+      "hardware": "#0ea5e9",
+      "space": "#f59e0b",
+      "digital": "#8b5cf6"
+    },
+    "stat_names": {
+      "internet": "互联网/软件",
+      "hardware": "硬件/半导体",
+      "space": "航天/新能源",
+      "digital": "数字创新"
+    },
+    "title": "科技日报",
+    "footer": "数据来源：TechCrunch / The Verge / Ars Technica / Wired / 36氪 / IT之家 / 雷锋网 / 极客公园 等公开科技媒体",
+    "sections": [
+      {
+        "id": "internet",
+        "badge": "INTERNET",
+        "title": "互联网 / 软件",
+        "emoji": "🌐",
+        "items": [
+          [
+            "COMPUTEX 2026台北落幕：AI计算统治展场",
+            "The Verge",
+            "COMPUTEX 2026以「AI Together」为主题在台北举行，吸引1500家企业参展、6000个展位，聚焦AI运算、机器人与智慧移动、次世代科技三大主题。",
+            "https://www.pcmag.com/news/computex-2026-live-dont-miss-a-reveal-from-nvidia-microsoft-intel-more"
+          ],
+          [
+            "Anthropic提交S-1草案启动IPO进程",
+            "Bloomberg",
+            "Anthropic正式向SEC提交S-1注册草案，启动IPO程序，预计将成为2026年最大规模科技IPO之一，估值可能超过千亿美元。",
+            "https://imfounder.com/science-tech/explosive-tech-news-june-2026-ai-lawsuits-ipos-cyberattacks/"
+          ],
+          [
+            "Google发布多项AI产品：Gemma 4、Co-Scientist等",
+            "TechCrunch",
+            "Google密集发布Nano Banana 2 GA、Co-Scientist多智能体科研系统、dreambeans个性化推荐、Gemma 4 12B统一多模态模型等多项AI产品。",
+            "https://x.com/GoogleAI/status/2062942864288387430"
+          ],
+          [
+            "阿里云PolarDB-X Zero：30秒获得全分布式数据库",
+            "36氪",
+            "阿里云上线PolarDB-X Zero，无需注册配置，一次API调用即可30秒获得全分布式数据库，原生HNSW向量索引，MySQL兼容引擎。",
+            "https://x.com/alibaba_cloud/status/2062781182417490310"
+          ],
+          [
+            "佛罗里达州起诉OpenAI：AI内容监管争议升级",
+            "Reuters",
+            "美国佛罗里达州对OpenAI提起诉讼，指控其AI生成内容对未成年人造成有害影响，这标志着AI内容监管进入法律博弈新阶段。",
+            "https://imfounder.com/science-tech/explosive-tech-news-june-2026-ai-lawsuits-ipos-cyberattacks/"
+          ]
+        ]
+      },
+      {
+        "id": "hardware",
+        "badge": "HARDWARE",
+        "title": "硬件 / 半导体",
+        "emoji": "🔧",
+        "items": [
+          [
+            "NVIDIA RTX Spark在COMPUTEX 2026正式亮相",
+            "Ars Technica",
+            "NVIDIA在COMPUTEX 2026上正式发布RTX Spark消费级显卡，基于全新架构带来性能飞跃，黄仁勋亲临现场展示AI渲染和光追新技术。",
+            "https://www.pcmag.com/news/computex-2026-live-dont-miss-a-reveal-from-nvidia-microsoft-intel-more"
+          ],
+          [
+            "氮化镓（GaN）半导体在2026年迎来爆发式增长",
+            "EE Times",
+            "Navitas Semiconductor等氮化镓芯片企业在2026年实现爆发式增长，GaN技术在高功率密度和高效能方面的优势推动其在AI数据中心和快充领域广泛应用。",
+            "https://semiconductors.einnews.com/"
+          ],
+          [
+            "Google母公司Alphabet承诺800亿美元AI基础设施投资",
+            "Reuters",
+            "Alphabet宣布将投入800亿美元用于AI基础设施建设，涵盖数据中心、定制芯片和海底光缆等多个领域，加入科技巨头AI军备竞赛。",
+            "https://imfounder.com/science-tech/explosive-tech-news-june-2026-ai-lawsuits-ipos-cyberattacks/"
+          ],
+          [
+            "台积电2nm制程量产在即，多家客户锁定产能",
+            "IT之家",
+            "台积电2nm制程技术取得关键突破，预计年内实现量产，苹果、NVIDIA、AMD等主要客户已提前锁定产能，先进制程竞争进一步加剧。",
+            "https://www.ithome.com"
+          ],
+          [
+            "中国AI企业超6000家，核心产业规模突破1.2万亿元",
+            "36氪",
+            "《中国新一代人工智能科技产业发展报告2026》发布，截至2025年底中国AI企业超6000家，核心产业突破1.2万亿元，智能体和具身智能大量走向应用。",
+            "https://finance.sina.com.cn/wm/2026-05-30/doc-inhzsssf8560160.shtml"
+          ]
+        ]
+      },
+      {
+        "id": "space",
+        "badge": "SPACE",
+        "title": "航天 / 新能源",
+        "emoji": "🚀",
+        "items": [
+          [
+            "SpaceX与Google达成每年110亿美元云服务协议",
+            "TechCrunch",
+            "SpaceX披露与Google新云服务协议，Google将每月向SpaceX支付9.2亿美元用于xAI数据中心计算能力，标志着航天与AI算力的深度融合。",
+            "https://x.com/rohanpaul_ai/status/2063000834045313314"
+          ],
+          [
+            "SpaceX创纪录IPO本月启动，商业航天进入新纪元",
+            "Bloomberg",
+            "SpaceX计划本月启动创纪录IPO，作为全球最有价值的私营航天公司，其上市被视为商业航天产业成熟的标志性事件。",
+            "https://www.bloomberg.com"
+          ],
+          [
+            "中国商业航天快速发展：多型火箭密集发射计划公布",
+            "新华网",
+            "中国商业航天企业发布2026年下半年密集发射计划，多型商业火箭将执行卫星互联网组网等任务，商业航天产业生态加速形成。",
+            "https://www.news.cn"
+          ],
+          [
+            "微软Project Mosaic：micro-LED光学互连技术亮相Build",
+            "Wired",
+            "微软剑桥研究院展示实验性micro-LED光学互连技术，实现低功耗高速数据传输，有望应用于下一代数据中心和AI计算集群互联。",
+            "https://x.com/MSFTResearch/status/2062983588606320714"
+          ]
+        ]
+      },
+      {
+        "id": "digital",
+        "badge": "DIGITAL",
+        "title": "数字创新",
+        "emoji": "💡",
+        "items": [
+          [
+            "具身智能投资窗口：银河通用等14家企业最新进展",
+            "36氪",
+            "2026年具身智能成为投资热点，银河通用完成25亿元新一轮融资，通过「银河星脑」将具身大模型、机器人本体和场景运营打通。",
+            "https://news.qq.com/rain/a/20260603A07KSA00"
+          ],
+          [
+            "2026腾讯游戏发布会：42款游戏及多项AI应用新进展",
+            "腾讯",
+            "SPARK 2026腾讯游戏发布会分享42款海内外游戏最新动态，展示AI技术在游戏制作、发行和运营中的多项创新应用。",
+            "https://news.qq.com/rain/a/20260527A0ANT900"
+          ],
+          [
+            "赛力斯与字节跳动合作推出全新AI定义汽车品牌",
+            "新浪财经",
+            "赛力斯集团参股的赛豆科技与字节跳动火山引擎深度合作，6月9日发布全新AI定义汽车品牌，首款车型年内推出，支持纯电和增程双动力。",
+            "https://finance.sina.com.cn/headline/2026-06-06/doc-iniamnzv8954006.shtml"
+          ],
+          [
+            "NVIDIA PixelDiT和Meta SAM 3D同获CVPR2026殊荣",
+            "NVIDIA",
+            "CVPR2026公布最佳论文奖项：NVIDIA PixelDiT入选最佳论文决赛，Meta SAM 3D获最佳论文荣誉提名，标志着计算机视觉领域的重大突破。",
+            "https://x.com/NVIDIAAI/status/2063034422698389625"
+          ]
+        ]
+      }
+    ]
+  }
+}
