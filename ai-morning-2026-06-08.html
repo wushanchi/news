@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 晨报 · 2026-06-08</title>
+<style>
+:root{--c-bg:#0f0c0a;--c-surface:#1a1410;--c-card:#221a14;--c-border:#3a2a1e;--c-text:#f0e6dc;--c-text-dim:#a89880;--c-accent:#ff6a3d;--c-accent2:#ff8c5a;--c-accent-glow:rgba(255,106,61,0.18);--c-grad-start:#ff5c28;--c-grad-mid:#e8452e;--c-grad-end:#c8203a;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(ff6a3d,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(0f0c0a,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.badge-models{background:#e85d3a}.badge-products{background:#f08c4a}.badge-industry{background:#d4a24e}.badge-paper{background:#c07a5e}.badge-tip{background:#b8956e}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(ff8c5a,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 8 日 · 星期一</div>
+  <h1 class="hero-title">AI 晨报</h1>
+  <div class="hero-total">今日 26 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-models)"></span> 模型 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-products)"></span> 产品 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-industry)"></span> 行业 <strong>8</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-paper)"></span> 论文 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-tip)"></span> 观点 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#models"><span>🤖 模型</span><span class="nav-count">3</span></a>
+  <a href="#products"><span>🚀 产品</span><span class="nav-count">7</span></a>
+  <a href="#industry"><span>🌍 行业</span><span class="nav-count">8</span></a>
+  <a href="#paper"><span>📄 论文</span><span class="nav-count">4</span></a>
+  <a href="#tip"><span>💡 观点</span><span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="models">
+  <div class="section-header">
+    <span class="section-badge badge-models">MODELS</span>
+    <h2>🤖 模型发布 / 更新</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#01</span>
+    <span class="card-source">Google I/O</span>
+  </div>
+  <div class="card-title">Gemini 3.5 Pro 六月发布窗口开启</div>
+  <div class="card-summary">谷歌确认Gemini 3.5 Pro将于6月发布，已发布Flash版得分55超Claude，输出284t/s是竞品4倍，定价$1.5/$9。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://memeburn.com/gemini-3-5-flash-vs-claude-gpt-pricing/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#02</span>
+    <span class="card-source">WaveSpeed</span>
+  </div>
+  <div class="card-title">六月模型发布地图：已确认与传闻全览</div>
+  <div class="card-summary">已确认：Gemini 3.5 Flash/Claude Opus 4.8/GPT-5.5/Grok 4.3；传闻：Claude Sonnet 4.8/Gemini 3.5 Pro；训练中：Grok 5/GPT-5.6。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://wavespeed.ai/blog/posts/june-2026-ai-launch-wave/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#03</span>
+    <span class="card-source">Microsoft Build</span>
+  </div>
+  <div class="card-title">微软Majorana 2量子芯片可靠性提升1000倍</div>
+  <div class="card-summary">微软Build 2026宣布Majorana 2量子芯片可靠性比前代提升1000倍，使用拓扑量子比特，定位Azure为量子-AI混合工作负载首选云平台。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.aguidetocloud.com/blog/microsoft-build-2026-recap/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="products">
+  <div class="section-header">
+    <span class="section-badge badge-products">PRODUCTS</span>
+    <h2>🚀 产品发布 / 更新</h2>
+    <span class="section-count">7 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#04</span>
+    <span class="card-source">Bloomberg</span>
+  </div>
+  <div class="card-title">Apple WWDC 2026：Gemini驱动全新Siri+iOS 27发布</div>
+  <div class="card-summary">Tim Cook最后一次WWDC主题演讲，全新Siri由1.2万亿参数Gemini模型驱动，iOS 27 Beta当天开放，iPhone 12及以上支持。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.36kr.com/p/3842589800499716" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#05</span>
+    <span class="card-source">Bloomberg</span>
+  </div>
+  <div class="card-title">Apple每年10亿美元Gemini授权战略揭秘</div>
+  <div class="card-summary">Apple以约10亿美元/年向谷歌授权Gemini模型，而非自建大模型。隐私架构上Gemini推理运行在Apple私有云计算，非谷歌基础设施。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://aitoolsrecap.com/Blog/apple-wwdc-2026-gemini-siri-ios-27-tim-cook-final-keynote" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#06</span>
+    <span class="card-source">Anthropic</span>
+  </div>
+  <div class="card-title">Claude成为iPhone选项——触达22亿台设备</div>
+  <div class="card-summary">Claude正式成为Apple Intelligence的AI选项之一，用户可在写作/研究/跨应用任务中使用Claude语音和人格，即使5%用户选择也将超1亿新用户。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-8-2026" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#07</span>
+    <span class="card-source">Anthropic</span>
+  </div>
+  <div class="card-title">Claude合作伙伴中心发布——1亿美元企业计划</div>
+  <div class="card-summary">Anthropic正式推出Claude合作伙伴中心和服务轨道，将1亿美元合作伙伴计划正式化，面向系统集成商和咨询公司。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://releasebot.io/updates/anthropic" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#08</span>
+    <span class="card-source">Microsoft Build</span>
+  </div>
+  <div class="card-title">微软Foundry：11,000+模型，Claude进入Excel Agent</div>
+  <div class="card-summary">Foundry模型目录已含11,000+模型，Claude Opus 4.8进入Foundry并扩展至Copilot Researcher/Studio，新增Excel Agent模式——7.5亿用户直接调用Claude。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.aguidetocloud.com/blog/microsoft-build-2026-recap/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#09</span>
+    <span class="card-source">Tech in Asia</span>
+  </div>
+  <div class="card-title">ChatGPT应用全面重新设计，集成Canva和Booking.com</div>
+  <div class="card-summary">OpenAI对ChatGPT应用进行重大重新设计，将第三方应用直接嵌入界面，初始合作Canva和Booking.com，标志从对话界面转向综合平台。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.techinasia.com/news/openai-plans-broader-chatgpt-app-redesign" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#10</span>
+    <span class="card-source">GitHub Trending</span>
+  </div>
+  <div class="card-title">MemPalace成为性能最佳开源AI记忆系统</div>
+  <div class="card-summary">高性能开源AI记忆系统MemPalace发布，在最新基准评估中位居榜首，完全免费，为AI Agent和长上下文应用提供强大方案。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://github.com/MemPalace/mempalace" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="industry">
+  <div class="section-header">
+    <span class="section-badge badge-industry">INDUSTRY</span>
+    <h2>🌍 行业</h2>
+    <span class="section-count">8 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#11</span>
+    <span class="card-source">Momentic</span>
+  </div>
+  <div class="card-title">AI聊天机器人市场份额：ChatGPT 54.7%，Claude增306%</div>
+  <div class="card-summary">ChatGPT以54.7%领先但较去年76.5%下降，Gemini 27.4%第二，Claude份额8.2%但单季增长306%，DeepSeek 4.1%，Grok 2.8%。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://momenticmarketing.com/blog/top-ai-chatbots" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#12</span>
+    <span class="card-source">Goldman Sachs</span>
+  </div>
+  <div class="card-title">SpaceX IPO距定价仅3天，目标1.75万亿美元</div>
+  <div class="card-summary">SpaceX将于6月11日定价，6月12日纳斯达克上市代码SPCX，融资750亿美元，30%流通股分配散户，xAI部门2025年营收32亿美元但消耗140亿现金。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://finance.sina.com.cn/stock/usstock/summary/2026-06-04/doc-iniaeiyh0683659.shtml" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#13</span>
+    <span class="card-source">Memeburn</span>
+  </div>
+  <div class="card-title">AI API定价战：2026年6月前沿模型对比</div>
+  <div class="card-summary">GPT-5.5 $1.5/$9，Opus 4.8 $5/$25(Fast Mode约3倍便宜)，Gemini 3.5 Flash $1.5/$9，Grok 4.3 $0.5/$2(有补贴)。Anthropic Fast Mode被认为最具创新定价策略。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://memeburn.com/gemini-3-5-flash-vs-claude-gpt-pricing/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#14</span>
+    <span class="card-source">Goldman Sachs</span>
+  </div>
+  <div class="card-title">AI市值记分卡：IPO浪潮中各公司估值</div>
+  <div class="card-summary">SpaceX目标1.75万亿，Anthropic 9650亿，OpenAI 7300-8500亿，高盛预测2026年IPO总融资额可达1600亿美元，三家公司合计超4万亿。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-8-2026" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#15</span>
+    <span class="card-source">Google AI Weekly</span>
+  </div>
+  <div class="card-title">五角大楼AI竞赛：测试OpenAI/谷歌替代Claude</div>
+  <div class="card-summary">五角大楼测试OpenAI和谷歌AI模型替代Claude用于机密军事系统。Claude Mythos在网络安全领域信誉强，但拒绝武器系统分析，OpenAI和谷歌更宽松。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-8-2026" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#16</span>
+    <span class="card-source">CDT</span>
+  </div>
+  <div class="card-title">CDT报告：37种操纵性暗模式存在于ChatGPT/Claude/Gemini</div>
+  <div class="card-summary">民主与技术中心在三大AI产品中识别37种操纵性暗模式，包括参与度最大化、情感依赖培养、能力欺骗和摩擦不对称，部分可能违反EU AI Act。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-8-2026" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#17</span>
+    <span class="card-source">TechCrunch</span>
+  </div>
+  <div class="card-title">Token末日：AI公司在IPO前纷纷涨价</div>
+  <div class="card-summary">AI行业面临Tokenpocalypse经济格局转变，主要公司进一步提高服务价格，与从私营转向上市公司战略密切相关，重心转向财务可持续性。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#18</span>
+    <span class="card-source">Colorado/EU</span>
+  </div>
+  <div class="card-title">科罗拉多AI法案22天倒计时+欧盟AI法案55天倒计时</div>
+  <div class="card-summary">科罗拉多消费者AI保护法6月30日生效，适用高风险AI系统；欧盟AI法案8月2日生效，最高罚款3500万欧元或全球年营业额7%。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-8-2026" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="paper">
+  <div class="section-header">
+    <span class="section-badge badge-paper">PAPERS</span>
+    <h2>📄 论文</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#19</span>
+    <span class="card-source">美团技术</span>
+  </div>
+  <div class="card-title">LARYBench：具身动作表示的ImageNet时刻</div>
+  <div class="card-summary">美团推出LARYBench基准评估通用潜在动作表示，发现通用视觉模型在动作泛化和控制精度上显著优于专业模型，具身动作可从大规模人类视频数据涌现。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://tech.meituan.com/2026/04/27/LongCat-LARYBench.html" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#20</span>
+    <span class="card-source">美团技术</span>
+  </div>
+  <div class="card-title">LongCat-AudioDiT：零样本TTS声音克隆</div>
+  <div class="card-summary">美团LongCat团队发布AudioDiT，放弃传统Mel频谱图直接在波形潜空间用扩散框架运行，消除多阶段级联误差，实现更高保真声音克隆。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://tech.meituan.com/2026/04/20/LongCat-AudioDiT.html" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#21</span>
+    <span class="card-source">美团技术</span>
+  </div>
+  <div class="card-title">General 365：严格AI推理新基准</div>
+  <div class="card-summary">美团发布General 365基准，对26个主流模型评估显示最强Gemini 3 Pro仅62.8%，多数未达60%及格线，揭示复杂推理仍是AI重大挑战。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://tech.meituan.com/2026/05/15/LongCat-General-365.html" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#22</span>
+    <span class="card-source">arXiv</span>
+  </div>
+  <div class="card-title">挑战拟人化：如果LLM有类人属性，帝国时代II也应如此</div>
+  <div class="card-summary">研究者挑战AI拟人化倾向，通过在帝国时代II上训练简单网络，论证道德感或语言理解在经验上并非LLM独有，呼吁建立非唯一性零假设。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://arxiv.org/abs/2605.31514" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="tip">
+  <div class="section-header">
+    <span class="section-badge badge-tip">TIPS</span>
+    <h2>💡 观点</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#23</span>
+    <span class="card-source">美团技术</span>
+  </div>
+  <div class="card-title">美团31万行代码重构的Agent评估策略</div>
+  <div class="card-summary">美团披露AI驱动开发管理框架，31万行代码重构中AI生成超90%代码，核心挑战从提升生成速度转为实施有效约束，采用Agent评估+Pre-PR机制。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://tech.meituan.com/2026/05/07/Agent-AI-Coding.html" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#24</span>
+    <span class="card-source">Hacker News</span>
+  </div>
+  <div class="card-title">实施自动化怀疑：AI辅助开发可信度新框架</div>
+  <div class="card-summary">开发者提出自动化怀疑方法论，放弃对LLM盲目依赖，使用专门子Agent（架构师/验证器/假设挖掘器）在设计阶段前置审查，识别规范缺陷。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.alexself.dev/blog/automated-doubt" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#25</span>
+    <span class="card-source">TechCrunch</span>
+  </div>
+  <div class="card-title">Notion恢复Anthropic AI访问，凸显第三方AI依赖</div>
+  <div class="card-summary">Notion在服务中断后恢复Anthropic AI模型访问，事件引发社交媒体广泛关注，凸显生产力软件生态系统对第三方AI集成的高度依赖。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#26</span>
+    <span class="card-source">TechCrunch</span>
+  </div>
+  <div class="card-title">OpenAI转向超级应用：Chat is dead</div>
+  <div class="card-summary">OpenAI正开发超级应用标志重大战略转型，一位高级员工称Chat is dead，暗示正超越传统对话界面转向综合多功能平台生态系统。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://techcrunch.com/2026/06/07/openai-is-still-working-on-that-super-app/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  数据来源：<a href="https://aihot.virxact.com" target="_blank" rel="noopener noreferrer">aihot.virxact.com</a> · AI HOT 每日聚合 + BuildFastWithAI / AIToolly 多源补充
+</footer>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.card-animate').forEach(c => obs.observe(c));
+</script>
+</body>
+</html>

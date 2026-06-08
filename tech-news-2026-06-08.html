@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026-06-08</title>
+<style>
+:root{--c-bg:#0a120e;--c-surface:#101a14;--c-card:#18241c;--c-border:#1e3a2a;--c-text:#dce8e0;--c-text-dim:#88aa90;--c-accent:#10b981;--c-accent2:#34d399;--c-accent-glow:rgba(16,185,129,0.18);--c-grad-start:#065f46;--c-grad-mid:#059669;--c-grad-end:#047857;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(10b981,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(0a120e,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.badge-internet{background:#10b981}.badge-hardware{background:#0ea5e9}.badge-space{background:#f59e0b}.badge-digital{background:#8b5cf6}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(34d399,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 8 日 · 星期一</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 19 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-internet)"></span> 互联网 / 软件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-hardware)"></span> 硬件 / 半导体 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-space)"></span> 航天 / 新能源 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-digital)"></span> 数字创新 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#internet"><span>🌐 互联网 / 软件</span><span class="nav-count">5</span></a>
+  <a href="#hardware"><span>🔧 硬件 / 半导体</span><span class="nav-count">5</span></a>
+  <a href="#space"><span>🚀 航天 / 新能源</span><span class="nav-count">5</span></a>
+  <a href="#digital"><span>💡 数字创新</span><span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="internet">
+  <div class="section-header">
+    <span class="section-badge badge-internet">INTERNET</span>
+    <h2>🌐 互联网 / 软件</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#01</span>
+    <span class="card-source">Bloomberg / 36氪</span>
+  </div>
+  <div class="card-title">Apple WWDC 2026：Gemini驱动Siri+iOS 27发布</div>
+  <div class="card-summary">Tim Cook最后一次WWDC演讲，全新Siri由1.2万亿参数Gemini驱动，iOS 27 Beta当天开放，苹果Apple Glasses AR眼镜85g售价$2999。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.36kr.com/p/3842589800499716" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#02</span>
+    <span class="card-source">Tech in Asia</span>
+  </div>
+  <div class="card-title">ChatGPT应用全面重新设计，集成Canva和Booking.com</div>
+  <div class="card-summary">OpenAI对ChatGPT应用重大重新设计，将第三方应用直接嵌入界面，初始合作Canva和Booking.com，从对话界面转向综合平台。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.techinasia.com/news/openai-plans-broader-chatgpt-app-redesign" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#03</span>
+    <span class="card-source">腾讯云开发者</span>
+  </div>
+  <div class="card-title">百度文心一言5.0：1.2万亿MoE中文超越GPT-4</div>
+  <div class="card-summary">文心一言5.0采用1.2万亿MoE架构，中文基准CLUE+得分93.7%超GPT-4的92.1%，API定价¥0.08/千tokens为GPT-4-turbo的1/20。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://cloud.tencent.com/developer/article/2684137" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#04</span>
+    <span class="card-source">腾讯云开发者</span>
+  </div>
+  <div class="card-title">谷歌Gemini 3.0：80%端侧推理，脱离云端依赖</div>
+  <div class="card-summary">首个将80%推理负载移至端侧的旗舰模型，基于TensorSoC Gen3功耗仅5W可在Pixel 11运行70B模型，支持127种语言实时翻译。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://cloud.tencent.com/developer/article/2684137" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#05</span>
+    <span class="card-source">腾讯云开发者</span>
+  </div>
+  <div class="card-title">OpenAI GPT-5 Preview：GPQA推理88.7%</div>
+  <div class="card-summary">GPT-5 Preview面向开发者早期预览，GPQA推理88.7%超GPT-4的63.2%，新增Active Reasoning可自主回溯，传闻上下文16M tokens。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://cloud.tencent.com/developer/article/2684137" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="hardware">
+  <div class="section-header">
+    <span class="section-badge badge-hardware">HARDWARE</span>
+    <h2>🔧 硬件 / 半导体</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#06</span>
+    <span class="card-source">Computex 2026</span>
+  </div>
+  <div class="card-title">英伟达Rubin架构GPU：2nm工艺5 PFLOPS FP8</div>
+  <div class="card-summary">基于台积电2nm N2工艺，单GPU FP8算力5 PFLOPS，288GB HBM4带宽8TB/s，Rubin Ultra双晶粒10 PFLOPS，算力密度较H100提升10倍。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://cloud.tencent.com/developer/article/2684137" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#07</span>
+    <span class="card-source">腾讯云开发者</span>
+  </div>
+  <div class="card-title">台积电2nm N2量产：良率85%超越预期</div>
+  <div class="card-summary">2nm工艺正式量产首批良率85%超N3/N5同期，逻辑密度提升15%速度提升12%功耗降25-30%，首批客户苹果/英伟达/AMD/高通/联发科。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://cloud.tencent.com/developer/article/2684137" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#08</span>
+    <span class="card-source">Tech in Asia</span>
+  </div>
+  <div class="card-title">三星晶圆代工Q3恢复盈利，2nm良率突破60%</div>
+  <div class="card-summary">三星晶圆代工预计Q3恢复盈利，Q1 2nm芯片良率突破60%，标志下一代半导体制造工艺稳定化。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.techinasia.com/news/samsung-foundry-return-profit-q3-2026" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#09</span>
+    <span class="card-source">Tech in Asia</span>
+  </div>
+  <div class="card-title">NVIDIA Vera CPU采用SK Hynix内存，专为AI Agent设计</div>
+  <div class="card-summary">英伟达CEO确认Vera CPU将使用SK Hynix内存，计划秋季在合作伙伴系统中首发，标志向专用AI Agent硅芯片战略转型。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.techinasia.com/news/nvidia-ceo-vera-cpu-sk-hynix-memory" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#10</span>
+    <span class="card-source">NVIDIA Newsroom</span>
+  </div>
+  <div class="card-title">NVIDIA与SK Hynix多年战略合作推进AI工厂内存</div>
+  <div class="card-summary">NVIDIA与SK Hynix签署多年技术合作协议，推进下一代内存技术并加速半导体设计与制造，为AI基础设施提供核心硬件支撑。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://nvidianews.nvidia.com/news/sk-hynix-ai-factory" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="space">
+  <div class="section-header">
+    <span class="section-badge badge-space">SPACE</span>
+    <h2>🚀 航天 / 新能源</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#11</span>
+    <span class="card-source">Sina Finance</span>
+  </div>
+  <div class="card-title">SpaceX IPO 6月11日定价，目标1.75万亿美元</div>
+  <div class="card-summary">SpaceX锁定6月11日定价6月12日纳斯达克上市，发行价135美元融资750亿美元，30%流通股分配散户，将成美国史上最大IPO。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://finance.sina.com.cn/stock/usstock/summary/2026-06-04/doc-iniaeiyh0683659.shtml" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#12</span>
+    <span class="card-source">腾讯云开发者</span>
+  </div>
+  <div class="card-title">华为×比亚迪璇玑智能座舱：鸿蒙5.0+L4自驾</div>
+  <div class="card-summary">深度整合鸿蒙座舱5.0与比亚迪L4自驾方案，搭载昇腾920芯片自驾算力1200 TOPS，无高精地图依赖复杂路口通过率99.7%。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://cloud.tencent.com/developer/article/2684137" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#13</span>
+    <span class="card-source">NVIDIA Newsroom</span>
+  </div>
+  <div class="card-title">NVIDIA与斗山集团合作推进物理AI与机器人</div>
+  <div class="card-summary">NVIDIA与斗山集团扩大合作，聚焦物理AI、机器人及AI工厂基础设施，涉及斗山机器人/山猫/重工/电子材料等子公司。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://blogs.nvidia.com/blog/nvidia-and-doosan-group-physical-ai/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#14</span>
+    <span class="card-source">NVIDIA Newsroom</span>
+  </div>
+  <div class="card-title">NAVER与NVIDIA合作扩展主权AI至吉瓦级</div>
+  <div class="card-summary">NAVER与NVIDIA合作以55MW为起点规划扩展至吉瓦级，借助DSX平台快速部署全栈AI平台，满足企业/工业/政府主权AI需求。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://nvidianews.nvidia.com/news/naver-ai-infrastructure" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#15</span>
+    <span class="card-source">NVIDIA Newsroom</span>
+  </div>
+  <div class="card-title">NVIDIA与SK Telecom合作建吉瓦级AI云</div>
+  <div class="card-summary">NVIDIA与SK Telecom合作开发吉瓦级AI云，首座AI工厂计划2027年运营，利用DSX平台建设专用AI工厂。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://nvidianews.nvidia.com/news/sk-telecom-ai-infrastructure" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="digital">
+  <div class="section-header">
+    <span class="section-badge badge-digital">DIGITAL</span>
+    <h2>💡 数字创新</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#16</span>
+    <span class="card-source">Microsoft</span>
+  </div>
+  <div class="card-title">微软Build 2026：Foundry 11K+模型+Majorana 2量子</div>
+  <div class="card-summary">Build 2026宣布Foundry模型目录11,000+模型，Majorana 2量子芯片可靠性提升1000倍，Claude Opus 4.8进入Excel Agent模式。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.aguidetocloud.com/blog/microsoft-build-2026-recap/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#17</span>
+    <span class="card-source">Ifeng Tech</span>
+  </div>
+  <div class="card-title">多地高考启用AI智能巡查系统防作弊</div>
+  <div class="card-summary">2026年高考多地考场投入使用AI智能巡查系统，运用视觉分析算法精准定位考生异常行为，自动标记作弊迹象截取录像供审核。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://tech.ifeng.com/c/8tkwGQzzD6p" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#18</span>
+    <span class="card-source">Sina Tech</span>
+  </div>
+  <div class="card-title">万兴科技携万兴剧厂亮相华为云INSPIRE 2026</div>
+  <div class="card-summary">万兴科技携万兴剧厂亮相华为云INSPIRE 2026，展示AI驱动的视频创作和数字内容生产新方案。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://tech.sina.com.cn/roll/" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#19</span>
+    <span class="card-source">Sina Finance</span>
+  </div>
+  <div class="card-title">《中国新一代AI科技产业发展报告2026》发布</div>
+  <div class="card-summary">报告显示中国AI企业超6000家核心产业规模突破1.2万亿元，2026年为AI发展转折之年，智能体和具身智能大量走向应用。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://finance.sina.com.cn/wm/2026-05-30/doc-inhzsssf8560160.shtml" target="_blank" rel="noopener noreferrer">
+      阅读原文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  数据来源：TechCrunch / The Verge / 36氪 / IT之家 / NVIDIA Newsroom / 腾讯云开发者 等公开科技媒体
+</footer>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.card-animate').forEach(c => obs.observe(c));
+</script>
+</body>
+</html>
