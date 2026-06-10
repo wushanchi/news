@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026-06-09</title>
+<style>
+:root{--c-bg:#120e06;--c-surface:#1a140a;--c-card:#241c10;--c-border:#3a2e18;--c-text:#f0e8d0;--c-text-dim:#aa9860;--c-accent:#f59e0b;--c-accent2:#fbbf24;--c-accent-glow:rgba(f59e0b,0.18);--c-tag-sports:#f59e0b;--c-tag-fitness:#10b981;--c-tag-nutrition:#ef4444;--c-tag-wellness:#8b5cf6;--c-grad-start:#b45309;--c-grad-mid:#d97706;--c-grad-end:#f59e0b;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(f59e0b,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(120e06,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-sports{background:var(--c-tag-sports)}.badge-fitness{background:var(--c-tag-fitness)}.badge-nutrition{background:var(--c-tag-nutrition)}.badge-wellness{background:var(--c-tag-wellness)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(fbbf24,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 9 日 · 星期二</div>
+  <h1 class="hero-title">运动健康日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-sports)"></span> 体坛快讯 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-fitness)"></span> 健身科学 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-nutrition)"></span> 营养饮食 <strong>3</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-wellness)"></span> 身心养护 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sports"><span>⚽ 体坛快讯</span><span class="nav-count">7</span></a>
+  <a href="#fitness"><span>💪 健身科学</span><span class="nav-count">4</span></a>
+  <a href="#nutrition"><span>🥗 营养饮食</span><span class="nav-count">3</span></a>
+  <a href="#wellness"><span>🧘 身心养护</span><span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="sports">
+  <div class="section-header">
+    <span class="section-badge badge-sports">SPORTS</span>
+    <h2>⚽ 体坛快讯</h2>
+    <span class="section-count">7 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#01</span>
+    <span class="card-source">ESPN</span>
+  </div>
+  <div class="card-title">NBA总决赛：尼克斯2-0领先马刺，文班亚马面临考验</div>
+  <div class="card-summary">尼克斯连赢G1和G2取得2-0领先，这是尼克斯本赛季季后赛第13场连胜，文班亚马需要在G3主场找回状态。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.espn.com/nba/story/_/id/48419498/nba-playoffs-2026-play-finals-schedule-scores-news-highlights-bracket-dates" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#02</span>
+    <span class="card-source">FIFA</span>
+  </div>
+  <div class="card-title">FIFA世界杯倒计时2天：6月11日墨西哥城开幕战</div>
+  <div class="card-summary">2026年世界杯48支球队104场比赛，6月11日墨西哥城阿兹特克球场迎来开幕战，历史首次三国联合主办。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#03</span>
+    <span class="card-source">Yahoo Sports</span>
+  </div>
+  <div class="card-title">美加墨世界杯分组赛程全解析：48队新赛制亮相</div>
+  <div class="card-summary">2026年世界杯采用48队新赛制，完整赛程已确认，从6月11日小组赛到7月19日决赛共104场比赛。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://sports.yahoo.com/soccer/article/2026-fifa-world-cup-daily-schedule-every-match-date-kickoff-time-and-venue-for-all-48-teams-234515087.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#04</span>
+    <span class="card-source">新华网体育</span>
+  </div>
+  <div class="card-title">“黑马”蓄势：谁将驰骋美加墨世界杯？</div>
+  <div class="card-summary">世界杯开赛在即，多支“黑马”球队蓄势待发，新赛制下小组出线名额增加，冷门概率大幅提升。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.xinhuanet.com/sports/news.htm" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#05</span>
+    <span class="card-source">中国新闻网</span>
+  </div>
+  <div class="card-title">国足开启世界杯前热身赛之旅</div>
+  <div class="card-summary">中国国家男子足球队开启世界杯前系列热身赛，教练组通过实战检验阵容搭配和战术体系，为大赛做最后准备。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.chinanews.com.cn/sports/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#06</span>
+    <span class="card-source">上海体育</span>
+  </div>
+  <div class="card-title">2026上海大众体育季火热开启，超百场赛事来袭</div>
+  <div class="card-summary">2026年上海大众体育季从6月正式拉开帷幕，计划推出超百场赛事活动，涵盖路跑、骑行、球类等多个大众体育项目。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.chinanews.com.cn/ty/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#07</span>
+    <span class="card-source">NBA.com</span>
+  </div>
+  <div class="card-title">NBA总决赛G3今晚马刺主场：文班亚马能否率队扳回一城</div>
+  <div class="card-summary">G3将于马刺主场进行，0-2落后的马刺背水一战，文班亚马需要在主场球迷面前展现统治力。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.nba.com/news/2026-nba-finals-schedule" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+<section class="section" id="fitness">
+  <div class="section-header">
+    <span class="section-badge badge-fitness">FITNESS</span>
+    <h2>💪 健身科学</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#08</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">菲律宾地震后救援与运动医学应急响应</div>
+  <div class="card-summary">菲律宾强烈地震造成大量人员受伤，运动医学专家参与伤员救治与康复，凸显运动医学在灾害救援中的重要角色。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://english.news.cn/20260609/7ac13340cdcb49f0844575727c21c478/c.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#09</span>
+    <span class="card-source">NIH</span>
+  </div>
+  <div class="card-title">NIH批准卡痛叶提取物mitragynine人体安全研究</div>
+  <div class="card-summary">美国国立卫生研究院批准卡痛叶活性成分mitragynine进入人体安全性研究，该物质可能成为阿片类药物使用障碍的潜在治疗选择。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.nih.gov/news-events/news-releases" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#10</span>
+    <span class="card-source">中新网</span>
+  </div>
+  <div class="card-title">北京“奔跑吧·少年”青少年科学健身指导启动</div>
+  <div class="card-summary">北京市体育局主办青少年科学健身指导暨体质促进趣味运动会，全校1400余名师生参与，推动青少年体质提升。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.chinanews.com.cn/ty/2026/06-02/10633011.shtml" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#11</span>
+    <span class="card-source">ESPN</span>
+  </div>
+  <div class="card-title">MLB赛季进入白热化阶段：本垒打大赛即将开打</div>
+  <div class="card-summary">2026年MLB赛季进入6月白热化阶段，全明星赛和本垒打大赛即将举行，多支球队为季后赛席位展开激烈争夺。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.espn.com/mlb" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+<section class="section" id="nutrition">
+  <div class="section-header">
+    <span class="section-badge badge-nutrition">NUTRITION</span>
+    <h2>🥗 营养饮食</h2>
+    <span class="section-count">3 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#12</span>
+    <span class="card-source">WHO/Lancet</span>
+  </div>
+  <div class="card-title">埃博拉疫情扩散：刚果515例确诊，WHO发布防控指南</div>
+  <div class="card-summary">WHO和Africa CDC宣布2026年埃博拉疫情为公共卫生紧急事件，由Bundibugyo病毒引起，已蔓延至乌干达。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#13</span>
+    <span class="card-source">Harvard Health</span>
+  </div>
+  <div class="card-title">地中海饮食与认知功能：新证据支持神经保护效应</div>
+  <div class="card-summary">坚持地中海饮食模式与老年认知功能衰退减缓显著相关，橄榄油和坚果中多酚类物质被认为是保护大脑的关键因素。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.health.harvard.edu" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#14</span>
+    <span class="card-source">ScienceDaily</span>
+  </div>
+  <div class="card-title">植物蛋白在运动营养领域新进展：与乳清蛋白效果相当</div>
+  <div class="card-summary">最新研究显示豌豆蛋白和大豆蛋白在促进肌肉蛋白合成方面与乳清蛋白效果相当，为素食运动员提供更多科学选择。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.sciencedaily.com/news/health_medicine/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+<section class="section" id="wellness">
+  <div class="section-header">
+    <span class="section-badge badge-wellness">WELLNESS</span>
+    <h2>🧘 身心养护</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#15</span>
+    <span class="card-source">ECDC</span>
+  </div>
+  <div class="card-title">ECDC发布刚果埃博拉疫情风险评估：跨境传播风险高</div>
+  <div class="card-summary">欧洲疾控中心评估刚果埃博拉疫情，Bundibugyo病毒传播风险高，建议加强入境监测和跨境卫生合作。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#16</span>
+    <span class="card-source">CDC</span>
+  </div>
+  <div class="card-title">CDC发布埃博拉旅行健康通知：关注DRC和乌干达</div>
+  <div class="card-summary">美国疾控中心发布健康咨询网络通知，提醒前往刚果和乌干达的旅行者注意埃博拉疫情，加强个人防护。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.cdc.gov/han/php/notices/han00530.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#17</span>
+    <span class="card-source">Medical News Today</span>
+  </div>
+  <div class="card-title">心理健康数字疗法监管缺失：元分析揭示仅30%有证据</div>
+  <div class="card-summary">覆盖50万用户的元分析显示心理健康App效果参差不齐，仅约30%的应用有临床证据支持，专家呼吁加强数字疗法监管。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.news-medical.net/category/Medical-Research-News.aspx" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#18</span>
+    <span class="card-source">Perplexity</span>
+  </div>
+  <div class="card-title">Perplexity与哈佛研究：AI智能体可降低工作压力提升满意度</div>
+  <div class="card-summary">3个月研究表明使用AI智能体的工人完成任务速度快87%成本低94%，且工作满意度更高，有助缓解职业压力。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://x.com/perplexity_ai/status/2064023455453110286" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <p>数据来源：ESPN / NBA / FIFA / 新华网体育 / WHO / NIH / ScienceDaily 等公开体育健康媒体</p>
+</footer>
+<script>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.15});document.querySelectorAll('.card-animate').forEach(function(c){o.observe(c)})})();
+</script>
+</body>
+</html>
