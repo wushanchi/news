@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国际焦点日报 · 2026-06-10</title>
+<style>
+:root{--c-bg:#0a0f1a;--c-surface:#101828;--c-card:#182030;--c-border:#1e3a5f;--c-text:#e0e8f0;--c-text-dim:#8899aa;--c-accent:#3b82f6;--c-accent2:#60a5fa;--c-accent-glow:rgba(3b82f6,0.18);--c-tag-politics:#3b82f6;--c-tag-economy:#6366f1;--c-tag-major:#ef4444;--c-tag-society:#8b5cf6;--c-grad-start:#1e40af;--c-grad-mid:#2563eb;--c-grad-end:#1d4ed8;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(3b82f6,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:rgba(0a0f1a,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.badge-politics{background:var(--c-tag-politics)}.badge-economy{background:var(--c-tag-economy)}.badge-major{background:var(--c-tag-major)}.badge-society{background:var(--c-tag-society)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(60a5fa,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 10 日 · 星期三</div>
+  <h1 class="hero-title">国际焦点日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-politics)"></span> 政治外交 <strong>6</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-economy)"></span> 经济财经 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-major)"></span> 重大事件 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-society)"></span> 社会人文 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#politics"><span>🏛️ 政治外交</span><span class="nav-count">6</span></a>
+  <a href="#economy"><span>💰 经济财经</span><span class="nav-count">5</span></a>
+  <a href="#major"><span>⚡ 重大事件</span><span class="nav-count">5</span></a>
+  <a href="#society"><span>🌏 社会人文</span><span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="politics">
+  <div class="section-header">
+    <span class="section-badge badge-politics">POLITICS</span>
+    <h2>🏛️ 政治外交</h2>
+    <span class="section-count">6 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#01</span>
+    <span class="card-source">Reuters</span>
+  </div>
+  <div class="card-title">内塔尼亚胡称赞特朗普帮助缓和以色列-伊朗紧张局势</div>
+  <div class="card-summary">以总理公开感谢特朗普在缓和以伊紧张关系中发挥的作用，此前特朗普呼吁双方停止交火防止冲突升级为更大范围地区战争。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#02</span>
+    <span class="card-source">WNG</span>
+  </div>
+  <div class="card-title">伊朗高官对达成和平协议表示怀疑</div>
+  <div class="card-summary">一名伊朗高级官员对与美国达成和平协议的前景表示怀疑，美伊和平谈判仍面临重大障碍。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://wng.org/podcasts/tuesday-morning-news-june-9-2026-1780937750" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#03</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">以色列空袭黎巴嫩南部，至少12人遇难</div>
+  <div class="card-summary">以色列对黎巴嫩南部多轮空袭造成至少12人死亡，纳巴提耶区Zefta遭黎明前空袭7人罹难，推罗区车辆遭袭4人死亡。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://english.news.cn/20260609/7ac13340cdcb49f0844575727c21c478/c.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#04</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">玻利维亚总统签署紧急状态新法应对持续39天抗议</div>
+  <div class="card-summary">玻利维亚总统签署第1740号法律规范紧急状态宣布程序，该国已持续39天抗议和道路封锁，新法允许总统通过最高法令宣布紧急状态。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://english.news.cn/20260609/7ac13340cdcb49f0844575727c21c478/c.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#05</span>
+    <span class="card-source">中国外交部</span>
+  </div>
+  <div class="card-title">全球人权治理高端论坛将于6月11日在北京举行</div>
+  <div class="card-summary">来自近百个国家和联合国等国际组织的400余名嘉宾将与会，纪念联合国《发展权利宣言》通过40周年。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://om.china-embassy.gov.cn/fyrth/202606/t20260608_11939733.htm" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#06</span>
+    <span class="card-source">环球时报</span>
+  </div>
+  <div class="card-title">中国6月外交转向全球经贸投资平台</div>
+  <div class="card-summary">5月高级别外交密集后，中国6月议程转向全球商业、贸易和投资，一系列重大经济平台陆续启动。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.globaltimes.cn/page/202605/1362006.shtml" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+<section class="section" id="economy">
+  <div class="section-header">
+    <span class="section-badge badge-economy">ECONOMY</span>
+    <h2>💰 经济财经</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#07</span>
+    <span class="card-source">Bloomberg</span>
+  </div>
+  <div class="card-title">投资者以创纪录速度撤离看空石油基金</div>
+  <div class="card-summary">上周投资者以创历史纪录速度从看空石油的基金中撤资，反映市场对油价走势预期的重大转变，美伊局势缓和为主要驱动。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#08</span>
+    <span class="card-source">Wired</span>
+  </div>
+  <div class="card-title">OpenAI机密提交S-1草案启动IPO，AI超级上市年启幕</div>
+  <div class="card-summary">继Anthropic和SpaceX之后，OpenAI正式提交S-1注册声明草案，华尔街为万亿美元级AI IPO浪潮做准备。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.wired.com/story/openai-confidentially-files-for-ipo/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#09</span>
+    <span class="card-source">新浪财经</span>
+  </div>
+  <div class="card-title">中国央行重启7天期逆回购操作，净投放920亿元</div>
+  <div class="card-summary">6月3-4日连续零操作后，6月5日重启7天期逆回购操作2150亿元，对冲到期量后实现净投放920亿元。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://finance.sina.com.cn/stock/y/2026-06-08/doc-iniaruxw9012130.shtml" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#10</span>
+    <span class="card-source">新浪财经</span>
+  </div>
+  <div class="card-title">科技创新50强出炉，全球资金关注AI产业链</div>
+  <div class="card-summary">证监会主席吴清强调坚守信义义务，从“重规模”向“重回报”转型，AI产业链成为全球资金重点配置方向。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://finance.sina.com.cn/stock/y/2026-06-08/doc-iniarzfy7265812.shtml" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#11</span>
+    <span class="card-source">商务部</span>
+  </div>
+  <div class="card-title">第十届中国-南亚博览会6月11日昆明开幕</div>
+  <div class="card-summary">以「团结协作，共谋发展」为主题，历经9届发展沉淀，国际化、专业化、市场化水平持续提升。</div>
+  <div class="card-actions">
+    <a class="card-link" href="http://expo.ce.cn/gd/202606/t20260601_3001984.shtml" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+<section class="section" id="major">
+  <div class="section-header">
+    <span class="section-badge badge-major">MAJOR</span>
+    <h2>⚡ 重大事件</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#12</span>
+    <span class="card-source">Reuters</span>
+  </div>
+  <div class="card-title">菲律宾强烈地震造成35人死亡，数千人流离失所</div>
+  <div class="card-summary">菲律宾民答那峨岛发生强烈地震，已造成至少35人死亡，大量民众被迫撤离家园，时值数百万儿童上课时段。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#13</span>
+    <span class="card-source">新华网/WHO</span>
+  </div>
+  <div class="card-title">刚果（金）埃博拉疫情快速扩散，已蔓延至乌干达</div>
+  <div class="card-summary">WHO警告刚果埃博拉疫情快速扩大，515例确诊91人死亡，乌干达19例确诊2人死亡，刚果风险评级“极高”。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://english.news.cn/20260609/7ac13340cdcb49f0844575727c21c478/c.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#14</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">美军在阿曼湾拦截并致残一艘油轮</div>
+  <div class="card-summary">美军中央司令部宣布在阿曼湾国际水域拦截帕劳籍油轮Marivex号，F/A-18战机向工程和操舵舱发射精确制导弹药。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://english.news.cn/20260609/7ac13340cdcb49f0844575727c21c478/c.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#15</span>
+    <span class="card-source">FIFA</span>
+  </div>
+  <div class="card-title">FIFA世界杯倒计时2天：6月11日美加墨联合开幕</div>
+  <div class="card-summary">2026年FIFA世界杯48支球队首次参赛，6月11日墨西哥城阿兹特克球场开幕战，横跨加拿大、墨西哥和美国三国联合举办。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#16</span>
+    <span class="card-source">The Verge</span>
+  </div>
+  <div class="card-title">苹果WWDC 2026：Tim Cook谢幕之作，Siri AI由Gemini驱动</div>
+  <div class="card-summary">Tim Cook最后一次以CEO身份主持WWDC，9月1日由John Ternus接任，发布Siri AI和iOS 27等全系更新。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.theverge.com/tech/944110/wwdc-2026-news-announcements" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+<section class="section" id="society">
+  <div class="section-header">
+    <span class="section-badge badge-society">SOCIETY</span>
+    <h2>🌏 社会人文</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#17</span>
+    <span class="card-source">Bloomberg</span>
+  </div>
+  <div class="card-title">苹果投资者对新Siri及AI平台反应冷淡</div>
+  <div class="card-summary">尽管苹果发布新一代Siri和AI平台，但市场投资者反应平平，股价未见明显提振，核心AI能力依赖Gemini引发质疑。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.livemint.com/technology/tech-news/apple-wwdc-2026-live-updates-ios-27-siri-ai-revamp-macos-27-key-announcements-and-highlights-11780923667605.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#18</span>
+    <span class="card-source">Livemint</span>
+  </div>
+  <div class="card-title">A24首部2亿美元影片《Backrooms》10天票房破2亿</div>
+  <div class="card-summary">恐怖片《Backrooms》成为A24史上首部达此成绩的影片，标志着独立电影公司进入大片时代。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#19</span>
+    <span class="card-source">Reuters</span>
+  </div>
+  <div class="card-title">美伊局势影响全球海运：霍尔木兹海峡通行风险上升</div>
+  <div class="card-summary">美军在阿曼湾拦截油轮后，霍尔木兹海峡通行风险进一步上升，全球海运保险费率大幅攀升。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#20</span>
+    <span class="card-source">北京市政府</span>
+  </div>
+  <div class="card-title">中国“北京榜样”5月榜发布：人形机器人创始人上榜</div>
+  <div class="card-summary">20人当选5月榜样，科技创新领域松延动力创始人姜哲源上榜，人形机器人产业化提速获社会认可。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.beijing.gov.cn/ywdt/yaowen/202606/t20260608_4690181.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <p>数据来源：Reuters / BBC / CNN / AP News / 新华网 / 环球网 / Livemint / UN News 等公开新闻源</p>
+</footer>
+<script>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:0.15});document.querySelectorAll('.card-animate').forEach(function(c){o.observe(c)})})();
+</script>
+</body>
+</html>
