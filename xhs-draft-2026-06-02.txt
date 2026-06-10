@@ -1,0 +1,29 @@
+📰 每日晨报 | 6月2日
+
+🤖 AI 圈 · 31条
+• MiniMax M3：100万token上下文，SWE-Bench超越GPT-5.5
+• Anthropic秘密提交S-1草案，计划IPO估值9650亿美元
+• Alphabet融资800亿美元扩建AI算力，含伯克希尔100亿私募
+• 腾讯混元发布Hy-Memory智能体记忆插件，token消耗降35%
+
+🌍 国际焦点 · 20条
+• 特朗普称一周内与伊朗达成谅解备忘录，延长停火
+• 以色列与真主党同意停止一切交火，局势缓和
+• 伊朗总统据报向最高领袖提交辞呈，官方尚未证实
+• 乌克兰愿接受与俄维持前线现状，释放停战信号
+
+💻 科技动态 · 18条
+• NVIDIA RTX Spark超级芯片发布：Blackwell+20核Grace+128GB
+• Intel Arc G3 Extreme掌机芯片亮相，XeSS 3全面压制AMD
+• Microsoft Build 2026开幕：Agent 365+Azure AI Foundry
+• COMPUTEX 2026首增机器人展区，AI延伸到实体硬件
+
+🏃 运动健康 · 17条
+• NBA总决赛马刺vs尼克斯6月4日开打，时隔27年重演经典
+• 法网王曦雨晋级女单16强，创个人大满贯最佳
+• 间歇性禁食不仅减重，还能改变肠道菌群和脑活动
+• 科学家找到驱动阿尔茨海默病炎症的隐藏开关STING
+
+📌 每日更新，欢迎关注
+🔗 完整日报：https://wushanchi.github.io/news/
+💬 你最关注哪条新闻？评论区见

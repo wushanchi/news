@@ -26,7 +26,7 @@
       "digital": "数字创新"
     },
     "title": "科技日报",
-    "footer": "数据来源：TechCrunch / The Verge / Ars Technica / Wired / 36氪 / IT之家 / 雷锋网 / 极客公园 等公开科技媒体",
+    "footer": "数据来源：TechCrunch / The Verge / Ars Technica / IT之家 / 36氪 / Wired 等公开科技媒体",
     "sections": [
       {
         "id": "internet",
@@ -35,34 +35,34 @@
         "emoji": "🌐",
         "items": [
           [
-            "COMPUTEX 2026台北落幕：AI计算统治展场",
+            "苹果WWDC 2026：Siri AI由Gemini驱动，iOS 27发布",
             "The Verge",
-            "COMPUTEX 2026以「AI Together」为主题在台北举行，吸引1500家企业参展、6000个展位，聚焦AI运算、机器人与智慧移动、次世代科技三大主题。",
-            "https://www.pcmag.com/news/computex-2026-live-dont-miss-a-reveal-from-nvidia-microsoft-intel-more"
+            "Siri AI全新重写由Google Gemini驱动，新增专属App、跨设备对话、Agent能力；iOS 27支持iPhone 11及以上，新增Liquid Glass设计。",
+            "https://www.theverge.com/tech/944110/wwdc-2026-news-announcements"
           ],
           [
-            "Anthropic提交S-1草案启动IPO进程",
-            "Bloomberg",
-            "Anthropic正式向SEC提交S-1注册草案，启动IPO程序，预计将成为2026年最大规模科技IPO之一，估值可能超过千亿美元。",
-            "https://imfounder.com/science-tech/explosive-tech-news-june-2026-ai-lawsuits-ipos-cyberattacks/"
-          ],
-          [
-            "Google发布多项AI产品：Gemma 4、Co-Scientist等",
+            "macOS 27 Golden Gate发布：Siri AI集成与Liquid Glass",
             "TechCrunch",
-            "Google密集发布Nano Banana 2 GA、Co-Scientist多智能体科研系统、dreambeans个性化推荐、Gemma 4 12B统一多模态模型等多项AI产品。",
-            "https://x.com/GoogleAI/status/2062942864288387430"
+            "macOS新版本命名Golden Gate，集成Siri AI、重新设计的Liquid Glass控件，跨平台一致的AI功能更新。",
+            "https://techcrunch.com/2026/06/08/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/"
           ],
           [
-            "阿里云PolarDB-X Zero：30秒获得全分布式数据库",
-            "36氪",
-            "阿里云上线PolarDB-X Zero，无需注册配置，一次API调用即可30秒获得全分布式数据库，原生HNSW向量索引，MySQL兼容引擎。",
-            "https://x.com/alibaba_cloud/status/2062781182417490310"
+            "微信AI官宣内测：小程序接入AI助手两种模式",
+            "IT之家",
+            "自动模式授权平台读取源码无需额外开发，开发模式可自主开发技能审核后由微信AI调用，小程序AI化迈出关键一步。",
+            "https://www.ithome.com/0/961/480.htm"
           ],
           [
-            "佛罗里达州起诉OpenAI：AI内容监管争议升级",
-            "Reuters",
-            "美国佛罗里达州对OpenAI提起诉讼，指控其AI生成内容对未成年人造成有害影响，这标志着AI内容监管进入法律博弈新阶段。",
-            "https://imfounder.com/science-tech/explosive-tech-news-june-2026-ai-lawsuits-ipos-cyberattacks/"
+            "OpenAI提交S-1草案：AI史上最大IPO启幕",
+            "Wired",
+            "继Anthropic和SpaceX之后，OpenAI正式提交IPO注册声明，估值介于8520亿至1万亿美元之间，9月挂牌。",
+            "https://www.wired.com/story/openai-confidentially-files-for-ipo/"
+          ],
+          [
+            "Kimi Code大版本升级：视频理解与多数据源集成",
+            "月之暗面",
+            "开源Coding Agent新增视频理解能力、集成同花顺/天眼查数据源、支持ACP协议和JetBrains/Zed编辑器。",
+            "https://mp.weixin.qq.com/s?__biz=MzkzMTY4NTIyNA%3D%3D&mid=2247484250&idx=1&sn=d0a07f5358250f3a54df8fbabe61f09a"
           ]
         ]
       },
@@ -73,34 +73,34 @@
         "emoji": "🔧",
         "items": [
           [
-            "NVIDIA RTX Spark在COMPUTEX 2026正式亮相",
-            "Ars Technica",
-            "NVIDIA在COMPUTEX 2026上正式发布RTX Spark消费级显卡，基于全新架构带来性能飞跃，黄仁勋亲临现场展示AI渲染和光追新技术。",
-            "https://www.pcmag.com/news/computex-2026-live-dont-miss-a-reveal-from-nvidia-microsoft-intel-more"
+            "小米MiMo-V2.5-Pro-UltraSpeed：1T MoE模型突破1000 TPS",
+            "小米",
+            "联合TileRT_AI发布，首次在1万亿参数MoE模型上实现超1000 tokens/s输出，仅用单台8-GPGPU节点，非Cerebras方案。",
+            "https://x.com/XiaomiMiMo/status/2063993790587904362"
           ],
           [
-            "氮化镓（GaN）半导体在2026年迎来爆发式增长",
-            "EE Times",
-            "Navitas Semiconductor等氮化镓芯片企业在2026年实现爆发式增长，GaN技术在高功率密度和高效能方面的优势推动其在AI数据中心和快充领域广泛应用。",
-            "https://semiconductors.einnews.com/"
+            "苹果第三代AFM运行于Nvidia+Google云端",
+            "The Verge",
+            "Apple Foundational Model运行于Nvidia硬件+Google云端，苹果坚称云端处理与本地处理隐私保护级别等同。",
+            "https://www.theverge.com/ai-artificial-intelligence/946705/apple-private-cloud-compute-ai-siri-intelligence-wwdc"
           ],
           [
-            "Google母公司Alphabet承诺800亿美元AI基础设施投资",
-            "Reuters",
-            "Alphabet宣布将投入800亿美元用于AI基础设施建设，涵盖数据中心、定制芯片和海底光缆等多个领域，加入科技巨头AI军备竞赛。",
-            "https://imfounder.com/science-tech/explosive-tech-news-june-2026-ai-lawsuits-ipos-cyberattacks/"
+            "NVIDIA与LG集团合作建设AI工厂",
+            "NVIDIA",
+            "整合NVIDIA AI工厂平台与LG消费电子/机器人技术，为自动驾驶、数据中心和GPU云服务提供加速计算基础设施。",
+            "https://blogs.nvidia.com/blog/nvidia-and-lg-group-ai-factory"
           ],
           [
-            "台积电2nm制程量产在即，多家客户锁定产能",
-            "IT之家",
-            "台积电2nm制程技术取得关键突破，预计年内实现量产，苹果、NVIDIA、AMD等主要客户已提前锁定产能，先进制程竞争进一步加剧。",
-            "https://www.ithome.com"
+            "英国主权AI计划提速：AI云提供商翻倍，5400个Blackwell GPU部署",
+            "NVIDIA",
+            "Nebius部署三套NVIDIA AI基础设施，预计2027年满负荷达65兆瓦，基于5400个Blackwell GPU。",
+            "https://blogs.nvidia.com/blog/uk-sovereign-ai-advancements"
           ],
           [
-            "中国AI企业超6000家，核心产业规模突破1.2万亿元",
-            "36氪",
-            "《中国新一代人工智能科技产业发展报告2026》发布，截至2025年底中国AI企业超6000家，核心产业突破1.2万亿元，智能体和具身智能大量走向应用。",
-            "https://finance.sina.com.cn/wm/2026-05-30/doc-inhzsssf8560160.shtml"
+            "2026年6月上旬科技产业全景：Computex+GTC双会引爆半导体",
+            "搜狐",
+            "全产业链从技术研发转向商业化落地，业内共识确立2026年为AI应用落地元年。",
+            "https://www.sohu.com/a/1031584618_120426565"
           ]
         ]
       },
@@ -111,28 +111,28 @@
         "emoji": "🚀",
         "items": [
           [
-            "SpaceX与Google达成每年110亿美元云服务协议",
-            "TechCrunch",
-            "SpaceX披露与Google新云服务协议，Google将每月向SpaceX支付9.2亿美元用于xAI数据中心计算能力，标志着航天与AI算力的深度融合。",
-            "https://x.com/rohanpaul_ai/status/2063000834045313314"
+            "SNEC 2026：太空光伏与钙钛矿叠层技术成为全场焦点",
+            "腾讯新闻",
+            "第十九届国际太阳能光伏大会开幕，太空光伏参展内容显著增多，钙钛矿叠层技术成为全场聚焦方向。",
+            "https://news.qq.com/rain/a/20260605A05CBU00"
           ],
           [
-            "SpaceX创纪录IPO本月启动，商业航天进入新纪元",
-            "Bloomberg",
-            "SpaceX计划本月启动创纪录IPO，作为全球最有价值的私营航天公司，其上市被视为商业航天产业成熟的标志性事件。",
-            "https://www.bloomberg.com"
+            "中国商业航天扎堆冲刺IPO，2026超级上市年启幕",
+            "搜狐",
+            "SpaceX、OpenAI、Anthropic三大巨头上市将注入数万亿美元流动性，中国商业航天企业也加速IPO进程。",
+            "https://www.sohu.com/a/971780384_122554353"
           ],
           [
-            "中国商业航天快速发展：多型火箭密集发射计划公布",
-            "新华网",
-            "中国商业航天企业发布2026年下半年密集发射计划，多型商业火箭将执行卫星互联网组网等任务，商业航天产业生态加速形成。",
-            "https://www.news.cn"
+            "苹果Private Cloud Compute：AI云端计算与隐私的博弈",
+            "The Verge",
+            "苹果在WWDC技术讲座中披露AI模型运行于Nvidia+Google云端，隐私承诺面临外界质疑，将成为苹果AI成败关键。",
+            "https://www.theverge.com/ai-artificial-intelligence/946705/apple-private-cloud-compute-ai-siri-intelligence-wwdc"
           ],
           [
-            "微软Project Mosaic：micro-LED光学互连技术亮相Build",
-            "Wired",
-            "微软剑桥研究院展示实验性micro-LED光学互连技术，实现低功耗高速数据传输，有望应用于下一代数据中心和AI计算集群互联。",
-            "https://x.com/MSFTResearch/status/2062983588606320714"
+            "FIFA世界杯6月11日开幕：科技赋能全球赛事",
+            "FIFA",
+            "2026年世界杯横跨北美三国48支球队104场比赛，多项科技首次应用于赛事管理、转播和观赛体验。",
+            "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
           ]
         ]
       },
@@ -143,28 +143,28 @@
         "emoji": "💡",
         "items": [
           [
-            "具身智能投资窗口：银河通用等14家企业最新进展",
-            "36氪",
-            "2026年具身智能成为投资热点，银河通用完成25亿元新一轮融资，通过「银河星脑」将具身大模型、机器人本体和场景运营打通。",
-            "https://news.qq.com/rain/a/20260603A07KSA00"
+            "高德发布全球首个3D原生城市世界模型ABot-Earth0.5",
+            "IT之家",
+            "覆盖190+国家和地区，输入卫星图或文字10分钟生成公里级3D城市，制图成本为传统百分之一，效率提升约千倍。",
+            "https://www.ithome.com/0/961/378.htm"
           ],
           [
-            "2026腾讯游戏发布会：42款游戏及多项AI应用新进展",
-            "腾讯",
-            "SPARK 2026腾讯游戏发布会分享42款海内外游戏最新动态，展示AI技术在游戏制作、发行和运营中的多项创新应用。",
-            "https://news.qq.com/rain/a/20260527A0ANT900"
+            "Runway Aleph 2.0：AI视频编辑模型一键适配任意格式",
+            "Runway",
+            "上传视频选择宽高比，AI自动填充场景其余部分，极大降低视频制作适配多平台的技术门槛和成本。",
+            "https://x.com/runwayml/status/2064012425884569627"
           ],
           [
-            "赛力斯与字节跳动合作推出全新AI定义汽车品牌",
-            "新浪财经",
-            "赛力斯集团参股的赛豆科技与字节跳动火山引擎深度合作，6月9日发布全新AI定义汽车品牌，首款车型年内推出，支持纯电和增程双动力。",
-            "https://finance.sina.com.cn/headline/2026-06-06/doc-iniamnzv8954006.shtml"
+            "生数科技与华策影视合作：AI+影视工业化流程",
+            "生数科技",
+            "以Vidu视频生成大模型为技术底座设立AI视听创制中心，探索AI虚拟制作与实拍融合的新一代影视工业化流程。",
+            "https://mp.weixin.qq.com/s?__biz=MzkzMDQ5NTQwMQ%3D%3D&mid=2247488842&idx=1&sn=3dab63189fa60b3b78c5ad72e3358791"
           ],
           [
-            "NVIDIA PixelDiT和Meta SAM 3D同获CVPR2026殊荣",
-            "NVIDIA",
-            "CVPR2026公布最佳论文奖项：NVIDIA PixelDiT入选最佳论文决赛，Meta SAM 3D获最佳论文荣誉提名，标志着计算机视觉领域的重大突破。",
-            "https://x.com/NVIDIAAI/status/2063034422698389625"
+            "Apple Intelligence升级：Safari AI扩展与Home AI摄像头",
+            "Apple",
+            "用户可自然语言描述生成自定义Safari扩展；HomeKit摄像头利用AI分析画面生成文字摘要和自然语言搜索。",
+            "https://www.apple.com/newsroom/2026/06/apple-intelligence-brings-powerful-ai-capabilities-into-everyday-experiences"
           ]
         ]
       }

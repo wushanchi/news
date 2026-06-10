@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import json, os
 
-DATE = "2026-06-06"
-DATE_CN = "2026 年 6 月 6 日"
-WEEKDAY = "星期六"
+DATE = "2026-06-10"
+DATE_CN = "2026 年 6 月 10 日"
+WEEKDAY = "星期三"
 BASE = r"C:\Users\Wu Shanchi\WorkBuddy\2026-05-22-AI news"
 
 # Load all data

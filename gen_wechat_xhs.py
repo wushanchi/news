@@ -2,9 +2,9 @@
 """Generate WeChat article and Xiaohongshu draft from 4 JSON data files."""
 import json, os
 
-DATE = "2026-06-06"
-DATE_CN = "2026年6月6日"
-WEEKDAY = "星期六"
+DATE = "2026-06-10"
+DATE_CN = "2026年6月10日"
+WEEKDAY = "星期三"
 BASE = r"C:\Users\Wu Shanchi\WorkBuddy\2026-05-22-AI news"
 
 # Load all data

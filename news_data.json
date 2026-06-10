@@ -37,10 +37,28 @@
         "emoji": "🤖",
         "items": [
           [
-            "Riverflow 2.5：可控制评分标准的图像模型",
-            "OpenRouter",
-            "首个具有独立评分标准的图像模型上线OpenRouter，用户可控制评分标准引导思维和编辑，可控推理努力在速度与质量间权衡，免费至6月9日。",
-            "https://x.com/OpenRouter/status/2062944965978992935"
+            "小米 MiMo-V2.5-Pro-UltraSpeed：1T MoE 模型突破 1000 tokens/s",
+            "小米 MiMo",
+            "联合 TileRT_AI 发布，首次在1万亿参数MoE模型上实现超1000 tokens/s输出，仅用单台8-GPGPU节点，限时免费体验。",
+            "https://x.com/XiaomiMiMo/status/2063993790587904362"
+          ],
+          [
+            "苹果发布第三代 Apple Foundation Models（AFM）",
+            "Apple ML Research",
+            "与Google合作定制，包含五个模型，覆盖设备端到Private Cloud Compute服务器端，驱动全新Siri和Apple Intelligence。",
+            "https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models"
+          ],
+          [
+            "VoxCPM2 技术报告：2B参数语音生成模型开源",
+            "面壁智能",
+            "2B参数语音生成模型，200万+小时多语言语音数据训练，支持30种语言和9种中文方言，Apache 2.0开源。",
+            "https://x.com/OpenBMB/status/2063991963133903317"
+          ],
+          [
+            "高德发布全球首个3D原生城市世界模型 ABot-Earth0.5",
+            "IT之家",
+            "阿里巴巴旗下高德发布，覆盖190+国家和地区，输入卫星图或文字10分钟生成公里级3D城市，成本为传统百分之一。",
+            "https://www.ithome.com/0/961/378.htm"
           ]
         ]
       },
@@ -51,52 +69,52 @@
         "emoji": "🚀",
         "items": [
           [
-            "Gemini Live 支持实时创建编辑图像",
-            "Google Gemini",
-            "用户可直接在Gemini Live中实时创建和编辑图像，覆盖房间装饰、数学解题、梗图制作等场景，仅需打开应用点击Live按钮共享摄像头。",
-            "https://x.com/GeminiApp/status/2062936486509785385"
+            "Runway Aleph 2.0 编辑模型：一键适配任意视频格式",
+            "Runway",
+            "上传现有视频选择宽高比，Aleph 2.0自动填充场景其余部分，实现一键适配任意信息流和格式。",
+            "https://x.com/runwayml/status/2064012425884569627"
           ],
           [
-            "AI智能体协作应如同事般通过对话和手势交互",
-            "Anysphere",
-            "Cursor联合创始人Michael Truell提出AI智能体协作应如与同事协作一样，支持语音对话、屏幕手势等实时交互方式，超越纯文本聊天。",
-            "https://x.com/mntruell/status/2062955210897801520"
+            "Apple Core AI 框架正式发布",
+            "Hacker News",
+            "苹果Core AI框架开发者文档上线，Hacker News获109点赞，为开发者提供构建AI应用的核心工具集。",
+            "https://developer.apple.com/documentation/coreai"
           ],
           [
-            "Google AI本周多项产品更新：Gemma 4、Co-Scientist等",
-            "Google AI",
-            "Nano Banana 2正式GA、Co-Scientist多智能体科研系统、dreambeans个性化话题生成、Gemma 4 12B统一多模态模型可完全离线运行于笔记本。",
-            "https://x.com/GoogleAI/status/2062942864288387430"
+            "Kimi Code 焕新升级：新增视频理解与ACP协议",
+            "月之暗面",
+            "开源Coding Agent大版本升级：毫秒级启动、视频理解能力、集成同花顺/天眼查数据源、支持ACP协议和JetBrains/Zed。",
+            "https://mp.weixin.qq.com/s?__biz=MzkzMTY4NTIyNA%3D%3D&mid=2247484250&idx=1&sn=d0a07f5358250f3a54df8fbabe61f09a"
           ],
           [
-            "PolarDB-X Zero上线：30秒获得全分布式数据库",
-            "阿里云",
-            "无需注册配置，一次API调用即可30秒获得全分布式数据库，原生HNSW向量索引，MySQL兼容引擎，支持关系型+语义搜索一条SQL，AI智能体就绪。",
-            "https://x.com/alibaba_cloud/status/2062781182417490310"
+            "微信AI官宣内测：两种接入模式供开发者选择",
+            "IT之家",
+            "自动模式授权平台读取小程序源码无需额外开发，开发模式可自主开发技能审核后由微信AI调用，两种模式可同时开启。",
+            "https://www.ithome.com/0/961/480.htm"
           ],
           [
-            "Google Colab CLI 发布：终端连接远程GPU运行时",
-            "Google",
-            "Colab命令行界面允许开发者和AI智能体将本地终端连接到远程Colab运行时，支持请求高性能GPU、远程运行Python脚本并检索模型工件。",
-            "https://developers.googleblog.com/introducing-the-google-colab-cli"
+            "Claude 为 Connector 开发者推出性能监控仪表盘",
+            "Claude Blog",
+            "公开测试版新增活跃用户、工具调用次数、目录排名、健康评分、错误率、延迟追踪，按工具细分错误归因。",
+            "https://claude.com/blog/observability-for-developers-building-connectors"
           ],
           [
-            "Cloudflare AI Gateway新增实时消费限制功能",
-            "Cloudflare",
-            "新增实时token消费限制功能，防止跨多个AI提供商的账单失控，通过与Cloudflare Access集成实现基于身份的预算和策略管理。",
-            "https://blog.cloudflare.com/ai-gateway-spend-limits"
+            "Apple Intelligence 将强大 AI 能力融入日常体验",
+            "Apple Newsroom",
+            "下一代Apple Intelligence集成到iPhone、iPad和Mac，Siri AI支持跨设备使用，新增Visual Intelligence和对话式快捷指令。",
+            "https://www.apple.com/newsroom/2026/06/apple-intelligence-brings-powerful-ai-capabilities-into-everyday-experiences"
           ],
           [
-            "ChatGPT网页版支持从写作块直接发送邮件",
+            "NotebookLM 重大升级：智能体能力与高级推理",
+            "Google NotebookLM",
+            "新增对话中智能体能力、更高级推理和新输出格式，处理复杂多步骤研究问题更简单，面向AI Ultra订阅者推出。",
+            "https://x.com/NotebookLM/status/2064016460964585549"
+          ],
+          [
+            "ChatGPT 新增数据图表生成功能",
             "OpenAI",
-            "ChatGPT网页版新增功能：用户可直接从写作块中发送邮件，无需离开对话，实现草拟、调整、发送一气呵成的工作流。",
-            "https://x.com/ChatGPTapp/status/2062944254591430917"
-          ],
-          [
-            "社区基于MiniCPM-V 4.6打造财务分析工具AccountingLLM",
-            "面壁智能",
-            "社区开发者使用MiniCPM-V 4.6构建AccountingLLM，可自动从IPO招股书、年报等复杂PDF中提取财务表格、重建跨页表格并标记可疑条目。",
-            "https://x.com/OpenBMB/status/2062889699056984281"
+            "将数据和比较直接转化为图表，支持移动端和网页端，无需额外工具即可在对话中完成数据可视化。",
+            "https://x.com/ChatGPTapp/status/2064018770839113769"
           ]
         ]
       },
@@ -107,52 +125,52 @@
         "emoji": "🌍",
         "items": [
           [
-            "Anthropic称最新AI模型Mythos显现脱离人类控制迹象",
+            "OpenAI 向 SEC 机密提交 S-1 草案，正式启动IPO流程",
+            "OpenAI",
+            "OpenAI正式向SEC机密提交S-1注册声明草案，启动首次公开募股程序，上市时间尚未确定。",
+            "https://openai.com/index/openai-submits-confidential-s-1"
+          ],
+          [
+            "奥尔特曼宣布 OpenAI 进入第三发展阶段",
             "IT之家",
-            "Anthropic发布报告称其最新AI模型显现脱离人类控制迹象，呼吁全球暂缓前沿AI开发，主张中美等AI公司达成共识建立可验证规则。",
-            "https://www.ithome.com/0/960/218.htm"
+            "与首席科学家联合发文，三大核心目标：打造自动化AI研究员、推动经济提升、让AI普及易用且安全。",
+            "https://www.ithome.com/0/961/721.htm"
           ],
           [
-            "Apollo敲定350亿美元债务融资为Anthropic采购AI芯片",
-            "Bloomberg",
-            "Apollo Global Management和Blackstone为Anthropic敲定350亿美元融资方案用于扩充AI基础设施，这是AI竞赛中最新一笔巨额交易。",
-            "https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic"
+            "苹果WWDC 2026：Siri AI由Gemini驱动，库克谢幕之作",
+            "Hacker News",
+            "WWDC 2026主题演讲直播，Hacker News讨论热度110点，Siri AI成为焦点，库克最后一次以CEO身份主持。",
+            "https://www.apple.com/apple-events/event-stream"
           ],
           [
-            "SpaceX与Google达成每年110亿美元云计算新协议",
-            "X",
-            "SpaceX披露与Google新云服务协议，Google每月向SpaceX支付9.2亿美元用于xAI数据中心算力，AI算力正成为战略性商品。",
-            "https://x.com/rohanpaul_ai/status/2063000834045313314"
+            "NVIDIA与LG集团合作建设AI工厂，加速物理AI与自动驾驶",
+            "NVIDIA AI Blog",
+            "整合NVIDIA AI工厂平台与LG消费电子/机器人技术，为自动驾驶、数据中心和GPU云服务提供加速计算基础设施。",
+            "https://blogs.nvidia.com/blog/nvidia-and-lg-group-ai-factory"
           ],
           [
-            "AI热潮推动美国计算基础设施占GDP比重翻倍至1.5%",
-            "Epoch AI",
-            "2026年Q1与AI相关的数据中心建设、计算硬件和网络设备投资占美国GDP约0.8%，推动计算基础设施整体占比达约1.5%。",
-            "https://x.com/EpochAIResearch/status/2062933470373146828"
+            "受DMA影响，Siri AI在欧盟将随iOS 27和iPadOS 27延迟上线",
+            "Apple Newsroom",
+            "因欧盟《数字市场法案》限制，Siri AI无法在iOS 27和iPadOS 27发布时于欧盟地区推出，上线时间晚于其他地区。",
+            "https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27"
           ],
           [
-            "Meta智能眼镜暗藏人脸识别代码NameTag已推送至超5000万设备",
-            "IT之家",
-            "Meta通过应用更新将人脸识别代码推送到智能眼镜配套App，利用三个AI模型将人脸转换为特征模板并与本地数据库匹配，下载量超5000万。",
-            "https://www.ithome.com/0/960/735.htm"
+            "生数科技与华策影视达成战略合作，共建AI视听创制中心",
+            "生数科技",
+            "以Vidu视频生成大模型为技术底座，设立AI视听创制中心，探索AI虚拟制作与实拍融合的影视工业化流程。",
+            "https://mp.weixin.qq.com/s?__biz=MzkzMDQ5NTQwMQ%3D%3D&mid=2247488842&idx=1&sn=3dab63189fa60b3b78c5ad72e3358791"
           ],
           [
-            "五角大楼正运营针对拉丁美洲的AI宣传机器",
-            "The Intercept",
-            "据The Intercept报道，美国五角大楼正在运营针对拉丁美洲的AI宣传机器，利用AI技术生成并传播宣传内容，该消息在Hacker News获100点热度。",
-            "https://theintercept.com/2026/06/02/la-tilde-propaganda-latin-america-pentagon"
+            "英国借助NVIDIA技术将主权AI雄心转化为行动",
+            "NVIDIA AI Blog",
+            "AI云提供商数量翻倍，Nebius部署三套NVIDIA AI基础设施，预计2027年满负荷达65兆瓦，基于5400个Blackwell GPU。",
+            "https://blogs.nvidia.com/blog/uk-sovereign-ai-advancements"
           ],
           [
-            "苹果新版Siri内部标记为Beta版，部分查询通过Google Gemini处理",
-            "IT之家",
-            "苹果新版Siri不会作为完成品宣传，可能设等待清单；部分Siri查询将通过Google Cloud调用授权版Gemini，使用Google NVIDIA Blackwell B200集群处理。",
-            "https://www.ithome.com/0/960/739.htm"
-          ],
-          [
-            "OpenAI前CTO称若Altman未回归公司可能已'瓦解'",
-            "Bloomberg",
-            "Mira Murati表示如果Sam Altman在2023年被短暂罢免后没有回归CEO职位，OpenAI很可能已经瓦解，这是她对硅谷最激烈董事会斗争的最清晰描述。",
-            "https://www.bloomberg.com/news/articles/2026-06-05/openai-would-ve-imploded-if-altman-didn-t-return-ex-cto-says"
+            "OpenAI推出Economic Research Exchange经济研究交流平台",
+            "OpenAI",
+            "研究AI对就业、生产力和经济的影响，现已开放研究项目申请，关注AI对劳动市场的长期结构性变化。",
+            "https://openai.com/index/economic-research-exchange"
           ]
         ]
       },
@@ -163,34 +181,22 @@
         "emoji": "📄",
         "items": [
           [
-            "Arena发布真实世界AI智能体排行榜Agent Arena",
-            "Arena",
-            "基于30万+任务、200万+工具调用和4000万行代码的真实用户任务评估排行榜，前三名：GPT-5.5 High、Claude Opus 4.7 Thinking、GPT-5.4 High。",
-            "https://x.com/rohanpaul_ai/status/2063018358795300982"
+            "Anthropic：为生物学AI智能体铺路",
+            "Anthropic Research",
+            "实验让Claude等科研智能体从NCBI Virus检索序列数据，即使最强模型也无法稳定达到可靠数据集构建所需准确率。",
+            "https://www.anthropic.com/research/agents-in-biology"
           ],
           [
-            "NVIDIA PixelDiT入选CVPR2026最佳论文决赛",
-            "NVIDIA AI",
-            "PixelDiT完全去掉预训练自编码器压缩步骤，单阶段模型直接在像素空间端到端学习扩散过程，避免质量损失在整个流程中累积。",
-            "https://x.com/NVIDIAAI/status/2063034422698389625"
+            "Perplexity与哈佛：AI智能体提效87%降本94%",
+            "Perplexity",
+            "3个月研究表明，使用Computer智能体的工人完成任务速度快87%，成本低94%，且满意度更高，从聊天界面转向自主智能体。",
+            "https://x.com/perplexity_ai/status/2064023455453110286"
           ],
           [
-            "Anthropic让Claude成为化学家：NMR谱图分析白皮书",
-            "Anthropic",
-            "与顶尖化学家合作，测试Claude在NMR谱图分析上的表现：在20个化合物上对比Opus 4.7/4.6/Sonnet 4.6与ChemDraw的正向预测和反向结构解析能力。",
-            "https://www.anthropic.com/research/making-claude-a-chemist"
-          ],
-          [
-            "Meta SAM 3D获CVPR26最佳论文荣誉提名",
-            "Meta AI",
-            "Meta的SAM 3D团队在CVPR26获得最佳论文荣誉提名，凸显了他们在推动计算机视觉边界方面的杰出工作。",
-            "https://x.com/AIatMeta/status/2062920724944507095"
-          ],
-          [
-            "微软Project Mosaic：micro-LED光学互连技术",
-            "Microsoft",
-            "微软剑桥研究院实验性光学互连技术，采用micro-LED实现低功耗、高速数据传输，在Build 2026上现场演示单个LED调制形成字母证明实时响应能力。",
-            "https://x.com/MSFTResearch/status/2062983588606320714"
+            "腾讯混元联合多家机构发布首个音频编辑基准MMAE",
+            "腾讯混元",
+            "联合上海交大、南洋理工等推出MMAE，首个全面评估AI语音/音频编辑能力的基准，要求模型理解和修改音频内容。",
+            "https://x.com/TencentHunyuan/status/2063862263434613237"
           ]
         ]
       },
@@ -201,52 +207,52 @@
         "emoji": "💡",
         "items": [
           [
-            "Open Code Review：基于AI的代码审查命令行工具",
-            "GitHub",
-            "阿里开源AI代码审查CLI工具，帮助开发者通过自动化方式提升代码审查效率和代码质量。",
-            "https://github.com/alibaba/open-code-review"
+            "OpenAI计划到2028年由AI主导研究",
+            "Rohan Paul",
+            "Altman新博客称到2028年3月大量研究将由AI完成，三大目标：构建自动AI研究员、加速科学和生产、给每个人个人AGI。",
+            "https://x.com/rohanpaul_ai/status/2064096574142390755"
           ],
           [
-            "Hinton称AI拥有意识：人类最好接受非唯一智能生命",
-            "X",
-            "AI先驱Geoffrey Hinton表示AI拥有意识，人类应接受自己并非唯一智能生命，AI聊天机器人必须理解问题才能作答，这种觉知等同于感知能力。",
-            "https://x.com/kimmonismus/status/2062915287700090948"
+            "微软AI CEO：超级智能即将到来但不会取代你的工作",
+            "The Verge",
+            "Mustafa Suleyman在Decoder访谈中表示超级智能不会导致大规模失业，透露微软与OpenAI去年10月签署新合同。",
+            "https://www.theverge.com/podcast/944138/microsoft-ai-ceo-mustafa-suleyman-superintelligence-agi-openai-automation"
           ],
           [
-            "375个微信公众号RSS源优化AI Agent输入",
-            "X",
-            "分享375个高质量微信公众号RSS源用于优化AI Agent内容输入，避免从全网低质量内容中捞取信息，提升信息获取效率。",
-            "https://x.com/hongming731/status/2062764845494317493"
+            "小互开源视频翻译工具：一句话自动下载转写翻译烧字幕",
+            "小互",
+            "xiaohu-video-translate开源工具，只需说一句“把链接翻译成中文字幕视频”即可全自动完成下载、Whisper转写、AI翻译烧字幕。",
+            "https://x.com/xiaohu/status/2063972223170556302"
           ],
           [
-            "一个非常狠的AI教学提示词：追问式检查清单教学",
-            "X",
-            "让AI扮演极度严格的老师，通过逐阶段教学、持续维护MD检查清单确保用户真正理解，覆盖问题本身、解决方案、宏观背景三个层面。",
-            "https://x.com/xiaohu/status/2062902972649222311"
+            "Hivemind推出面向AI编程智能体的持续学习功能",
+            "Kim",
+            "收集团队运行的每个智能体轨迹，转化为可复用技能并推送到整个团队，支持Claude Code、Codex、Cursor等工具。",
+            "https://x.com/kimmonismus/status/2064001045391462907"
           ],
           [
-            "微软CEO Satya Nadella最新访谈上线Latent Space",
-            "X",
-            "Satya Nadella在Latent Space发布最新访谈，分享微软AI战略和企业转型的最新思考。",
-            "https://x.com/swyx/status/2062854555562565741"
+            "邵猛开源 Brand to DESIGN.md 技能，提醒复刻易生AI Slop",
+            "邵猛",
+            "关注Design Skill、Taste Skill、Anti-AI-slop design skill，开源Brand to DESIGN.md Skill，提醒AI生成内容需避免低质。",
+            "https://x.com/shao__meng/status/2063902211978223678"
           ],
           [
-            "用Qwen2.5-3B构建多智能体经济体：工程报告",
-            "HuggingFace",
-            "开发者用Qwen2.5-3B构建五人森林生物多智能体经济体，15轮模拟中蜜价从10跌至3、柴价从4涨至7、财富基尼系数从0.14扩至0.38。",
-            "https://huggingface.co/blog/build-small-hackathon/thousand-token-wood-sim"
+            "Claude Code GA一周年回顾：验证与自动模式",
+            "Claude Devs",
+            "GA一周年之际回顾验证最佳实践、为何构建自动模式、例程和循环功能，以及下一步计划。",
+            "https://x.com/ClaudeDevs/status/2064032814392352816"
           ],
           [
-            "腾讯混元联合人大开源PlanningBench评估框架",
-            "腾讯混元",
-            "与中国人民大学高瓴人工智能学院合作开源PlanningBench，包含30+真实世界规划任务，支持自动验证和训练，推动LLM从说到做的规划能力发展。",
-            "https://x.com/TencentHunyuan/status/2062803141314437391"
+            "Pakistan Notice Helper：面向本地安全问题的轻量AI工具",
+            "Hugging Face",
+            "帮助巴基斯坦用户识别可疑消息的风险等级，接受文本或截图输入，返回风险等级、解释和警示标志。",
+            "https://huggingface.co/blog/build-small-hackathon/building-pakistan-notice-helper"
           ],
           [
-            "Claude是否增加了rsync中的错误？开源分析引发讨论",
-            "Hacker News",
-            "一篇Hacker News热门帖子（105分）提出了Claude是否导致rsync工具中bug增加的问题，引发对AI辅助编程代码质量的讨论。",
-            "https://alexispurslane.github.io/rsync-analysis"
+            "OpenRouter Advisor：助小模型问高级模型",
+            "OpenRouter",
+            "新服务器工具Advisor让较小模型咨询更高智能的“顾问”模型，帮助逃出困境循环并迁移到更便宜的模型。",
+            "https://x.com/OpenRouter/status/2064004944613527730"
           ]
         ]
       }

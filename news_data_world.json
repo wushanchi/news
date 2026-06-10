@@ -26,7 +26,7 @@
       "society": "社会人文"
     },
     "title": "国际焦点日报",
-    "footer": "数据来源：Reuters / BBC / CNN / AP News / 新华网 / 环球网 / 参考消息 / UN News / Bloomberg 等公开新闻源",
+    "footer": "数据来源：Reuters / BBC / CNN / AP News / 新华网 / 环球网 / Livemint / UN News 等公开新闻源",
     "sections": [
       {
         "id": "politics",
@@ -35,46 +35,40 @@
         "emoji": "🏛️",
         "items": [
           [
-            "特朗普称美伊协议可能在本周末达成",
-            "AP News",
-            "特朗普在白宫表示美伊谈判进展顺利，协议可能在本周末揭晓，但也称美军对伊朗进行了相当猛烈的打击作为回应。",
-            "https://apnews.com/article/iran-us-israel-war-2-june-2026-9bde9a3425d4b9ff70f157bdae0fb982"
-          ],
-          [
-            "伊朗向科威特和巴林发射导弹被拦截，美军打击伊朗设施",
-            "CNN",
-            "伊朗向科威特和巴林发射导弹均被拦截或失效，作为回应美军对伊朗一处设施发动了打击，地区紧张局势持续升级。",
-            "https://www.cnn.com/2026/06/02/world/live-news/iran-trump-israel-lebanon-war-intl-hnk"
-          ],
-          [
-            "以色列与黎巴嫩同意停火，条件为真主党完全撤出南黎",
-            "AP News",
-            "以色列与黎巴嫩同意实施停火协议，条件为真主党武装分子“完全停止”在南黎巴嫩的活动并从该地区撤出。",
-            "https://apnews.com/article/iran-us-israel-war-2-june-2026"
-          ],
-          [
-            "G7领导人峰会在法国召开，聚焦AI监管与全球贸易",
+            "内塔尼亚胡称赞特朗普帮助缓和以色列-伊朗紧张局势",
             "Reuters",
-            "G7领导人峰会在法国举行，各国领导人就AI全球监管框架、贸易政策协调以及乌克兰重建资金等议题展开密集磋商。",
-            "https://www.reuters.com/world/g7-summit-2026"
+            "以总理公开感谢特朗普在缓和以伊紧张关系中发挥的作用，此前特朗普呼吁双方停止交火防止冲突升级为更大范围地区战争。",
+            "https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html"
           ],
           [
-            "联合国纪念78年来4500多名牺牲的维和人员",
-            "UN News",
-            "联合国在日内瓦举行仪式悼念78年来在执行维和任务中牺牲的4500多名维和人员，强调多边主义与和平使命的持续重要性。",
-            "https://www.ungeneva.org/en/news-media/news-list"
+            "伊朗高官对达成和平协议表示怀疑",
+            "WNG",
+            "一名伊朗高级官员对与美国达成和平协议的前景表示怀疑，美伊和平谈判仍面临重大障碍。",
+            "https://wng.org/podcasts/tuesday-morning-news-june-9-2026-1780937750"
           ],
           [
-            "新一轮国资国企改革方案（2026-2029）正式下发",
+            "以色列空袭黎巴嫩南部，至少12人遇难",
             "新华网",
-            "中国《关于进一步深化国资国企改革的方案（2026-2029年）》已正式下发，中央企业加速传达学习，各地密集召开专题会议细化落实举措。",
-            "https://finance.sina.com.cn/stock/y/2026-06-01/doc-inhzwcks5473515.shtml"
+            "以色列对黎巴嫩南部多轮空袭造成至少12人死亡，纳巴提耶区Zefta遭黎明前空袭7人罹难，推罗区车辆遭袭4人死亡。",
+            "https://english.news.cn/20260609/7ac13340cdcb49f0844575727c21c478/c.html"
           ],
           [
-            "欧盟领导人布鲁塞尔峰会讨论乌克兰重建与安全架构",
-            "BBC",
-            "欧盟27国领导人在布鲁塞尔举行特别峰会，重点讨论乌克兰战后重建资金方案和欧洲安全架构的长期规划。",
-            "https://www.bbc.com/news/world-europe"
+            "玻利维亚总统签署紧急状态新法应对持续39天抗议",
+            "新华网",
+            "玻利维亚总统签署第1740号法律规范紧急状态宣布程序，该国已持续39天抗议和道路封锁，新法允许总统通过最高法令宣布紧急状态。",
+            "https://english.news.cn/20260609/7ac13340cdcb49f0844575727c21c478/c.html"
+          ],
+          [
+            "全球人权治理高端论坛将于6月11日在北京举行",
+            "中国外交部",
+            "来自近百个国家和联合国等国际组织的400余名嘉宾将与会，纪念联合国《发展权利宣言》通过40周年。",
+            "https://om.china-embassy.gov.cn/fyrth/202606/t20260608_11939733.htm"
+          ],
+          [
+            "中国6月外交转向全球经贸投资平台",
+            "环球时报",
+            "5月高级别外交密集后，中国6月议程转向全球商业、贸易和投资，一系列重大经济平台陆续启动。",
+            "https://www.globaltimes.cn/page/202605/1362006.shtml"
           ]
         ]
       },
@@ -85,34 +79,34 @@
         "emoji": "💰",
         "items": [
           [
-            "Apollo与Blackstone为Anthropic敲定350亿美元AI芯片融资",
+            "投资者以创纪录速度撤离看空石油基金",
             "Bloomberg",
-            "Apollo Global Management和Blackstone为Anthropic完成350亿美元债务融资方案用于扩充AI基础设施，成为AI军备竞赛中最新一笔巨额交易。",
-            "https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic"
+            "上周投资者以创历史纪录速度从看空石油的基金中撤资，反映市场对油价走势预期的重大转变，美伊局势缓和为主要驱动。",
+            "https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html"
           ],
           [
-            "SpaceX与Google签署每年110亿美元云计算协议",
-            "Reuters",
-            "SpaceX披露与Google新云服务协议，Google每月向SpaceX支付9.2亿美元（约每年110亿美元）用于xAI数据中心算力，凸显AI算力的战略商品属性。",
-            "https://x.com/rohanpaul_ai/status/2063000834045313314"
+            "OpenAI机密提交S-1草案启动IPO，AI超级上市年启幕",
+            "Wired",
+            "继Anthropic和SpaceX之后，OpenAI正式提交S-1注册声明草案，华尔街为万亿美元级AI IPO浪潮做准备。",
+            "https://www.wired.com/story/openai-confidentially-files-for-ipo/"
           ],
           [
-            "AI基础设施投资推动美国计算基建占GDP比重翻倍至1.5%",
-            "Epoch AI",
-            "2026年Q1与AI相关的数据中心建设、计算硬件和网络设备投资约占美国GDP的0.8%，推动计算基础设施整体占比达约1.5%，较此前翻倍。",
-            "https://x.com/EpochAIResearch/status/2062933470373146828"
-          ],
-          [
-            "国际金价在4400-4800美元/盎司区间震荡",
+            "中国央行重启7天期逆回购操作，净投放920亿元",
             "新浪财经",
-            "2026年上半年黄金市场呈现箱体震荡格局，国际金价在4400-4800美元/盎司宽幅波动，国内金价在980-1040元/克之间来回拉锯。",
-            "https://news.qq.com/rain/a/20260526A08TK900"
+            "6月3-4日连续零操作后，6月5日重启7天期逆回购操作2150亿元，对冲到期量后实现净投放920亿元。",
+            "https://finance.sina.com.cn/stock/y/2026-06-08/doc-iniaruxw9012130.shtml"
           ],
           [
-            "6月重磅事件密集：SpaceX IPO、FIFA世界杯等影响全球市场",
-            "Reuters",
-            "步入6月海内外重磅事件密集落地，SpaceX创纪录IPO、美联储政策会议、FIFA世界杯开幕等将影响全球市场流动性与风险偏好。",
-            "https://xueqiu.com/1266865638/391892715"
+            "科技创新50强出炉，全球资金关注AI产业链",
+            "新浪财经",
+            "证监会主席吴清强调坚守信义义务，从“重规模”向“重回报”转型，AI产业链成为全球资金重点配置方向。",
+            "https://finance.sina.com.cn/stock/y/2026-06-08/doc-iniarzfy7265812.shtml"
+          ],
+          [
+            "第十届中国-南亚博览会6月11日昆明开幕",
+            "商务部",
+            "以「团结协作，共谋发展」为主题，历经9届发展沉淀，国际化、专业化、市场化水平持续提升。",
+            "http://expo.ce.cn/gd/202606/t20260601_3001984.shtml"
           ]
         ]
       },
@@ -123,34 +117,34 @@
         "emoji": "⚡",
         "items": [
           [
-            "世界环境日聚焦气候紧急行动，全球气温接近历史极值",
-            "UNEP",
-            "在阿塞拜疆巴库举行世界环境日纪念活动，全球气温接近历史极值、厄尔尼诺即将回归，各国政府和企业承诺加速气候行动。",
-            "https://www.unep.org/news-and-stories/press-release/planet-swelters-world-environment-day-2026-focuses-urgent-climate"
+            "菲律宾强烈地震造成35人死亡，数千人流离失所",
+            "Reuters",
+            "菲律宾民答那峨岛发生强烈地震，已造成至少35人死亡，大量民众被迫撤离家园，时值数百万儿童上课时段。",
+            "https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html"
           ],
           [
-            "FIFA世界杯倒计时5天：6月11日北美开幕",
+            "刚果（金）埃博拉疫情快速扩散，已蔓延至乌干达",
+            "新华网/WHO",
+            "WHO警告刚果埃博拉疫情快速扩大，515例确诊91人死亡，乌干达19例确诊2人死亡，刚果风险评级“极高”。",
+            "https://english.news.cn/20260609/7ac13340cdcb49f0844575727c21c478/c.html"
+          ],
+          [
+            "美军在阿曼湾拦截并致残一艘油轮",
+            "新华网",
+            "美军中央司令部宣布在阿曼湾国际水域拦截帕劳籍油轮Marivex号，F/A-18战机向工程和操舵舱发射精确制导弹药。",
+            "https://english.news.cn/20260609/7ac13340cdcb49f0844575727c21c478/c.html"
+          ],
+          [
+            "FIFA世界杯倒计时2天：6月11日美加墨联合开幕",
             "FIFA",
-            "2026年FIFA世界杯即将在加拿大、墨西哥和美国三国联合举办，6月11日开幕战备受瞩目，这是历史上首次由三个国家共同主办世界杯。",
+            "2026年FIFA世界杯48支球队首次参赛，6月11日墨西哥城阿兹特克球场开幕战，横跨加拿大、墨西哥和美国三国联合举办。",
             "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
           ],
           [
-            "SpaceX创纪录IPO本月启动，估值或将突破历史",
-            "Bloomberg",
-            "SpaceX计划本月启动创纪录IPO，市场预期估值将突破历史水平，成为2026年全球最大规模的首次公开募股事件之一。",
-            "https://www.bloomberg.com/news/articles/2026-06"
-          ],
-          [
-            "中国商务部对进口牛肉实施保障措施：超配额加征55%关税",
-            "商务部",
-            "中国对进口牛肉实施国别配额及配额外加征55%关税的保障措施正式执行，当进口数量达到配额后将自动触发加征机制。",
-            "https://www.mofcom.gov.cn/xwfbzt/2026/swbzklxxwfbh2026n6y4r/index.html"
-          ],
-          [
-            "美军对伊朗设施发动打击后地区安全局势急剧恶化",
-            "BBC",
-            "美军对伊朗设施发动打击后，中东地区安全局势急剧恶化，国际社会呼吁各方保持克制，联合国安理会就此召开紧急会议。",
-            "https://www.bbc.com/news/world-middle-east"
+            "苹果WWDC 2026：Tim Cook谢幕之作，Siri AI由Gemini驱动",
+            "The Verge",
+            "Tim Cook最后一次以CEO身份主持WWDC，9月1日由John Ternus接任，发布Siri AI和iOS 27等全系更新。",
+            "https://www.theverge.com/tech/944110/wwdc-2026-news-announcements"
           ]
         ]
       },
@@ -161,22 +155,28 @@
         "emoji": "🌏",
         "items": [
           [
-            "伊朗导弹袭击影响科威特国际机场正常运营",
+            "苹果投资者对新Siri及AI平台反应冷淡",
+            "Bloomberg",
+            "尽管苹果发布新一代Siri和AI平台，但市场投资者反应平平，股价未见明显提振，核心AI能力依赖Gemini引发质疑。",
+            "https://www.livemint.com/technology/tech-news/apple-wwdc-2026-live-updates-ios-27-siri-ai-revamp-macos-27-key-announcements-and-highlights-11780923667605.html"
+          ],
+          [
+            "A24首部2亿美元影片《Backrooms》10天票房破2亿",
+            "Livemint",
+            "恐怖片《Backrooms》成为A24史上首部达此成绩的影片，标志着独立电影公司进入大片时代。",
+            "https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html"
+          ],
+          [
+            "美伊局势影响全球海运：霍尔木兹海峡通行风险上升",
             "Reuters",
-            "伊朗向科威特发射的导弹虽被拦截，但已对科威特国际机场正常运营造成影响，多个航班被迫改道或延误。",
-            "https://www.reuters.com/world/middle-east"
+            "美军在阿曼湾拦截油轮后，霍尔木兹海峡通行风险进一步上升，全球海运保险费率大幅攀升。",
+            "https://www.livemint.com/news/world/total-world-latest-news-on-june-9-2026-live-updates-11780946022526.html"
           ],
           [
-            "五角大楼利用AI在拉丁美洲开展宣传行动遭曝光",
-            "The Intercept",
-            "调查报道揭露美国五角大楼正运营针对拉丁美洲的AI宣传机器，利用人工智能技术生成并传播宣传内容，引发对AI武器化的担忧。",
-            "https://theintercept.com/2026/06/02/la-tilde-propaganda-latin-america-pentagon"
-          ],
-          [
-            "Nature Medicine：尼泊尔、塞内加尔、赞比亚母婴健康取得重大进展",
-            "Nature",
-            "研究显示尼泊尔、塞内加尔和赞比亚在母婴健康领域取得重大进展，尽管分娩护理覆盖率较高但仍面临质量提升挑战。",
-            "https://www.nature.com/nm/articles?year=2026"
+            "中国“北京榜样”5月榜发布：人形机器人创始人上榜",
+            "北京市政府",
+            "20人当选5月榜样，科技创新领域松延动力创始人姜哲源上榜，人形机器人产业化提速获社会认可。",
+            "https://www.beijing.gov.cn/ywdt/yaowen/202606/t20260608_4690181.html"
           ]
         ]
       }

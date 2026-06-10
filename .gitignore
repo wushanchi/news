@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Local backups
+.workbuddy/*_bak.json
+.workbuddy/fix_*.py
+.workbuddy/*.py
+.workbuddy/automations/
+
+# Local generator (old)
+local-generator/
