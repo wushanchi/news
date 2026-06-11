@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国际焦点日报 · 2026-06-11</title>
+<style>
+:root{--c-bg:#0a0f1a;--c-surface:#101828;--c-card:#182030;--c-border:#1e3a5f;--c-text:#e0e8f0;--c-text-dim:#8899aa;--c-accent:#3b82f6;--c-accent2:#60a5fa;--c-accent-glow:rgba(3b82f6,0.18);--c-tag-politics:#3b82f6;--c-tag-economy:#6366f1;--c-tag-major:#ef4444;--c-tag-society:#8b5cf6;--c-grad-start:#1e40af;--c-grad-mid:#2563eb;--c-grad-end:#1d4ed8;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif}
+.badge-politics{background:var(--c-tag-politics)}.badge-economy{background:var(--c-tag-economy)}.badge-major{background:var(--c-tag-major)}.badge-society{background:var(--c-tag-society)}
+
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(ff6a3d,0.12),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:var(--c-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(ff8c5a,0.3);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+
+</style>
+
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 11 日 · 星期四</div>
+  <h1 class="hero-title">国际焦点日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-politics)"></span> 政治外交 <strong>7</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-economy)"></span> 经济财经 <strong>5</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-major)"></span> 重大事件 <strong>4</strong></div>
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-society)"></span> 社会人文 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#politics"><span>🏛️ 政治外交</span><span class="nav-count">7</span></a>
+  <a href="#economy"><span>💰 经济财经</span><span class="nav-count">5</span></a>
+  <a href="#major"><span>⚡ 重大事件</span><span class="nav-count">4</span></a>
+  <a href="#society"><span>🌏 社会人文</span><span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="politics">
+  <div class="section-header">
+    <span class="section-badge badge-politics">POLITICS</span>
+    <h2>🏛️ 政治外交</h2>
+    <span class="section-count">7 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#01</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">美伊海上冲突急剧升级：伊朗称击中18个美军目标</div>
+  <div class="card-summary">伊朗革命卫队宣称击中并摧毁18个美军重要目标，同时打击位于伊拉克的美军基地和第五舰队爱国者系统。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.news.cn/world/jsxw/index.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#02</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">美军否认军舰遭伊朗袭击，特朗普称与伊朗官员直接通话</div>
+  <div class="card-summary">美方否认有任何军舰遭伊朗袭击，特朗普声称已与伊朗官员直接通话，但伊朗方面予以否认。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.news.cn/world/jsxw/index.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#03</span>
+    <span class="card-source">观察者网</span>
+  </div>
+  <div class="card-title">特朗普提议：伊朗一半石油换美国帮助重建</div>
+  <div class="card-summary">特朗普提出将帮助伊朗重建但要求拿走其一半石油，美伊和谈前景岌岌可危。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#04</span>
+    <span class="card-source">正观新闻</span>
+  </div>
+  <div class="card-title">伊朗称全面关闭霍尔木兹海峡，违规通行将受打击</div>
+  <div class="card-summary">伊朗宣布全面关闭霍尔木兹海峡，警告任何违规通行将受到打击，国际油价应声大涨。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#05</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">哥伦比亚总统再次要求特朗普停止干涉哥总统选举</div>
+  <div class="card-summary">哥伦比亚总统发表声明，再次强烈要求特朗普政府停止对其国内总统选举的干涉行为。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.news.cn/world/jsxw/index.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#06</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">中国代表就推进中东和平提出四点主张</div>
+  <div class="card-summary">中国常驻联合国代表在安理会就推进中东和平提出四点主张，呼吁各方保持克制、推动政治解决。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.news.cn/world/jsxw/index.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#07</span>
+    <span class="card-source">新华社</span>
+  </div>
+  <div class="card-title">俄国家杜马谴责美国对古巴侵略性政策</div>
+  <div class="card-summary">俄罗斯国家杜马通过决议谴责美国对古巴的侵略性政策，呼吁国际社会解除对古封锁。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="economy">
+  <div class="section-header">
+    <span class="section-badge badge-economy">ECONOMY</span>
+    <h2>💰 经济财经</h2>
+    <span class="section-count">5 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#08</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">国际油价大涨金价大跌，地缘风险主导市场</div>
+  <div class="card-summary">受美伊冲突升级影响，国际油价大幅上涨，金价则因美联储加息预期承压下跌，跌回2025年水平。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.news.cn/world/jsxw/index.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#09</span>
+    <span class="card-source">环球时报</span>
+  </div>
+  <div class="card-title">SpaceX 周五上市，市场热议“值不值”</div>
+  <div class="card-summary">SpaceX即将于周五上市，认购规模达2500亿美元超额近4倍，但市场对其估值合理性仍存分歧。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#10</span>
+    <span class="card-source">环球时报</span>
+  </div>
+  <div class="card-title">德国经济面临萎缩风险，订单大减</div>
+  <div class="card-summary">德国制造业订单大幅减少，经济面临萎缩风险，作为欧洲最大经济体陷入困境引发广泛关注。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#11</span>
+    <span class="card-source">环球时报</span>
+  </div>
+  <div class="card-title">日韩关注印尼“收紧”煤炭出口政策</div>
+  <div class="card-summary">印尼调整煤炭出口政策引发日本和韩国高度关注，两国能源供应安全面临新的不确定性。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#12</span>
+    <span class="card-source">财联社</span>
+  </div>
+  <div class="card-title">印度多地自动取款机遭遇现金荒</div>
+  <div class="card-summary">印度二三线城市ATM现金短缺问题加剧，民众取现困难，折射该国金融基础设施的潜在问题。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="major">
+  <div class="section-header">
+    <span class="section-badge badge-major">MAJOR</span>
+    <h2>⚡ 重大事件</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#13</span>
+    <span class="card-source">一财网</span>
+  </div>
+  <div class="card-title">菲律宾南部地震已造成45人死亡</div>
+  <div class="card-summary">菲律宾南部发生强烈地震，官方确认已有45人不幸遇难，救援工作仍在紧张进行中。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#14</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">伊朗战事不停，美国农民深受高油价之苦</div>
+  <div class="card-summary">美伊冲突持续推高国际油价，美国农民耕种成本激增，农业部门面临严峻成本压力。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://www.news.cn/world/jsxw/index.html" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#15</span>
+    <span class="card-source">光明网</span>
+  </div>
+  <div class="card-title">极端气候事件正成为常态，全球行动刻不容缓</div>
+  <div class="card-summary">5月欧洲热如盛夏、全球极端气候事件频发，气象专家详解背后成因，警告全球行动刻不容缓。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#16</span>
+    <span class="card-source">中华网</span>
+  </div>
+  <div class="card-title">报告称2025年全球核武支出创新高，美国居首</div>
+  <div class="card-summary">最新报告指出2025年全球核武器支出创下历史新高，美国一国支出超过其余八国总和。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<section class="section" id="society">
+  <div class="section-header">
+    <span class="section-badge badge-society">SOCIETY</span>
+    <h2>🌏 社会人文</h2>
+    <span class="section-count">4 条</span>
+  </div>
+  <div class="cards">
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#17</span>
+    <span class="card-source">新华网</span>
+  </div>
+  <div class="card-title">三分之二美国人不再相信“美国梦”</div>
+  <div class="card-summary">最新民调显示约三分之二的美国人不再相信美国梦，年轻一代对未来更加悲观。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#18</span>
+    <span class="card-source">环球时报</span>
+  </div>
+  <div class="card-title">从世界杯看“义乌制造”以变应变</div>
+  <div class="card-summary">2026美加墨世界杯带动义乌小商品出口热潮，中国制造业以快速应变能力满足全球球迷需求。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#19</span>
+    <span class="card-source">央视新闻</span>
+  </div>
+  <div class="card-title">比尔·盖茨就爱泼斯坦案调查自愿作证</div>
+  <div class="card-summary">微软创始人比尔·盖茨就爱泼斯坦案件调查自愿出庭作证，表示将协助伸张正义。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+<div class="card card-animate">
+  <div class="card-top">
+    <span class="card-num">#20</span>
+    <span class="card-source">环球时报</span>
+  </div>
+  <div class="card-title">票价更亲民，世界杯热身赛受追捧</div>
+  <div class="card-summary">2026世界杯临近，各队热身赛票价相较正赛更亲民，受到全球球迷热烈追捧。</div>
+  <div class="card-actions">
+    <a class="card-link" href="https://news.china.com/international/" target="_blank" rel="noopener noreferrer">
+      阅读原文
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+<p>数据来源：新华网 / 环球时报 / 央视新闻 / Reuters / CNN / BBC 等公开新闻源</p>
+<p>生成时间：2026-06-11 08:50 北京时间</p>
+</footer>
+
+<script>
+const observer=new IntersectionObserver((e)=>{e.forEach((e)=>{e.isIntersecting&&e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.card-animate').forEach((e)=>observer.observe(e));
+</script>
+
+</body>
+</html>
