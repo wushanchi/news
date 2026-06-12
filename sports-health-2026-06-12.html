@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动健康日报 · 2026 年 6 月 12 日</title>
+<style>
+:root{--c-bg:#120e06;--c-surface:#1a140a;--c-card:#241c10;--c-border:#3a2e18;--c-text:#f0e8d0;--c-text-dim:#aa9860;--c-accent:#f59e0b;--c-accent2:#fbbf24;--c-accent-glow:rgba(245,158,11,0.18);--c-tag-sports:#f59e0b;--c-tag-fitness:#10b981;--c-tag-nutrition:#ef4444;--c-tag-wellness:#8b5cf6;--c-grad-start:#b45309;--c-grad-mid:#d97706;--c-grad-end:#f59e0b;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif.badge-sports{background:var(--c-tag-sports)}.badge-fitness{background:var(--c-tag-fitness)}.badge-nutrition{background:var(--c-tag-nutrition)}.badge-wellness{background:var(--c-tag-wellness)}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(255,255,255,0.06),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:var(--c-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 12 日 · 星期五</div>
+  <h1 class="hero-title">运动健康日报</h1>
+  <div class="hero-total">今日 19 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-sports)"></span> 体坛快讯 <strong>7</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-fitness)"></span> 健身科学 <strong>4</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-nutrition)"></span> 营养饮食 <strong>4</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-wellness)"></span> 身心养护 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#sports"><span>⚽ 体坛快讯</span><span class="nav-count">7</span></a><a href="#fitness"><span>💪 健身科学</span><span class="nav-count">4</span></a><a href="#nutrition"><span>🥗 营养饮食</span><span class="nav-count">4</span></a><a href="#wellness"><span>🧘 身心养护</span><span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="sports">
+<div class="section-header"><span class="section-badge badge-sports">⚽ 体坛快讯</span><h2>体坛快讯</h2><span class="section-count">7 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#1</span><span class="card-source">FIFA</span></div>
+<h3 class="card-title">世界杯揭幕战：墨西哥胜南非，3红牌创历史</h3>
+<p class="card-summary">世界杯史上首次揭幕战3人罚下，东道主墨西哥击败9人南非，阿兹特克体育场沸腾。</p>
+<div class="card-actions"><a class="card-link" href="https://www.independent.co.uk/sport/football/mexico-south-africa-world-cup-2026-opening-ceremony-live-stream-score-b2994072.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#2</span><span class="card-source">ESPN</span></div>
+<h3 class="card-title">NBA总决赛G4：尼克斯29分逆转胜马刺107-106</h3>
+<p class="card-summary">尼克斯创NBA总决赛历史最大逆转纪录，从落后29分扳回，总比分3-1领先逼近冠军。</p>
+<div class="card-actions"><a class="card-link" href="https://apnews.com/article/nba-finals-spurs-knicks-game-4-ba83cdcb98f92d0c9fffd32a5745c97c" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#3</span><span class="card-source">AP News</span></div>
+<h3 class="card-title">尼克斯距1973年以来首冠仅一步之遥</h3>
+<p class="card-summary">总决赛3-1领先马刺，G5将于6月13日回到纽约主场，有望终结52年冠军荒。</p>
+<div class="card-actions"><a class="card-link" href="https://apnews.com/article/nba-finals-spurs-knicks-game-4-ba83cdcb98f92d0c9fffd32a5745c97c" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#4</span><span class="card-source">NBA.com</span></div>
+<h3 class="card-title">文班亚马表现受质疑：G4领先29分被逆转</h3>
+<p class="card-summary">马刺在G4第三节曾领先29分但被翻盘，Wembanyama关键回合表现成焦点。</p>
+<div class="card-actions"><a class="card-link" href="https://www.nba.com/news/4-takeaways-spurs-knicks-game-4" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#5</span><span class="card-source">ESPN</span></div>
+<h3 class="card-title">2026世界杯48队赛制全面启幕</h3>
+<p class="card-summary">104场比赛跨三国16城进行，6月12日北京时间韩国vs捷克等多场小组赛陆续开打。</p>
+<div class="card-actions"><a class="card-link" href="https://www.espn.com/soccer/story/_/id/48939282/2026-fifa-world-cup-fixtures-results" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#6</span><span class="card-source">BBC Sport</span></div>
+<h3 class="card-title">夏奇拉献唱世界杯开幕式，主题曲"Dai Dai"</h3>
+<p class="card-summary">Shakira在墨西哥城体育场精彩献唱，2026世界杯开幕表演引发全球热议。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#7</span><span class="card-source">腾讯体育</span></div>
+<h3 class="card-title">孙颖莎入选《时代》体育界最具影响力100人</h3>
+<p class="card-summary">《时代》杂志首次发布"体育界最具影响力100人"榜单，中国乒乓球名将孙颖莎上榜。</p>
+<div class="card-actions"></div>
+</article></div>
+</section><section class="section" id="fitness">
+<div class="section-header"><span class="section-badge badge-fitness">💪 健身科学</span><h2>健身科学</h2><span class="section-count">4 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#8</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">每周仅30分钟运动即可显著改善健康</h3>
+<p class="card-summary">最新研究表明，极少量规律运动即可带来心血管和代谢健康的显著改善。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#9</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">简单音乐技巧可将运动耐力提高20%</h3>
+<p class="card-summary">特定节奏音乐配合运动节奏，显著提升耐力表现，无需额外训练投入。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#10</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">每日8500步可有效防止体重反弹</h3>
+<p class="card-summary">大规模纵向研究证实，保持日均8500步是维持减重成果的有效策略。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#11</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">无需高强度锻炼也能有效增肌</h3>
+<p class="card-summary">新研究发现低负荷阻力训练配合适当营养，可达到与高强度训练相近的增肌效果。</p>
+<div class="card-actions"></div>
+</article></div>
+</section><section class="section" id="nutrition">
+<div class="section-header"><span class="section-badge badge-nutrition">🥗 营养饮食</span><h2>营养饮食</h2><span class="section-count">4 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#12</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">超加工食品可能损害专注力，即使饮食整体健康</h3>
+<p class="card-summary">2100名成人研究显示，超加工食品独立于整体饮食质量影响注意力集中能力。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#13</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">饮茶可改善健康与长寿，但饮用方式很重要</h3>
+<p class="card-summary">新研究揭示不同冲泡方式和饮用温度对茶叶健康功效的影响差异显著。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#14</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">迄今最大胶原蛋白研究揭示真正有效方法</h3>
+<p class="card-summary">近8000人参与的最大规模胶原蛋白临床试验公布，验证了有效剂量与最佳补充策略。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#15</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">Ozempic等减肥药与乳腺癌风险降低30%相关</h3>
+<p class="card-summary">大型观察性研究发现GLP-1类药物使用与乳腺癌发病率显著降低存在关联。</p>
+<div class="card-actions"></div>
+</article></div>
+</section><section class="section" id="wellness">
+<div class="section-header"><span class="section-badge badge-wellness">🧘 身心养护</span><h2>身心养护</h2><span class="section-count">4 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#16</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">科学家发现细胞衰老的可逆隐藏原因</h3>
+<p class="card-summary">磷脂酰胆碱水平下降是线粒体功能障碍的主因，为抗衰老干预提供新靶点。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#17</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">耳鸣可能是听力损失的早期预警信号</h3>
+<p class="card-summary">新研究确认耳鸣与即将发生的听力损失之间存在强预测关系，提醒及早检查。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#18</span><span class="card-source">ScienceDaily</span></div>
+<h3 class="card-title">化疗患者发现保持思维清晰的简单方法</h3>
+<p class="card-summary">居家运动被证实可有效缓解"化疗脑"症状，影响高达80%的化疗患者。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#19</span><span class="card-source">NIH</span></div>
+<h3 class="card-title">NIH发布首个大规模衰老细胞图谱</h3>
+<p class="card-summary">首个大规模衰老细胞图谱可为未来衰老相关疾病的治疗策略提供重要参考框架。</p>
+<div class="card-actions"></div>
+</article></div>
+</section>
+</main>
+<footer class="footer">
+  数据来源：ESPN / Sky Sports / 新浪体育 / NBA.com / FIFA / ScienceDaily / Harvard Health 等公开体育健康媒体
+</footer>
+
+<script>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(e.target.classList.add("visible"),o.unobserve(e.target))})},{threshold:0.1});document.querySelectorAll(".card-animate").forEach(function(e){o.observe(e)})})();
+</script>
+</body>
+</html>

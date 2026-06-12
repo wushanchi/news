@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026 年 6 月 12 日</title>
+<style>
+:root{--c-bg:#0a120e;--c-surface:#101a14;--c-card:#18241c;--c-border:#1e3a2a;--c-text:#dce8e0;--c-text-dim:#88aa90;--c-accent:#10b981;--c-accent2:#34d399;--c-accent-glow:rgba(16,185,129,0.18);--c-tag-internet:#10b981;--c-tag-hardware:#0ea5e9;--c-tag-space:#f59e0b;--c-tag-digital:#8b5cf6;--c-grad-start:#065f46;--c-grad-mid:#059669;--c-grad-end:#047857;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif.badge-internet{background:var(--c-tag-internet)}.badge-hardware{background:var(--c-tag-hardware)}.badge-space{background:var(--c-tag-space)}.badge-digital{background:var(--c-tag-digital)}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(255,255,255,0.06),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:var(--c-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 12 日 · 星期五</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 18 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-internet)"></span> 互联网/软件 <strong>6</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-hardware)"></span> 硬件/半导体 <strong>5</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-space)"></span> 航天/新能源 <strong>4</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-digital)"></span> 数字创新 <strong>3</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#internet"><span>🌐 互联网/软件</span><span class="nav-count">6</span></a><a href="#hardware"><span>🔧 硬件/半导体</span><span class="nav-count">5</span></a><a href="#space"><span>🚀 航天/新能源</span><span class="nav-count">4</span></a><a href="#digital"><span>💡 数字创新</span><span class="nav-count">3</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="internet">
+<div class="section-header"><span class="section-badge badge-internet">🌐 互联网/软件</span><h2>互联网/软件</h2><span class="section-count">6 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#1</span><span class="card-source">The Verge</span></div>
+<h3 class="card-title">苹果 WWDC 2026 发布 AI 版 Siri 与 iOS 27</h3>
+<p class="card-summary">全新Siri支持跨应用协调操作，注重隐私和设备端处理，Xcode与Core AI框架同时升级。</p>
+<div class="card-actions"><a class="card-link" href="https://www.theverge.com/tech/944110/wwdc-2026-news-announcements" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#2</span><span class="card-source">Google</span></div>
+<h3 class="card-title">Google 加速 Agentic AI 时代：AI 代理成主流</h3>
+<p class="card-summary">从聊天机器人转向能自主完成任务的AI代理，应用覆盖研究自动化、企业工作流等。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#3</span><span class="card-source">TechCrunch</span></div>
+<h3 class="card-title">OpenAI 加速走向 IPO，或成近年最大科技上市</h3>
+<p class="card-summary">从研究组织到最具影响力AI平台之一，投资者关注增长前景与企业采用率。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#4</span><span class="card-source">Microsoft</span></div>
+<h3 class="card-title">Microsoft 强化企业 AI 领导地位</h3>
+<p class="card-summary">将AI整合进云计算、商业软件和开发平台，企业AI采用成增长最快细分领域。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#5</span><span class="card-source">TechCrunch</span></div>
+<h3 class="card-title">AI 监管成为全球优先事项</h3>
+<p class="card-summary">各国聚焦AI透明度、安全测试、责任标准和数据隐私，合规将成为关键竞争优势。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#6</span><span class="card-source">Apple</span></div>
+<h3 class="card-title">WWDC 2026：苹果推出全新 Xcode 与 Core AI 框架</h3>
+<p class="card-summary">智能编码工作流突破性进展，编码助手功能扩展至全流程支持。</p>
+<div class="card-actions"><a class="card-link" href="https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section><section class="section" id="hardware">
+<div class="section-header"><span class="section-badge badge-hardware">🔧 硬件/半导体</span><h2>硬件/半导体</h2><span class="section-count">5 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#7</span><span class="card-source">NVIDIA</span></div>
+<h3 class="card-title">NVIDIA Vera Rubin 全面量产，COMPUTEX 2026 焦点</h3>
+<p class="card-summary">黄仁勋在GTC Taipei宣布下一代AI平台Vera Rubin全规模量产，正式杀入PC芯片市场。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#8</span><span class="card-source">Bloomberg</span></div>
+<h3 class="card-title">AI 芯片支出创纪录，全球半导体市场重构</h3>
+<p class="card-summary">AI服务器巨头股价波动，资本开支创历史新高，全球半导体产业加速向AI方向倾斜。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#9</span><span class="card-source">TechCrunch</span></div>
+<h3 class="card-title">COMPUTEX 2026 落幕：端侧 AI 与人形机器人成新主线</h3>
+<p class="card-summary">NVIDIA PC芯片+AMD/Intel端侧方案齐发，产业正式进入AI硬件商业化落地阶段。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#10</span><span class="card-source">Wired</span></div>
+<h3 class="card-title">AI 基础设施成新战场：算力与数据中心竞赛</h3>
+<p class="card-summary">全球科技巨头激烈争夺AI芯片、数据中心及能源资源，格局堪比早期云计算扩张。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#11</span><span class="card-source">36氪</span></div>
+<h3 class="card-title">中国半导体产业在先进制程取得实质性突破</h3>
+<p class="card-summary">SEMICON China信号明确：中国半导体设备企业已在先进制程和封装环节取得关键进展。</p>
+<div class="card-actions"></div>
+</article></div>
+</section><section class="section" id="space">
+<div class="section-header"><span class="section-badge badge-space">🚀 航天/新能源</span><h2>航天/新能源</h2><span class="section-count">4 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#12</span><span class="card-source">Reuters</span></div>
+<h3 class="card-title">SpaceX Starlink 全球用户突破500万</h3>
+<p class="card-summary">星链星座持续扩容，SpaceX商业航天发射频次创新高，火星计划稳步推进。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#13</span><span class="card-source">CNBC</span></div>
+<h3 class="card-title">商业航天扎堆冲刺 IPO，2026 加速商业化</h3>
+<p class="card-summary">多家民营航天企业集中递交上市申请，商业航天从技术验证转向商业运营。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#14</span><span class="card-source">PV Magazine</span></div>
+<h3 class="card-title">光伏新技术集中量产发布，转换效率再破纪录</h3>
+<p class="card-summary">叠层电池技术突破30%效率大关，全球清洁能源投资持续攀升。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#15</span><span class="card-source">36氪</span></div>
+<h3 class="card-title">人形机器人产业化提速，中国厂商加速布局</h3>
+<p class="card-summary">多个品牌人形机器人进入量产阶段，价格降至10万元以内，应用场景拓展至制造和服务业。</p>
+<div class="card-actions"></div>
+</article></div>
+</section><section class="section" id="digital">
+<div class="section-header"><span class="section-badge badge-digital">💡 数字创新</span><h2>数字创新</h2><span class="section-count">3 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#16</span><span class="card-source">The Verge</span></div>
+<h3 class="card-title">Deezer 推出跨平台 AI 音乐检测工具</h3>
+<p class="card-summary">用户无论使用Spotify还是Apple Music，均可检查播放列表中是否含AI生成音乐。</p>
+<div class="card-actions"><a class="card-link" href="https://www.theverge.com/ai-artificial-intelligence/948153/deezer-ai-music-detector-spotify-apple" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#17</span><span class="card-source">New Scientist</span></div>
+<h3 class="card-title">全自主 AI 无人机首次实战击杀引发伦理争议</h3>
+<p class="card-summary">完全自主运行的无人机执行致命攻击，标志着自主武器系统进入新阶段。</p>
+<div class="card-actions"><a class="card-link" href="https://www.newscientist.com/article/2529849-fully-autonomous-drones-have-killed-human-soldiers-for-the-first-time" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#18</span><span class="card-source">Bloomberg</span></div>
+<h3 class="card-title">AI 浪潮引发中国劳动者权益保护讨论</h3>
+<p class="card-summary">官媒呼吁保护劳工权利，北京正考虑如何管控AI技术带来的就业风险。</p>
+<div class="card-actions"><a class="card-link" href="https://www.bloomberg.com/news/articles/2026-06-11/ai-wave-sparks-alarm-in-china-with-call-to-protect-worker-rights" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section>
+</main>
+<footer class="footer">
+  数据来源：TechCrunch / The Verge / 36氪 / IT之家 / Bloomberg / Wired 等公开科技媒体
+</footer>
+
+<script>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(e.target.classList.add("visible"),o.unobserve(e.target))})},{threshold:0.1});document.querySelectorAll(".card-animate").forEach(function(e){o.observe(e)})})();
+</script>
+</body>
+</html>
