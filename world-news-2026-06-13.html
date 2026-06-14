@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国际焦点日报 · 2026 年 6 月 13 日</title>
+<style>
+:root{--c-bg:#0a0f1a;--c-surface:#101828;--c-card:#182030;--c-border:#1e3a5f;--c-text:#e0e8f0;--c-text-dim:#8899aa;--c-accent:#3b82f6;--c-accent2:#60a5fa;--c-accent-glow:rgba(59,130,246,0.18);--c-tag-politics:#3b82f6;--c-tag-economy:#6366f1;--c-tag-major:#ef4444;--c-tag-society:#8b5cf6;--c-grad-start:#1e40af;--c-grad-mid:#2563eb;--c-grad-end:#1d4ed8;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif.badge-politics{background:var(--c-tag-politics)}.badge-economy{background:var(--c-tag-economy)}.badge-major{background:var(--c-tag-major)}.badge-society{background:var(--c-tag-society)}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(255,255,255,0.06),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:var(--c-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 13 日 · 星期六</div>
+  <h1 class="hero-title">国际焦点日报</h1>
+  <div class="hero-total">今日 20 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-politics)"></span> 政治外交 <strong>7</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-economy)"></span> 经济财经 <strong>5</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-major)"></span> 重大事件 <strong>4</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-society)"></span> 社会人文 <strong>4</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#politics"><span>🏛️ 政治外交</span><span class="nav-count">7</span></a><a href="#economy"><span>💰 经济财经</span><span class="nav-count">5</span></a><a href="#major"><span>⚡ 重大事件</span><span class="nav-count">4</span></a><a href="#society"><span>🌏 社会人文</span><span class="nav-count">4</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="politics">
+<div class="section-header"><span class="section-badge badge-politics">🏛️ 政治外交</span><h2>政治外交</h2><span class="section-count">7 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#1</span><span class="card-source">The Hindu</span></div>
+<h3 class="card-title">特朗普宣布美伊和平协议将于 6 月 14 日签署</h3>
+<p class="card-summary">特朗普称美伊和平协议将于周日（6月14日）正式签署，签署后霍尔木兹海峡将立即重新开放，结束持续数周的海上封锁。</p>
+<div class="card-actions"><a class="card-link" href="https://www.thehindu.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#2</span><span class="card-source">Times of Eswatini</span></div>
+<h3 class="card-title">美国对伊朗发动新一轮军事打击</h3>
+<p class="card-summary">在和平谈判进行的同时，美国对伊朗实施新一轮军事打击，令外界对协议前景产生质疑，德黑兰方面强烈谴责。</p>
+<div class="card-actions"></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#3</span><span class="card-source">Livemint</span></div>
+<h3 class="card-title">伊朗最高领袖哈梅内伊葬礼定于 7 月 9 日在马什哈德举行</h3>
+<p class="card-summary">统治伊朗近 37 年的阿亚图拉-哈梅内伊的葬礼将于 7 月 4 日在德黑兰开始，7 月 9 日在马什哈德举行最终安葬。</p>
+<div class="card-actions"><a class="card-link" href="https://www.livemint.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#4</span><span class="card-source">Livemint</span></div>
+<h3 class="card-title">印度外长就海员遇难事件向鲁比奥提出强烈抗议</h3>
+<p class="card-summary">三艘载有印度船员的船只在阿曼海岸附近遭到袭击，其中一起事件造成三名印度海员死亡，印度外长贾伊尚卡尔向美国国务卿提出强烈抗议。</p>
+<div class="card-actions"><a class="card-link" href="https://www.livemint.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#5</span><span class="card-source">Livemint</span></div>
+<h3 class="card-title">巴基斯坦总理：美伊和平协议可能在 24 小时内敲定</h3>
+<p class="card-summary">巴基斯坦总理谢赫巴兹-谢里夫宣布，美伊和平协议可能在 24 小时内完成，巴基斯坦已准备好进行电子签署，技术性会谈将于下周展开。</p>
+<div class="card-actions"><a class="card-link" href="https://www.livemint.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#6</span><span class="card-source">UN News</span></div>
+<h3 class="card-title">联合国秘书长古特雷斯呼吁恢复停火并警惕局势升级</h3>
+<p class="card-summary">联合国秘书长古特雷斯就中东持续冲突发表声明，呼吁各方立即恢复停火，并警告局势进一步升级将对全球和平与安全构成严重威胁。</p>
+<div class="card-actions"><a class="card-link" href="https://news.un.org/zh/story/2026/06/1142320" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#7</span><span class="card-source">Tasnim News</span></div>
+<h3 class="card-title">以色列持续袭击黎巴嫩南部，中东局势再度紧张</h3>
+<p class="card-summary">以色列对黎巴嫩南部的军事袭击仍在持续，黎巴嫩方面报告称以色列军队在发出撤离警告后于 6 月 13 日对该国南部发动空袭。</p>
+<div class="card-actions"><a class="card-link" href="https://www.tasnimnews.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section><section class="section" id="economy">
+<div class="section-header"><span class="section-badge badge-economy">💰 经济财经</span><h2>经济财经</h2><span class="section-count">5 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#8</span><span class="card-source">UN News</span></div>
+<h3 class="card-title">世行警告：中东冲突冲击全球经济，增长预期大幅下调</h3>
+<p class="card-summary">世界银行发布最新全球经济展望报告，警告中东持续冲突对全球能源市场和供应链的冲击，大幅下调 2026 年全球经济增长预期。</p>
+<div class="card-actions"><a class="card-link" href="https://news.un.org/zh/story/2026/06/1142320" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#9</span><span class="card-source">路透社</span></div>
+<h3 class="card-title">阿联酋拟向伊朗释放数十亿美元资产，换取海峡安全通行</h3>
+<p class="card-summary">阿联酋考虑解冻并向伊朗移交数十亿美元被冻结资产，此举与确保霍尔木兹海峡安全通行直接挂钩，是结束冲突谈判中的关键议题。</p>
+<div class="card-actions"><a class="card-link" href="https://www.livemint.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#10</span><span class="card-source">Dawn</span></div>
+<h3 class="card-title">FIFA 世界杯 2026 揭幕战：美国 4-1 大胜巴拉圭，主场开门红</h3>
+<p class="card-summary">东道主美国队在洛杉矶纪念体育场大胜巴拉圭，巴洛贡首秀即梅开二度，麦肯尼造乌龙，普利西奇送助攻，主场球迷沸腾。</p>
+<div class="card-actions"><a class="card-link" href="https://sports.cctv.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#11</span><span class="card-source">Reuters</span></div>
+<h3 class="card-title">2026 年世界杯成为有史以来最具商业价值的单届体育赛事</h3>
+<p class="card-summary">根据多家赞助商和商业分析机构数据，2026 年世界杯已超越 2022 年卡塔尔世界杯，成为有史以来商业价值最高的单届体育赛事。</p>
+<div class="card-actions"><a class="card-link" href="https://www.reuters.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#12</span><span class="card-source">Yahoo Sports</span></div>
+<h3 class="card-title">国际足联禁止球迷带水瓶进场馆，引发广泛争议</h3>
+<p class="card-summary">国际足联在世界杯期间实施禁止球迷携带水瓶进入场馆的新规，此举在社交媒体上引发广泛争议，球迷组织和人权团体均提出质疑。</p>
+<div class="card-actions"><a class="card-link" href="https://sports.yahoo.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section><section class="section" id="major">
+<div class="section-header"><span class="section-badge badge-major">⚡ 重大事件</span><h2>重大事件</h2><span class="section-count">4 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#13</span><span class="card-source">Reuters</span></div>
+<h3 class="card-title">FIFA 世界杯 2026 正式开赛：48 队扩军创历史</h3>
+<p class="card-summary">2026 年美加墨世界杯正式开赛，48 支球队参赛创历史纪录，国际足联报告门票销售和全球观众数量均创新高。</p>
+<div class="card-actions"><a class="card-link" href="https://www.fifa.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#14</span><span class="card-source">FIFA</span></div>
+<h3 class="card-title">卡塔尔 vs 瑞士：亚洲冠军迎欧洲考验</h3>
+<p class="card-summary">世界杯 2026 小组赛阶段，卡塔尔在旧金山湾区球场迎战瑞士，这是亚洲杯冠军在扩军后世界杯中的首场关键战役。</p>
+<div class="card-actions"><a class="card-link" href="https://www.fifa.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#15</span><span class="card-source">PBS/AP</span></div>
+<h3 class="card-title">北爱尔兰贝尔法斯特爆发反移民骚乱，数千人集会谴责暴力</h3>
+<p class="card-summary">在一起持刀袭击事件发生后，北爱尔兰贝尔法斯特爆发反移民骚乱，数千人随后走上街头进行谴责示威，警方已介入维持秩序。</p>
+<div class="card-actions"><a class="card-link" href="https://www.pbs.org" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#16</span><span class="card-source">The New York Times</span></div>
+<h3 class="card-title">加纳政府拟就 Thomas Partey 事件提起法律诉讼</h3>
+<p class="card-summary">加纳政府表示将在加拿大联邦法院提起法律诉讼，事件与世界杯参赛球员托马斯-帕蒂相关，具体法律诉求尚未完全披露。</p>
+<div class="card-actions"><a class="card-link" href="https://www.nytimes.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section><section class="section" id="society">
+<div class="section-header"><span class="section-badge badge-society">🌏 社会人文</span><h2>社会人文</h2><span class="section-count">4 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#17</span><span class="card-source">AP News</span></div>
+<h3 class="card-title">尼泊尔加德满都举行骄傲月游行，数百人参加</h3>
+<p class="card-summary">数百名民众在尼泊尔首都加德满都参加骄傲月游行，为 LGBTQ 权利发声，这是南亚地区规模最大的 pride 活动之一。</p>
+<div class="card-actions"><a class="card-link" href="https://apnews.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#18</span><span class="card-source">Eurasia Review</span></div>
+<h3 class="card-title">北约不能再将北极视为边缘议题</h3>
+<p class="card-summary">分析文章指出，随着北极地区战略重要性急剧上升，北约需重新审视北极地区的战略定位，不能再将其视为边缘安全议题。</p>
+<div class="card-actions"><a class="card-link" href="https://www.eurasiareview.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#19</span><span class="card-source">AP News</span></div>
+<h3 class="card-title">加拿大总理卡尼就中等国家国际立场发表声明</h3>
+<p class="card-summary">加拿大总理卡尼在国际论坛上就中等国家的联合立场发表声明，强调在全球不确定时期多边合作和规则-based 国际秩序的重要性。</p>
+<div class="card-actions"><a class="card-link" href="https://apnews.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#20</span><span class="card-source">Reuters</span></div>
+<h3 class="card-title">世界杯带动全球球迷文化热潮，多元文化交融成亮点</h3>
+<p class="card-summary">2026 年世界杯不仅是一场体育盛事，也带动了全球球迷文化的交流热潮，多元文化背景的球迷相聚成为本届赛事的重要亮点。</p>
+<div class="card-actions"><a class="card-link" href="https://www.reuters.com" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section>
+</main>
+<footer class="footer">
+  数据来源：Reuters / BBC / CNN / AP News / UN News / 新华网 / 环球网 等公开新闻源
+</footer>
+
+<script>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(e.target.classList.add("visible"),o.unobserve(e.target))})},{threshold:0.1});document.querySelectorAll(".card-animate").forEach(function(e){o.observe(e)})})();
+</script>
+</body>
+</html>
