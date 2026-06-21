@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技日报 · 2026 年 6 月 21 日</title>
+<style>
+:root{--c-bg:#0a120e;--c-surface:#101a14;--c-card:#18241c;--c-border:#1e3a2a;--c-text:#dce8e0;--c-text-dim:#88aa90;--c-accent:#10b981;--c-accent2:#34d399;--c-accent-glow:rgba(16,185,129,0.18);--c-tag-internet:#10b981;--c-tag-hardware:#0ea5e9;--c-tag-space:#f59e0b;--c-tag-digital:#8b5cf6;--c-grad-start:#065f46;--c-grad-mid:#059669;--c-grad-end:#047857;--radius:14px;--radius-sm:8px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);--font-mono:'SF Mono','Cascadia Code','Consolas','Menlo',monospace;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif.badge-internet{background:var(--c-tag-internet)}.badge-hardware{background:var(--c-tag-hardware)}.badge-space{background:var(--c-tag-space)}.badge-digital{background:var(--c-tag-digital)}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;background:linear-gradient(135deg,var(--c-grad-start),var(--c-grad-mid) 50%,var(--c-grad-end));padding:60px 24px 56px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.08),transparent 60%),radial-gradient(circle at 70% 80%,rgba(255,255,255,0.06),transparent 50%)}
+.hero-date{position:relative;font-size:15px;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:0.06em;margin-bottom:8px}
+.hero-title{position:relative;font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-0.02em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.hero-total{position:relative;display:inline-block;margin-top:12px;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:6px 18px;border-radius:20px;color:rgba(255,255,255,0.9)}
+.stats-wrap{position:relative;margin-top:-28px;padding:0 16px;z-index:2}
+.stats{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px 20px;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.stat{display:flex;align-items:center;gap:7px;font-size:14px;color:var(--c-text-dim)}
+.stat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.stat strong{color:var(--c-text);font-weight:600}
+.nav-wrap{position:sticky;top:0;z-index:10;background:var(--c-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);padding:0 16px}
+.nav{max-width:900px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;color:var(--c-text-dim);transition:var(--transition)}
+.nav a:hover{color:var(--c-text);background:var(--c-card)}
+.nav a .nav-count{font-size:11px;background:var(--c-border);padding:1px 7px;border-radius:10px;color:var(--c-text-dim)}
+.main{max-width:900px;margin:0 auto;padding:32px 16px 60px}
+.section{margin-bottom:40px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--c-border)}
+.section-badge{font-size:11px;font-weight:700;letter-spacing:0.04em;padding:4px 12px;border-radius:4px;text-transform:uppercase;color:#fff}
+.section-header h2{font-size:20px;font-weight:700;color:var(--c-text)}
+.section-count{font-size:13px;color:var(--c-text-dim);margin-left:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform var(--transition),box-shadow var(--transition);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);border-color:var(--c-accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-accent),var(--c-accent2));opacity:0;transition:opacity var(--transition)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-num{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--c-accent);background:var(--c-accent-glow);padding:2px 10px;border-radius:var(--radius-sm);flex-shrink:0}
+.card-source{font-size:11px;font-weight:500;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,0.06);color:var(--c-text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.card-title{font-size:15px;font-weight:700;line-height:1.45;color:var(--c-text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-summary{font-size:13px;line-height:1.55;color:var(--c-text-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-actions{display:flex;align-items:center;gap:8px;margin-top:auto}
+.card-time{font-size:11px;color:var(--c-text-dim);opacity:0.7}
+.card-link{margin-left:auto;font-size:12px;font-weight:600;color:var(--c-accent2);padding:5px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:4px}
+.card-link:hover{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.card-link svg{width:14px;height:14px;flex-shrink:0}
+.card-animate{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease}
+.card-animate.visible{opacity:1;transform:translateY(0)}
+.section-empty{text-align:center;padding:32px;color:var(--c-text-dim);font-size:14px;background:var(--c-card);border:1px dashed var(--c-border);border-radius:var(--radius)}
+.footer{text-align:center;padding:24px 16px 40px;font-size:12px;color:var(--c-text-dim);opacity:0.6;border-top:1px solid var(--c-border)}
+.footer a{color:var(--c-accent2)}
+@media(max-width:600px){.hero{padding:44px 16px 40px}.cards{grid-template-columns:1fr}.stats{gap:6px;padding:14px}.stat{font-size:12px}.nav a{padding:6px 12px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-date">2026 年 6 月 21 日 · 星期日</div>
+  <h1 class="hero-title">科技日报</h1>
+  <div class="hero-total">今日 17 条 · 北京时间 08:50 生成</div>
+</header>
+<div class="stats-wrap">
+  <div class="stats">
+    <div class="stat"><span class="stat-dot" style="background:var(--c-tag-internet)"></span> 互联网/软件 <strong>6</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-hardware)"></span> 硬件/半导体 <strong>4</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-space)"></span> 航天/新能源 <strong>2</strong></div><div class="stat"><span class="stat-dot" style="background:var(--c-tag-digital)"></span> 数字创新 <strong>5</strong></div>
+  </div>
+</div>
+<nav class="nav-wrap"><div class="nav">
+  <a href="#internet"><span>🌐 互联网/软件</span><span class="nav-count">6</span></a><a href="#hardware"><span>🔧 硬件/半导体</span><span class="nav-count">4</span></a><a href="#space"><span>🚀 航天/新能源</span><span class="nav-count">2</span></a><a href="#digital"><span>💡 数字创新</span><span class="nav-count">5</span></a>
+</div></nav>
+<main class="main">
+<section class="section" id="internet">
+<div class="section-header"><span class="section-badge badge-internet">🌐 互联网/软件</span><h2>互联网/软件</h2><span class="section-count">6 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#1</span><span class="card-source">Cursor</span></div>
+<h3 class="card-title">Cursor 发布 Origin：面向 Agent 的代码托管平台</h3>
+<p class="card-summary">在 Compile 大会推出，针对 AI Agent 设计。技术栈来自收购的 Graphite，解决多 Agent 并发分支和合并冲突，对标 GitHub/GitLab。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#2</span><span class="card-source">小米 MiMo</span></div>
+<h3 class="card-title">Xiaomi MiMo Claw 正式版发布，联动金山办公</h3>
+<p class="card-summary">搭载 MiMo-V2.5-Pro 旗舰模型，支持百万级上下文和千次连续工具调用，联动金山办公生态。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#3</span><span class="card-source">Google Cloud</span></div>
+<h3 class="card-title">Google Cloud 发布开放知识格式 OKF v0.1</h3>
+<p class="card-summary">Apache 2.0 协议开源，用 Markdown + YAML 解决 AI Agent 知识孤岛问题，每个文件代表一个"概念"，含 YAML 元数据。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#4</span><span class="card-source">京东</span></div>
+<h3 class="card-title">京东发布智能体自主支付协议 A2P2</h3>
+<p class="card-summary">国内首个 Agent Autonomous Payment Protocol，支付自主能力分为 L0-L5 六级，引入 ARI 运行时身份机制。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#5</span><span class="card-source">Mozilla</span></div>
+<h3 class="card-title">Firefox 151 切换至 Rust 版 zlib-rs</h3>
+<p class="card-summary">gzip 压缩与解压缩由 Rust 重写的 zlib-rs 接管，替换自 1995 年以来的 C 语言 zlib 库，验证 Rust 内存安全能力。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#6</span><span class="card-source">OSChina</span></div>
+<h3 class="card-title">uniTerm v1.0 跨平台 AI Agent 终端开源</h3>
+<p class="card-summary">基于 Wails v2 构建的跨平台终端模拟器，深度集成可自主运行 AI Agent，整合远程连接、文件传输、数据库操作、服务器监控。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section><section class="section" id="hardware">
+<div class="section-header"><span class="section-badge badge-hardware">🔧 硬件/半导体</span><h2>硬件/半导体</h2><span class="section-count">4 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#7</span><span class="card-source">Google</span></div>
+<h3 class="card-title">Android 17 正式发布，Pixel 设备率先推送</h3>
+<p class="card-summary">带来 Bubbles 气泡多任务、临时权限、折叠屏游戏模式等四大更新，高端设备同步上线 Gemini Intelligence 端侧 AI 能力。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#8</span><span class="card-source">火山引擎</span></div>
+<h3 class="card-title">字节跳动发布 Seedance 2.0 Mini 视频生成模型</h3>
+<p class="card-summary">720P 单秒成本约 0.5 元，较标准版降低一半，主打高性价比视频生成，即将开放 API。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#9</span><span class="card-source">IT之家</span></div>
+<h3 class="card-title">台积电全力推进 CoPoS 面板级封装技术</h3>
+<p class="card-summary">以方形玻璃基板替代传统圆形晶圆，可将材料利用率从不足 70% 提升至 90% 以上，并降低 20-30% 的单位成本。</p>
+<div class="card-actions"><a class="card-link" href="https://it.ithome.com/" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#10</span><span class="card-source">华尔街日报</span></div>
+<h3 class="card-title">库克承认苹果将全面涨价：AI 引爆内存芯片暴涨</h3>
+<p class="card-summary">苹果 CEO 蒂姆·库克 6 月 18 日采访称价格上涨"不可避免"，将 AI 引爆的内存芯片暴涨形容为"百年一遇的洪水"。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section><section class="section" id="space">
+<div class="section-header"><span class="section-badge badge-space">🚀 航天/新能源</span><h2>航天/新能源</h2><span class="section-count">2 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#11</span><span class="card-source">摩根大通</span></div>
+<h3 class="card-title">摩根大通：2030 年 AI 基建总投入将达 5.5 万亿美元</h3>
+<p class="card-summary">较去年 11 月预测增加 4000 亿美元，其中 4.1 万亿来自债务融资。英伟达近日发行 250 亿美元高评级债券，认购达 850 亿美元。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#12</span><span class="card-source">彭博社</span></div>
+<h3 class="card-title">DeepSeek 首轮融资超 74 亿美元，估值 520-590 亿</h3>
+<p class="card-summary">为中国 AI 行业最大单轮融资。创始人梁文锋个人出资 200 亿元，外部投资者注入其管理有限合伙企业获经济权益但不享投票权。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section><section class="section" id="digital">
+<div class="section-header"><span class="section-badge badge-digital">💡 数字创新</span><h2>数字创新</h2><span class="section-count">5 条</span></div>
+<div class="cards"><article class="card card-animate">
+<div class="card-top"><span class="card-num">#13</span><span class="card-source">Z.ai</span></div>
+<h3 class="card-title">GLM-5.2 登顶开源权重模型榜首</h3>
+<p class="card-summary">Z.ai 的 GLM-5.2 在 Artificial Analysis Intelligence Index v4.1 以 51 分登顶，超越 Claude 4 Opus 与 DeepSeek V4 Pro。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#14</span><span class="card-source">通义实验室</span></div>
+<h3 class="card-title">通义实验室开源统一科学大模型 LOGOS</h3>
+<p class="card-summary">联合人大高瓴推出首个基于"科学语法"的多领域科学生成基础模型，覆盖 7 类模态、44.87B tokens 预训练语料。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#15</span><span class="card-source">Sensor Tower</span></div>
+<h3 class="card-title">ChatGPT 市场份额首次跌破 50%</h3>
+<p class="card-summary">《2026 年 AI 现状报告》显示 ChatGPT 降至 46.4%，Gemini 升至 27.7%，Claude 10.3%。格局已从一家独大变为多强争霸。</p>
+<div class="card-actions"><a class="card-link" href="https://www.saiita.com.cn/technology-consulting/2026-june-tech-news.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#16</span><span class="card-source">Bloomberg</span></div>
+<h3 class="card-title">微软双向转售 GPT 与 DeepSeek，成全球最大 AI 中间商</h3>
+<p class="card-summary">将 ChatGPT 卖给中国企业，也反向将 DeepSeek-R1/V4 卖给西方客户，构建跨中美 AI 模型的双向贸易网络。</p>
+<div class="card-actions"><a class="card-link" href="https://x.com/AYi_AInotes/status/2068218661710512231" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article><article class="card card-animate">
+<div class="card-top"><span class="card-num">#17</span><span class="card-source">LogRocket</span></div>
+<h3 class="card-title">OpenCode 登顶 AI 开发工具实力榜</h3>
+<p class="card-summary">2026 年 6 月版 AI 开发工具实力榜中，OpenCode 凭借惊人的社区增长和开放生态，超越 Cursor、Claude Code 等开源编程 Agent。</p>
+<div class="card-actions"><a class="card-link" href="https://www.weste.net/2026/06-16/OpenCode.html" target="_blank" rel="noopener noreferrer">阅读<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+</article></div>
+</section>
+</main>
+<footer class="footer">
+  数据来源：IT之家 / 36氪 / TechCrunch / The Verge / Bloomberg / Sensor Tower 等公开科技媒体
+</footer>
+
+<script>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(e.target.classList.add("visible"),o.unobserve(e.target))})},{threshold:0.1});document.querySelectorAll(".card-animate").forEach(function(e){o.observe(e)})})();
+</script>
+</body>
+</html>
